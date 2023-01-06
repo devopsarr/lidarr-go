@@ -1,0 +1,470 @@
+# UiConfigResource
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **int32** |  | [optional] 
+**FirstDayOfWeek** | Pointer to **int32** |  | [optional] 
+**CalendarWeekColumnHeader** | Pointer to **NullableString** |  | [optional] 
+**ShortDateFormat** | Pointer to **NullableString** |  | [optional] 
+**LongDateFormat** | Pointer to **NullableString** |  | [optional] 
+**TimeFormat** | Pointer to **NullableString** |  | [optional] 
+**ShowRelativeDates** | Pointer to **bool** |  | [optional] 
+**EnableColorImpairedMode** | Pointer to **bool** |  | [optional] 
+**UiLanguage** | Pointer to **int32** |  | [optional] 
+**ExpandAlbumByDefault** | Pointer to **bool** |  | [optional] 
+**ExpandSingleByDefault** | Pointer to **bool** |  | [optional] 
+**ExpandEPByDefault** | Pointer to **bool** |  | [optional] 
+**ExpandBroadcastByDefault** | Pointer to **bool** |  | [optional] 
+**ExpandOtherByDefault** | Pointer to **bool** |  | [optional] 
+**Theme** | Pointer to **NullableString** |  | [optional] 
+
+## Methods
+
+### NewUiConfigResource
+
+`func NewUiConfigResource() *UiConfigResource`
+
+NewUiConfigResource instantiates a new UiConfigResource object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewUiConfigResourceWithDefaults
+
+`func NewUiConfigResourceWithDefaults() *UiConfigResource`
+
+NewUiConfigResourceWithDefaults instantiates a new UiConfigResource object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *UiConfigResource) GetId() int32`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *UiConfigResource) GetIdOk() (*int32, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *UiConfigResource) SetId(v int32)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *UiConfigResource) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetFirstDayOfWeek
+
+`func (o *UiConfigResource) GetFirstDayOfWeek() int32`
+
+GetFirstDayOfWeek returns the FirstDayOfWeek field if non-nil, zero value otherwise.
+
+### GetFirstDayOfWeekOk
+
+`func (o *UiConfigResource) GetFirstDayOfWeekOk() (*int32, bool)`
+
+GetFirstDayOfWeekOk returns a tuple with the FirstDayOfWeek field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirstDayOfWeek
+
+`func (o *UiConfigResource) SetFirstDayOfWeek(v int32)`
+
+SetFirstDayOfWeek sets FirstDayOfWeek field to given value.
+
+### HasFirstDayOfWeek
+
+`func (o *UiConfigResource) HasFirstDayOfWeek() bool`
+
+HasFirstDayOfWeek returns a boolean if a field has been set.
+
+### GetCalendarWeekColumnHeader
+
+`func (o *UiConfigResource) GetCalendarWeekColumnHeader() string`
+
+GetCalendarWeekColumnHeader returns the CalendarWeekColumnHeader field if non-nil, zero value otherwise.
+
+### GetCalendarWeekColumnHeaderOk
+
+`func (o *UiConfigResource) GetCalendarWeekColumnHeaderOk() (*string, bool)`
+
+GetCalendarWeekColumnHeaderOk returns a tuple with the CalendarWeekColumnHeader field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCalendarWeekColumnHeader
+
+`func (o *UiConfigResource) SetCalendarWeekColumnHeader(v string)`
+
+SetCalendarWeekColumnHeader sets CalendarWeekColumnHeader field to given value.
+
+### HasCalendarWeekColumnHeader
+
+`func (o *UiConfigResource) HasCalendarWeekColumnHeader() bool`
+
+HasCalendarWeekColumnHeader returns a boolean if a field has been set.
+
+### SetCalendarWeekColumnHeaderNil
+
+`func (o *UiConfigResource) SetCalendarWeekColumnHeaderNil(b bool)`
+
+ SetCalendarWeekColumnHeaderNil sets the value for CalendarWeekColumnHeader to be an explicit nil
+
+### UnsetCalendarWeekColumnHeader
+`func (o *UiConfigResource) UnsetCalendarWeekColumnHeader()`
+
+UnsetCalendarWeekColumnHeader ensures that no value is present for CalendarWeekColumnHeader, not even an explicit nil
+### GetShortDateFormat
+
+`func (o *UiConfigResource) GetShortDateFormat() string`
+
+GetShortDateFormat returns the ShortDateFormat field if non-nil, zero value otherwise.
+
+### GetShortDateFormatOk
+
+`func (o *UiConfigResource) GetShortDateFormatOk() (*string, bool)`
+
+GetShortDateFormatOk returns a tuple with the ShortDateFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShortDateFormat
+
+`func (o *UiConfigResource) SetShortDateFormat(v string)`
+
+SetShortDateFormat sets ShortDateFormat field to given value.
+
+### HasShortDateFormat
+
+`func (o *UiConfigResource) HasShortDateFormat() bool`
+
+HasShortDateFormat returns a boolean if a field has been set.
+
+### SetShortDateFormatNil
+
+`func (o *UiConfigResource) SetShortDateFormatNil(b bool)`
+
+ SetShortDateFormatNil sets the value for ShortDateFormat to be an explicit nil
+
+### UnsetShortDateFormat
+`func (o *UiConfigResource) UnsetShortDateFormat()`
+
+UnsetShortDateFormat ensures that no value is present for ShortDateFormat, not even an explicit nil
+### GetLongDateFormat
+
+`func (o *UiConfigResource) GetLongDateFormat() string`
+
+GetLongDateFormat returns the LongDateFormat field if non-nil, zero value otherwise.
+
+### GetLongDateFormatOk
+
+`func (o *UiConfigResource) GetLongDateFormatOk() (*string, bool)`
+
+GetLongDateFormatOk returns a tuple with the LongDateFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLongDateFormat
+
+`func (o *UiConfigResource) SetLongDateFormat(v string)`
+
+SetLongDateFormat sets LongDateFormat field to given value.
+
+### HasLongDateFormat
+
+`func (o *UiConfigResource) HasLongDateFormat() bool`
+
+HasLongDateFormat returns a boolean if a field has been set.
+
+### SetLongDateFormatNil
+
+`func (o *UiConfigResource) SetLongDateFormatNil(b bool)`
+
+ SetLongDateFormatNil sets the value for LongDateFormat to be an explicit nil
+
+### UnsetLongDateFormat
+`func (o *UiConfigResource) UnsetLongDateFormat()`
+
+UnsetLongDateFormat ensures that no value is present for LongDateFormat, not even an explicit nil
+### GetTimeFormat
+
+`func (o *UiConfigResource) GetTimeFormat() string`
+
+GetTimeFormat returns the TimeFormat field if non-nil, zero value otherwise.
+
+### GetTimeFormatOk
+
+`func (o *UiConfigResource) GetTimeFormatOk() (*string, bool)`
+
+GetTimeFormatOk returns a tuple with the TimeFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimeFormat
+
+`func (o *UiConfigResource) SetTimeFormat(v string)`
+
+SetTimeFormat sets TimeFormat field to given value.
+
+### HasTimeFormat
+
+`func (o *UiConfigResource) HasTimeFormat() bool`
+
+HasTimeFormat returns a boolean if a field has been set.
+
+### SetTimeFormatNil
+
+`func (o *UiConfigResource) SetTimeFormatNil(b bool)`
+
+ SetTimeFormatNil sets the value for TimeFormat to be an explicit nil
+
+### UnsetTimeFormat
+`func (o *UiConfigResource) UnsetTimeFormat()`
+
+UnsetTimeFormat ensures that no value is present for TimeFormat, not even an explicit nil
+### GetShowRelativeDates
+
+`func (o *UiConfigResource) GetShowRelativeDates() bool`
+
+GetShowRelativeDates returns the ShowRelativeDates field if non-nil, zero value otherwise.
+
+### GetShowRelativeDatesOk
+
+`func (o *UiConfigResource) GetShowRelativeDatesOk() (*bool, bool)`
+
+GetShowRelativeDatesOk returns a tuple with the ShowRelativeDates field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShowRelativeDates
+
+`func (o *UiConfigResource) SetShowRelativeDates(v bool)`
+
+SetShowRelativeDates sets ShowRelativeDates field to given value.
+
+### HasShowRelativeDates
+
+`func (o *UiConfigResource) HasShowRelativeDates() bool`
+
+HasShowRelativeDates returns a boolean if a field has been set.
+
+### GetEnableColorImpairedMode
+
+`func (o *UiConfigResource) GetEnableColorImpairedMode() bool`
+
+GetEnableColorImpairedMode returns the EnableColorImpairedMode field if non-nil, zero value otherwise.
+
+### GetEnableColorImpairedModeOk
+
+`func (o *UiConfigResource) GetEnableColorImpairedModeOk() (*bool, bool)`
+
+GetEnableColorImpairedModeOk returns a tuple with the EnableColorImpairedMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableColorImpairedMode
+
+`func (o *UiConfigResource) SetEnableColorImpairedMode(v bool)`
+
+SetEnableColorImpairedMode sets EnableColorImpairedMode field to given value.
+
+### HasEnableColorImpairedMode
+
+`func (o *UiConfigResource) HasEnableColorImpairedMode() bool`
+
+HasEnableColorImpairedMode returns a boolean if a field has been set.
+
+### GetUiLanguage
+
+`func (o *UiConfigResource) GetUiLanguage() int32`
+
+GetUiLanguage returns the UiLanguage field if non-nil, zero value otherwise.
+
+### GetUiLanguageOk
+
+`func (o *UiConfigResource) GetUiLanguageOk() (*int32, bool)`
+
+GetUiLanguageOk returns a tuple with the UiLanguage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUiLanguage
+
+`func (o *UiConfigResource) SetUiLanguage(v int32)`
+
+SetUiLanguage sets UiLanguage field to given value.
+
+### HasUiLanguage
+
+`func (o *UiConfigResource) HasUiLanguage() bool`
+
+HasUiLanguage returns a boolean if a field has been set.
+
+### GetExpandAlbumByDefault
+
+`func (o *UiConfigResource) GetExpandAlbumByDefault() bool`
+
+GetExpandAlbumByDefault returns the ExpandAlbumByDefault field if non-nil, zero value otherwise.
+
+### GetExpandAlbumByDefaultOk
+
+`func (o *UiConfigResource) GetExpandAlbumByDefaultOk() (*bool, bool)`
+
+GetExpandAlbumByDefaultOk returns a tuple with the ExpandAlbumByDefault field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpandAlbumByDefault
+
+`func (o *UiConfigResource) SetExpandAlbumByDefault(v bool)`
+
+SetExpandAlbumByDefault sets ExpandAlbumByDefault field to given value.
+
+### HasExpandAlbumByDefault
+
+`func (o *UiConfigResource) HasExpandAlbumByDefault() bool`
+
+HasExpandAlbumByDefault returns a boolean if a field has been set.
+
+### GetExpandSingleByDefault
+
+`func (o *UiConfigResource) GetExpandSingleByDefault() bool`
+
+GetExpandSingleByDefault returns the ExpandSingleByDefault field if non-nil, zero value otherwise.
+
+### GetExpandSingleByDefaultOk
+
+`func (o *UiConfigResource) GetExpandSingleByDefaultOk() (*bool, bool)`
+
+GetExpandSingleByDefaultOk returns a tuple with the ExpandSingleByDefault field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpandSingleByDefault
+
+`func (o *UiConfigResource) SetExpandSingleByDefault(v bool)`
+
+SetExpandSingleByDefault sets ExpandSingleByDefault field to given value.
+
+### HasExpandSingleByDefault
+
+`func (o *UiConfigResource) HasExpandSingleByDefault() bool`
+
+HasExpandSingleByDefault returns a boolean if a field has been set.
+
+### GetExpandEPByDefault
+
+`func (o *UiConfigResource) GetExpandEPByDefault() bool`
+
+GetExpandEPByDefault returns the ExpandEPByDefault field if non-nil, zero value otherwise.
+
+### GetExpandEPByDefaultOk
+
+`func (o *UiConfigResource) GetExpandEPByDefaultOk() (*bool, bool)`
+
+GetExpandEPByDefaultOk returns a tuple with the ExpandEPByDefault field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpandEPByDefault
+
+`func (o *UiConfigResource) SetExpandEPByDefault(v bool)`
+
+SetExpandEPByDefault sets ExpandEPByDefault field to given value.
+
+### HasExpandEPByDefault
+
+`func (o *UiConfigResource) HasExpandEPByDefault() bool`
+
+HasExpandEPByDefault returns a boolean if a field has been set.
+
+### GetExpandBroadcastByDefault
+
+`func (o *UiConfigResource) GetExpandBroadcastByDefault() bool`
+
+GetExpandBroadcastByDefault returns the ExpandBroadcastByDefault field if non-nil, zero value otherwise.
+
+### GetExpandBroadcastByDefaultOk
+
+`func (o *UiConfigResource) GetExpandBroadcastByDefaultOk() (*bool, bool)`
+
+GetExpandBroadcastByDefaultOk returns a tuple with the ExpandBroadcastByDefault field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpandBroadcastByDefault
+
+`func (o *UiConfigResource) SetExpandBroadcastByDefault(v bool)`
+
+SetExpandBroadcastByDefault sets ExpandBroadcastByDefault field to given value.
+
+### HasExpandBroadcastByDefault
+
+`func (o *UiConfigResource) HasExpandBroadcastByDefault() bool`
+
+HasExpandBroadcastByDefault returns a boolean if a field has been set.
+
+### GetExpandOtherByDefault
+
+`func (o *UiConfigResource) GetExpandOtherByDefault() bool`
+
+GetExpandOtherByDefault returns the ExpandOtherByDefault field if non-nil, zero value otherwise.
+
+### GetExpandOtherByDefaultOk
+
+`func (o *UiConfigResource) GetExpandOtherByDefaultOk() (*bool, bool)`
+
+GetExpandOtherByDefaultOk returns a tuple with the ExpandOtherByDefault field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpandOtherByDefault
+
+`func (o *UiConfigResource) SetExpandOtherByDefault(v bool)`
+
+SetExpandOtherByDefault sets ExpandOtherByDefault field to given value.
+
+### HasExpandOtherByDefault
+
+`func (o *UiConfigResource) HasExpandOtherByDefault() bool`
+
+HasExpandOtherByDefault returns a boolean if a field has been set.
+
+### GetTheme
+
+`func (o *UiConfigResource) GetTheme() string`
+
+GetTheme returns the Theme field if non-nil, zero value otherwise.
+
+### GetThemeOk
+
+`func (o *UiConfigResource) GetThemeOk() (*string, bool)`
+
+GetThemeOk returns a tuple with the Theme field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTheme
+
+`func (o *UiConfigResource) SetTheme(v string)`
+
+SetTheme sets Theme field to given value.
+
+### HasTheme
+
+`func (o *UiConfigResource) HasTheme() bool`
+
+HasTheme returns a boolean if a field has been set.
+
+### SetThemeNil
+
+`func (o *UiConfigResource) SetThemeNil(b bool)`
+
+ SetThemeNil sets the value for Theme to be an explicit nil
+
+### UnsetTheme
+`func (o *UiConfigResource) UnsetTheme()`
+
+UnsetTheme ensures that no value is present for Theme, not even an explicit nil
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

@@ -1,0 +1,108 @@
+# ProfileReleaseStatusItemResource
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **int32** |  | [optional] 
+**ReleaseStatus** | Pointer to [**ReleaseStatus**](ReleaseStatus.md) |  | [optional] 
+**Allowed** | Pointer to **bool** |  | [optional] 
+
+## Methods
+
+### NewProfileReleaseStatusItemResource
+
+`func NewProfileReleaseStatusItemResource() *ProfileReleaseStatusItemResource`
+
+NewProfileReleaseStatusItemResource instantiates a new ProfileReleaseStatusItemResource object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewProfileReleaseStatusItemResourceWithDefaults
+
+`func NewProfileReleaseStatusItemResourceWithDefaults() *ProfileReleaseStatusItemResource`
+
+NewProfileReleaseStatusItemResourceWithDefaults instantiates a new ProfileReleaseStatusItemResource object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *ProfileReleaseStatusItemResource) GetId() int32`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ProfileReleaseStatusItemResource) GetIdOk() (*int32, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ProfileReleaseStatusItemResource) SetId(v int32)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *ProfileReleaseStatusItemResource) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetReleaseStatus
+
+`func (o *ProfileReleaseStatusItemResource) GetReleaseStatus() ReleaseStatus`
+
+GetReleaseStatus returns the ReleaseStatus field if non-nil, zero value otherwise.
+
+### GetReleaseStatusOk
+
+`func (o *ProfileReleaseStatusItemResource) GetReleaseStatusOk() (*ReleaseStatus, bool)`
+
+GetReleaseStatusOk returns a tuple with the ReleaseStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReleaseStatus
+
+`func (o *ProfileReleaseStatusItemResource) SetReleaseStatus(v ReleaseStatus)`
+
+SetReleaseStatus sets ReleaseStatus field to given value.
+
+### HasReleaseStatus
+
+`func (o *ProfileReleaseStatusItemResource) HasReleaseStatus() bool`
+
+HasReleaseStatus returns a boolean if a field has been set.
+
+### GetAllowed
+
+`func (o *ProfileReleaseStatusItemResource) GetAllowed() bool`
+
+GetAllowed returns the Allowed field if non-nil, zero value otherwise.
+
+### GetAllowedOk
+
+`func (o *ProfileReleaseStatusItemResource) GetAllowedOk() (*bool, bool)`
+
+GetAllowedOk returns a tuple with the Allowed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowed
+
+`func (o *ProfileReleaseStatusItemResource) SetAllowed(v bool)`
+
+SetAllowed sets Allowed field to given value.
+
+### HasAllowed
+
+`func (o *ProfileReleaseStatusItemResource) HasAllowed() bool`
+
+HasAllowed returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
