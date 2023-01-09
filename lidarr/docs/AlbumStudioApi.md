@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1AlbumStudio**](AlbumStudioApi.md#CreateApiV1AlbumStudio) | **Post** /api/v1/albumstudio | 
+[**CreateAlbumStudio**](AlbumStudioApi.md#CreateAlbumStudio) | **Post** /api/v1/albumstudio | 
 
 
 
-## CreateApiV1AlbumStudio
+## CreateAlbumStudio
 
-> CreateApiV1AlbumStudio(ctx).AlbumStudioResource(albumStudioResource).Execute()
+> CreateAlbumStudio(ctx).AlbumStudioResource(albumStudioResource).Execute()
 
 
 
@@ -31,9 +31,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlbumStudioApi.CreateApiV1AlbumStudio(context.Background()).AlbumStudioResource(albumStudioResource).Execute()
+    resp, r, err := apiClient.AlbumStudioApi.CreateAlbumStudio(context.Background()).AlbumStudioResource(albumStudioResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlbumStudioApi.CreateApiV1AlbumStudio``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlbumStudioApi.CreateAlbumStudio``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -45,7 +45,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1AlbumStudioRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAlbumStudioRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

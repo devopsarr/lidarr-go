@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1HistoryFailedById**](HistoryApi.md#CreateApiV1HistoryFailedById) | **Post** /api/v1/history/failed/{id} | 
-[**GetApiV1History**](HistoryApi.md#GetApiV1History) | **Get** /api/v1/history | 
-[**ListApiV1HistoryArtist**](HistoryApi.md#ListApiV1HistoryArtist) | **Get** /api/v1/history/artist | 
-[**ListApiV1HistorySince**](HistoryApi.md#ListApiV1HistorySince) | **Get** /api/v1/history/since | 
+[**CreateHistoryFailedById**](HistoryApi.md#CreateHistoryFailedById) | **Post** /api/v1/history/failed/{id} | 
+[**GetHistory**](HistoryApi.md#GetHistory) | **Get** /api/v1/history | 
+[**ListHistoryArtist**](HistoryApi.md#ListHistoryArtist) | **Get** /api/v1/history/artist | 
+[**ListHistorySince**](HistoryApi.md#ListHistorySince) | **Get** /api/v1/history/since | 
 
 
 
-## CreateApiV1HistoryFailedById
+## CreateHistoryFailedById
 
-> CreateApiV1HistoryFailedById(ctx, id).Execute()
+> CreateHistoryFailedById(ctx, id).Execute()
 
 
 
@@ -34,9 +34,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.CreateApiV1HistoryFailedById(context.Background(), id).Execute()
+    resp, r, err := apiClient.HistoryApi.CreateHistoryFailedById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.CreateApiV1HistoryFailedById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.CreateHistoryFailedById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1HistoryFailedByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateHistoryFailedByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1History
+## GetHistory
 
-> HistoryResourcePagingResource GetApiV1History(ctx).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
+> HistoryResourcePagingResource GetHistory(ctx).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
 
 
 
@@ -102,13 +102,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.GetApiV1History(context.Background()).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
+    resp, r, err := apiClient.HistoryApi.GetHistory(context.Background()).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.GetApiV1History``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.GetHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1History`: HistoryResourcePagingResource
-    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.GetApiV1History`: %v\n", resp)
+    // response from `GetHistory`: HistoryResourcePagingResource
+    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.GetHistory`: %v\n", resp)
 }
 ```
 
@@ -118,7 +118,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1HistoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetHistoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -145,9 +145,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1HistoryArtist
+## ListHistoryArtist
 
-> []HistoryResource ListApiV1HistoryArtist(ctx).ArtistId(artistId).AlbumId(albumId).EventType(eventType).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
+> []HistoryResource ListHistoryArtist(ctx).ArtistId(artistId).AlbumId(albumId).EventType(eventType).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
 
 
 
@@ -173,13 +173,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.ListApiV1HistoryArtist(context.Background()).ArtistId(artistId).AlbumId(albumId).EventType(eventType).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
+    resp, r, err := apiClient.HistoryApi.ListHistoryArtist(context.Background()).ArtistId(artistId).AlbumId(albumId).EventType(eventType).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.ListApiV1HistoryArtist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.ListHistoryArtist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1HistoryArtist`: []HistoryResource
-    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.ListApiV1HistoryArtist`: %v\n", resp)
+    // response from `ListHistoryArtist`: []HistoryResource
+    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.ListHistoryArtist`: %v\n", resp)
 }
 ```
 
@@ -189,7 +189,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1HistoryArtistRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListHistoryArtistRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -219,9 +219,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1HistorySince
+## ListHistorySince
 
-> []HistoryResource ListApiV1HistorySince(ctx).Date(date).EventType(eventType).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
+> []HistoryResource ListHistorySince(ctx).Date(date).EventType(eventType).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
 
 
 
@@ -247,13 +247,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.ListApiV1HistorySince(context.Background()).Date(date).EventType(eventType).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
+    resp, r, err := apiClient.HistoryApi.ListHistorySince(context.Background()).Date(date).EventType(eventType).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.ListApiV1HistorySince``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.ListHistorySince``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1HistorySince`: []HistoryResource
-    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.ListApiV1HistorySince`: %v\n", resp)
+    // response from `ListHistorySince`: []HistoryResource
+    fmt.Fprintf(os.Stdout, "Response from `HistoryApi.ListHistorySince`: %v\n", resp)
 }
 ```
 
@@ -263,7 +263,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1HistorySinceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListHistorySinceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

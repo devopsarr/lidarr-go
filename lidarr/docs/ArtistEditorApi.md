@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteApiV1ArtistEditor**](ArtistEditorApi.md#DeleteApiV1ArtistEditor) | **Delete** /api/v1/artist/editor | 
-[**PutApiV1ArtistEditor**](ArtistEditorApi.md#PutApiV1ArtistEditor) | **Put** /api/v1/artist/editor | 
+[**DeleteArtistEditor**](ArtistEditorApi.md#DeleteArtistEditor) | **Delete** /api/v1/artist/editor | 
+[**PutArtistEditor**](ArtistEditorApi.md#PutArtistEditor) | **Put** /api/v1/artist/editor | 
 
 
 
-## DeleteApiV1ArtistEditor
+## DeleteArtistEditor
 
-> DeleteApiV1ArtistEditor(ctx).ArtistEditorResource(artistEditorResource).Execute()
+> DeleteArtistEditor(ctx).ArtistEditorResource(artistEditorResource).Execute()
 
 
 
@@ -32,9 +32,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArtistEditorApi.DeleteApiV1ArtistEditor(context.Background()).ArtistEditorResource(artistEditorResource).Execute()
+    resp, r, err := apiClient.ArtistEditorApi.DeleteArtistEditor(context.Background()).ArtistEditorResource(artistEditorResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArtistEditorApi.DeleteApiV1ArtistEditor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ArtistEditorApi.DeleteArtistEditor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -46,7 +46,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1ArtistEditorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteArtistEditorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -71,9 +71,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PutApiV1ArtistEditor
+## PutArtistEditor
 
-> PutApiV1ArtistEditor(ctx).ArtistEditorResource(artistEditorResource).Execute()
+> PutArtistEditor(ctx).ArtistEditorResource(artistEditorResource).Execute()
 
 
 
@@ -94,9 +94,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArtistEditorApi.PutApiV1ArtistEditor(context.Background()).ArtistEditorResource(artistEditorResource).Execute()
+    resp, r, err := apiClient.ArtistEditorApi.PutArtistEditor(context.Background()).ArtistEditorResource(artistEditorResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArtistEditorApi.PutApiV1ArtistEditor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ArtistEditorApi.PutArtistEditor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -108,7 +108,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutApiV1ArtistEditorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPutArtistEditorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

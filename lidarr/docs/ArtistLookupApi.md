@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1ArtistLookup**](ArtistLookupApi.md#GetApiV1ArtistLookup) | **Get** /api/v1/artist/lookup | 
+[**GetArtistLookup**](ArtistLookupApi.md#GetArtistLookup) | **Get** /api/v1/artist/lookup | 
 
 
 
-## GetApiV1ArtistLookup
+## GetArtistLookup
 
-> GetApiV1ArtistLookup(ctx).Term(term).Execute()
+> GetArtistLookup(ctx).Term(term).Execute()
 
 
 
@@ -31,9 +31,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArtistLookupApi.GetApiV1ArtistLookup(context.Background()).Term(term).Execute()
+    resp, r, err := apiClient.ArtistLookupApi.GetArtistLookup(context.Background()).Term(term).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArtistLookupApi.GetApiV1ArtistLookup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ArtistLookupApi.GetArtistLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -45,7 +45,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ArtistLookupRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetArtistLookupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

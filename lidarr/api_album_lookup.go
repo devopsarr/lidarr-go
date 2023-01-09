@@ -21,43 +21,43 @@ import (
 
 // AlbumLookupApiService AlbumLookupApi service
 type AlbumLookupApiService service
-type ApiGetApiV1AlbumLookupRequest struct {
+type ApiGetAlbumLookupRequest struct {
 	ctx context.Context
 	ApiService *AlbumLookupApiService
 	term *string
 }
 
-func (r ApiGetApiV1AlbumLookupRequest) Term(term string) ApiGetApiV1AlbumLookupRequest {
+func (r ApiGetAlbumLookupRequest) Term(term string) ApiGetAlbumLookupRequest {
 	r.term = &term
 	return r
 }
 
-func (r ApiGetApiV1AlbumLookupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1AlbumLookupExecute(r)
+func (r ApiGetAlbumLookupRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetAlbumLookupExecute(r)
 }
 
 /*
-GetApiV1AlbumLookup Method for GetApiV1AlbumLookup
+GetAlbumLookup Method for GetAlbumLookup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1AlbumLookupRequest
+ @return ApiGetAlbumLookupRequest
 */
-func (a *AlbumLookupApiService) GetApiV1AlbumLookup(ctx context.Context) ApiGetApiV1AlbumLookupRequest {
-	return ApiGetApiV1AlbumLookupRequest{
+func (a *AlbumLookupApiService) GetAlbumLookup(ctx context.Context) ApiGetAlbumLookupRequest {
+	return ApiGetAlbumLookupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AlbumLookupApiService) GetApiV1AlbumLookupExecute(r ApiGetApiV1AlbumLookupRequest) (*http.Response, error) {
+func (a *AlbumLookupApiService) GetAlbumLookupExecute(r ApiGetAlbumLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumLookupApiService.GetApiV1AlbumLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumLookupApiService.GetAlbumLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

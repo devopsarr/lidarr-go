@@ -22,27 +22,27 @@ import (
 
 // MediaCoverApiService MediaCoverApi service
 type MediaCoverApiService service
-type ApiGetApiV1MediaCoverAlbumalbumIdByFilenameRequest struct {
+type ApiGetMediaCoverAlbumalbumIdByFilenameRequest struct {
 	ctx context.Context
 	ApiService *MediaCoverApiService
 	albumId int32
 	filename string
 }
 
-func (r ApiGetApiV1MediaCoverAlbumalbumIdByFilenameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1MediaCoverAlbumalbumIdByFilenameExecute(r)
+func (r ApiGetMediaCoverAlbumalbumIdByFilenameRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetMediaCoverAlbumalbumIdByFilenameExecute(r)
 }
 
 /*
-GetApiV1MediaCoverAlbumalbumIdByFilename Method for GetApiV1MediaCoverAlbumalbumIdByFilename
+GetMediaCoverAlbumalbumIdByFilename Method for GetMediaCoverAlbumalbumIdByFilename
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param albumId
  @param filename
- @return ApiGetApiV1MediaCoverAlbumalbumIdByFilenameRequest
+ @return ApiGetMediaCoverAlbumalbumIdByFilenameRequest
 */
-func (a *MediaCoverApiService) GetApiV1MediaCoverAlbumalbumIdByFilename(ctx context.Context, albumId int32, filename string) ApiGetApiV1MediaCoverAlbumalbumIdByFilenameRequest {
-	return ApiGetApiV1MediaCoverAlbumalbumIdByFilenameRequest{
+func (a *MediaCoverApiService) GetMediaCoverAlbumalbumIdByFilename(ctx context.Context, albumId int32, filename string) ApiGetMediaCoverAlbumalbumIdByFilenameRequest {
+	return ApiGetMediaCoverAlbumalbumIdByFilenameRequest{
 		ApiService: a,
 		ctx: ctx,
 		albumId: albumId,
@@ -51,14 +51,14 @@ func (a *MediaCoverApiService) GetApiV1MediaCoverAlbumalbumIdByFilename(ctx cont
 }
 
 // Execute executes the request
-func (a *MediaCoverApiService) GetApiV1MediaCoverAlbumalbumIdByFilenameExecute(r ApiGetApiV1MediaCoverAlbumalbumIdByFilenameRequest) (*http.Response, error) {
+func (a *MediaCoverApiService) GetMediaCoverAlbumalbumIdByFilenameExecute(r ApiGetMediaCoverAlbumalbumIdByFilenameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaCoverApiService.GetApiV1MediaCoverAlbumalbumIdByFilename")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaCoverApiService.GetMediaCoverAlbumalbumIdByFilename")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -143,27 +143,27 @@ func (a *MediaCoverApiService) GetApiV1MediaCoverAlbumalbumIdByFilenameExecute(r
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1MediaCoverArtistartistIdByFilenameRequest struct {
+type ApiGetMediaCoverArtistartistIdByFilenameRequest struct {
 	ctx context.Context
 	ApiService *MediaCoverApiService
 	artistId int32
 	filename string
 }
 
-func (r ApiGetApiV1MediaCoverArtistartistIdByFilenameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetApiV1MediaCoverArtistartistIdByFilenameExecute(r)
+func (r ApiGetMediaCoverArtistartistIdByFilenameRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GetMediaCoverArtistartistIdByFilenameExecute(r)
 }
 
 /*
-GetApiV1MediaCoverArtistartistIdByFilename Method for GetApiV1MediaCoverArtistartistIdByFilename
+GetMediaCoverArtistartistIdByFilename Method for GetMediaCoverArtistartistIdByFilename
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param artistId
  @param filename
- @return ApiGetApiV1MediaCoverArtistartistIdByFilenameRequest
+ @return ApiGetMediaCoverArtistartistIdByFilenameRequest
 */
-func (a *MediaCoverApiService) GetApiV1MediaCoverArtistartistIdByFilename(ctx context.Context, artistId int32, filename string) ApiGetApiV1MediaCoverArtistartistIdByFilenameRequest {
-	return ApiGetApiV1MediaCoverArtistartistIdByFilenameRequest{
+func (a *MediaCoverApiService) GetMediaCoverArtistartistIdByFilename(ctx context.Context, artistId int32, filename string) ApiGetMediaCoverArtistartistIdByFilenameRequest {
+	return ApiGetMediaCoverArtistartistIdByFilenameRequest{
 		ApiService: a,
 		ctx: ctx,
 		artistId: artistId,
@@ -172,14 +172,14 @@ func (a *MediaCoverApiService) GetApiV1MediaCoverArtistartistIdByFilename(ctx co
 }
 
 // Execute executes the request
-func (a *MediaCoverApiService) GetApiV1MediaCoverArtistartistIdByFilenameExecute(r ApiGetApiV1MediaCoverArtistartistIdByFilenameRequest) (*http.Response, error) {
+func (a *MediaCoverApiService) GetMediaCoverArtistartistIdByFilenameExecute(r ApiGetMediaCoverArtistartistIdByFilenameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaCoverApiService.GetApiV1MediaCoverArtistartistIdByFilename")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaCoverApiService.GetMediaCoverArtistartistIdByFilename")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

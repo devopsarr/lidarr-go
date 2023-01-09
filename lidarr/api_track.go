@@ -23,25 +23,25 @@ import (
 
 // TrackApiService TrackApi service
 type TrackApiService service
-type ApiGetApiV1TrackByIdRequest struct {
+type ApiGetTrackByIdRequest struct {
 	ctx context.Context
 	ApiService *TrackApiService
 	id int32
 }
 
-func (r ApiGetApiV1TrackByIdRequest) Execute() (*TrackResource, *http.Response, error) {
-	return r.ApiService.GetApiV1TrackByIdExecute(r)
+func (r ApiGetTrackByIdRequest) Execute() (*TrackResource, *http.Response, error) {
+	return r.ApiService.GetTrackByIdExecute(r)
 }
 
 /*
-GetApiV1TrackById Method for GetApiV1TrackById
+GetTrackById Method for GetTrackById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1TrackByIdRequest
+ @return ApiGetTrackByIdRequest
 */
-func (a *TrackApiService) GetApiV1TrackById(ctx context.Context, id int32) ApiGetApiV1TrackByIdRequest {
-	return ApiGetApiV1TrackByIdRequest{
+func (a *TrackApiService) GetTrackById(ctx context.Context, id int32) ApiGetTrackByIdRequest {
+	return ApiGetTrackByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -50,7 +50,7 @@ func (a *TrackApiService) GetApiV1TrackById(ctx context.Context, id int32) ApiGe
 
 // Execute executes the request
 //  @return TrackResource
-func (a *TrackApiService) GetApiV1TrackByIdExecute(r ApiGetApiV1TrackByIdRequest) (*TrackResource, *http.Response, error) {
+func (a *TrackApiService) GetTrackByIdExecute(r ApiGetTrackByIdRequest) (*TrackResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -58,7 +58,7 @@ func (a *TrackApiService) GetApiV1TrackByIdExecute(r ApiGetApiV1TrackByIdRequest
 		localVarReturnValue  *TrackResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackApiService.GetApiV1TrackById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackApiService.GetTrackById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,7 +151,7 @@ func (a *TrackApiService) GetApiV1TrackByIdExecute(r ApiGetApiV1TrackByIdRequest
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1TrackRequest struct {
+type ApiListTrackRequest struct {
 	ctx context.Context
 	ApiService *TrackApiService
 	artistId *int32
@@ -160,38 +160,38 @@ type ApiListApiV1TrackRequest struct {
 	trackIds *[]int32
 }
 
-func (r ApiListApiV1TrackRequest) ArtistId(artistId int32) ApiListApiV1TrackRequest {
+func (r ApiListTrackRequest) ArtistId(artistId int32) ApiListTrackRequest {
 	r.artistId = &artistId
 	return r
 }
 
-func (r ApiListApiV1TrackRequest) AlbumId(albumId int32) ApiListApiV1TrackRequest {
+func (r ApiListTrackRequest) AlbumId(albumId int32) ApiListTrackRequest {
 	r.albumId = &albumId
 	return r
 }
 
-func (r ApiListApiV1TrackRequest) AlbumReleaseId(albumReleaseId int32) ApiListApiV1TrackRequest {
+func (r ApiListTrackRequest) AlbumReleaseId(albumReleaseId int32) ApiListTrackRequest {
 	r.albumReleaseId = &albumReleaseId
 	return r
 }
 
-func (r ApiListApiV1TrackRequest) TrackIds(trackIds []int32) ApiListApiV1TrackRequest {
+func (r ApiListTrackRequest) TrackIds(trackIds []int32) ApiListTrackRequest {
 	r.trackIds = &trackIds
 	return r
 }
 
-func (r ApiListApiV1TrackRequest) Execute() ([]*TrackResource, *http.Response, error) {
-	return r.ApiService.ListApiV1TrackExecute(r)
+func (r ApiListTrackRequest) Execute() ([]*TrackResource, *http.Response, error) {
+	return r.ApiService.ListTrackExecute(r)
 }
 
 /*
-ListApiV1Track Method for ListApiV1Track
+ListTrack Method for ListTrack
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1TrackRequest
+ @return ApiListTrackRequest
 */
-func (a *TrackApiService) ListApiV1Track(ctx context.Context) ApiListApiV1TrackRequest {
-	return ApiListApiV1TrackRequest{
+func (a *TrackApiService) ListTrack(ctx context.Context) ApiListTrackRequest {
+	return ApiListTrackRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -199,7 +199,7 @@ func (a *TrackApiService) ListApiV1Track(ctx context.Context) ApiListApiV1TrackR
 
 // Execute executes the request
 //  @return []TrackResource
-func (a *TrackApiService) ListApiV1TrackExecute(r ApiListApiV1TrackRequest) ([]*TrackResource, *http.Response, error) {
+func (a *TrackApiService) ListTrackExecute(r ApiListTrackRequest) ([]*TrackResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -207,7 +207,7 @@ func (a *TrackApiService) ListApiV1TrackExecute(r ApiListApiV1TrackRequest) ([]*
 		localVarReturnValue  []*TrackResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackApiService.ListApiV1Track")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackApiService.ListTrack")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

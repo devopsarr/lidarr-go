@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Artist**](ArtistApi.md#CreateApiV1Artist) | **Post** /api/v1/artist | 
-[**DeleteApiV1Artist**](ArtistApi.md#DeleteApiV1Artist) | **Delete** /api/v1/artist/{id} | 
-[**GetApiV1ArtistById**](ArtistApi.md#GetApiV1ArtistById) | **Get** /api/v1/artist/{id} | 
-[**ListApiV1Artist**](ArtistApi.md#ListApiV1Artist) | **Get** /api/v1/artist | 
-[**UpdateApiV1Artist**](ArtistApi.md#UpdateApiV1Artist) | **Put** /api/v1/artist/{id} | 
+[**CreateArtist**](ArtistApi.md#CreateArtist) | **Post** /api/v1/artist | 
+[**DeleteArtist**](ArtistApi.md#DeleteArtist) | **Delete** /api/v1/artist/{id} | 
+[**GetArtistById**](ArtistApi.md#GetArtistById) | **Get** /api/v1/artist/{id} | 
+[**ListArtist**](ArtistApi.md#ListArtist) | **Get** /api/v1/artist | 
+[**UpdateArtist**](ArtistApi.md#UpdateArtist) | **Put** /api/v1/artist/{id} | 
 
 
 
-## CreateApiV1Artist
+## CreateArtist
 
-> ArtistResource CreateApiV1Artist(ctx).ArtistResource(artistResource).Execute()
+> ArtistResource CreateArtist(ctx).ArtistResource(artistResource).Execute()
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArtistApi.CreateApiV1Artist(context.Background()).ArtistResource(artistResource).Execute()
+    resp, r, err := apiClient.ArtistApi.CreateArtist(context.Background()).ArtistResource(artistResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArtistApi.CreateApiV1Artist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ArtistApi.CreateArtist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Artist`: ArtistResource
-    fmt.Fprintf(os.Stdout, "Response from `ArtistApi.CreateApiV1Artist`: %v\n", resp)
+    // response from `CreateArtist`: ArtistResource
+    fmt.Fprintf(os.Stdout, "Response from `ArtistApi.CreateArtist`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1ArtistRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateArtistRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Artist
+## DeleteArtist
 
-> DeleteApiV1Artist(ctx, id).Execute()
+> DeleteArtist(ctx, id).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArtistApi.DeleteApiV1Artist(context.Background(), id).Execute()
+    resp, r, err := apiClient.ArtistApi.DeleteArtist(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArtistApi.DeleteApiV1Artist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ArtistApi.DeleteArtist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1ArtistRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteArtistRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1ArtistById
+## GetArtistById
 
-> ArtistResource GetApiV1ArtistById(ctx, id).Execute()
+> ArtistResource GetArtistById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArtistApi.GetApiV1ArtistById(context.Background(), id).Execute()
+    resp, r, err := apiClient.ArtistApi.GetArtistById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArtistApi.GetApiV1ArtistById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ArtistApi.GetArtistById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1ArtistById`: ArtistResource
-    fmt.Fprintf(os.Stdout, "Response from `ArtistApi.GetApiV1ArtistById`: %v\n", resp)
+    // response from `GetArtistById`: ArtistResource
+    fmt.Fprintf(os.Stdout, "Response from `ArtistApi.GetArtistById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1ArtistByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetArtistByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -210,9 +210,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1Artist
+## ListArtist
 
-> []ArtistResource ListApiV1Artist(ctx).MbId(mbId).Execute()
+> []ArtistResource ListArtist(ctx).MbId(mbId).Execute()
 
 
 
@@ -233,13 +233,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArtistApi.ListApiV1Artist(context.Background()).MbId(mbId).Execute()
+    resp, r, err := apiClient.ArtistApi.ListArtist(context.Background()).MbId(mbId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArtistApi.ListApiV1Artist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ArtistApi.ListArtist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Artist`: []ArtistResource
-    fmt.Fprintf(os.Stdout, "Response from `ArtistApi.ListApiV1Artist`: %v\n", resp)
+    // response from `ListArtist`: []ArtistResource
+    fmt.Fprintf(os.Stdout, "Response from `ArtistApi.ListArtist`: %v\n", resp)
 }
 ```
 
@@ -249,7 +249,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1ArtistRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListArtistRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -274,9 +274,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1Artist
+## UpdateArtist
 
-> ArtistResource UpdateApiV1Artist(ctx, id).ArtistResource(artistResource).Execute()
+> ArtistResource UpdateArtist(ctx, id).ArtistResource(artistResource).Execute()
 
 
 
@@ -298,13 +298,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArtistApi.UpdateApiV1Artist(context.Background(), id).ArtistResource(artistResource).Execute()
+    resp, r, err := apiClient.ArtistApi.UpdateArtist(context.Background(), id).ArtistResource(artistResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ArtistApi.UpdateApiV1Artist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ArtistApi.UpdateArtist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1Artist`: ArtistResource
-    fmt.Fprintf(os.Stdout, "Response from `ArtistApi.UpdateApiV1Artist`: %v\n", resp)
+    // response from `UpdateArtist`: ArtistResource
+    fmt.Fprintf(os.Stdout, "Response from `ArtistApi.UpdateArtist`: %v\n", resp)
 }
 ```
 
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1ArtistRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateArtistRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

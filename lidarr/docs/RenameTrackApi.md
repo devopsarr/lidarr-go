@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListApiV1Rename**](RenameTrackApi.md#ListApiV1Rename) | **Get** /api/v1/rename | 
+[**ListRename**](RenameTrackApi.md#ListRename) | **Get** /api/v1/rename | 
 
 
 
-## ListApiV1Rename
+## ListRename
 
-> []RenameTrackResource ListApiV1Rename(ctx).ArtistId(artistId).AlbumId(albumId).Execute()
+> []RenameTrackResource ListRename(ctx).ArtistId(artistId).AlbumId(albumId).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RenameTrackApi.ListApiV1Rename(context.Background()).ArtistId(artistId).AlbumId(albumId).Execute()
+    resp, r, err := apiClient.RenameTrackApi.ListRename(context.Background()).ArtistId(artistId).AlbumId(albumId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RenameTrackApi.ListApiV1Rename``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RenameTrackApi.ListRename``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Rename`: []RenameTrackResource
-    fmt.Fprintf(os.Stdout, "Response from `RenameTrackApi.ListApiV1Rename`: %v\n", resp)
+    // response from `ListRename`: []RenameTrackResource
+    fmt.Fprintf(os.Stdout, "Response from `RenameTrackApi.ListRename`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1RenameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListRenameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -23,25 +23,25 @@ import (
 
 // HistoryApiService HistoryApi service
 type HistoryApiService service
-type ApiCreateApiV1HistoryFailedByIdRequest struct {
+type ApiCreateHistoryFailedByIdRequest struct {
 	ctx context.Context
 	ApiService *HistoryApiService
 	id int32
 }
 
-func (r ApiCreateApiV1HistoryFailedByIdRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateApiV1HistoryFailedByIdExecute(r)
+func (r ApiCreateHistoryFailedByIdRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateHistoryFailedByIdExecute(r)
 }
 
 /*
-CreateApiV1HistoryFailedById Method for CreateApiV1HistoryFailedById
+CreateHistoryFailedById Method for CreateHistoryFailedById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiCreateApiV1HistoryFailedByIdRequest
+ @return ApiCreateHistoryFailedByIdRequest
 */
-func (a *HistoryApiService) CreateApiV1HistoryFailedById(ctx context.Context, id int32) ApiCreateApiV1HistoryFailedByIdRequest {
-	return ApiCreateApiV1HistoryFailedByIdRequest{
+func (a *HistoryApiService) CreateHistoryFailedById(ctx context.Context, id int32) ApiCreateHistoryFailedByIdRequest {
+	return ApiCreateHistoryFailedByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -49,14 +49,14 @@ func (a *HistoryApiService) CreateApiV1HistoryFailedById(ctx context.Context, id
 }
 
 // Execute executes the request
-func (a *HistoryApiService) CreateApiV1HistoryFailedByIdExecute(r ApiCreateApiV1HistoryFailedByIdRequest) (*http.Response, error) {
+func (a *HistoryApiService) CreateHistoryFailedByIdExecute(r ApiCreateHistoryFailedByIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryApiService.CreateApiV1HistoryFailedById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryApiService.CreateHistoryFailedById")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -140,7 +140,7 @@ func (a *HistoryApiService) CreateApiV1HistoryFailedByIdExecute(r ApiCreateApiV1
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1HistoryRequest struct {
+type ApiGetHistoryRequest struct {
 	ctx context.Context
 	ApiService *HistoryApiService
 	includeArtist *bool
@@ -148,33 +148,33 @@ type ApiGetApiV1HistoryRequest struct {
 	includeTrack *bool
 }
 
-func (r ApiGetApiV1HistoryRequest) IncludeArtist(includeArtist bool) ApiGetApiV1HistoryRequest {
+func (r ApiGetHistoryRequest) IncludeArtist(includeArtist bool) ApiGetHistoryRequest {
 	r.includeArtist = &includeArtist
 	return r
 }
 
-func (r ApiGetApiV1HistoryRequest) IncludeAlbum(includeAlbum bool) ApiGetApiV1HistoryRequest {
+func (r ApiGetHistoryRequest) IncludeAlbum(includeAlbum bool) ApiGetHistoryRequest {
 	r.includeAlbum = &includeAlbum
 	return r
 }
 
-func (r ApiGetApiV1HistoryRequest) IncludeTrack(includeTrack bool) ApiGetApiV1HistoryRequest {
+func (r ApiGetHistoryRequest) IncludeTrack(includeTrack bool) ApiGetHistoryRequest {
 	r.includeTrack = &includeTrack
 	return r
 }
 
-func (r ApiGetApiV1HistoryRequest) Execute() (*HistoryResourcePagingResource, *http.Response, error) {
-	return r.ApiService.GetApiV1HistoryExecute(r)
+func (r ApiGetHistoryRequest) Execute() (*HistoryResourcePagingResource, *http.Response, error) {
+	return r.ApiService.GetHistoryExecute(r)
 }
 
 /*
-GetApiV1History Method for GetApiV1History
+GetHistory Method for GetHistory
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1HistoryRequest
+ @return ApiGetHistoryRequest
 */
-func (a *HistoryApiService) GetApiV1History(ctx context.Context) ApiGetApiV1HistoryRequest {
-	return ApiGetApiV1HistoryRequest{
+func (a *HistoryApiService) GetHistory(ctx context.Context) ApiGetHistoryRequest {
+	return ApiGetHistoryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -182,7 +182,7 @@ func (a *HistoryApiService) GetApiV1History(ctx context.Context) ApiGetApiV1Hist
 
 // Execute executes the request
 //  @return HistoryResourcePagingResource
-func (a *HistoryApiService) GetApiV1HistoryExecute(r ApiGetApiV1HistoryRequest) (*HistoryResourcePagingResource, *http.Response, error) {
+func (a *HistoryApiService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryResourcePagingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -190,7 +190,7 @@ func (a *HistoryApiService) GetApiV1HistoryExecute(r ApiGetApiV1HistoryRequest) 
 		localVarReturnValue  *HistoryResourcePagingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryApiService.GetApiV1History")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryApiService.GetHistory")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -291,7 +291,7 @@ func (a *HistoryApiService) GetApiV1HistoryExecute(r ApiGetApiV1HistoryRequest) 
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1HistoryArtistRequest struct {
+type ApiListHistoryArtistRequest struct {
 	ctx context.Context
 	ApiService *HistoryApiService
 	artistId *int32
@@ -302,48 +302,48 @@ type ApiListApiV1HistoryArtistRequest struct {
 	includeTrack *bool
 }
 
-func (r ApiListApiV1HistoryArtistRequest) ArtistId(artistId int32) ApiListApiV1HistoryArtistRequest {
+func (r ApiListHistoryArtistRequest) ArtistId(artistId int32) ApiListHistoryArtistRequest {
 	r.artistId = &artistId
 	return r
 }
 
-func (r ApiListApiV1HistoryArtistRequest) AlbumId(albumId int32) ApiListApiV1HistoryArtistRequest {
+func (r ApiListHistoryArtistRequest) AlbumId(albumId int32) ApiListHistoryArtistRequest {
 	r.albumId = &albumId
 	return r
 }
 
-func (r ApiListApiV1HistoryArtistRequest) EventType(eventType EntityHistoryEventType) ApiListApiV1HistoryArtistRequest {
+func (r ApiListHistoryArtistRequest) EventType(eventType EntityHistoryEventType) ApiListHistoryArtistRequest {
 	r.eventType = &eventType
 	return r
 }
 
-func (r ApiListApiV1HistoryArtistRequest) IncludeArtist(includeArtist bool) ApiListApiV1HistoryArtistRequest {
+func (r ApiListHistoryArtistRequest) IncludeArtist(includeArtist bool) ApiListHistoryArtistRequest {
 	r.includeArtist = &includeArtist
 	return r
 }
 
-func (r ApiListApiV1HistoryArtistRequest) IncludeAlbum(includeAlbum bool) ApiListApiV1HistoryArtistRequest {
+func (r ApiListHistoryArtistRequest) IncludeAlbum(includeAlbum bool) ApiListHistoryArtistRequest {
 	r.includeAlbum = &includeAlbum
 	return r
 }
 
-func (r ApiListApiV1HistoryArtistRequest) IncludeTrack(includeTrack bool) ApiListApiV1HistoryArtistRequest {
+func (r ApiListHistoryArtistRequest) IncludeTrack(includeTrack bool) ApiListHistoryArtistRequest {
 	r.includeTrack = &includeTrack
 	return r
 }
 
-func (r ApiListApiV1HistoryArtistRequest) Execute() ([]*HistoryResource, *http.Response, error) {
-	return r.ApiService.ListApiV1HistoryArtistExecute(r)
+func (r ApiListHistoryArtistRequest) Execute() ([]*HistoryResource, *http.Response, error) {
+	return r.ApiService.ListHistoryArtistExecute(r)
 }
 
 /*
-ListApiV1HistoryArtist Method for ListApiV1HistoryArtist
+ListHistoryArtist Method for ListHistoryArtist
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1HistoryArtistRequest
+ @return ApiListHistoryArtistRequest
 */
-func (a *HistoryApiService) ListApiV1HistoryArtist(ctx context.Context) ApiListApiV1HistoryArtistRequest {
-	return ApiListApiV1HistoryArtistRequest{
+func (a *HistoryApiService) ListHistoryArtist(ctx context.Context) ApiListHistoryArtistRequest {
+	return ApiListHistoryArtistRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -351,7 +351,7 @@ func (a *HistoryApiService) ListApiV1HistoryArtist(ctx context.Context) ApiListA
 
 // Execute executes the request
 //  @return []HistoryResource
-func (a *HistoryApiService) ListApiV1HistoryArtistExecute(r ApiListApiV1HistoryArtistRequest) ([]*HistoryResource, *http.Response, error) {
+func (a *HistoryApiService) ListHistoryArtistExecute(r ApiListHistoryArtistRequest) ([]*HistoryResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -359,7 +359,7 @@ func (a *HistoryApiService) ListApiV1HistoryArtistExecute(r ApiListApiV1HistoryA
 		localVarReturnValue  []*HistoryResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryApiService.ListApiV1HistoryArtist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryApiService.ListHistoryArtist")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -469,7 +469,7 @@ func (a *HistoryApiService) ListApiV1HistoryArtistExecute(r ApiListApiV1HistoryA
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1HistorySinceRequest struct {
+type ApiListHistorySinceRequest struct {
 	ctx context.Context
 	ApiService *HistoryApiService
 	date *time.Time
@@ -479,43 +479,43 @@ type ApiListApiV1HistorySinceRequest struct {
 	includeTrack *bool
 }
 
-func (r ApiListApiV1HistorySinceRequest) Date(date time.Time) ApiListApiV1HistorySinceRequest {
+func (r ApiListHistorySinceRequest) Date(date time.Time) ApiListHistorySinceRequest {
 	r.date = &date
 	return r
 }
 
-func (r ApiListApiV1HistorySinceRequest) EventType(eventType EntityHistoryEventType) ApiListApiV1HistorySinceRequest {
+func (r ApiListHistorySinceRequest) EventType(eventType EntityHistoryEventType) ApiListHistorySinceRequest {
 	r.eventType = &eventType
 	return r
 }
 
-func (r ApiListApiV1HistorySinceRequest) IncludeArtist(includeArtist bool) ApiListApiV1HistorySinceRequest {
+func (r ApiListHistorySinceRequest) IncludeArtist(includeArtist bool) ApiListHistorySinceRequest {
 	r.includeArtist = &includeArtist
 	return r
 }
 
-func (r ApiListApiV1HistorySinceRequest) IncludeAlbum(includeAlbum bool) ApiListApiV1HistorySinceRequest {
+func (r ApiListHistorySinceRequest) IncludeAlbum(includeAlbum bool) ApiListHistorySinceRequest {
 	r.includeAlbum = &includeAlbum
 	return r
 }
 
-func (r ApiListApiV1HistorySinceRequest) IncludeTrack(includeTrack bool) ApiListApiV1HistorySinceRequest {
+func (r ApiListHistorySinceRequest) IncludeTrack(includeTrack bool) ApiListHistorySinceRequest {
 	r.includeTrack = &includeTrack
 	return r
 }
 
-func (r ApiListApiV1HistorySinceRequest) Execute() ([]*HistoryResource, *http.Response, error) {
-	return r.ApiService.ListApiV1HistorySinceExecute(r)
+func (r ApiListHistorySinceRequest) Execute() ([]*HistoryResource, *http.Response, error) {
+	return r.ApiService.ListHistorySinceExecute(r)
 }
 
 /*
-ListApiV1HistorySince Method for ListApiV1HistorySince
+ListHistorySince Method for ListHistorySince
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1HistorySinceRequest
+ @return ApiListHistorySinceRequest
 */
-func (a *HistoryApiService) ListApiV1HistorySince(ctx context.Context) ApiListApiV1HistorySinceRequest {
-	return ApiListApiV1HistorySinceRequest{
+func (a *HistoryApiService) ListHistorySince(ctx context.Context) ApiListHistorySinceRequest {
+	return ApiListHistorySinceRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -523,7 +523,7 @@ func (a *HistoryApiService) ListApiV1HistorySince(ctx context.Context) ApiListAp
 
 // Execute executes the request
 //  @return []HistoryResource
-func (a *HistoryApiService) ListApiV1HistorySinceExecute(r ApiListApiV1HistorySinceRequest) ([]*HistoryResource, *http.Response, error) {
+func (a *HistoryApiService) ListHistorySinceExecute(r ApiListHistorySinceRequest) ([]*HistoryResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -531,7 +531,7 @@ func (a *HistoryApiService) ListApiV1HistorySinceExecute(r ApiListApiV1HistorySi
 		localVarReturnValue  []*HistoryResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryApiService.ListApiV1HistorySince")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryApiService.ListHistorySince")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

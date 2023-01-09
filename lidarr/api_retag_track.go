@@ -21,35 +21,35 @@ import (
 
 // RetagTrackApiService RetagTrackApi service
 type RetagTrackApiService service
-type ApiListApiV1RetagRequest struct {
+type ApiListRetagRequest struct {
 	ctx context.Context
 	ApiService *RetagTrackApiService
 	artistId *int32
 	albumId *int32
 }
 
-func (r ApiListApiV1RetagRequest) ArtistId(artistId int32) ApiListApiV1RetagRequest {
+func (r ApiListRetagRequest) ArtistId(artistId int32) ApiListRetagRequest {
 	r.artistId = &artistId
 	return r
 }
 
-func (r ApiListApiV1RetagRequest) AlbumId(albumId int32) ApiListApiV1RetagRequest {
+func (r ApiListRetagRequest) AlbumId(albumId int32) ApiListRetagRequest {
 	r.albumId = &albumId
 	return r
 }
 
-func (r ApiListApiV1RetagRequest) Execute() ([]*RetagTrackResource, *http.Response, error) {
-	return r.ApiService.ListApiV1RetagExecute(r)
+func (r ApiListRetagRequest) Execute() ([]*RetagTrackResource, *http.Response, error) {
+	return r.ApiService.ListRetagExecute(r)
 }
 
 /*
-ListApiV1Retag Method for ListApiV1Retag
+ListRetag Method for ListRetag
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1RetagRequest
+ @return ApiListRetagRequest
 */
-func (a *RetagTrackApiService) ListApiV1Retag(ctx context.Context) ApiListApiV1RetagRequest {
-	return ApiListApiV1RetagRequest{
+func (a *RetagTrackApiService) ListRetag(ctx context.Context) ApiListRetagRequest {
+	return ApiListRetagRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -57,7 +57,7 @@ func (a *RetagTrackApiService) ListApiV1Retag(ctx context.Context) ApiListApiV1R
 
 // Execute executes the request
 //  @return []RetagTrackResource
-func (a *RetagTrackApiService) ListApiV1RetagExecute(r ApiListApiV1RetagRequest) ([]*RetagTrackResource, *http.Response, error) {
+func (a *RetagTrackApiService) ListRetagExecute(r ApiListRetagRequest) ([]*RetagTrackResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -65,7 +65,7 @@ func (a *RetagTrackApiService) ListApiV1RetagExecute(r ApiListApiV1RetagRequest)
 		localVarReturnValue  []*RetagTrackResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetagTrackApiService.ListApiV1Retag")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetagTrackApiService.ListRetag")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

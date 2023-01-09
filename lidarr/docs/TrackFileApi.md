@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteApiV1TrackFile**](TrackFileApi.md#DeleteApiV1TrackFile) | **Delete** /api/v1/trackfile/{id} | 
-[**DeleteApiV1TrackFileBulk**](TrackFileApi.md#DeleteApiV1TrackFileBulk) | **Delete** /api/v1/trackfile/bulk | 
-[**GetApiV1TrackFileById**](TrackFileApi.md#GetApiV1TrackFileById) | **Get** /api/v1/trackfile/{id} | 
-[**ListApiV1TrackFile**](TrackFileApi.md#ListApiV1TrackFile) | **Get** /api/v1/trackfile | 
-[**PutApiV1TrackFileEditor**](TrackFileApi.md#PutApiV1TrackFileEditor) | **Put** /api/v1/trackfile/editor | 
-[**UpdateApiV1TrackFile**](TrackFileApi.md#UpdateApiV1TrackFile) | **Put** /api/v1/trackfile/{id} | 
+[**DeleteTrackFile**](TrackFileApi.md#DeleteTrackFile) | **Delete** /api/v1/trackfile/{id} | 
+[**DeleteTrackFileBulk**](TrackFileApi.md#DeleteTrackFileBulk) | **Delete** /api/v1/trackfile/bulk | 
+[**GetTrackFileById**](TrackFileApi.md#GetTrackFileById) | **Get** /api/v1/trackfile/{id} | 
+[**ListTrackFile**](TrackFileApi.md#ListTrackFile) | **Get** /api/v1/trackfile | 
+[**PutTrackFileEditor**](TrackFileApi.md#PutTrackFileEditor) | **Put** /api/v1/trackfile/editor | 
+[**UpdateTrackFile**](TrackFileApi.md#UpdateTrackFile) | **Put** /api/v1/trackfile/{id} | 
 
 
 
-## DeleteApiV1TrackFile
+## DeleteTrackFile
 
-> DeleteApiV1TrackFile(ctx, id).Execute()
+> DeleteTrackFile(ctx, id).Execute()
 
 
 
@@ -36,9 +36,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrackFileApi.DeleteApiV1TrackFile(context.Background(), id).Execute()
+    resp, r, err := apiClient.TrackFileApi.DeleteTrackFile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrackFileApi.DeleteApiV1TrackFile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrackFileApi.DeleteTrackFile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1TrackFileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteTrackFileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -79,9 +79,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1TrackFileBulk
+## DeleteTrackFileBulk
 
-> DeleteApiV1TrackFileBulk(ctx).TrackFileListResource(trackFileListResource).Execute()
+> DeleteTrackFileBulk(ctx).TrackFileListResource(trackFileListResource).Execute()
 
 
 
@@ -102,9 +102,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrackFileApi.DeleteApiV1TrackFileBulk(context.Background()).TrackFileListResource(trackFileListResource).Execute()
+    resp, r, err := apiClient.TrackFileApi.DeleteTrackFileBulk(context.Background()).TrackFileListResource(trackFileListResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrackFileApi.DeleteApiV1TrackFileBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrackFileApi.DeleteTrackFileBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -116,7 +116,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1TrackFileBulkRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteTrackFileBulkRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -141,9 +141,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1TrackFileById
+## GetTrackFileById
 
-> TrackFileResource GetApiV1TrackFileById(ctx, id).Execute()
+> TrackFileResource GetTrackFileById(ctx, id).Execute()
 
 
 
@@ -164,13 +164,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrackFileApi.GetApiV1TrackFileById(context.Background(), id).Execute()
+    resp, r, err := apiClient.TrackFileApi.GetTrackFileById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrackFileApi.GetApiV1TrackFileById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrackFileApi.GetTrackFileById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1TrackFileById`: TrackFileResource
-    fmt.Fprintf(os.Stdout, "Response from `TrackFileApi.GetApiV1TrackFileById`: %v\n", resp)
+    // response from `GetTrackFileById`: TrackFileResource
+    fmt.Fprintf(os.Stdout, "Response from `TrackFileApi.GetTrackFileById`: %v\n", resp)
 }
 ```
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1TrackFileByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTrackFileByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -209,9 +209,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1TrackFile
+## ListTrackFile
 
-> []TrackFileResource ListApiV1TrackFile(ctx).ArtistId(artistId).TrackFileIds(trackFileIds).AlbumId(albumId).Unmapped(unmapped).Execute()
+> []TrackFileResource ListTrackFile(ctx).ArtistId(artistId).TrackFileIds(trackFileIds).AlbumId(albumId).Unmapped(unmapped).Execute()
 
 
 
@@ -235,13 +235,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrackFileApi.ListApiV1TrackFile(context.Background()).ArtistId(artistId).TrackFileIds(trackFileIds).AlbumId(albumId).Unmapped(unmapped).Execute()
+    resp, r, err := apiClient.TrackFileApi.ListTrackFile(context.Background()).ArtistId(artistId).TrackFileIds(trackFileIds).AlbumId(albumId).Unmapped(unmapped).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrackFileApi.ListApiV1TrackFile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrackFileApi.ListTrackFile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1TrackFile`: []TrackFileResource
-    fmt.Fprintf(os.Stdout, "Response from `TrackFileApi.ListApiV1TrackFile`: %v\n", resp)
+    // response from `ListTrackFile`: []TrackFileResource
+    fmt.Fprintf(os.Stdout, "Response from `TrackFileApi.ListTrackFile`: %v\n", resp)
 }
 ```
 
@@ -251,7 +251,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1TrackFileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListTrackFileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -279,9 +279,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PutApiV1TrackFileEditor
+## PutTrackFileEditor
 
-> PutApiV1TrackFileEditor(ctx).TrackFileListResource(trackFileListResource).Execute()
+> PutTrackFileEditor(ctx).TrackFileListResource(trackFileListResource).Execute()
 
 
 
@@ -302,9 +302,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrackFileApi.PutApiV1TrackFileEditor(context.Background()).TrackFileListResource(trackFileListResource).Execute()
+    resp, r, err := apiClient.TrackFileApi.PutTrackFileEditor(context.Background()).TrackFileListResource(trackFileListResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrackFileApi.PutApiV1TrackFileEditor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrackFileApi.PutTrackFileEditor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -316,7 +316,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutApiV1TrackFileEditorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPutTrackFileEditorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -341,9 +341,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1TrackFile
+## UpdateTrackFile
 
-> TrackFileResource UpdateApiV1TrackFile(ctx, id).TrackFileResource(trackFileResource).Execute()
+> TrackFileResource UpdateTrackFile(ctx, id).TrackFileResource(trackFileResource).Execute()
 
 
 
@@ -365,13 +365,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrackFileApi.UpdateApiV1TrackFile(context.Background(), id).TrackFileResource(trackFileResource).Execute()
+    resp, r, err := apiClient.TrackFileApi.UpdateTrackFile(context.Background(), id).TrackFileResource(trackFileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrackFileApi.UpdateApiV1TrackFile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrackFileApi.UpdateTrackFile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1TrackFile`: TrackFileResource
-    fmt.Fprintf(os.Stdout, "Response from `TrackFileApi.UpdateApiV1TrackFile`: %v\n", resp)
+    // response from `UpdateTrackFile`: TrackFileResource
+    fmt.Fprintf(os.Stdout, "Response from `TrackFileApi.UpdateTrackFile`: %v\n", resp)
 }
 ```
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1TrackFileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateTrackFileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

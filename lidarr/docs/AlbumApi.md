@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateApiV1Album**](AlbumApi.md#CreateApiV1Album) | **Post** /api/v1/album | 
-[**DeleteApiV1Album**](AlbumApi.md#DeleteApiV1Album) | **Delete** /api/v1/album/{id} | 
-[**GetApiV1AlbumById**](AlbumApi.md#GetApiV1AlbumById) | **Get** /api/v1/album/{id} | 
-[**ListApiV1Album**](AlbumApi.md#ListApiV1Album) | **Get** /api/v1/album | 
-[**PutApiV1AlbumMonitor**](AlbumApi.md#PutApiV1AlbumMonitor) | **Put** /api/v1/album/monitor | 
-[**UpdateApiV1Album**](AlbumApi.md#UpdateApiV1Album) | **Put** /api/v1/album/{id} | 
+[**CreateAlbum**](AlbumApi.md#CreateAlbum) | **Post** /api/v1/album | 
+[**DeleteAlbum**](AlbumApi.md#DeleteAlbum) | **Delete** /api/v1/album/{id} | 
+[**GetAlbumById**](AlbumApi.md#GetAlbumById) | **Get** /api/v1/album/{id} | 
+[**ListAlbum**](AlbumApi.md#ListAlbum) | **Get** /api/v1/album | 
+[**PutAlbumMonitor**](AlbumApi.md#PutAlbumMonitor) | **Put** /api/v1/album/monitor | 
+[**UpdateAlbum**](AlbumApi.md#UpdateAlbum) | **Put** /api/v1/album/{id} | 
 
 
 
-## CreateApiV1Album
+## CreateAlbum
 
-> AlbumResource CreateApiV1Album(ctx).AlbumResource(albumResource).Execute()
+> AlbumResource CreateAlbum(ctx).AlbumResource(albumResource).Execute()
 
 
 
@@ -36,13 +36,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlbumApi.CreateApiV1Album(context.Background()).AlbumResource(albumResource).Execute()
+    resp, r, err := apiClient.AlbumApi.CreateAlbum(context.Background()).AlbumResource(albumResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlbumApi.CreateApiV1Album``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlbumApi.CreateAlbum``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateApiV1Album`: AlbumResource
-    fmt.Fprintf(os.Stdout, "Response from `AlbumApi.CreateApiV1Album`: %v\n", resp)
+    // response from `CreateAlbum`: AlbumResource
+    fmt.Fprintf(os.Stdout, "Response from `AlbumApi.CreateAlbum`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateApiV1AlbumRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAlbumRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1Album
+## DeleteAlbum
 
-> DeleteApiV1Album(ctx, id).Execute()
+> DeleteAlbum(ctx, id).Execute()
 
 
 
@@ -100,9 +100,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlbumApi.DeleteApiV1Album(context.Background(), id).Execute()
+    resp, r, err := apiClient.AlbumApi.DeleteAlbum(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlbumApi.DeleteApiV1Album``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlbumApi.DeleteAlbum``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1AlbumRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteAlbumRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -143,9 +143,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1AlbumById
+## GetAlbumById
 
-> AlbumResource GetApiV1AlbumById(ctx, id).Execute()
+> AlbumResource GetAlbumById(ctx, id).Execute()
 
 
 
@@ -166,13 +166,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlbumApi.GetApiV1AlbumById(context.Background(), id).Execute()
+    resp, r, err := apiClient.AlbumApi.GetAlbumById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlbumApi.GetApiV1AlbumById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlbumApi.GetAlbumById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1AlbumById`: AlbumResource
-    fmt.Fprintf(os.Stdout, "Response from `AlbumApi.GetApiV1AlbumById`: %v\n", resp)
+    // response from `GetAlbumById`: AlbumResource
+    fmt.Fprintf(os.Stdout, "Response from `AlbumApi.GetAlbumById`: %v\n", resp)
 }
 ```
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1AlbumByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAlbumByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -211,9 +211,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1Album
+## ListAlbum
 
-> []AlbumResource ListApiV1Album(ctx).ArtistId(artistId).AlbumIds(albumIds).ForeignAlbumId(foreignAlbumId).IncludeAllArtistAlbums(includeAllArtistAlbums).Execute()
+> []AlbumResource ListAlbum(ctx).ArtistId(artistId).AlbumIds(albumIds).ForeignAlbumId(foreignAlbumId).IncludeAllArtistAlbums(includeAllArtistAlbums).Execute()
 
 
 
@@ -237,13 +237,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlbumApi.ListApiV1Album(context.Background()).ArtistId(artistId).AlbumIds(albumIds).ForeignAlbumId(foreignAlbumId).IncludeAllArtistAlbums(includeAllArtistAlbums).Execute()
+    resp, r, err := apiClient.AlbumApi.ListAlbum(context.Background()).ArtistId(artistId).AlbumIds(albumIds).ForeignAlbumId(foreignAlbumId).IncludeAllArtistAlbums(includeAllArtistAlbums).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlbumApi.ListApiV1Album``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlbumApi.ListAlbum``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Album`: []AlbumResource
-    fmt.Fprintf(os.Stdout, "Response from `AlbumApi.ListApiV1Album`: %v\n", resp)
+    // response from `ListAlbum`: []AlbumResource
+    fmt.Fprintf(os.Stdout, "Response from `AlbumApi.ListAlbum`: %v\n", resp)
 }
 ```
 
@@ -253,7 +253,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1AlbumRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListAlbumRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -281,9 +281,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PutApiV1AlbumMonitor
+## PutAlbumMonitor
 
-> PutApiV1AlbumMonitor(ctx).AlbumsMonitoredResource(albumsMonitoredResource).Execute()
+> PutAlbumMonitor(ctx).AlbumsMonitoredResource(albumsMonitoredResource).Execute()
 
 
 
@@ -304,9 +304,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlbumApi.PutApiV1AlbumMonitor(context.Background()).AlbumsMonitoredResource(albumsMonitoredResource).Execute()
+    resp, r, err := apiClient.AlbumApi.PutAlbumMonitor(context.Background()).AlbumsMonitoredResource(albumsMonitoredResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlbumApi.PutApiV1AlbumMonitor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlbumApi.PutAlbumMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -318,7 +318,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPutApiV1AlbumMonitorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPutAlbumMonitorRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -343,9 +343,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateApiV1Album
+## UpdateAlbum
 
-> AlbumResource UpdateApiV1Album(ctx, id).AlbumResource(albumResource).Execute()
+> AlbumResource UpdateAlbum(ctx, id).AlbumResource(albumResource).Execute()
 
 
 
@@ -367,13 +367,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlbumApi.UpdateApiV1Album(context.Background(), id).AlbumResource(albumResource).Execute()
+    resp, r, err := apiClient.AlbumApi.UpdateAlbum(context.Background(), id).AlbumResource(albumResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AlbumApi.UpdateApiV1Album``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AlbumApi.UpdateAlbum``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateApiV1Album`: AlbumResource
-    fmt.Fprintf(os.Stdout, "Response from `AlbumApi.UpdateApiV1Album`: %v\n", resp)
+    // response from `UpdateAlbum`: AlbumResource
+    fmt.Fprintf(os.Stdout, "Response from `AlbumApi.UpdateAlbum`: %v\n", resp)
 }
 ```
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateApiV1AlbumRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateAlbumRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

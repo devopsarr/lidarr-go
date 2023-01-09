@@ -21,43 +21,43 @@ import (
 
 // AlbumStudioApiService AlbumStudioApi service
 type AlbumStudioApiService service
-type ApiCreateApiV1AlbumStudioRequest struct {
+type ApiCreateAlbumStudioRequest struct {
 	ctx context.Context
 	ApiService *AlbumStudioApiService
 	albumStudioResource *AlbumStudioResource
 }
 
-func (r ApiCreateApiV1AlbumStudioRequest) AlbumStudioResource(albumStudioResource AlbumStudioResource) ApiCreateApiV1AlbumStudioRequest {
+func (r ApiCreateAlbumStudioRequest) AlbumStudioResource(albumStudioResource AlbumStudioResource) ApiCreateAlbumStudioRequest {
 	r.albumStudioResource = &albumStudioResource
 	return r
 }
 
-func (r ApiCreateApiV1AlbumStudioRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateApiV1AlbumStudioExecute(r)
+func (r ApiCreateAlbumStudioRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateAlbumStudioExecute(r)
 }
 
 /*
-CreateApiV1AlbumStudio Method for CreateApiV1AlbumStudio
+CreateAlbumStudio Method for CreateAlbumStudio
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateApiV1AlbumStudioRequest
+ @return ApiCreateAlbumStudioRequest
 */
-func (a *AlbumStudioApiService) CreateApiV1AlbumStudio(ctx context.Context) ApiCreateApiV1AlbumStudioRequest {
-	return ApiCreateApiV1AlbumStudioRequest{
+func (a *AlbumStudioApiService) CreateAlbumStudio(ctx context.Context) ApiCreateAlbumStudioRequest {
+	return ApiCreateAlbumStudioRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AlbumStudioApiService) CreateApiV1AlbumStudioExecute(r ApiCreateApiV1AlbumStudioRequest) (*http.Response, error) {
+func (a *AlbumStudioApiService) CreateAlbumStudioExecute(r ApiCreateAlbumStudioRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumStudioApiService.CreateApiV1AlbumStudio")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumStudioApiService.CreateAlbumStudio")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

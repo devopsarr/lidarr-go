@@ -22,25 +22,25 @@ import (
 
 // BlocklistApiService BlocklistApi service
 type BlocklistApiService service
-type ApiDeleteApiV1BlocklistRequest struct {
+type ApiDeleteBlocklistRequest struct {
 	ctx context.Context
 	ApiService *BlocklistApiService
 	id int32
 }
 
-func (r ApiDeleteApiV1BlocklistRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1BlocklistExecute(r)
+func (r ApiDeleteBlocklistRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBlocklistExecute(r)
 }
 
 /*
-DeleteApiV1Blocklist Method for DeleteApiV1Blocklist
+DeleteBlocklist Method for DeleteBlocklist
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteApiV1BlocklistRequest
+ @return ApiDeleteBlocklistRequest
 */
-func (a *BlocklistApiService) DeleteApiV1Blocklist(ctx context.Context, id int32) ApiDeleteApiV1BlocklistRequest {
-	return ApiDeleteApiV1BlocklistRequest{
+func (a *BlocklistApiService) DeleteBlocklist(ctx context.Context, id int32) ApiDeleteBlocklistRequest {
+	return ApiDeleteBlocklistRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -48,14 +48,14 @@ func (a *BlocklistApiService) DeleteApiV1Blocklist(ctx context.Context, id int32
 }
 
 // Execute executes the request
-func (a *BlocklistApiService) DeleteApiV1BlocklistExecute(r ApiDeleteApiV1BlocklistRequest) (*http.Response, error) {
+func (a *BlocklistApiService) DeleteBlocklistExecute(r ApiDeleteBlocklistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlocklistApiService.DeleteApiV1Blocklist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlocklistApiService.DeleteBlocklist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -139,43 +139,43 @@ func (a *BlocklistApiService) DeleteApiV1BlocklistExecute(r ApiDeleteApiV1Blockl
 
 	return localVarHTTPResponse, nil
 }
-type ApiDeleteApiV1BlocklistBulkRequest struct {
+type ApiDeleteBlocklistBulkRequest struct {
 	ctx context.Context
 	ApiService *BlocklistApiService
 	blocklistBulkResource *BlocklistBulkResource
 }
 
-func (r ApiDeleteApiV1BlocklistBulkRequest) BlocklistBulkResource(blocklistBulkResource BlocklistBulkResource) ApiDeleteApiV1BlocklistBulkRequest {
+func (r ApiDeleteBlocklistBulkRequest) BlocklistBulkResource(blocklistBulkResource BlocklistBulkResource) ApiDeleteBlocklistBulkRequest {
 	r.blocklistBulkResource = &blocklistBulkResource
 	return r
 }
 
-func (r ApiDeleteApiV1BlocklistBulkRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteApiV1BlocklistBulkExecute(r)
+func (r ApiDeleteBlocklistBulkRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteBlocklistBulkExecute(r)
 }
 
 /*
-DeleteApiV1BlocklistBulk Method for DeleteApiV1BlocklistBulk
+DeleteBlocklistBulk Method for DeleteBlocklistBulk
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteApiV1BlocklistBulkRequest
+ @return ApiDeleteBlocklistBulkRequest
 */
-func (a *BlocklistApiService) DeleteApiV1BlocklistBulk(ctx context.Context) ApiDeleteApiV1BlocklistBulkRequest {
-	return ApiDeleteApiV1BlocklistBulkRequest{
+func (a *BlocklistApiService) DeleteBlocklistBulk(ctx context.Context) ApiDeleteBlocklistBulkRequest {
+	return ApiDeleteBlocklistBulkRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BlocklistApiService) DeleteApiV1BlocklistBulkExecute(r ApiDeleteApiV1BlocklistBulkRequest) (*http.Response, error) {
+func (a *BlocklistApiService) DeleteBlocklistBulkExecute(r ApiDeleteBlocklistBulkRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlocklistApiService.DeleteApiV1BlocklistBulk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlocklistApiService.DeleteBlocklistBulk")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -260,23 +260,23 @@ func (a *BlocklistApiService) DeleteApiV1BlocklistBulkExecute(r ApiDeleteApiV1Bl
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetApiV1BlocklistRequest struct {
+type ApiGetBlocklistRequest struct {
 	ctx context.Context
 	ApiService *BlocklistApiService
 }
 
-func (r ApiGetApiV1BlocklistRequest) Execute() (*BlocklistResourcePagingResource, *http.Response, error) {
-	return r.ApiService.GetApiV1BlocklistExecute(r)
+func (r ApiGetBlocklistRequest) Execute() (*BlocklistResourcePagingResource, *http.Response, error) {
+	return r.ApiService.GetBlocklistExecute(r)
 }
 
 /*
-GetApiV1Blocklist Method for GetApiV1Blocklist
+GetBlocklist Method for GetBlocklist
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1BlocklistRequest
+ @return ApiGetBlocklistRequest
 */
-func (a *BlocklistApiService) GetApiV1Blocklist(ctx context.Context) ApiGetApiV1BlocklistRequest {
-	return ApiGetApiV1BlocklistRequest{
+func (a *BlocklistApiService) GetBlocklist(ctx context.Context) ApiGetBlocklistRequest {
+	return ApiGetBlocklistRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -284,7 +284,7 @@ func (a *BlocklistApiService) GetApiV1Blocklist(ctx context.Context) ApiGetApiV1
 
 // Execute executes the request
 //  @return BlocklistResourcePagingResource
-func (a *BlocklistApiService) GetApiV1BlocklistExecute(r ApiGetApiV1BlocklistRequest) (*BlocklistResourcePagingResource, *http.Response, error) {
+func (a *BlocklistApiService) GetBlocklistExecute(r ApiGetBlocklistRequest) (*BlocklistResourcePagingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -292,7 +292,7 @@ func (a *BlocklistApiService) GetApiV1BlocklistExecute(r ApiGetApiV1BlocklistReq
 		localVarReturnValue  *BlocklistResourcePagingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlocklistApiService.GetApiV1Blocklist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlocklistApiService.GetBlocklist")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

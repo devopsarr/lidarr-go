@@ -23,25 +23,25 @@ import (
 
 // CalendarApiService CalendarApi service
 type CalendarApiService service
-type ApiGetApiV1CalendarByIdRequest struct {
+type ApiGetCalendarByIdRequest struct {
 	ctx context.Context
 	ApiService *CalendarApiService
 	id int32
 }
 
-func (r ApiGetApiV1CalendarByIdRequest) Execute() (*AlbumResource, *http.Response, error) {
-	return r.ApiService.GetApiV1CalendarByIdExecute(r)
+func (r ApiGetCalendarByIdRequest) Execute() (*AlbumResource, *http.Response, error) {
+	return r.ApiService.GetCalendarByIdExecute(r)
 }
 
 /*
-GetApiV1CalendarById Method for GetApiV1CalendarById
+GetCalendarById Method for GetCalendarById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1CalendarByIdRequest
+ @return ApiGetCalendarByIdRequest
 */
-func (a *CalendarApiService) GetApiV1CalendarById(ctx context.Context, id int32) ApiGetApiV1CalendarByIdRequest {
-	return ApiGetApiV1CalendarByIdRequest{
+func (a *CalendarApiService) GetCalendarById(ctx context.Context, id int32) ApiGetCalendarByIdRequest {
+	return ApiGetCalendarByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -50,7 +50,7 @@ func (a *CalendarApiService) GetApiV1CalendarById(ctx context.Context, id int32)
 
 // Execute executes the request
 //  @return AlbumResource
-func (a *CalendarApiService) GetApiV1CalendarByIdExecute(r ApiGetApiV1CalendarByIdRequest) (*AlbumResource, *http.Response, error) {
+func (a *CalendarApiService) GetCalendarByIdExecute(r ApiGetCalendarByIdRequest) (*AlbumResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -58,7 +58,7 @@ func (a *CalendarApiService) GetApiV1CalendarByIdExecute(r ApiGetApiV1CalendarBy
 		localVarReturnValue  *AlbumResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarApiService.GetApiV1CalendarById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarApiService.GetCalendarById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -151,7 +151,7 @@ func (a *CalendarApiService) GetApiV1CalendarByIdExecute(r ApiGetApiV1CalendarBy
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListApiV1CalendarRequest struct {
+type ApiListCalendarRequest struct {
 	ctx context.Context
 	ApiService *CalendarApiService
 	start *time.Time
@@ -160,38 +160,38 @@ type ApiListApiV1CalendarRequest struct {
 	includeArtist *bool
 }
 
-func (r ApiListApiV1CalendarRequest) Start(start time.Time) ApiListApiV1CalendarRequest {
+func (r ApiListCalendarRequest) Start(start time.Time) ApiListCalendarRequest {
 	r.start = &start
 	return r
 }
 
-func (r ApiListApiV1CalendarRequest) End(end time.Time) ApiListApiV1CalendarRequest {
+func (r ApiListCalendarRequest) End(end time.Time) ApiListCalendarRequest {
 	r.end = &end
 	return r
 }
 
-func (r ApiListApiV1CalendarRequest) Unmonitored(unmonitored bool) ApiListApiV1CalendarRequest {
+func (r ApiListCalendarRequest) Unmonitored(unmonitored bool) ApiListCalendarRequest {
 	r.unmonitored = &unmonitored
 	return r
 }
 
-func (r ApiListApiV1CalendarRequest) IncludeArtist(includeArtist bool) ApiListApiV1CalendarRequest {
+func (r ApiListCalendarRequest) IncludeArtist(includeArtist bool) ApiListCalendarRequest {
 	r.includeArtist = &includeArtist
 	return r
 }
 
-func (r ApiListApiV1CalendarRequest) Execute() ([]*AlbumResource, *http.Response, error) {
-	return r.ApiService.ListApiV1CalendarExecute(r)
+func (r ApiListCalendarRequest) Execute() ([]*AlbumResource, *http.Response, error) {
+	return r.ApiService.ListCalendarExecute(r)
 }
 
 /*
-ListApiV1Calendar Method for ListApiV1Calendar
+ListCalendar Method for ListCalendar
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListApiV1CalendarRequest
+ @return ApiListCalendarRequest
 */
-func (a *CalendarApiService) ListApiV1Calendar(ctx context.Context) ApiListApiV1CalendarRequest {
-	return ApiListApiV1CalendarRequest{
+func (a *CalendarApiService) ListCalendar(ctx context.Context) ApiListCalendarRequest {
+	return ApiListCalendarRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -199,7 +199,7 @@ func (a *CalendarApiService) ListApiV1Calendar(ctx context.Context) ApiListApiV1
 
 // Execute executes the request
 //  @return []AlbumResource
-func (a *CalendarApiService) ListApiV1CalendarExecute(r ApiListApiV1CalendarRequest) ([]*AlbumResource, *http.Response, error) {
+func (a *CalendarApiService) ListCalendarExecute(r ApiListCalendarRequest) ([]*AlbumResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -207,7 +207,7 @@ func (a *CalendarApiService) ListApiV1CalendarExecute(r ApiListApiV1CalendarRequ
 		localVarReturnValue  []*AlbumResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarApiService.ListApiV1Calendar")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarApiService.ListCalendar")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

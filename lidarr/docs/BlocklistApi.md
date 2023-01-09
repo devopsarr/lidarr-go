@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteApiV1Blocklist**](BlocklistApi.md#DeleteApiV1Blocklist) | **Delete** /api/v1/blocklist/{id} | 
-[**DeleteApiV1BlocklistBulk**](BlocklistApi.md#DeleteApiV1BlocklistBulk) | **Delete** /api/v1/blocklist/bulk | 
-[**GetApiV1Blocklist**](BlocklistApi.md#GetApiV1Blocklist) | **Get** /api/v1/blocklist | 
+[**DeleteBlocklist**](BlocklistApi.md#DeleteBlocklist) | **Delete** /api/v1/blocklist/{id} | 
+[**DeleteBlocklistBulk**](BlocklistApi.md#DeleteBlocklistBulk) | **Delete** /api/v1/blocklist/bulk | 
+[**GetBlocklist**](BlocklistApi.md#GetBlocklist) | **Get** /api/v1/blocklist | 
 
 
 
-## DeleteApiV1Blocklist
+## DeleteBlocklist
 
-> DeleteApiV1Blocklist(ctx, id).Execute()
+> DeleteBlocklist(ctx, id).Execute()
 
 
 
@@ -33,9 +33,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlocklistApi.DeleteApiV1Blocklist(context.Background(), id).Execute()
+    resp, r, err := apiClient.BlocklistApi.DeleteBlocklist(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BlocklistApi.DeleteApiV1Blocklist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BlocklistApi.DeleteBlocklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1BlocklistRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteBlocklistRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteApiV1BlocklistBulk
+## DeleteBlocklistBulk
 
-> DeleteApiV1BlocklistBulk(ctx).BlocklistBulkResource(blocklistBulkResource).Execute()
+> DeleteBlocklistBulk(ctx).BlocklistBulkResource(blocklistBulkResource).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlocklistApi.DeleteApiV1BlocklistBulk(context.Background()).BlocklistBulkResource(blocklistBulkResource).Execute()
+    resp, r, err := apiClient.BlocklistApi.DeleteBlocklistBulk(context.Background()).BlocklistBulkResource(blocklistBulkResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BlocklistApi.DeleteApiV1BlocklistBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BlocklistApi.DeleteBlocklistBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -113,7 +113,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteApiV1BlocklistBulkRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteBlocklistBulkRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -138,9 +138,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetApiV1Blocklist
+## GetBlocklist
 
-> BlocklistResourcePagingResource GetApiV1Blocklist(ctx).Execute()
+> BlocklistResourcePagingResource GetBlocklist(ctx).Execute()
 
 
 
@@ -160,13 +160,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BlocklistApi.GetApiV1Blocklist(context.Background()).Execute()
+    resp, r, err := apiClient.BlocklistApi.GetBlocklist(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BlocklistApi.GetApiV1Blocklist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BlocklistApi.GetBlocklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1Blocklist`: BlocklistResourcePagingResource
-    fmt.Fprintf(os.Stdout, "Response from `BlocklistApi.GetApiV1Blocklist`: %v\n", resp)
+    // response from `GetBlocklist`: BlocklistResourcePagingResource
+    fmt.Fprintf(os.Stdout, "Response from `BlocklistApi.GetBlocklist`: %v\n", resp)
 }
 ```
 
@@ -176,7 +176,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1BlocklistRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetBlocklistRequest struct via the builder pattern
 
 
 ### Return type

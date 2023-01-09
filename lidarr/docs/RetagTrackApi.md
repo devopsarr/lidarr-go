@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListApiV1Retag**](RetagTrackApi.md#ListApiV1Retag) | **Get** /api/v1/retag | 
+[**ListRetag**](RetagTrackApi.md#ListRetag) | **Get** /api/v1/retag | 
 
 
 
-## ListApiV1Retag
+## ListRetag
 
-> []RetagTrackResource ListApiV1Retag(ctx).ArtistId(artistId).AlbumId(albumId).Execute()
+> []RetagTrackResource ListRetag(ctx).ArtistId(artistId).AlbumId(albumId).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RetagTrackApi.ListApiV1Retag(context.Background()).ArtistId(artistId).AlbumId(albumId).Execute()
+    resp, r, err := apiClient.RetagTrackApi.ListRetag(context.Background()).ArtistId(artistId).AlbumId(albumId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RetagTrackApi.ListApiV1Retag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RetagTrackApi.ListRetag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Retag`: []RetagTrackResource
-    fmt.Fprintf(os.Stdout, "Response from `RetagTrackApi.ListApiV1Retag`: %v\n", resp)
+    // response from `ListRetag`: []RetagTrackResource
+    fmt.Fprintf(os.Stdout, "Response from `RetagTrackApi.ListRetag`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1RetagRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListRetagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -22,29 +22,29 @@ import (
 
 // MissingApiService MissingApi service
 type MissingApiService service
-type ApiGetApiV1WantedMissingRequest struct {
+type ApiGetWantedMissingRequest struct {
 	ctx context.Context
 	ApiService *MissingApiService
 	includeArtist *bool
 }
 
-func (r ApiGetApiV1WantedMissingRequest) IncludeArtist(includeArtist bool) ApiGetApiV1WantedMissingRequest {
+func (r ApiGetWantedMissingRequest) IncludeArtist(includeArtist bool) ApiGetWantedMissingRequest {
 	r.includeArtist = &includeArtist
 	return r
 }
 
-func (r ApiGetApiV1WantedMissingRequest) Execute() (*AlbumResourcePagingResource, *http.Response, error) {
-	return r.ApiService.GetApiV1WantedMissingExecute(r)
+func (r ApiGetWantedMissingRequest) Execute() (*AlbumResourcePagingResource, *http.Response, error) {
+	return r.ApiService.GetWantedMissingExecute(r)
 }
 
 /*
-GetApiV1WantedMissing Method for GetApiV1WantedMissing
+GetWantedMissing Method for GetWantedMissing
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetApiV1WantedMissingRequest
+ @return ApiGetWantedMissingRequest
 */
-func (a *MissingApiService) GetApiV1WantedMissing(ctx context.Context) ApiGetApiV1WantedMissingRequest {
-	return ApiGetApiV1WantedMissingRequest{
+func (a *MissingApiService) GetWantedMissing(ctx context.Context) ApiGetWantedMissingRequest {
+	return ApiGetWantedMissingRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *MissingApiService) GetApiV1WantedMissing(ctx context.Context) ApiGetApi
 
 // Execute executes the request
 //  @return AlbumResourcePagingResource
-func (a *MissingApiService) GetApiV1WantedMissingExecute(r ApiGetApiV1WantedMissingRequest) (*AlbumResourcePagingResource, *http.Response, error) {
+func (a *MissingApiService) GetWantedMissingExecute(r ApiGetWantedMissingRequest) (*AlbumResourcePagingResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *MissingApiService) GetApiV1WantedMissingExecute(r ApiGetApiV1WantedMiss
 		localVarReturnValue  *AlbumResourcePagingResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MissingApiService.GetApiV1WantedMissing")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MissingApiService.GetWantedMissing")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -155,25 +155,25 @@ func (a *MissingApiService) GetApiV1WantedMissingExecute(r ApiGetApiV1WantedMiss
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetApiV1WantedMissingByIdRequest struct {
+type ApiGetWantedMissingByIdRequest struct {
 	ctx context.Context
 	ApiService *MissingApiService
 	id int32
 }
 
-func (r ApiGetApiV1WantedMissingByIdRequest) Execute() (*AlbumResource, *http.Response, error) {
-	return r.ApiService.GetApiV1WantedMissingByIdExecute(r)
+func (r ApiGetWantedMissingByIdRequest) Execute() (*AlbumResource, *http.Response, error) {
+	return r.ApiService.GetWantedMissingByIdExecute(r)
 }
 
 /*
-GetApiV1WantedMissingById Method for GetApiV1WantedMissingById
+GetWantedMissingById Method for GetWantedMissingById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetApiV1WantedMissingByIdRequest
+ @return ApiGetWantedMissingByIdRequest
 */
-func (a *MissingApiService) GetApiV1WantedMissingById(ctx context.Context, id int32) ApiGetApiV1WantedMissingByIdRequest {
-	return ApiGetApiV1WantedMissingByIdRequest{
+func (a *MissingApiService) GetWantedMissingById(ctx context.Context, id int32) ApiGetWantedMissingByIdRequest {
+	return ApiGetWantedMissingByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -182,7 +182,7 @@ func (a *MissingApiService) GetApiV1WantedMissingById(ctx context.Context, id in
 
 // Execute executes the request
 //  @return AlbumResource
-func (a *MissingApiService) GetApiV1WantedMissingByIdExecute(r ApiGetApiV1WantedMissingByIdRequest) (*AlbumResource, *http.Response, error) {
+func (a *MissingApiService) GetWantedMissingByIdExecute(r ApiGetWantedMissingByIdRequest) (*AlbumResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -190,7 +190,7 @@ func (a *MissingApiService) GetApiV1WantedMissingByIdExecute(r ApiGetApiV1Wanted
 		localVarReturnValue  *AlbumResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MissingApiService.GetApiV1WantedMissingById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MissingApiService.GetWantedMissingById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

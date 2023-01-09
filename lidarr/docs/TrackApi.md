@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetApiV1TrackById**](TrackApi.md#GetApiV1TrackById) | **Get** /api/v1/track/{id} | 
-[**ListApiV1Track**](TrackApi.md#ListApiV1Track) | **Get** /api/v1/track | 
+[**GetTrackById**](TrackApi.md#GetTrackById) | **Get** /api/v1/track/{id} | 
+[**ListTrack**](TrackApi.md#ListTrack) | **Get** /api/v1/track | 
 
 
 
-## GetApiV1TrackById
+## GetTrackById
 
-> TrackResource GetApiV1TrackById(ctx, id).Execute()
+> TrackResource GetTrackById(ctx, id).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrackApi.GetApiV1TrackById(context.Background(), id).Execute()
+    resp, r, err := apiClient.TrackApi.GetTrackById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrackApi.GetApiV1TrackById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrackApi.GetTrackById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetApiV1TrackById`: TrackResource
-    fmt.Fprintf(os.Stdout, "Response from `TrackApi.GetApiV1TrackById`: %v\n", resp)
+    // response from `GetTrackById`: TrackResource
+    fmt.Fprintf(os.Stdout, "Response from `TrackApi.GetTrackById`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetApiV1TrackByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTrackByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListApiV1Track
+## ListTrack
 
-> []TrackResource ListApiV1Track(ctx).ArtistId(artistId).AlbumId(albumId).AlbumReleaseId(albumReleaseId).TrackIds(trackIds).Execute()
+> []TrackResource ListTrack(ctx).ArtistId(artistId).AlbumId(albumId).AlbumReleaseId(albumReleaseId).TrackIds(trackIds).Execute()
 
 
 
@@ -103,13 +103,13 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TrackApi.ListApiV1Track(context.Background()).ArtistId(artistId).AlbumId(albumId).AlbumReleaseId(albumReleaseId).TrackIds(trackIds).Execute()
+    resp, r, err := apiClient.TrackApi.ListTrack(context.Background()).ArtistId(artistId).AlbumId(albumId).AlbumReleaseId(albumReleaseId).TrackIds(trackIds).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TrackApi.ListApiV1Track``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TrackApi.ListTrack``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListApiV1Track`: []TrackResource
-    fmt.Fprintf(os.Stdout, "Response from `TrackApi.ListApiV1Track`: %v\n", resp)
+    // response from `ListTrack`: []TrackResource
+    fmt.Fprintf(os.Stdout, "Response from `TrackApi.ListTrack`: %v\n", resp)
 }
 ```
 
@@ -119,7 +119,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListApiV1TrackRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListTrackRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
