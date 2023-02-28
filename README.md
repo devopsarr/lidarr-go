@@ -78,226 +78,233 @@ All URIs are relative to *http://localhost:8686*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AlbumApi* | [**CreateAlbum**](docs/AlbumApi.md#createalbum) | **Post** /api/v1/album | 
-*AlbumApi* | [**DeleteAlbum**](docs/AlbumApi.md#deletealbum) | **Delete** /api/v1/album/{id} | 
-*AlbumApi* | [**GetAlbumById**](docs/AlbumApi.md#getalbumbyid) | **Get** /api/v1/album/{id} | 
-*AlbumApi* | [**ListAlbum**](docs/AlbumApi.md#listalbum) | **Get** /api/v1/album | 
-*AlbumApi* | [**PutAlbumMonitor**](docs/AlbumApi.md#putalbummonitor) | **Put** /api/v1/album/monitor | 
-*AlbumApi* | [**UpdateAlbum**](docs/AlbumApi.md#updatealbum) | **Put** /api/v1/album/{id} | 
-*AlbumLookupApi* | [**GetAlbumLookup**](docs/AlbumLookupApi.md#getalbumlookup) | **Get** /api/v1/album/lookup | 
-*AlbumStudioApi* | [**CreateAlbumStudio**](docs/AlbumStudioApi.md#createalbumstudio) | **Post** /api/v1/albumstudio | 
-*ApiInfoApi* | [**GetApi**](docs/ApiInfoApi.md#getapi) | **Get** /api | 
-*ArtistApi* | [**CreateArtist**](docs/ArtistApi.md#createartist) | **Post** /api/v1/artist | 
-*ArtistApi* | [**DeleteArtist**](docs/ArtistApi.md#deleteartist) | **Delete** /api/v1/artist/{id} | 
-*ArtistApi* | [**GetArtistById**](docs/ArtistApi.md#getartistbyid) | **Get** /api/v1/artist/{id} | 
-*ArtistApi* | [**ListArtist**](docs/ArtistApi.md#listartist) | **Get** /api/v1/artist | 
-*ArtistApi* | [**UpdateArtist**](docs/ArtistApi.md#updateartist) | **Put** /api/v1/artist/{id} | 
-*ArtistEditorApi* | [**DeleteArtistEditor**](docs/ArtistEditorApi.md#deleteartisteditor) | **Delete** /api/v1/artist/editor | 
-*ArtistEditorApi* | [**PutArtistEditor**](docs/ArtistEditorApi.md#putartisteditor) | **Put** /api/v1/artist/editor | 
-*ArtistLookupApi* | [**GetArtistLookup**](docs/ArtistLookupApi.md#getartistlookup) | **Get** /api/v1/artist/lookup | 
-*AuthenticationApi* | [**CreateLogin**](docs/AuthenticationApi.md#createlogin) | **Post** /login | 
-*AuthenticationApi* | [**GetLogout**](docs/AuthenticationApi.md#getlogout) | **Get** /logout | 
-*BackupApi* | [**CreateSystemBackupRestoreById**](docs/BackupApi.md#createsystembackuprestorebyid) | **Post** /api/v1/system/backup/restore/{id} | 
-*BackupApi* | [**CreateSystemBackupRestoreUpload**](docs/BackupApi.md#createsystembackuprestoreupload) | **Post** /api/v1/system/backup/restore/upload | 
-*BackupApi* | [**DeleteSystemBackup**](docs/BackupApi.md#deletesystembackup) | **Delete** /api/v1/system/backup/{id} | 
-*BackupApi* | [**ListSystemBackup**](docs/BackupApi.md#listsystembackup) | **Get** /api/v1/system/backup | 
-*BlocklistApi* | [**DeleteBlocklist**](docs/BlocklistApi.md#deleteblocklist) | **Delete** /api/v1/blocklist/{id} | 
-*BlocklistApi* | [**DeleteBlocklistBulk**](docs/BlocklistApi.md#deleteblocklistbulk) | **Delete** /api/v1/blocklist/bulk | 
-*BlocklistApi* | [**GetBlocklist**](docs/BlocklistApi.md#getblocklist) | **Get** /api/v1/blocklist | 
-*CalendarApi* | [**GetCalendarById**](docs/CalendarApi.md#getcalendarbyid) | **Get** /api/v1/calendar/{id} | 
-*CalendarApi* | [**ListCalendar**](docs/CalendarApi.md#listcalendar) | **Get** /api/v1/calendar | 
-*CalendarFeedApi* | [**GetFeedV1CalendarLidarrIcs**](docs/CalendarFeedApi.md#getfeedv1calendarlidarrics) | **Get** /feed/v1/calendar/lidarr.ics | 
-*CommandApi* | [**CreateCommand**](docs/CommandApi.md#createcommand) | **Post** /api/v1/command | 
-*CommandApi* | [**DeleteCommand**](docs/CommandApi.md#deletecommand) | **Delete** /api/v1/command/{id} | 
-*CommandApi* | [**GetCommandById**](docs/CommandApi.md#getcommandbyid) | **Get** /api/v1/command/{id} | 
-*CommandApi* | [**ListCommand**](docs/CommandApi.md#listcommand) | **Get** /api/v1/command | 
-*CustomFilterApi* | [**CreateCustomFilter**](docs/CustomFilterApi.md#createcustomfilter) | **Post** /api/v1/customfilter | 
-*CustomFilterApi* | [**DeleteCustomFilter**](docs/CustomFilterApi.md#deletecustomfilter) | **Delete** /api/v1/customfilter/{id} | 
-*CustomFilterApi* | [**GetCustomFilterById**](docs/CustomFilterApi.md#getcustomfilterbyid) | **Get** /api/v1/customfilter/{id} | 
-*CustomFilterApi* | [**ListCustomFilter**](docs/CustomFilterApi.md#listcustomfilter) | **Get** /api/v1/customfilter | 
-*CustomFilterApi* | [**UpdateCustomFilter**](docs/CustomFilterApi.md#updatecustomfilter) | **Put** /api/v1/customfilter/{id} | 
-*CutoffApi* | [**GetWantedCutoff**](docs/CutoffApi.md#getwantedcutoff) | **Get** /api/v1/wanted/cutoff | 
-*CutoffApi* | [**GetWantedCutoffById**](docs/CutoffApi.md#getwantedcutoffbyid) | **Get** /api/v1/wanted/cutoff/{id} | 
-*DelayProfileApi* | [**CreateDelayProfile**](docs/DelayProfileApi.md#createdelayprofile) | **Post** /api/v1/delayprofile | 
-*DelayProfileApi* | [**DeleteDelayProfile**](docs/DelayProfileApi.md#deletedelayprofile) | **Delete** /api/v1/delayprofile/{id} | 
-*DelayProfileApi* | [**GetDelayProfileById**](docs/DelayProfileApi.md#getdelayprofilebyid) | **Get** /api/v1/delayprofile/{id} | 
-*DelayProfileApi* | [**ListDelayProfile**](docs/DelayProfileApi.md#listdelayprofile) | **Get** /api/v1/delayprofile | 
-*DelayProfileApi* | [**UpdateDelayProfile**](docs/DelayProfileApi.md#updatedelayprofile) | **Put** /api/v1/delayprofile/{id} | 
-*DelayProfileApi* | [**UpdateDelayProfileReorder**](docs/DelayProfileApi.md#updatedelayprofilereorder) | **Put** /api/v1/delayprofile/reorder/{id} | 
-*DiskSpaceApi* | [**ListDiskSpace**](docs/DiskSpaceApi.md#listdiskspace) | **Get** /api/v1/diskspace | 
-*DownloadClientApi* | [**CreateDownloadClient**](docs/DownloadClientApi.md#createdownloadclient) | **Post** /api/v1/downloadclient | 
-*DownloadClientApi* | [**CreateDownloadClientActionByName**](docs/DownloadClientApi.md#createdownloadclientactionbyname) | **Post** /api/v1/downloadclient/action/{name} | 
-*DownloadClientApi* | [**DeleteDownloadClient**](docs/DownloadClientApi.md#deletedownloadclient) | **Delete** /api/v1/downloadclient/{id} | 
-*DownloadClientApi* | [**GetDownloadClientById**](docs/DownloadClientApi.md#getdownloadclientbyid) | **Get** /api/v1/downloadclient/{id} | 
-*DownloadClientApi* | [**ListDownloadClient**](docs/DownloadClientApi.md#listdownloadclient) | **Get** /api/v1/downloadclient | 
-*DownloadClientApi* | [**ListDownloadClientSchema**](docs/DownloadClientApi.md#listdownloadclientschema) | **Get** /api/v1/downloadclient/schema | 
-*DownloadClientApi* | [**TestDownloadClient**](docs/DownloadClientApi.md#testdownloadclient) | **Post** /api/v1/downloadclient/test | 
-*DownloadClientApi* | [**TestallDownloadClient**](docs/DownloadClientApi.md#testalldownloadclient) | **Post** /api/v1/downloadclient/testall | 
-*DownloadClientApi* | [**UpdateDownloadClient**](docs/DownloadClientApi.md#updatedownloadclient) | **Put** /api/v1/downloadclient/{id} | 
-*DownloadClientConfigApi* | [**GetDownloadClientConfig**](docs/DownloadClientConfigApi.md#getdownloadclientconfig) | **Get** /api/v1/config/downloadclient | 
-*DownloadClientConfigApi* | [**GetDownloadClientConfigById**](docs/DownloadClientConfigApi.md#getdownloadclientconfigbyid) | **Get** /api/v1/config/downloadclient/{id} | 
-*DownloadClientConfigApi* | [**UpdateDownloadClientConfig**](docs/DownloadClientConfigApi.md#updatedownloadclientconfig) | **Put** /api/v1/config/downloadclient/{id} | 
-*FileSystemApi* | [**GetFileSystem**](docs/FileSystemApi.md#getfilesystem) | **Get** /api/v1/filesystem | 
-*FileSystemApi* | [**GetFileSystemMediafiles**](docs/FileSystemApi.md#getfilesystemmediafiles) | **Get** /api/v1/filesystem/mediafiles | 
-*FileSystemApi* | [**GetFileSystemType**](docs/FileSystemApi.md#getfilesystemtype) | **Get** /api/v1/filesystem/type | 
-*HealthApi* | [**GetHealthById**](docs/HealthApi.md#gethealthbyid) | **Get** /api/v1/health/{id} | 
-*HealthApi* | [**ListHealth**](docs/HealthApi.md#listhealth) | **Get** /api/v1/health | 
-*HistoryApi* | [**CreateHistoryFailedById**](docs/HistoryApi.md#createhistoryfailedbyid) | **Post** /api/v1/history/failed/{id} | 
-*HistoryApi* | [**GetHistory**](docs/HistoryApi.md#gethistory) | **Get** /api/v1/history | 
-*HistoryApi* | [**ListHistoryArtist**](docs/HistoryApi.md#listhistoryartist) | **Get** /api/v1/history/artist | 
-*HistoryApi* | [**ListHistorySince**](docs/HistoryApi.md#listhistorysince) | **Get** /api/v1/history/since | 
-*HostConfigApi* | [**GetHostConfig**](docs/HostConfigApi.md#gethostconfig) | **Get** /api/v1/config/host | 
-*HostConfigApi* | [**GetHostConfigById**](docs/HostConfigApi.md#gethostconfigbyid) | **Get** /api/v1/config/host/{id} | 
-*HostConfigApi* | [**UpdateHostConfig**](docs/HostConfigApi.md#updatehostconfig) | **Put** /api/v1/config/host/{id} | 
-*ImportListApi* | [**CreateImportList**](docs/ImportListApi.md#createimportlist) | **Post** /api/v1/importlist | 
-*ImportListApi* | [**CreateImportListActionByName**](docs/ImportListApi.md#createimportlistactionbyname) | **Post** /api/v1/importlist/action/{name} | 
-*ImportListApi* | [**DeleteImportList**](docs/ImportListApi.md#deleteimportlist) | **Delete** /api/v1/importlist/{id} | 
-*ImportListApi* | [**GetImportListById**](docs/ImportListApi.md#getimportlistbyid) | **Get** /api/v1/importlist/{id} | 
-*ImportListApi* | [**ListImportList**](docs/ImportListApi.md#listimportlist) | **Get** /api/v1/importlist | 
-*ImportListApi* | [**ListImportListSchema**](docs/ImportListApi.md#listimportlistschema) | **Get** /api/v1/importlist/schema | 
-*ImportListApi* | [**TestImportList**](docs/ImportListApi.md#testimportlist) | **Post** /api/v1/importlist/test | 
-*ImportListApi* | [**TestallImportList**](docs/ImportListApi.md#testallimportlist) | **Post** /api/v1/importlist/testall | 
-*ImportListApi* | [**UpdateImportList**](docs/ImportListApi.md#updateimportlist) | **Put** /api/v1/importlist/{id} | 
-*ImportListExclusionApi* | [**CreateImportListExclusion**](docs/ImportListExclusionApi.md#createimportlistexclusion) | **Post** /api/v1/importlistexclusion | 
-*ImportListExclusionApi* | [**DeleteImportListExclusion**](docs/ImportListExclusionApi.md#deleteimportlistexclusion) | **Delete** /api/v1/importlistexclusion/{id} | 
-*ImportListExclusionApi* | [**GetImportListExclusionById**](docs/ImportListExclusionApi.md#getimportlistexclusionbyid) | **Get** /api/v1/importlistexclusion/{id} | 
-*ImportListExclusionApi* | [**ListImportListExclusion**](docs/ImportListExclusionApi.md#listimportlistexclusion) | **Get** /api/v1/importlistexclusion | 
-*ImportListExclusionApi* | [**UpdateImportListExclusion**](docs/ImportListExclusionApi.md#updateimportlistexclusion) | **Put** /api/v1/importlistexclusion/{id} | 
-*IndexerApi* | [**CreateIndexer**](docs/IndexerApi.md#createindexer) | **Post** /api/v1/indexer | 
-*IndexerApi* | [**CreateIndexerActionByName**](docs/IndexerApi.md#createindexeractionbyname) | **Post** /api/v1/indexer/action/{name} | 
-*IndexerApi* | [**DeleteIndexer**](docs/IndexerApi.md#deleteindexer) | **Delete** /api/v1/indexer/{id} | 
-*IndexerApi* | [**GetIndexerById**](docs/IndexerApi.md#getindexerbyid) | **Get** /api/v1/indexer/{id} | 
-*IndexerApi* | [**ListIndexer**](docs/IndexerApi.md#listindexer) | **Get** /api/v1/indexer | 
-*IndexerApi* | [**ListIndexerSchema**](docs/IndexerApi.md#listindexerschema) | **Get** /api/v1/indexer/schema | 
-*IndexerApi* | [**TestIndexer**](docs/IndexerApi.md#testindexer) | **Post** /api/v1/indexer/test | 
-*IndexerApi* | [**TestallIndexer**](docs/IndexerApi.md#testallindexer) | **Post** /api/v1/indexer/testall | 
-*IndexerApi* | [**UpdateIndexer**](docs/IndexerApi.md#updateindexer) | **Put** /api/v1/indexer/{id} | 
-*IndexerConfigApi* | [**GetIndexerConfig**](docs/IndexerConfigApi.md#getindexerconfig) | **Get** /api/v1/config/indexer | 
-*IndexerConfigApi* | [**GetIndexerConfigById**](docs/IndexerConfigApi.md#getindexerconfigbyid) | **Get** /api/v1/config/indexer/{id} | 
-*IndexerConfigApi* | [**UpdateIndexerConfig**](docs/IndexerConfigApi.md#updateindexerconfig) | **Put** /api/v1/config/indexer/{id} | 
-*InitializeJsApi* | [**GetInitializeJs**](docs/InitializeJsApi.md#getinitializejs) | **Get** /initialize.js | 
-*LanguageApi* | [**GetLanguageById**](docs/LanguageApi.md#getlanguagebyid) | **Get** /api/v1/language/{id} | 
-*LanguageApi* | [**ListLanguage**](docs/LanguageApi.md#listlanguage) | **Get** /api/v1/language | 
-*LocalizationApi* | [**GetLocalization**](docs/LocalizationApi.md#getlocalization) | **Get** /api/v1/localization | 
-*LogApi* | [**GetLog**](docs/LogApi.md#getlog) | **Get** /api/v1/log | 
-*LogFileApi* | [**GetLogFileByFilename**](docs/LogFileApi.md#getlogfilebyfilename) | **Get** /api/v1/log/file/{filename} | 
-*LogFileApi* | [**ListLogFile**](docs/LogFileApi.md#listlogfile) | **Get** /api/v1/log/file | 
-*ManualImportApi* | [**ListManualImport**](docs/ManualImportApi.md#listmanualimport) | **Get** /api/v1/manualimport | 
-*ManualImportApi* | [**PutManualImport**](docs/ManualImportApi.md#putmanualimport) | **Put** /api/v1/manualimport | 
-*MediaCoverApi* | [**GetMediaCoverAlbumalbumIdByFilename**](docs/MediaCoverApi.md#getmediacoveralbumalbumidbyfilename) | **Get** /api/v1/mediacover/album/{albumId}/{filename} | 
-*MediaCoverApi* | [**GetMediaCoverArtistartistIdByFilename**](docs/MediaCoverApi.md#getmediacoverartistartistidbyfilename) | **Get** /api/v1/mediacover/artist/{artistId}/{filename} | 
-*MediaManagementConfigApi* | [**GetMediaManagementConfig**](docs/MediaManagementConfigApi.md#getmediamanagementconfig) | **Get** /api/v1/config/mediamanagement | 
-*MediaManagementConfigApi* | [**GetMediaManagementConfigById**](docs/MediaManagementConfigApi.md#getmediamanagementconfigbyid) | **Get** /api/v1/config/mediamanagement/{id} | 
-*MediaManagementConfigApi* | [**UpdateMediaManagementConfig**](docs/MediaManagementConfigApi.md#updatemediamanagementconfig) | **Put** /api/v1/config/mediamanagement/{id} | 
-*MetadataApi* | [**CreateMetadata**](docs/MetadataApi.md#createmetadata) | **Post** /api/v1/metadata | 
-*MetadataApi* | [**CreateMetadataActionByName**](docs/MetadataApi.md#createmetadataactionbyname) | **Post** /api/v1/metadata/action/{name} | 
-*MetadataApi* | [**DeleteMetadata**](docs/MetadataApi.md#deletemetadata) | **Delete** /api/v1/metadata/{id} | 
-*MetadataApi* | [**GetMetadataById**](docs/MetadataApi.md#getmetadatabyid) | **Get** /api/v1/metadata/{id} | 
-*MetadataApi* | [**ListMetadata**](docs/MetadataApi.md#listmetadata) | **Get** /api/v1/metadata | 
-*MetadataApi* | [**ListMetadataSchema**](docs/MetadataApi.md#listmetadataschema) | **Get** /api/v1/metadata/schema | 
-*MetadataApi* | [**TestMetadata**](docs/MetadataApi.md#testmetadata) | **Post** /api/v1/metadata/test | 
-*MetadataApi* | [**TestallMetadata**](docs/MetadataApi.md#testallmetadata) | **Post** /api/v1/metadata/testall | 
-*MetadataApi* | [**UpdateMetadata**](docs/MetadataApi.md#updatemetadata) | **Put** /api/v1/metadata/{id} | 
-*MetadataProfileApi* | [**CreateMetadataProfile**](docs/MetadataProfileApi.md#createmetadataprofile) | **Post** /api/v1/metadataprofile | 
-*MetadataProfileApi* | [**DeleteMetadataProfile**](docs/MetadataProfileApi.md#deletemetadataprofile) | **Delete** /api/v1/metadataprofile/{id} | 
-*MetadataProfileApi* | [**GetMetadataProfileById**](docs/MetadataProfileApi.md#getmetadataprofilebyid) | **Get** /api/v1/metadataprofile/{id} | 
-*MetadataProfileApi* | [**ListMetadataProfile**](docs/MetadataProfileApi.md#listmetadataprofile) | **Get** /api/v1/metadataprofile | 
-*MetadataProfileApi* | [**UpdateMetadataProfile**](docs/MetadataProfileApi.md#updatemetadataprofile) | **Put** /api/v1/metadataprofile/{id} | 
-*MetadataProfileSchemaApi* | [**GetMetadataprofileSchema**](docs/MetadataProfileSchemaApi.md#getmetadataprofileschema) | **Get** /api/v1/metadataprofile/schema | 
-*MetadataProviderConfigApi* | [**GetMetadataProviderConfig**](docs/MetadataProviderConfigApi.md#getmetadataproviderconfig) | **Get** /api/v1/config/metadataprovider | 
-*MetadataProviderConfigApi* | [**GetMetadataProviderConfigById**](docs/MetadataProviderConfigApi.md#getmetadataproviderconfigbyid) | **Get** /api/v1/config/metadataprovider/{id} | 
-*MetadataProviderConfigApi* | [**UpdateMetadataProviderConfig**](docs/MetadataProviderConfigApi.md#updatemetadataproviderconfig) | **Put** /api/v1/config/metadataprovider/{id} | 
-*MissingApi* | [**GetWantedMissing**](docs/MissingApi.md#getwantedmissing) | **Get** /api/v1/wanted/missing | 
-*MissingApi* | [**GetWantedMissingById**](docs/MissingApi.md#getwantedmissingbyid) | **Get** /api/v1/wanted/missing/{id} | 
-*NamingConfigApi* | [**GetNamingConfig**](docs/NamingConfigApi.md#getnamingconfig) | **Get** /api/v1/config/naming | 
-*NamingConfigApi* | [**GetNamingConfigById**](docs/NamingConfigApi.md#getnamingconfigbyid) | **Get** /api/v1/config/naming/{id} | 
-*NamingConfigApi* | [**GetNamingConfigExamples**](docs/NamingConfigApi.md#getnamingconfigexamples) | **Get** /api/v1/config/naming/examples | 
-*NamingConfigApi* | [**UpdateNamingConfig**](docs/NamingConfigApi.md#updatenamingconfig) | **Put** /api/v1/config/naming/{id} | 
-*NotificationApi* | [**CreateNotification**](docs/NotificationApi.md#createnotification) | **Post** /api/v1/notification | 
-*NotificationApi* | [**CreateNotificationActionByName**](docs/NotificationApi.md#createnotificationactionbyname) | **Post** /api/v1/notification/action/{name} | 
-*NotificationApi* | [**DeleteNotification**](docs/NotificationApi.md#deletenotification) | **Delete** /api/v1/notification/{id} | 
-*NotificationApi* | [**GetNotificationById**](docs/NotificationApi.md#getnotificationbyid) | **Get** /api/v1/notification/{id} | 
-*NotificationApi* | [**ListNotification**](docs/NotificationApi.md#listnotification) | **Get** /api/v1/notification | 
-*NotificationApi* | [**ListNotificationSchema**](docs/NotificationApi.md#listnotificationschema) | **Get** /api/v1/notification/schema | 
-*NotificationApi* | [**TestNotification**](docs/NotificationApi.md#testnotification) | **Post** /api/v1/notification/test | 
-*NotificationApi* | [**TestallNotification**](docs/NotificationApi.md#testallnotification) | **Post** /api/v1/notification/testall | 
-*NotificationApi* | [**UpdateNotification**](docs/NotificationApi.md#updatenotification) | **Put** /api/v1/notification/{id} | 
-*ParseApi* | [**GetParse**](docs/ParseApi.md#getparse) | **Get** /api/v1/parse | 
-*QualityDefinitionApi* | [**GetQualityDefinitionById**](docs/QualityDefinitionApi.md#getqualitydefinitionbyid) | **Get** /api/v1/qualitydefinition/{id} | 
-*QualityDefinitionApi* | [**ListQualityDefinition**](docs/QualityDefinitionApi.md#listqualitydefinition) | **Get** /api/v1/qualitydefinition | 
-*QualityDefinitionApi* | [**PutQualityDefinitionUpdate**](docs/QualityDefinitionApi.md#putqualitydefinitionupdate) | **Put** /api/v1/qualitydefinition/update | 
-*QualityDefinitionApi* | [**UpdateQualityDefinition**](docs/QualityDefinitionApi.md#updatequalitydefinition) | **Put** /api/v1/qualitydefinition/{id} | 
-*QualityProfileApi* | [**CreateQualityProfile**](docs/QualityProfileApi.md#createqualityprofile) | **Post** /api/v1/qualityprofile | 
-*QualityProfileApi* | [**DeleteQualityProfile**](docs/QualityProfileApi.md#deletequalityprofile) | **Delete** /api/v1/qualityprofile/{id} | 
-*QualityProfileApi* | [**GetQualityProfileById**](docs/QualityProfileApi.md#getqualityprofilebyid) | **Get** /api/v1/qualityprofile/{id} | 
-*QualityProfileApi* | [**ListQualityProfile**](docs/QualityProfileApi.md#listqualityprofile) | **Get** /api/v1/qualityprofile | 
-*QualityProfileApi* | [**UpdateQualityProfile**](docs/QualityProfileApi.md#updatequalityprofile) | **Put** /api/v1/qualityprofile/{id} | 
-*QualityProfileSchemaApi* | [**GetQualityprofileSchema**](docs/QualityProfileSchemaApi.md#getqualityprofileschema) | **Get** /api/v1/qualityprofile/schema | 
-*QueueApi* | [**DeleteQueue**](docs/QueueApi.md#deletequeue) | **Delete** /api/v1/queue/{id} | 
-*QueueApi* | [**DeleteQueueBulk**](docs/QueueApi.md#deletequeuebulk) | **Delete** /api/v1/queue/bulk | 
-*QueueApi* | [**GetQueue**](docs/QueueApi.md#getqueue) | **Get** /api/v1/queue | 
-*QueueApi* | [**GetQueueById**](docs/QueueApi.md#getqueuebyid) | **Get** /api/v1/queue/{id} | 
-*QueueActionApi* | [**CreateQueueGrabBulk**](docs/QueueActionApi.md#createqueuegrabbulk) | **Post** /api/v1/queue/grab/bulk | 
-*QueueActionApi* | [**CreateQueueGrabById**](docs/QueueActionApi.md#createqueuegrabbyid) | **Post** /api/v1/queue/grab/{id} | 
-*QueueDetailsApi* | [**GetQueueDetailsById**](docs/QueueDetailsApi.md#getqueuedetailsbyid) | **Get** /api/v1/queue/details/{id} | 
-*QueueDetailsApi* | [**ListQueueDetails**](docs/QueueDetailsApi.md#listqueuedetails) | **Get** /api/v1/queue/details | 
-*QueueStatusApi* | [**GetQueueStatus**](docs/QueueStatusApi.md#getqueuestatus) | **Get** /api/v1/queue/status | 
-*QueueStatusApi* | [**GetQueueStatusById**](docs/QueueStatusApi.md#getqueuestatusbyid) | **Get** /api/v1/queue/status/{id} | 
-*ReleaseApi* | [**CreateRelease**](docs/ReleaseApi.md#createrelease) | **Post** /api/v1/release | 
-*ReleaseApi* | [**GetReleaseById**](docs/ReleaseApi.md#getreleasebyid) | **Get** /api/v1/release/{id} | 
-*ReleaseApi* | [**ListRelease**](docs/ReleaseApi.md#listrelease) | **Get** /api/v1/release | 
-*ReleaseProfileApi* | [**CreateReleaseProfile**](docs/ReleaseProfileApi.md#createreleaseprofile) | **Post** /api/v1/releaseprofile | 
-*ReleaseProfileApi* | [**DeleteReleaseProfile**](docs/ReleaseProfileApi.md#deletereleaseprofile) | **Delete** /api/v1/releaseprofile/{id} | 
-*ReleaseProfileApi* | [**GetReleaseProfileById**](docs/ReleaseProfileApi.md#getreleaseprofilebyid) | **Get** /api/v1/releaseprofile/{id} | 
-*ReleaseProfileApi* | [**ListReleaseProfile**](docs/ReleaseProfileApi.md#listreleaseprofile) | **Get** /api/v1/releaseprofile | 
-*ReleaseProfileApi* | [**UpdateReleaseProfile**](docs/ReleaseProfileApi.md#updatereleaseprofile) | **Put** /api/v1/releaseprofile/{id} | 
-*ReleasePushApi* | [**CreateReleasePush**](docs/ReleasePushApi.md#createreleasepush) | **Post** /api/v1/release/push | 
-*ReleasePushApi* | [**GetReleasePushById**](docs/ReleasePushApi.md#getreleasepushbyid) | **Get** /api/v1/release/push/{id} | 
-*RemotePathMappingApi* | [**CreateRemotePathMapping**](docs/RemotePathMappingApi.md#createremotepathmapping) | **Post** /api/v1/remotepathmapping | 
-*RemotePathMappingApi* | [**DeleteRemotePathMapping**](docs/RemotePathMappingApi.md#deleteremotepathmapping) | **Delete** /api/v1/remotepathmapping/{id} | 
-*RemotePathMappingApi* | [**GetRemotePathMappingById**](docs/RemotePathMappingApi.md#getremotepathmappingbyid) | **Get** /api/v1/remotepathmapping/{id} | 
-*RemotePathMappingApi* | [**ListRemotePathMapping**](docs/RemotePathMappingApi.md#listremotepathmapping) | **Get** /api/v1/remotepathmapping | 
-*RemotePathMappingApi* | [**UpdateRemotePathMapping**](docs/RemotePathMappingApi.md#updateremotepathmapping) | **Put** /api/v1/remotepathmapping/{id} | 
-*RenameTrackApi* | [**ListRename**](docs/RenameTrackApi.md#listrename) | **Get** /api/v1/rename | 
-*RetagTrackApi* | [**ListRetag**](docs/RetagTrackApi.md#listretag) | **Get** /api/v1/retag | 
-*RootFolderApi* | [**CreateRootFolder**](docs/RootFolderApi.md#createrootfolder) | **Post** /api/v1/rootfolder | 
-*RootFolderApi* | [**DeleteRootFolder**](docs/RootFolderApi.md#deleterootfolder) | **Delete** /api/v1/rootfolder/{id} | 
-*RootFolderApi* | [**GetRootFolderById**](docs/RootFolderApi.md#getrootfolderbyid) | **Get** /api/v1/rootfolder/{id} | 
-*RootFolderApi* | [**ListRootFolder**](docs/RootFolderApi.md#listrootfolder) | **Get** /api/v1/rootfolder | 
-*RootFolderApi* | [**UpdateRootFolder**](docs/RootFolderApi.md#updaterootfolder) | **Put** /api/v1/rootfolder/{id} | 
-*SearchApi* | [**GetSearch**](docs/SearchApi.md#getsearch) | **Get** /api/v1/search | 
-*StaticResourceApi* | [**Get**](docs/StaticResourceApi.md#get) | **Get** / | 
-*StaticResourceApi* | [**GetByPath**](docs/StaticResourceApi.md#getbypath) | **Get** /{path} | 
-*StaticResourceApi* | [**GetContentByPath**](docs/StaticResourceApi.md#getcontentbypath) | **Get** /content/{path} | 
-*StaticResourceApi* | [**GetLogin**](docs/StaticResourceApi.md#getlogin) | **Get** /login | 
-*SystemApi* | [**CreateSystemRestart**](docs/SystemApi.md#createsystemrestart) | **Post** /api/v1/system/restart | 
-*SystemApi* | [**CreateSystemShutdown**](docs/SystemApi.md#createsystemshutdown) | **Post** /api/v1/system/shutdown | 
-*SystemApi* | [**GetSystemRoutes**](docs/SystemApi.md#getsystemroutes) | **Get** /api/v1/system/routes | 
-*SystemApi* | [**GetSystemRoutesDuplicate**](docs/SystemApi.md#getsystemroutesduplicate) | **Get** /api/v1/system/routes/duplicate | 
-*SystemApi* | [**GetSystemStatus**](docs/SystemApi.md#getsystemstatus) | **Get** /api/v1/system/status | 
-*TagApi* | [**CreateTag**](docs/TagApi.md#createtag) | **Post** /api/v1/tag | 
-*TagApi* | [**DeleteTag**](docs/TagApi.md#deletetag) | **Delete** /api/v1/tag/{id} | 
-*TagApi* | [**GetTagById**](docs/TagApi.md#gettagbyid) | **Get** /api/v1/tag/{id} | 
-*TagApi* | [**ListTag**](docs/TagApi.md#listtag) | **Get** /api/v1/tag | 
-*TagApi* | [**UpdateTag**](docs/TagApi.md#updatetag) | **Put** /api/v1/tag/{id} | 
-*TagDetailsApi* | [**GetTagDetailById**](docs/TagDetailsApi.md#gettagdetailbyid) | **Get** /api/v1/tag/detail/{id} | 
-*TagDetailsApi* | [**ListTagDetail**](docs/TagDetailsApi.md#listtagdetail) | **Get** /api/v1/tag/detail | 
-*TaskApi* | [**GetSystemTaskById**](docs/TaskApi.md#getsystemtaskbyid) | **Get** /api/v1/system/task/{id} | 
-*TaskApi* | [**ListSystemTask**](docs/TaskApi.md#listsystemtask) | **Get** /api/v1/system/task | 
-*TrackApi* | [**GetTrackById**](docs/TrackApi.md#gettrackbyid) | **Get** /api/v1/track/{id} | 
-*TrackApi* | [**ListTrack**](docs/TrackApi.md#listtrack) | **Get** /api/v1/track | 
-*TrackFileApi* | [**DeleteTrackFile**](docs/TrackFileApi.md#deletetrackfile) | **Delete** /api/v1/trackfile/{id} | 
-*TrackFileApi* | [**DeleteTrackFileBulk**](docs/TrackFileApi.md#deletetrackfilebulk) | **Delete** /api/v1/trackfile/bulk | 
-*TrackFileApi* | [**GetTrackFileById**](docs/TrackFileApi.md#gettrackfilebyid) | **Get** /api/v1/trackfile/{id} | 
-*TrackFileApi* | [**ListTrackFile**](docs/TrackFileApi.md#listtrackfile) | **Get** /api/v1/trackfile | 
-*TrackFileApi* | [**PutTrackFileEditor**](docs/TrackFileApi.md#puttrackfileeditor) | **Put** /api/v1/trackfile/editor | 
-*TrackFileApi* | [**UpdateTrackFile**](docs/TrackFileApi.md#updatetrackfile) | **Put** /api/v1/trackfile/{id} | 
-*UiConfigApi* | [**GetUiConfig**](docs/UiConfigApi.md#getuiconfig) | **Get** /api/v1/config/ui | 
-*UiConfigApi* | [**GetUiConfigById**](docs/UiConfigApi.md#getuiconfigbyid) | **Get** /api/v1/config/ui/{id} | 
-*UiConfigApi* | [**UpdateUiConfig**](docs/UiConfigApi.md#updateuiconfig) | **Put** /api/v1/config/ui/{id} | 
-*UpdateApi* | [**ListUpdate**](docs/UpdateApi.md#listupdate) | **Get** /api/v1/update | 
-*UpdateLogFileApi* | [**GetLogFileUpdateByFilename**](docs/UpdateLogFileApi.md#getlogfileupdatebyfilename) | **Get** /api/v1/log/file/update/{filename} | 
-*UpdateLogFileApi* | [**ListLogFileUpdate**](docs/UpdateLogFileApi.md#listlogfileupdate) | **Get** /api/v1/log/file/update | 
+*AlbumApi* | [**CreateAlbum**](lidarr/docs/AlbumApi.md#createalbum) | **Post** /api/v1/album | 
+*AlbumApi* | [**DeleteAlbum**](lidarr/docs/AlbumApi.md#deletealbum) | **Delete** /api/v1/album/{id} | 
+*AlbumApi* | [**GetAlbumById**](lidarr/docs/AlbumApi.md#getalbumbyid) | **Get** /api/v1/album/{id} | 
+*AlbumApi* | [**ListAlbum**](lidarr/docs/AlbumApi.md#listalbum) | **Get** /api/v1/album | 
+*AlbumApi* | [**PutAlbumMonitor**](lidarr/docs/AlbumApi.md#putalbummonitor) | **Put** /api/v1/album/monitor | 
+*AlbumApi* | [**UpdateAlbum**](lidarr/docs/AlbumApi.md#updatealbum) | **Put** /api/v1/album/{id} | 
+*AlbumLookupApi* | [**GetAlbumLookup**](lidarr/docs/AlbumLookupApi.md#getalbumlookup) | **Get** /api/v1/album/lookup | 
+*AlbumStudioApi* | [**CreateAlbumStudio**](lidarr/docs/AlbumStudioApi.md#createalbumstudio) | **Post** /api/v1/albumstudio | 
+*ApiInfoApi* | [**GetApi**](lidarr/docs/ApiInfoApi.md#getapi) | **Get** /api | 
+*ArtistApi* | [**CreateArtist**](lidarr/docs/ArtistApi.md#createartist) | **Post** /api/v1/artist | 
+*ArtistApi* | [**DeleteArtist**](lidarr/docs/ArtistApi.md#deleteartist) | **Delete** /api/v1/artist/{id} | 
+*ArtistApi* | [**GetArtistById**](lidarr/docs/ArtistApi.md#getartistbyid) | **Get** /api/v1/artist/{id} | 
+*ArtistApi* | [**ListArtist**](lidarr/docs/ArtistApi.md#listartist) | **Get** /api/v1/artist | 
+*ArtistApi* | [**UpdateArtist**](lidarr/docs/ArtistApi.md#updateartist) | **Put** /api/v1/artist/{id} | 
+*ArtistEditorApi* | [**DeleteArtistEditor**](lidarr/docs/ArtistEditorApi.md#deleteartisteditor) | **Delete** /api/v1/artist/editor | 
+*ArtistEditorApi* | [**PutArtistEditor**](lidarr/docs/ArtistEditorApi.md#putartisteditor) | **Put** /api/v1/artist/editor | 
+*ArtistLookupApi* | [**GetArtistLookup**](lidarr/docs/ArtistLookupApi.md#getartistlookup) | **Get** /api/v1/artist/lookup | 
+*AuthenticationApi* | [**CreateLogin**](lidarr/docs/AuthenticationApi.md#createlogin) | **Post** /login | 
+*AuthenticationApi* | [**GetLogout**](lidarr/docs/AuthenticationApi.md#getlogout) | **Get** /logout | 
+*BackupApi* | [**CreateSystemBackupRestoreById**](lidarr/docs/BackupApi.md#createsystembackuprestorebyid) | **Post** /api/v1/system/backup/restore/{id} | 
+*BackupApi* | [**CreateSystemBackupRestoreUpload**](lidarr/docs/BackupApi.md#createsystembackuprestoreupload) | **Post** /api/v1/system/backup/restore/upload | 
+*BackupApi* | [**DeleteSystemBackup**](lidarr/docs/BackupApi.md#deletesystembackup) | **Delete** /api/v1/system/backup/{id} | 
+*BackupApi* | [**ListSystemBackup**](lidarr/docs/BackupApi.md#listsystembackup) | **Get** /api/v1/system/backup | 
+*BlocklistApi* | [**DeleteBlocklist**](lidarr/docs/BlocklistApi.md#deleteblocklist) | **Delete** /api/v1/blocklist/{id} | 
+*BlocklistApi* | [**DeleteBlocklistBulk**](lidarr/docs/BlocklistApi.md#deleteblocklistbulk) | **Delete** /api/v1/blocklist/bulk | 
+*BlocklistApi* | [**GetBlocklist**](lidarr/docs/BlocklistApi.md#getblocklist) | **Get** /api/v1/blocklist | 
+*CalendarApi* | [**GetCalendarById**](lidarr/docs/CalendarApi.md#getcalendarbyid) | **Get** /api/v1/calendar/{id} | 
+*CalendarApi* | [**ListCalendar**](lidarr/docs/CalendarApi.md#listcalendar) | **Get** /api/v1/calendar | 
+*CalendarFeedApi* | [**GetFeedV1CalendarLidarrIcs**](lidarr/docs/CalendarFeedApi.md#getfeedv1calendarlidarrics) | **Get** /feed/v1/calendar/lidarr.ics | 
+*CommandApi* | [**CreateCommand**](lidarr/docs/CommandApi.md#createcommand) | **Post** /api/v1/command | 
+*CommandApi* | [**DeleteCommand**](lidarr/docs/CommandApi.md#deletecommand) | **Delete** /api/v1/command/{id} | 
+*CommandApi* | [**GetCommandById**](lidarr/docs/CommandApi.md#getcommandbyid) | **Get** /api/v1/command/{id} | 
+*CommandApi* | [**ListCommand**](lidarr/docs/CommandApi.md#listcommand) | **Get** /api/v1/command | 
+*CustomFilterApi* | [**CreateCustomFilter**](lidarr/docs/CustomFilterApi.md#createcustomfilter) | **Post** /api/v1/customfilter | 
+*CustomFilterApi* | [**DeleteCustomFilter**](lidarr/docs/CustomFilterApi.md#deletecustomfilter) | **Delete** /api/v1/customfilter/{id} | 
+*CustomFilterApi* | [**GetCustomFilterById**](lidarr/docs/CustomFilterApi.md#getcustomfilterbyid) | **Get** /api/v1/customfilter/{id} | 
+*CustomFilterApi* | [**ListCustomFilter**](lidarr/docs/CustomFilterApi.md#listcustomfilter) | **Get** /api/v1/customfilter | 
+*CustomFilterApi* | [**UpdateCustomFilter**](lidarr/docs/CustomFilterApi.md#updatecustomfilter) | **Put** /api/v1/customfilter/{id} | 
+*CustomFormatApi* | [**CreateCustomFormat**](lidarr/docs/CustomFormatApi.md#createcustomformat) | **Post** /api/v1/customformat | 
+*CustomFormatApi* | [**DeleteCustomFormat**](lidarr/docs/CustomFormatApi.md#deletecustomformat) | **Delete** /api/v1/customformat/{id} | 
+*CustomFormatApi* | [**GetCustomFormatById**](lidarr/docs/CustomFormatApi.md#getcustomformatbyid) | **Get** /api/v1/customformat/{id} | 
+*CustomFormatApi* | [**GetCustomFormatSchema**](lidarr/docs/CustomFormatApi.md#getcustomformatschema) | **Get** /api/v1/customformat/schema | 
+*CustomFormatApi* | [**ListCustomFormat**](lidarr/docs/CustomFormatApi.md#listcustomformat) | **Get** /api/v1/customformat | 
+*CustomFormatApi* | [**UpdateCustomFormat**](lidarr/docs/CustomFormatApi.md#updatecustomformat) | **Put** /api/v1/customformat/{id} | 
+*CutoffApi* | [**GetWantedCutoff**](lidarr/docs/CutoffApi.md#getwantedcutoff) | **Get** /api/v1/wanted/cutoff | 
+*CutoffApi* | [**GetWantedCutoffById**](lidarr/docs/CutoffApi.md#getwantedcutoffbyid) | **Get** /api/v1/wanted/cutoff/{id} | 
+*DelayProfileApi* | [**CreateDelayProfile**](lidarr/docs/DelayProfileApi.md#createdelayprofile) | **Post** /api/v1/delayprofile | 
+*DelayProfileApi* | [**DeleteDelayProfile**](lidarr/docs/DelayProfileApi.md#deletedelayprofile) | **Delete** /api/v1/delayprofile/{id} | 
+*DelayProfileApi* | [**GetDelayProfileById**](lidarr/docs/DelayProfileApi.md#getdelayprofilebyid) | **Get** /api/v1/delayprofile/{id} | 
+*DelayProfileApi* | [**ListDelayProfile**](lidarr/docs/DelayProfileApi.md#listdelayprofile) | **Get** /api/v1/delayprofile | 
+*DelayProfileApi* | [**UpdateDelayProfile**](lidarr/docs/DelayProfileApi.md#updatedelayprofile) | **Put** /api/v1/delayprofile/{id} | 
+*DelayProfileApi* | [**UpdateDelayProfileReorder**](lidarr/docs/DelayProfileApi.md#updatedelayprofilereorder) | **Put** /api/v1/delayprofile/reorder/{id} | 
+*DiskSpaceApi* | [**ListDiskSpace**](lidarr/docs/DiskSpaceApi.md#listdiskspace) | **Get** /api/v1/diskspace | 
+*DownloadClientApi* | [**CreateDownloadClient**](lidarr/docs/DownloadClientApi.md#createdownloadclient) | **Post** /api/v1/downloadclient | 
+*DownloadClientApi* | [**CreateDownloadClientActionByName**](lidarr/docs/DownloadClientApi.md#createdownloadclientactionbyname) | **Post** /api/v1/downloadclient/action/{name} | 
+*DownloadClientApi* | [**DeleteDownloadClient**](lidarr/docs/DownloadClientApi.md#deletedownloadclient) | **Delete** /api/v1/downloadclient/{id} | 
+*DownloadClientApi* | [**GetDownloadClientById**](lidarr/docs/DownloadClientApi.md#getdownloadclientbyid) | **Get** /api/v1/downloadclient/{id} | 
+*DownloadClientApi* | [**ListDownloadClient**](lidarr/docs/DownloadClientApi.md#listdownloadclient) | **Get** /api/v1/downloadclient | 
+*DownloadClientApi* | [**ListDownloadClientSchema**](lidarr/docs/DownloadClientApi.md#listdownloadclientschema) | **Get** /api/v1/downloadclient/schema | 
+*DownloadClientApi* | [**TestDownloadClient**](lidarr/docs/DownloadClientApi.md#testdownloadclient) | **Post** /api/v1/downloadclient/test | 
+*DownloadClientApi* | [**TestallDownloadClient**](lidarr/docs/DownloadClientApi.md#testalldownloadclient) | **Post** /api/v1/downloadclient/testall | 
+*DownloadClientApi* | [**UpdateDownloadClient**](lidarr/docs/DownloadClientApi.md#updatedownloadclient) | **Put** /api/v1/downloadclient/{id} | 
+*DownloadClientConfigApi* | [**GetDownloadClientConfig**](lidarr/docs/DownloadClientConfigApi.md#getdownloadclientconfig) | **Get** /api/v1/config/downloadclient | 
+*DownloadClientConfigApi* | [**GetDownloadClientConfigById**](lidarr/docs/DownloadClientConfigApi.md#getdownloadclientconfigbyid) | **Get** /api/v1/config/downloadclient/{id} | 
+*DownloadClientConfigApi* | [**UpdateDownloadClientConfig**](lidarr/docs/DownloadClientConfigApi.md#updatedownloadclientconfig) | **Put** /api/v1/config/downloadclient/{id} | 
+*FileSystemApi* | [**GetFileSystem**](lidarr/docs/FileSystemApi.md#getfilesystem) | **Get** /api/v1/filesystem | 
+*FileSystemApi* | [**GetFileSystemMediafiles**](lidarr/docs/FileSystemApi.md#getfilesystemmediafiles) | **Get** /api/v1/filesystem/mediafiles | 
+*FileSystemApi* | [**GetFileSystemType**](lidarr/docs/FileSystemApi.md#getfilesystemtype) | **Get** /api/v1/filesystem/type | 
+*HealthApi* | [**GetHealthById**](lidarr/docs/HealthApi.md#gethealthbyid) | **Get** /api/v1/health/{id} | 
+*HealthApi* | [**ListHealth**](lidarr/docs/HealthApi.md#listhealth) | **Get** /api/v1/health | 
+*HistoryApi* | [**CreateHistoryFailedById**](lidarr/docs/HistoryApi.md#createhistoryfailedbyid) | **Post** /api/v1/history/failed/{id} | 
+*HistoryApi* | [**GetHistory**](lidarr/docs/HistoryApi.md#gethistory) | **Get** /api/v1/history | 
+*HistoryApi* | [**ListHistoryArtist**](lidarr/docs/HistoryApi.md#listhistoryartist) | **Get** /api/v1/history/artist | 
+*HistoryApi* | [**ListHistorySince**](lidarr/docs/HistoryApi.md#listhistorysince) | **Get** /api/v1/history/since | 
+*HostConfigApi* | [**GetHostConfig**](lidarr/docs/HostConfigApi.md#gethostconfig) | **Get** /api/v1/config/host | 
+*HostConfigApi* | [**GetHostConfigById**](lidarr/docs/HostConfigApi.md#gethostconfigbyid) | **Get** /api/v1/config/host/{id} | 
+*HostConfigApi* | [**UpdateHostConfig**](lidarr/docs/HostConfigApi.md#updatehostconfig) | **Put** /api/v1/config/host/{id} | 
+*ImportListApi* | [**CreateImportList**](lidarr/docs/ImportListApi.md#createimportlist) | **Post** /api/v1/importlist | 
+*ImportListApi* | [**CreateImportListActionByName**](lidarr/docs/ImportListApi.md#createimportlistactionbyname) | **Post** /api/v1/importlist/action/{name} | 
+*ImportListApi* | [**DeleteImportList**](lidarr/docs/ImportListApi.md#deleteimportlist) | **Delete** /api/v1/importlist/{id} | 
+*ImportListApi* | [**GetImportListById**](lidarr/docs/ImportListApi.md#getimportlistbyid) | **Get** /api/v1/importlist/{id} | 
+*ImportListApi* | [**ListImportList**](lidarr/docs/ImportListApi.md#listimportlist) | **Get** /api/v1/importlist | 
+*ImportListApi* | [**ListImportListSchema**](lidarr/docs/ImportListApi.md#listimportlistschema) | **Get** /api/v1/importlist/schema | 
+*ImportListApi* | [**TestImportList**](lidarr/docs/ImportListApi.md#testimportlist) | **Post** /api/v1/importlist/test | 
+*ImportListApi* | [**TestallImportList**](lidarr/docs/ImportListApi.md#testallimportlist) | **Post** /api/v1/importlist/testall | 
+*ImportListApi* | [**UpdateImportList**](lidarr/docs/ImportListApi.md#updateimportlist) | **Put** /api/v1/importlist/{id} | 
+*ImportListExclusionApi* | [**CreateImportListExclusion**](lidarr/docs/ImportListExclusionApi.md#createimportlistexclusion) | **Post** /api/v1/importlistexclusion | 
+*ImportListExclusionApi* | [**DeleteImportListExclusion**](lidarr/docs/ImportListExclusionApi.md#deleteimportlistexclusion) | **Delete** /api/v1/importlistexclusion/{id} | 
+*ImportListExclusionApi* | [**GetImportListExclusionById**](lidarr/docs/ImportListExclusionApi.md#getimportlistexclusionbyid) | **Get** /api/v1/importlistexclusion/{id} | 
+*ImportListExclusionApi* | [**ListImportListExclusion**](lidarr/docs/ImportListExclusionApi.md#listimportlistexclusion) | **Get** /api/v1/importlistexclusion | 
+*ImportListExclusionApi* | [**UpdateImportListExclusion**](lidarr/docs/ImportListExclusionApi.md#updateimportlistexclusion) | **Put** /api/v1/importlistexclusion/{id} | 
+*IndexerApi* | [**CreateIndexer**](lidarr/docs/IndexerApi.md#createindexer) | **Post** /api/v1/indexer | 
+*IndexerApi* | [**CreateIndexerActionByName**](lidarr/docs/IndexerApi.md#createindexeractionbyname) | **Post** /api/v1/indexer/action/{name} | 
+*IndexerApi* | [**DeleteIndexer**](lidarr/docs/IndexerApi.md#deleteindexer) | **Delete** /api/v1/indexer/{id} | 
+*IndexerApi* | [**GetIndexerById**](lidarr/docs/IndexerApi.md#getindexerbyid) | **Get** /api/v1/indexer/{id} | 
+*IndexerApi* | [**ListIndexer**](lidarr/docs/IndexerApi.md#listindexer) | **Get** /api/v1/indexer | 
+*IndexerApi* | [**ListIndexerSchema**](lidarr/docs/IndexerApi.md#listindexerschema) | **Get** /api/v1/indexer/schema | 
+*IndexerApi* | [**TestIndexer**](lidarr/docs/IndexerApi.md#testindexer) | **Post** /api/v1/indexer/test | 
+*IndexerApi* | [**TestallIndexer**](lidarr/docs/IndexerApi.md#testallindexer) | **Post** /api/v1/indexer/testall | 
+*IndexerApi* | [**UpdateIndexer**](lidarr/docs/IndexerApi.md#updateindexer) | **Put** /api/v1/indexer/{id} | 
+*IndexerConfigApi* | [**GetIndexerConfig**](lidarr/docs/IndexerConfigApi.md#getindexerconfig) | **Get** /api/v1/config/indexer | 
+*IndexerConfigApi* | [**GetIndexerConfigById**](lidarr/docs/IndexerConfigApi.md#getindexerconfigbyid) | **Get** /api/v1/config/indexer/{id} | 
+*IndexerConfigApi* | [**UpdateIndexerConfig**](lidarr/docs/IndexerConfigApi.md#updateindexerconfig) | **Put** /api/v1/config/indexer/{id} | 
+*InitializeJsApi* | [**GetInitializeJs**](lidarr/docs/InitializeJsApi.md#getinitializejs) | **Get** /initialize.js | 
+*LanguageApi* | [**GetLanguageById**](lidarr/docs/LanguageApi.md#getlanguagebyid) | **Get** /api/v1/language/{id} | 
+*LanguageApi* | [**ListLanguage**](lidarr/docs/LanguageApi.md#listlanguage) | **Get** /api/v1/language | 
+*LocalizationApi* | [**GetLocalization**](lidarr/docs/LocalizationApi.md#getlocalization) | **Get** /api/v1/localization | 
+*LogApi* | [**GetLog**](lidarr/docs/LogApi.md#getlog) | **Get** /api/v1/log | 
+*LogFileApi* | [**GetLogFileByFilename**](lidarr/docs/LogFileApi.md#getlogfilebyfilename) | **Get** /api/v1/log/file/{filename} | 
+*LogFileApi* | [**ListLogFile**](lidarr/docs/LogFileApi.md#listlogfile) | **Get** /api/v1/log/file | 
+*ManualImportApi* | [**CreateManualImport**](lidarr/docs/ManualImportApi.md#createmanualimport) | **Post** /api/v1/manualimport | 
+*ManualImportApi* | [**ListManualImport**](lidarr/docs/ManualImportApi.md#listmanualimport) | **Get** /api/v1/manualimport | 
+*MediaCoverApi* | [**GetMediaCoverAlbumalbumIdByFilename**](lidarr/docs/MediaCoverApi.md#getmediacoveralbumalbumidbyfilename) | **Get** /api/v1/mediacover/album/{albumId}/{filename} | 
+*MediaCoverApi* | [**GetMediaCoverArtistartistIdByFilename**](lidarr/docs/MediaCoverApi.md#getmediacoverartistartistidbyfilename) | **Get** /api/v1/mediacover/artist/{artistId}/{filename} | 
+*MediaManagementConfigApi* | [**GetMediaManagementConfig**](lidarr/docs/MediaManagementConfigApi.md#getmediamanagementconfig) | **Get** /api/v1/config/mediamanagement | 
+*MediaManagementConfigApi* | [**GetMediaManagementConfigById**](lidarr/docs/MediaManagementConfigApi.md#getmediamanagementconfigbyid) | **Get** /api/v1/config/mediamanagement/{id} | 
+*MediaManagementConfigApi* | [**UpdateMediaManagementConfig**](lidarr/docs/MediaManagementConfigApi.md#updatemediamanagementconfig) | **Put** /api/v1/config/mediamanagement/{id} | 
+*MetadataApi* | [**CreateMetadata**](lidarr/docs/MetadataApi.md#createmetadata) | **Post** /api/v1/metadata | 
+*MetadataApi* | [**CreateMetadataActionByName**](lidarr/docs/MetadataApi.md#createmetadataactionbyname) | **Post** /api/v1/metadata/action/{name} | 
+*MetadataApi* | [**DeleteMetadata**](lidarr/docs/MetadataApi.md#deletemetadata) | **Delete** /api/v1/metadata/{id} | 
+*MetadataApi* | [**GetMetadataById**](lidarr/docs/MetadataApi.md#getmetadatabyid) | **Get** /api/v1/metadata/{id} | 
+*MetadataApi* | [**ListMetadata**](lidarr/docs/MetadataApi.md#listmetadata) | **Get** /api/v1/metadata | 
+*MetadataApi* | [**ListMetadataSchema**](lidarr/docs/MetadataApi.md#listmetadataschema) | **Get** /api/v1/metadata/schema | 
+*MetadataApi* | [**TestMetadata**](lidarr/docs/MetadataApi.md#testmetadata) | **Post** /api/v1/metadata/test | 
+*MetadataApi* | [**TestallMetadata**](lidarr/docs/MetadataApi.md#testallmetadata) | **Post** /api/v1/metadata/testall | 
+*MetadataApi* | [**UpdateMetadata**](lidarr/docs/MetadataApi.md#updatemetadata) | **Put** /api/v1/metadata/{id} | 
+*MetadataProfileApi* | [**CreateMetadataProfile**](lidarr/docs/MetadataProfileApi.md#createmetadataprofile) | **Post** /api/v1/metadataprofile | 
+*MetadataProfileApi* | [**DeleteMetadataProfile**](lidarr/docs/MetadataProfileApi.md#deletemetadataprofile) | **Delete** /api/v1/metadataprofile/{id} | 
+*MetadataProfileApi* | [**GetMetadataProfileById**](lidarr/docs/MetadataProfileApi.md#getmetadataprofilebyid) | **Get** /api/v1/metadataprofile/{id} | 
+*MetadataProfileApi* | [**ListMetadataProfile**](lidarr/docs/MetadataProfileApi.md#listmetadataprofile) | **Get** /api/v1/metadataprofile | 
+*MetadataProfileApi* | [**UpdateMetadataProfile**](lidarr/docs/MetadataProfileApi.md#updatemetadataprofile) | **Put** /api/v1/metadataprofile/{id} | 
+*MetadataProfileSchemaApi* | [**GetMetadataprofileSchema**](lidarr/docs/MetadataProfileSchemaApi.md#getmetadataprofileschema) | **Get** /api/v1/metadataprofile/schema | 
+*MetadataProviderConfigApi* | [**GetMetadataProviderConfig**](lidarr/docs/MetadataProviderConfigApi.md#getmetadataproviderconfig) | **Get** /api/v1/config/metadataprovider | 
+*MetadataProviderConfigApi* | [**GetMetadataProviderConfigById**](lidarr/docs/MetadataProviderConfigApi.md#getmetadataproviderconfigbyid) | **Get** /api/v1/config/metadataprovider/{id} | 
+*MetadataProviderConfigApi* | [**UpdateMetadataProviderConfig**](lidarr/docs/MetadataProviderConfigApi.md#updatemetadataproviderconfig) | **Put** /api/v1/config/metadataprovider/{id} | 
+*MissingApi* | [**GetWantedMissing**](lidarr/docs/MissingApi.md#getwantedmissing) | **Get** /api/v1/wanted/missing | 
+*MissingApi* | [**GetWantedMissingById**](lidarr/docs/MissingApi.md#getwantedmissingbyid) | **Get** /api/v1/wanted/missing/{id} | 
+*NamingConfigApi* | [**GetNamingConfig**](lidarr/docs/NamingConfigApi.md#getnamingconfig) | **Get** /api/v1/config/naming | 
+*NamingConfigApi* | [**GetNamingConfigById**](lidarr/docs/NamingConfigApi.md#getnamingconfigbyid) | **Get** /api/v1/config/naming/{id} | 
+*NamingConfigApi* | [**GetNamingConfigExamples**](lidarr/docs/NamingConfigApi.md#getnamingconfigexamples) | **Get** /api/v1/config/naming/examples | 
+*NamingConfigApi* | [**UpdateNamingConfig**](lidarr/docs/NamingConfigApi.md#updatenamingconfig) | **Put** /api/v1/config/naming/{id} | 
+*NotificationApi* | [**CreateNotification**](lidarr/docs/NotificationApi.md#createnotification) | **Post** /api/v1/notification | 
+*NotificationApi* | [**CreateNotificationActionByName**](lidarr/docs/NotificationApi.md#createnotificationactionbyname) | **Post** /api/v1/notification/action/{name} | 
+*NotificationApi* | [**DeleteNotification**](lidarr/docs/NotificationApi.md#deletenotification) | **Delete** /api/v1/notification/{id} | 
+*NotificationApi* | [**GetNotificationById**](lidarr/docs/NotificationApi.md#getnotificationbyid) | **Get** /api/v1/notification/{id} | 
+*NotificationApi* | [**ListNotification**](lidarr/docs/NotificationApi.md#listnotification) | **Get** /api/v1/notification | 
+*NotificationApi* | [**ListNotificationSchema**](lidarr/docs/NotificationApi.md#listnotificationschema) | **Get** /api/v1/notification/schema | 
+*NotificationApi* | [**TestNotification**](lidarr/docs/NotificationApi.md#testnotification) | **Post** /api/v1/notification/test | 
+*NotificationApi* | [**TestallNotification**](lidarr/docs/NotificationApi.md#testallnotification) | **Post** /api/v1/notification/testall | 
+*NotificationApi* | [**UpdateNotification**](lidarr/docs/NotificationApi.md#updatenotification) | **Put** /api/v1/notification/{id} | 
+*ParseApi* | [**GetParse**](lidarr/docs/ParseApi.md#getparse) | **Get** /api/v1/parse | 
+*PingApi* | [**GetPing**](lidarr/docs/PingApi.md#getping) | **Get** /ping | 
+*QualityDefinitionApi* | [**GetQualityDefinitionById**](lidarr/docs/QualityDefinitionApi.md#getqualitydefinitionbyid) | **Get** /api/v1/qualitydefinition/{id} | 
+*QualityDefinitionApi* | [**ListQualityDefinition**](lidarr/docs/QualityDefinitionApi.md#listqualitydefinition) | **Get** /api/v1/qualitydefinition | 
+*QualityDefinitionApi* | [**PutQualityDefinitionUpdate**](lidarr/docs/QualityDefinitionApi.md#putqualitydefinitionupdate) | **Put** /api/v1/qualitydefinition/update | 
+*QualityDefinitionApi* | [**UpdateQualityDefinition**](lidarr/docs/QualityDefinitionApi.md#updatequalitydefinition) | **Put** /api/v1/qualitydefinition/{id} | 
+*QualityProfileApi* | [**CreateQualityProfile**](lidarr/docs/QualityProfileApi.md#createqualityprofile) | **Post** /api/v1/qualityprofile | 
+*QualityProfileApi* | [**DeleteQualityProfile**](lidarr/docs/QualityProfileApi.md#deletequalityprofile) | **Delete** /api/v1/qualityprofile/{id} | 
+*QualityProfileApi* | [**GetQualityProfileById**](lidarr/docs/QualityProfileApi.md#getqualityprofilebyid) | **Get** /api/v1/qualityprofile/{id} | 
+*QualityProfileApi* | [**ListQualityProfile**](lidarr/docs/QualityProfileApi.md#listqualityprofile) | **Get** /api/v1/qualityprofile | 
+*QualityProfileApi* | [**UpdateQualityProfile**](lidarr/docs/QualityProfileApi.md#updatequalityprofile) | **Put** /api/v1/qualityprofile/{id} | 
+*QualityProfileSchemaApi* | [**GetQualityprofileSchema**](lidarr/docs/QualityProfileSchemaApi.md#getqualityprofileschema) | **Get** /api/v1/qualityprofile/schema | 
+*QueueApi* | [**DeleteQueue**](lidarr/docs/QueueApi.md#deletequeue) | **Delete** /api/v1/queue/{id} | 
+*QueueApi* | [**DeleteQueueBulk**](lidarr/docs/QueueApi.md#deletequeuebulk) | **Delete** /api/v1/queue/bulk | 
+*QueueApi* | [**GetQueue**](lidarr/docs/QueueApi.md#getqueue) | **Get** /api/v1/queue | 
+*QueueApi* | [**GetQueueById**](lidarr/docs/QueueApi.md#getqueuebyid) | **Get** /api/v1/queue/{id} | 
+*QueueActionApi* | [**CreateQueueGrabBulk**](lidarr/docs/QueueActionApi.md#createqueuegrabbulk) | **Post** /api/v1/queue/grab/bulk | 
+*QueueActionApi* | [**CreateQueueGrabById**](lidarr/docs/QueueActionApi.md#createqueuegrabbyid) | **Post** /api/v1/queue/grab/{id} | 
+*QueueDetailsApi* | [**GetQueueDetailsById**](lidarr/docs/QueueDetailsApi.md#getqueuedetailsbyid) | **Get** /api/v1/queue/details/{id} | 
+*QueueDetailsApi* | [**ListQueueDetails**](lidarr/docs/QueueDetailsApi.md#listqueuedetails) | **Get** /api/v1/queue/details | 
+*QueueStatusApi* | [**GetQueueStatus**](lidarr/docs/QueueStatusApi.md#getqueuestatus) | **Get** /api/v1/queue/status | 
+*QueueStatusApi* | [**GetQueueStatusById**](lidarr/docs/QueueStatusApi.md#getqueuestatusbyid) | **Get** /api/v1/queue/status/{id} | 
+*ReleaseApi* | [**CreateRelease**](lidarr/docs/ReleaseApi.md#createrelease) | **Post** /api/v1/release | 
+*ReleaseApi* | [**GetReleaseById**](lidarr/docs/ReleaseApi.md#getreleasebyid) | **Get** /api/v1/release/{id} | 
+*ReleaseApi* | [**ListRelease**](lidarr/docs/ReleaseApi.md#listrelease) | **Get** /api/v1/release | 
+*ReleaseProfileApi* | [**CreateReleaseProfile**](lidarr/docs/ReleaseProfileApi.md#createreleaseprofile) | **Post** /api/v1/releaseprofile | 
+*ReleaseProfileApi* | [**DeleteReleaseProfile**](lidarr/docs/ReleaseProfileApi.md#deletereleaseprofile) | **Delete** /api/v1/releaseprofile/{id} | 
+*ReleaseProfileApi* | [**GetReleaseProfileById**](lidarr/docs/ReleaseProfileApi.md#getreleaseprofilebyid) | **Get** /api/v1/releaseprofile/{id} | 
+*ReleaseProfileApi* | [**ListReleaseProfile**](lidarr/docs/ReleaseProfileApi.md#listreleaseprofile) | **Get** /api/v1/releaseprofile | 
+*ReleaseProfileApi* | [**UpdateReleaseProfile**](lidarr/docs/ReleaseProfileApi.md#updatereleaseprofile) | **Put** /api/v1/releaseprofile/{id} | 
+*ReleasePushApi* | [**CreateReleasePush**](lidarr/docs/ReleasePushApi.md#createreleasepush) | **Post** /api/v1/release/push | 
+*ReleasePushApi* | [**GetReleasePushById**](lidarr/docs/ReleasePushApi.md#getreleasepushbyid) | **Get** /api/v1/release/push/{id} | 
+*RemotePathMappingApi* | [**CreateRemotePathMapping**](lidarr/docs/RemotePathMappingApi.md#createremotepathmapping) | **Post** /api/v1/remotepathmapping | 
+*RemotePathMappingApi* | [**DeleteRemotePathMapping**](lidarr/docs/RemotePathMappingApi.md#deleteremotepathmapping) | **Delete** /api/v1/remotepathmapping/{id} | 
+*RemotePathMappingApi* | [**GetRemotePathMappingById**](lidarr/docs/RemotePathMappingApi.md#getremotepathmappingbyid) | **Get** /api/v1/remotepathmapping/{id} | 
+*RemotePathMappingApi* | [**ListRemotePathMapping**](lidarr/docs/RemotePathMappingApi.md#listremotepathmapping) | **Get** /api/v1/remotepathmapping | 
+*RemotePathMappingApi* | [**UpdateRemotePathMapping**](lidarr/docs/RemotePathMappingApi.md#updateremotepathmapping) | **Put** /api/v1/remotepathmapping/{id} | 
+*RenameTrackApi* | [**ListRename**](lidarr/docs/RenameTrackApi.md#listrename) | **Get** /api/v1/rename | 
+*RetagTrackApi* | [**ListRetag**](lidarr/docs/RetagTrackApi.md#listretag) | **Get** /api/v1/retag | 
+*RootFolderApi* | [**CreateRootFolder**](lidarr/docs/RootFolderApi.md#createrootfolder) | **Post** /api/v1/rootfolder | 
+*RootFolderApi* | [**DeleteRootFolder**](lidarr/docs/RootFolderApi.md#deleterootfolder) | **Delete** /api/v1/rootfolder/{id} | 
+*RootFolderApi* | [**GetRootFolderById**](lidarr/docs/RootFolderApi.md#getrootfolderbyid) | **Get** /api/v1/rootfolder/{id} | 
+*RootFolderApi* | [**ListRootFolder**](lidarr/docs/RootFolderApi.md#listrootfolder) | **Get** /api/v1/rootfolder | 
+*RootFolderApi* | [**UpdateRootFolder**](lidarr/docs/RootFolderApi.md#updaterootfolder) | **Put** /api/v1/rootfolder/{id} | 
+*SearchApi* | [**GetSearch**](lidarr/docs/SearchApi.md#getsearch) | **Get** /api/v1/search | 
+*StaticResourceApi* | [**Get**](lidarr/docs/StaticResourceApi.md#get) | **Get** / | 
+*StaticResourceApi* | [**GetByPath**](lidarr/docs/StaticResourceApi.md#getbypath) | **Get** /{path} | 
+*StaticResourceApi* | [**GetContentByPath**](lidarr/docs/StaticResourceApi.md#getcontentbypath) | **Get** /content/{path} | 
+*StaticResourceApi* | [**GetLogin**](lidarr/docs/StaticResourceApi.md#getlogin) | **Get** /login | 
+*SystemApi* | [**CreateSystemRestart**](lidarr/docs/SystemApi.md#createsystemrestart) | **Post** /api/v1/system/restart | 
+*SystemApi* | [**CreateSystemShutdown**](lidarr/docs/SystemApi.md#createsystemshutdown) | **Post** /api/v1/system/shutdown | 
+*SystemApi* | [**GetSystemRoutes**](lidarr/docs/SystemApi.md#getsystemroutes) | **Get** /api/v1/system/routes | 
+*SystemApi* | [**GetSystemRoutesDuplicate**](lidarr/docs/SystemApi.md#getsystemroutesduplicate) | **Get** /api/v1/system/routes/duplicate | 
+*SystemApi* | [**GetSystemStatus**](lidarr/docs/SystemApi.md#getsystemstatus) | **Get** /api/v1/system/status | 
+*TagApi* | [**CreateTag**](lidarr/docs/TagApi.md#createtag) | **Post** /api/v1/tag | 
+*TagApi* | [**DeleteTag**](lidarr/docs/TagApi.md#deletetag) | **Delete** /api/v1/tag/{id} | 
+*TagApi* | [**GetTagById**](lidarr/docs/TagApi.md#gettagbyid) | **Get** /api/v1/tag/{id} | 
+*TagApi* | [**ListTag**](lidarr/docs/TagApi.md#listtag) | **Get** /api/v1/tag | 
+*TagApi* | [**UpdateTag**](lidarr/docs/TagApi.md#updatetag) | **Put** /api/v1/tag/{id} | 
+*TagDetailsApi* | [**GetTagDetailById**](lidarr/docs/TagDetailsApi.md#gettagdetailbyid) | **Get** /api/v1/tag/detail/{id} | 
+*TagDetailsApi* | [**ListTagDetail**](lidarr/docs/TagDetailsApi.md#listtagdetail) | **Get** /api/v1/tag/detail | 
+*TaskApi* | [**GetSystemTaskById**](lidarr/docs/TaskApi.md#getsystemtaskbyid) | **Get** /api/v1/system/task/{id} | 
+*TaskApi* | [**ListSystemTask**](lidarr/docs/TaskApi.md#listsystemtask) | **Get** /api/v1/system/task | 
+*TrackApi* | [**GetTrackById**](lidarr/docs/TrackApi.md#gettrackbyid) | **Get** /api/v1/track/{id} | 
+*TrackApi* | [**ListTrack**](lidarr/docs/TrackApi.md#listtrack) | **Get** /api/v1/track | 
+*TrackFileApi* | [**DeleteTrackFile**](lidarr/docs/TrackFileApi.md#deletetrackfile) | **Delete** /api/v1/trackfile/{id} | 
+*TrackFileApi* | [**DeleteTrackFileBulk**](lidarr/docs/TrackFileApi.md#deletetrackfilebulk) | **Delete** /api/v1/trackfile/bulk | 
+*TrackFileApi* | [**GetTrackFileById**](lidarr/docs/TrackFileApi.md#gettrackfilebyid) | **Get** /api/v1/trackfile/{id} | 
+*TrackFileApi* | [**ListTrackFile**](lidarr/docs/TrackFileApi.md#listtrackfile) | **Get** /api/v1/trackfile | 
+*TrackFileApi* | [**PutTrackFileEditor**](lidarr/docs/TrackFileApi.md#puttrackfileeditor) | **Put** /api/v1/trackfile/editor | 
+*TrackFileApi* | [**UpdateTrackFile**](lidarr/docs/TrackFileApi.md#updatetrackfile) | **Put** /api/v1/trackfile/{id} | 
+*UiConfigApi* | [**GetUiConfig**](lidarr/docs/UiConfigApi.md#getuiconfig) | **Get** /api/v1/config/ui | 
+*UiConfigApi* | [**GetUiConfigById**](lidarr/docs/UiConfigApi.md#getuiconfigbyid) | **Get** /api/v1/config/ui/{id} | 
+*UiConfigApi* | [**UpdateUiConfig**](lidarr/docs/UiConfigApi.md#updateuiconfig) | **Put** /api/v1/config/ui/{id} | 
+*UpdateApi* | [**ListUpdate**](lidarr/docs/UpdateApi.md#listupdate) | **Get** /api/v1/update | 
+*UpdateLogFileApi* | [**GetLogFileUpdateByFilename**](lidarr/docs/UpdateLogFileApi.md#getlogfileupdatebyfilename) | **Get** /api/v1/log/file/update/{filename} | 
+*UpdateLogFileApi* | [**ListLogFileUpdate**](lidarr/docs/UpdateLogFileApi.md#listlogfileupdate) | **Get** /api/v1/log/file/update | 
 
 
 ## Documentation For Models
@@ -342,6 +349,10 @@ Class | Method | HTTP request | Description
  - [CommandStatus](docs/CommandStatus.md)
  - [CommandTrigger](docs/CommandTrigger.md)
  - [CustomFilterResource](docs/CustomFilterResource.md)
+ - [CustomFormat](docs/CustomFormat.md)
+ - [CustomFormatResource](docs/CustomFormatResource.md)
+ - [CustomFormatSpecificationSchema](docs/CustomFormatSpecificationSchema.md)
+ - [DatabaseType](docs/DatabaseType.md)
  - [DelayProfileResource](docs/DelayProfileResource.md)
  - [DiskSpaceResource](docs/DiskSpaceResource.md)
  - [DownloadClientConfigResource](docs/DownloadClientConfigResource.md)
@@ -356,6 +367,7 @@ Class | Method | HTTP request | Description
  - [HistoryResourcePagingResource](docs/HistoryResourcePagingResource.md)
  - [HostConfigResource](docs/HostConfigResource.md)
  - [HttpUri](docs/HttpUri.md)
+ - [ICustomFormatSpecification](docs/ICustomFormatSpecification.md)
  - [ImportListExclusionResource](docs/ImportListExclusionResource.md)
  - [ImportListMonitorType](docs/ImportListMonitorType.md)
  - [ImportListResource](docs/ImportListResource.md)
@@ -369,6 +381,7 @@ Class | Method | HTTP request | Description
  - [LogResource](docs/LogResource.md)
  - [LogResourcePagingResource](docs/LogResourcePagingResource.md)
  - [ManualImportResource](docs/ManualImportResource.md)
+ - [ManualImportUpdateResource](docs/ManualImportUpdateResource.md)
  - [MediaCover](docs/MediaCover.md)
  - [MediaCoverTypes](docs/MediaCoverTypes.md)
  - [MediaInfoModel](docs/MediaInfoModel.md)
@@ -391,7 +404,10 @@ Class | Method | HTTP request | Description
  - [ParseResource](docs/ParseResource.md)
  - [ParsedAlbumInfo](docs/ParsedAlbumInfo.md)
  - [ParsedTrackInfo](docs/ParsedTrackInfo.md)
+ - [PingResource](docs/PingResource.md)
  - [PrimaryAlbumType](docs/PrimaryAlbumType.md)
+ - [ProfileFormatItem](docs/ProfileFormatItem.md)
+ - [ProfileFormatItemResource](docs/ProfileFormatItemResource.md)
  - [ProfilePrimaryAlbumTypeItem](docs/ProfilePrimaryAlbumTypeItem.md)
  - [ProfilePrimaryAlbumTypeItemResource](docs/ProfilePrimaryAlbumTypeItemResource.md)
  - [ProfileReleaseStatusItem](docs/ProfileReleaseStatusItem.md)
@@ -426,10 +442,11 @@ Class | Method | HTTP request | Description
  - [RetagTrackResource](docs/RetagTrackResource.md)
  - [Revision](docs/Revision.md)
  - [RootFolderResource](docs/RootFolderResource.md)
+ - [RuntimeMode](docs/RuntimeMode.md)
  - [SecondaryAlbumType](docs/SecondaryAlbumType.md)
  - [SelectOption](docs/SelectOption.md)
  - [SortDirection](docs/SortDirection.md)
- - [StringInt32KeyValuePair](docs/StringInt32KeyValuePair.md)
+ - [SystemResource](docs/SystemResource.md)
  - [TagDetailsResource](docs/TagDetailsResource.md)
  - [TagDifference](docs/TagDifference.md)
  - [TagResource](docs/TagResource.md)
