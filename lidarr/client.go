@@ -61,6 +61,7 @@ type APIClient struct {
 	CalendarFeedApi *CalendarFeedApiService
 	CommandApi *CommandApiService
 	CustomFilterApi *CustomFilterApiService
+	CustomFormatApi *CustomFormatApiService
 	CutoffApi *CutoffApiService
 	DelayProfileApi *DelayProfileApiService
 	DiskSpaceApi *DiskSpaceApiService
@@ -90,6 +91,7 @@ type APIClient struct {
 	NamingConfigApi *NamingConfigApiService
 	NotificationApi *NotificationApiService
 	ParseApi *ParseApiService
+	PingApi *PingApiService
 	QualityDefinitionApi *QualityDefinitionApiService
 	QualityProfileApi *QualityProfileApiService
 	QualityProfileSchemaApi *QualityProfileSchemaApiService
@@ -147,6 +149,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.CalendarFeedApi = (*CalendarFeedApiService)(&c.common)
 	c.CommandApi = (*CommandApiService)(&c.common)
 	c.CustomFilterApi = (*CustomFilterApiService)(&c.common)
+	c.CustomFormatApi = (*CustomFormatApiService)(&c.common)
 	c.CutoffApi = (*CutoffApiService)(&c.common)
 	c.DelayProfileApi = (*DelayProfileApiService)(&c.common)
 	c.DiskSpaceApi = (*DiskSpaceApiService)(&c.common)
@@ -176,6 +179,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.NamingConfigApi = (*NamingConfigApiService)(&c.common)
 	c.NotificationApi = (*NotificationApiService)(&c.common)
 	c.ParseApi = (*ParseApiService)(&c.common)
+	c.PingApi = (*PingApiService)(&c.common)
 	c.QualityDefinitionApi = (*QualityDefinitionApiService)(&c.common)
 	c.QualityProfileApi = (*QualityProfileApiService)(&c.common)
 	c.QualityProfileSchemaApi = (*QualityProfileSchemaApiService)(&c.common)

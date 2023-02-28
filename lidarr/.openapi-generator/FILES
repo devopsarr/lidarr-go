@@ -15,6 +15,7 @@ api_calendar.go
 api_calendar_feed.go
 api_command.go
 api_custom_filter.go
+api_custom_format.go
 api_cutoff.go
 api_delay_profile.go
 api_disk_space.go
@@ -44,6 +45,7 @@ api_missing.go
 api_naming_config.go
 api_notification.go
 api_parse.go
+api_ping.go
 api_quality_definition.go
 api_quality_profile.go
 api_quality_profile_schema.go
@@ -125,7 +127,12 @@ docs/CommandStatus.md
 docs/CommandTrigger.md
 docs/CustomFilterApi.md
 docs/CustomFilterResource.md
+docs/CustomFormat.md
+docs/CustomFormatApi.md
+docs/CustomFormatResource.md
+docs/CustomFormatSpecificationSchema.md
 docs/CutoffApi.md
+docs/DatabaseType.md
 docs/DelayProfileApi.md
 docs/DelayProfileResource.md
 docs/DiskSpaceApi.md
@@ -148,6 +155,7 @@ docs/HistoryResourcePagingResource.md
 docs/HostConfigApi.md
 docs/HostConfigResource.md
 docs/HttpUri.md
+docs/ICustomFormatSpecification.md
 docs/ImportListApi.md
 docs/ImportListExclusionApi.md
 docs/ImportListExclusionResource.md
@@ -171,6 +179,7 @@ docs/LogResource.md
 docs/LogResourcePagingResource.md
 docs/ManualImportApi.md
 docs/ManualImportResource.md
+docs/ManualImportUpdateResource.md
 docs/MediaCover.md
 docs/MediaCoverApi.md
 docs/MediaCoverTypes.md
@@ -203,7 +212,11 @@ docs/ParseApi.md
 docs/ParseResource.md
 docs/ParsedAlbumInfo.md
 docs/ParsedTrackInfo.md
+docs/PingApi.md
+docs/PingResource.md
 docs/PrimaryAlbumType.md
+docs/ProfileFormatItem.md
+docs/ProfileFormatItemResource.md
 docs/ProfilePrimaryAlbumTypeItem.md
 docs/ProfilePrimaryAlbumTypeItemResource.md
 docs/ProfileReleaseStatusItem.md
@@ -252,13 +265,14 @@ docs/RetagTrackResource.md
 docs/Revision.md
 docs/RootFolderApi.md
 docs/RootFolderResource.md
+docs/RuntimeMode.md
 docs/SearchApi.md
 docs/SecondaryAlbumType.md
 docs/SelectOption.md
 docs/SortDirection.md
 docs/StaticResourceApi.md
-docs/StringInt32KeyValuePair.md
 docs/SystemApi.md
+docs/SystemResource.md
 docs/TagApi.md
 docs/TagDetailsApi.md
 docs/TagDetailsResource.md
@@ -329,6 +343,10 @@ model_command_resource.go
 model_command_status.go
 model_command_trigger.go
 model_custom_filter_resource.go
+model_custom_format.go
+model_custom_format_resource.go
+model_custom_format_specification_schema.go
+model_database_type.go
 model_delay_profile_resource.go
 model_disk_space_resource.go
 model_download_client_config_resource.go
@@ -343,6 +361,7 @@ model_history_resource.go
 model_history_resource_paging_resource.go
 model_host_config_resource.go
 model_http_uri.go
+model_i_custom_format_specification.go
 model_import_list_exclusion_resource.go
 model_import_list_monitor_type.go
 model_import_list_resource.go
@@ -356,6 +375,7 @@ model_log_file_resource.go
 model_log_resource.go
 model_log_resource_paging_resource.go
 model_manual_import_resource.go
+model_manual_import_update_resource.go
 model_media_cover.go
 model_media_cover_types.go
 model_media_info_model.go
@@ -378,7 +398,10 @@ model_paging_resource_filter.go
 model_parse_resource.go
 model_parsed_album_info.go
 model_parsed_track_info.go
+model_ping_resource.go
 model_primary_album_type.go
+model_profile_format_item.go
+model_profile_format_item_resource.go
 model_profile_primary_album_type_item.go
 model_profile_primary_album_type_item_resource.go
 model_profile_release_status_item.go
@@ -413,10 +436,11 @@ model_rescan_after_refresh_type.go
 model_retag_track_resource.go
 model_revision.go
 model_root_folder_resource.go
+model_runtime_mode.go
 model_secondary_album_type.go
 model_select_option.go
 model_sort_direction.go
-model_string_int32_key_value_pair.go
+model_system_resource.go
 model_tag_details_resource.go
 model_tag_difference.go
 model_tag_resource.go
