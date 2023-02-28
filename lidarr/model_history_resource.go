@@ -23,6 +23,7 @@ type HistoryResource struct {
 	TrackId *int32 `json:"trackId,omitempty"`
 	SourceTitle NullableString `json:"sourceTitle,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
+	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
 	QualityCutoffNotMet *bool `json:"qualityCutoffNotMet,omitempty"`
 	Date *time.Time `json:"date,omitempty"`
 	DownloadId NullableString `json:"downloadId,omitempty"`
@@ -250,6 +251,39 @@ func (o *HistoryResource) HasQuality() bool {
 // SetQuality gets a reference to the given QualityModel and assigns it to the Quality field.
 func (o *HistoryResource) SetQuality(v QualityModel) {
 	o.Quality = &v
+}
+
+// GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *HistoryResource) GetCustomFormats() []*CustomFormatResource {
+	if o == nil {
+		var ret []*CustomFormatResource
+		return ret
+	}
+	return o.CustomFormats
+}
+
+// GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *HistoryResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
+	if o == nil || isNil(o.CustomFormats) {
+    return nil, false
+	}
+	return o.CustomFormats, true
+}
+
+// HasCustomFormats returns a boolean if a field has been set.
+func (o *HistoryResource) HasCustomFormats() bool {
+	if o != nil && isNil(o.CustomFormats) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
+func (o *HistoryResource) SetCustomFormats(v []*CustomFormatResource) {
+	o.CustomFormats = v
 }
 
 // GetQualityCutoffNotMet returns the QualityCutoffNotMet field value if set, zero value otherwise.
@@ -538,6 +572,9 @@ func (o HistoryResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
+	}
+	if o.CustomFormats != nil {
+		toSerialize["customFormats"] = o.CustomFormats
 	}
 	if !isNil(o.QualityCutoffNotMet) {
 		toSerialize["qualityCutoffNotMet"] = o.QualityCutoffNotMet

@@ -18,6 +18,8 @@ import (
 type TrackFileListResource struct {
 	TrackFileIds []*int32 `json:"trackFileIds,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
+	SceneName NullableString `json:"sceneName,omitempty"`
+	ReleaseGroup NullableString `json:"releaseGroup,omitempty"`
 }
 
 // NewTrackFileListResource instantiates a new TrackFileListResource object
@@ -102,6 +104,90 @@ func (o *TrackFileListResource) SetQuality(v QualityModel) {
 	o.Quality = &v
 }
 
+// GetSceneName returns the SceneName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TrackFileListResource) GetSceneName() string {
+	if o == nil || isNil(o.SceneName.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.SceneName.Get()
+}
+
+// GetSceneNameOk returns a tuple with the SceneName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TrackFileListResource) GetSceneNameOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.SceneName.Get(), o.SceneName.IsSet()
+}
+
+// HasSceneName returns a boolean if a field has been set.
+func (o *TrackFileListResource) HasSceneName() bool {
+	if o != nil && o.SceneName.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSceneName gets a reference to the given NullableString and assigns it to the SceneName field.
+func (o *TrackFileListResource) SetSceneName(v string) {
+	o.SceneName.Set(&v)
+}
+// SetSceneNameNil sets the value for SceneName to be an explicit nil
+func (o *TrackFileListResource) SetSceneNameNil() {
+	o.SceneName.Set(nil)
+}
+
+// UnsetSceneName ensures that no value is present for SceneName, not even an explicit nil
+func (o *TrackFileListResource) UnsetSceneName() {
+	o.SceneName.Unset()
+}
+
+// GetReleaseGroup returns the ReleaseGroup field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TrackFileListResource) GetReleaseGroup() string {
+	if o == nil || isNil(o.ReleaseGroup.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ReleaseGroup.Get()
+}
+
+// GetReleaseGroupOk returns a tuple with the ReleaseGroup field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TrackFileListResource) GetReleaseGroupOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.ReleaseGroup.Get(), o.ReleaseGroup.IsSet()
+}
+
+// HasReleaseGroup returns a boolean if a field has been set.
+func (o *TrackFileListResource) HasReleaseGroup() bool {
+	if o != nil && o.ReleaseGroup.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetReleaseGroup gets a reference to the given NullableString and assigns it to the ReleaseGroup field.
+func (o *TrackFileListResource) SetReleaseGroup(v string) {
+	o.ReleaseGroup.Set(&v)
+}
+// SetReleaseGroupNil sets the value for ReleaseGroup to be an explicit nil
+func (o *TrackFileListResource) SetReleaseGroupNil() {
+	o.ReleaseGroup.Set(nil)
+}
+
+// UnsetReleaseGroup ensures that no value is present for ReleaseGroup, not even an explicit nil
+func (o *TrackFileListResource) UnsetReleaseGroup() {
+	o.ReleaseGroup.Unset()
+}
+
 func (o TrackFileListResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.TrackFileIds != nil {
@@ -109,6 +195,12 @@ func (o TrackFileListResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
+	}
+	if o.SceneName.IsSet() {
+		toSerialize["sceneName"] = o.SceneName.Get()
+	}
+	if o.ReleaseGroup.IsSet() {
+		toSerialize["releaseGroup"] = o.ReleaseGroup.Get()
 	}
 	return json.Marshal(toSerialize)
 }

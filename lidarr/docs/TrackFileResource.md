@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **Path** | Pointer to **NullableString** |  | [optional] 
 **Size** | Pointer to **int64** |  | [optional] 
 **DateAdded** | Pointer to **time.Time** |  | [optional] 
+**SceneName** | Pointer to **NullableString** |  | [optional] 
+**ReleaseGroup** | Pointer to **NullableString** |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
 **QualityWeight** | Pointer to **int32** |  | [optional] 
 **MediaInfo** | Pointer to [**MediaInfoResource**](MediaInfoResource.md) |  | [optional] 
@@ -195,6 +197,76 @@ SetDateAdded sets DateAdded field to given value.
 
 HasDateAdded returns a boolean if a field has been set.
 
+### GetSceneName
+
+`func (o *TrackFileResource) GetSceneName() string`
+
+GetSceneName returns the SceneName field if non-nil, zero value otherwise.
+
+### GetSceneNameOk
+
+`func (o *TrackFileResource) GetSceneNameOk() (*string, bool)`
+
+GetSceneNameOk returns a tuple with the SceneName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSceneName
+
+`func (o *TrackFileResource) SetSceneName(v string)`
+
+SetSceneName sets SceneName field to given value.
+
+### HasSceneName
+
+`func (o *TrackFileResource) HasSceneName() bool`
+
+HasSceneName returns a boolean if a field has been set.
+
+### SetSceneNameNil
+
+`func (o *TrackFileResource) SetSceneNameNil(b bool)`
+
+ SetSceneNameNil sets the value for SceneName to be an explicit nil
+
+### UnsetSceneName
+`func (o *TrackFileResource) UnsetSceneName()`
+
+UnsetSceneName ensures that no value is present for SceneName, not even an explicit nil
+### GetReleaseGroup
+
+`func (o *TrackFileResource) GetReleaseGroup() string`
+
+GetReleaseGroup returns the ReleaseGroup field if non-nil, zero value otherwise.
+
+### GetReleaseGroupOk
+
+`func (o *TrackFileResource) GetReleaseGroupOk() (*string, bool)`
+
+GetReleaseGroupOk returns a tuple with the ReleaseGroup field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReleaseGroup
+
+`func (o *TrackFileResource) SetReleaseGroup(v string)`
+
+SetReleaseGroup sets ReleaseGroup field to given value.
+
+### HasReleaseGroup
+
+`func (o *TrackFileResource) HasReleaseGroup() bool`
+
+HasReleaseGroup returns a boolean if a field has been set.
+
+### SetReleaseGroupNil
+
+`func (o *TrackFileResource) SetReleaseGroupNil(b bool)`
+
+ SetReleaseGroupNil sets the value for ReleaseGroup to be an explicit nil
+
+### UnsetReleaseGroup
+`func (o *TrackFileResource) UnsetReleaseGroup()`
+
+UnsetReleaseGroup ensures that no value is present for ReleaseGroup, not even an explicit nil
 ### GetQuality
 
 `func (o *TrackFileResource) GetQuality() QualityModel`

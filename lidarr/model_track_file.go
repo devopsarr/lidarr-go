@@ -22,6 +22,7 @@ type TrackFile struct {
 	Size *int64 `json:"size,omitempty"`
 	Modified *time.Time `json:"modified,omitempty"`
 	DateAdded *time.Time `json:"dateAdded,omitempty"`
+	OriginalFilePath NullableString `json:"originalFilePath,omitempty"`
 	SceneName NullableString `json:"sceneName,omitempty"`
 	ReleaseGroup NullableString `json:"releaseGroup,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
@@ -217,6 +218,48 @@ func (o *TrackFile) HasDateAdded() bool {
 // SetDateAdded gets a reference to the given time.Time and assigns it to the DateAdded field.
 func (o *TrackFile) SetDateAdded(v time.Time) {
 	o.DateAdded = &v
+}
+
+// GetOriginalFilePath returns the OriginalFilePath field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TrackFile) GetOriginalFilePath() string {
+	if o == nil || isNil(o.OriginalFilePath.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.OriginalFilePath.Get()
+}
+
+// GetOriginalFilePathOk returns a tuple with the OriginalFilePath field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TrackFile) GetOriginalFilePathOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.OriginalFilePath.Get(), o.OriginalFilePath.IsSet()
+}
+
+// HasOriginalFilePath returns a boolean if a field has been set.
+func (o *TrackFile) HasOriginalFilePath() bool {
+	if o != nil && o.OriginalFilePath.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetOriginalFilePath gets a reference to the given NullableString and assigns it to the OriginalFilePath field.
+func (o *TrackFile) SetOriginalFilePath(v string) {
+	o.OriginalFilePath.Set(&v)
+}
+// SetOriginalFilePathNil sets the value for OriginalFilePath to be an explicit nil
+func (o *TrackFile) SetOriginalFilePathNil() {
+	o.OriginalFilePath.Set(nil)
+}
+
+// UnsetOriginalFilePath ensures that no value is present for OriginalFilePath, not even an explicit nil
+func (o *TrackFile) UnsetOriginalFilePath() {
+	o.OriginalFilePath.Unset()
 }
 
 // GetSceneName returns the SceneName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -511,6 +554,9 @@ func (o TrackFile) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.DateAdded) {
 		toSerialize["dateAdded"] = o.DateAdded
+	}
+	if o.OriginalFilePath.IsSet() {
+		toSerialize["originalFilePath"] = o.OriginalFilePath.Get()
 	}
 	if o.SceneName.IsSet() {
 		toSerialize["sceneName"] = o.SceneName.Get()

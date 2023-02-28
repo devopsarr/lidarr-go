@@ -24,6 +24,7 @@ const (
 	IMPORTLISTTYPE_SPOTIFY ImportListType = "spotify"
 	IMPORTLISTTYPE_LAST_FM ImportListType = "lastFm"
 	IMPORTLISTTYPE_OTHER ImportListType = "other"
+	IMPORTLISTTYPE_ADVANCED ImportListType = "advanced"
 )
 
 // All allowed values of ImportListType enum
@@ -32,6 +33,7 @@ var AllowedImportListTypeEnumValues = []ImportListType{
 	"spotify",
 	"lastFm",
 	"other",
+	"advanced",
 }
 
 func (v *ImportListType) UnmarshalJSON(src []byte) error {

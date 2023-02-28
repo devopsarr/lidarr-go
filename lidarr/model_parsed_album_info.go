@@ -27,6 +27,7 @@ type ParsedAlbumInfo struct {
 	ReleaseGroup NullableString `json:"releaseGroup,omitempty"`
 	ReleaseHash NullableString `json:"releaseHash,omitempty"`
 	ReleaseVersion NullableString `json:"releaseVersion,omitempty"`
+	ReleaseTitle NullableString `json:"releaseTitle,omitempty"`
 }
 
 // NewParsedAlbumInfo instantiates a new ParsedAlbumInfo object
@@ -458,6 +459,48 @@ func (o *ParsedAlbumInfo) UnsetReleaseVersion() {
 	o.ReleaseVersion.Unset()
 }
 
+// GetReleaseTitle returns the ReleaseTitle field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ParsedAlbumInfo) GetReleaseTitle() string {
+	if o == nil || isNil(o.ReleaseTitle.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ReleaseTitle.Get()
+}
+
+// GetReleaseTitleOk returns a tuple with the ReleaseTitle field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ParsedAlbumInfo) GetReleaseTitleOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.ReleaseTitle.Get(), o.ReleaseTitle.IsSet()
+}
+
+// HasReleaseTitle returns a boolean if a field has been set.
+func (o *ParsedAlbumInfo) HasReleaseTitle() bool {
+	if o != nil && o.ReleaseTitle.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetReleaseTitle gets a reference to the given NullableString and assigns it to the ReleaseTitle field.
+func (o *ParsedAlbumInfo) SetReleaseTitle(v string) {
+	o.ReleaseTitle.Set(&v)
+}
+// SetReleaseTitleNil sets the value for ReleaseTitle to be an explicit nil
+func (o *ParsedAlbumInfo) SetReleaseTitleNil() {
+	o.ReleaseTitle.Set(nil)
+}
+
+// UnsetReleaseTitle ensures that no value is present for ReleaseTitle, not even an explicit nil
+func (o *ParsedAlbumInfo) UnsetReleaseTitle() {
+	o.ReleaseTitle.Unset()
+}
+
 func (o ParsedAlbumInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AlbumTitle.IsSet() {
@@ -492,6 +535,9 @@ func (o ParsedAlbumInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ReleaseVersion.IsSet() {
 		toSerialize["releaseVersion"] = o.ReleaseVersion.Get()
+	}
+	if o.ReleaseTitle.IsSet() {
+		toSerialize["releaseTitle"] = o.ReleaseTitle.Get()
 	}
 	return json.Marshal(toSerialize)
 }

@@ -22,6 +22,7 @@ type BlocklistResource struct {
 	AlbumIds []*int32 `json:"albumIds,omitempty"`
 	SourceTitle NullableString `json:"sourceTitle,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
+	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
 	Date *time.Time `json:"date,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
 	Indexer NullableString `json:"indexer,omitempty"`
@@ -215,6 +216,39 @@ func (o *BlocklistResource) HasQuality() bool {
 // SetQuality gets a reference to the given QualityModel and assigns it to the Quality field.
 func (o *BlocklistResource) SetQuality(v QualityModel) {
 	o.Quality = &v
+}
+
+// GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BlocklistResource) GetCustomFormats() []*CustomFormatResource {
+	if o == nil {
+		var ret []*CustomFormatResource
+		return ret
+	}
+	return o.CustomFormats
+}
+
+// GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BlocklistResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
+	if o == nil || isNil(o.CustomFormats) {
+    return nil, false
+	}
+	return o.CustomFormats, true
+}
+
+// HasCustomFormats returns a boolean if a field has been set.
+func (o *BlocklistResource) HasCustomFormats() bool {
+	if o != nil && isNil(o.CustomFormats) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
+func (o *BlocklistResource) SetCustomFormats(v []*CustomFormatResource) {
+	o.CustomFormats = v
 }
 
 // GetDate returns the Date field value if set, zero value otherwise.
@@ -413,6 +447,9 @@ func (o BlocklistResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
+	}
+	if o.CustomFormats != nil {
+		toSerialize["customFormats"] = o.CustomFormats
 	}
 	if !isNil(o.Date) {
 		toSerialize["date"] = o.Date

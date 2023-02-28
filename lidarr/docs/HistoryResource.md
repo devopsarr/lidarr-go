@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **TrackId** | Pointer to **int32** |  | [optional] 
 **SourceTitle** | Pointer to **NullableString** |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
+**CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
 **QualityCutoffNotMet** | Pointer to **bool** |  | [optional] 
 **Date** | Pointer to **time.Time** |  | [optional] 
 **DownloadId** | Pointer to **NullableString** |  | [optional] 
@@ -198,6 +199,41 @@ SetQuality sets Quality field to given value.
 
 HasQuality returns a boolean if a field has been set.
 
+### GetCustomFormats
+
+`func (o *HistoryResource) GetCustomFormats() []CustomFormatResource`
+
+GetCustomFormats returns the CustomFormats field if non-nil, zero value otherwise.
+
+### GetCustomFormatsOk
+
+`func (o *HistoryResource) GetCustomFormatsOk() (*[]CustomFormatResource, bool)`
+
+GetCustomFormatsOk returns a tuple with the CustomFormats field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFormats
+
+`func (o *HistoryResource) SetCustomFormats(v []CustomFormatResource)`
+
+SetCustomFormats sets CustomFormats field to given value.
+
+### HasCustomFormats
+
+`func (o *HistoryResource) HasCustomFormats() bool`
+
+HasCustomFormats returns a boolean if a field has been set.
+
+### SetCustomFormatsNil
+
+`func (o *HistoryResource) SetCustomFormatsNil(b bool)`
+
+ SetCustomFormatsNil sets the value for CustomFormats to be an explicit nil
+
+### UnsetCustomFormats
+`func (o *HistoryResource) UnsetCustomFormats()`
+
+UnsetCustomFormats ensures that no value is present for CustomFormats, not even an explicit nil
 ### GetQualityCutoffNotMet
 
 `func (o *HistoryResource) GetQualityCutoffNotMet() bool`
