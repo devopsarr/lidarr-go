@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## DeleteAlbum
 
-> DeleteAlbum(ctx, id).Execute()
+> DeleteAlbum(ctx, id).DeleteFiles(deleteFiles).AddImportListExclusion(addImportListExclusion).Execute()
 
 
 
@@ -97,10 +97,12 @@ import (
 
 func main() {
     id := int32(56) // int32 | 
+    deleteFiles := true // bool |  (optional) (default to false)
+    addImportListExclusion := true // bool |  (optional) (default to false)
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AlbumApi.DeleteAlbum(context.Background(), id).Execute()
+    resp, r, err := apiClient.AlbumApi.DeleteAlbum(context.Background(), id).DeleteFiles(deleteFiles).AddImportListExclusion(addImportListExclusion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AlbumApi.DeleteAlbum``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -124,6 +126,8 @@ Other parameters are passed through a pointer to a apiDeleteAlbumRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **deleteFiles** | **bool** |  | [default to false]
+ **addImportListExclusion** | **bool** |  | [default to false]
 
 ### Return type
 
