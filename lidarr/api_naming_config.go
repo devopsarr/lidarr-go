@@ -279,6 +279,7 @@ type ApiGetNamingConfigExamplesRequest struct {
 	ApiService *NamingConfigApiService
 	renameTracks *bool
 	replaceIllegalCharacters *bool
+	colonReplacementFormat *int32
 	standardTrackFormat *string
 	multiDiscTrackFormat *string
 	artistFolderFormat *string
@@ -299,6 +300,11 @@ func (r ApiGetNamingConfigExamplesRequest) RenameTracks(renameTracks bool) ApiGe
 
 func (r ApiGetNamingConfigExamplesRequest) ReplaceIllegalCharacters(replaceIllegalCharacters bool) ApiGetNamingConfigExamplesRequest {
 	r.replaceIllegalCharacters = &replaceIllegalCharacters
+	return r
+}
+
+func (r ApiGetNamingConfigExamplesRequest) ColonReplacementFormat(colonReplacementFormat int32) ApiGetNamingConfigExamplesRequest {
+	r.colonReplacementFormat = &colonReplacementFormat
 	return r
 }
 
@@ -398,6 +404,9 @@ func (a *NamingConfigApiService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	}
 	if r.replaceIllegalCharacters != nil {
 		localVarQueryParams.Add("ReplaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
+	}
+	if r.colonReplacementFormat != nil {
+		localVarQueryParams.Add("ColonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
 	}
 	if r.standardTrackFormat != nil {
 		localVarQueryParams.Add("StandardTrackFormat", parameterToString(*r.standardTrackFormat, ""))
