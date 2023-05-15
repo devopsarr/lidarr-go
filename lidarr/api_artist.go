@@ -20,11 +20,11 @@ import (
 )
 
 
-// ArtistApiService ArtistApi service
-type ArtistApiService service
+// ArtistAPIService ArtistAPI service
+type ArtistAPIService service
 type ApiCreateArtistRequest struct {
 	ctx context.Context
-	ApiService *ArtistApiService
+	ApiService *ArtistAPIService
 	artistResource *ArtistResource
 }
 
@@ -43,7 +43,7 @@ CreateArtist Method for CreateArtist
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateArtistRequest
 */
-func (a *ArtistApiService) CreateArtist(ctx context.Context) ApiCreateArtistRequest {
+func (a *ArtistAPIService) CreateArtist(ctx context.Context) ApiCreateArtistRequest {
 	return ApiCreateArtistRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -52,7 +52,7 @@ func (a *ArtistApiService) CreateArtist(ctx context.Context) ApiCreateArtistRequ
 
 // Execute executes the request
 //  @return ArtistResource
-func (a *ArtistApiService) CreateArtistExecute(r ApiCreateArtistRequest) (*ArtistResource, *http.Response, error) {
+func (a *ArtistAPIService) CreateArtistExecute(r ApiCreateArtistRequest) (*ArtistResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *ArtistApiService) CreateArtistExecute(r ApiCreateArtistRequest) (*Artis
 		localVarReturnValue  *ArtistResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistApiService.CreateArtist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistAPIService.CreateArtist")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *ArtistApiService) CreateArtistExecute(r ApiCreateArtistRequest) (*Artis
 }
 type ApiDeleteArtistRequest struct {
 	ctx context.Context
-	ApiService *ArtistApiService
+	ApiService *ArtistAPIService
 	id int32
 }
 
@@ -171,7 +171,7 @@ DeleteArtist Method for DeleteArtist
  @param id
  @return ApiDeleteArtistRequest
 */
-func (a *ArtistApiService) DeleteArtist(ctx context.Context, id int32) ApiDeleteArtistRequest {
+func (a *ArtistAPIService) DeleteArtist(ctx context.Context, id int32) ApiDeleteArtistRequest {
 	return ApiDeleteArtistRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -180,14 +180,14 @@ func (a *ArtistApiService) DeleteArtist(ctx context.Context, id int32) ApiDelete
 }
 
 // Execute executes the request
-func (a *ArtistApiService) DeleteArtistExecute(r ApiDeleteArtistRequest) (*http.Response, error) {
+func (a *ArtistAPIService) DeleteArtistExecute(r ApiDeleteArtistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistApiService.DeleteArtist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistAPIService.DeleteArtist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -273,7 +273,7 @@ func (a *ArtistApiService) DeleteArtistExecute(r ApiDeleteArtistRequest) (*http.
 }
 type ApiGetArtistByIdRequest struct {
 	ctx context.Context
-	ApiService *ArtistApiService
+	ApiService *ArtistAPIService
 	id int32
 }
 
@@ -288,7 +288,7 @@ GetArtistById Method for GetArtistById
  @param id
  @return ApiGetArtistByIdRequest
 */
-func (a *ArtistApiService) GetArtistById(ctx context.Context, id int32) ApiGetArtistByIdRequest {
+func (a *ArtistAPIService) GetArtistById(ctx context.Context, id int32) ApiGetArtistByIdRequest {
 	return ApiGetArtistByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -298,7 +298,7 @@ func (a *ArtistApiService) GetArtistById(ctx context.Context, id int32) ApiGetAr
 
 // Execute executes the request
 //  @return ArtistResource
-func (a *ArtistApiService) GetArtistByIdExecute(r ApiGetArtistByIdRequest) (*ArtistResource, *http.Response, error) {
+func (a *ArtistAPIService) GetArtistByIdExecute(r ApiGetArtistByIdRequest) (*ArtistResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -306,7 +306,7 @@ func (a *ArtistApiService) GetArtistByIdExecute(r ApiGetArtistByIdRequest) (*Art
 		localVarReturnValue  *ArtistResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistApiService.GetArtistById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistAPIService.GetArtistById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -401,7 +401,7 @@ func (a *ArtistApiService) GetArtistByIdExecute(r ApiGetArtistByIdRequest) (*Art
 }
 type ApiListArtistRequest struct {
 	ctx context.Context
-	ApiService *ArtistApiService
+	ApiService *ArtistAPIService
 	mbId *string
 }
 
@@ -420,7 +420,7 @@ ListArtist Method for ListArtist
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListArtistRequest
 */
-func (a *ArtistApiService) ListArtist(ctx context.Context) ApiListArtistRequest {
+func (a *ArtistAPIService) ListArtist(ctx context.Context) ApiListArtistRequest {
 	return ApiListArtistRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -429,7 +429,7 @@ func (a *ArtistApiService) ListArtist(ctx context.Context) ApiListArtistRequest 
 
 // Execute executes the request
 //  @return []ArtistResource
-func (a *ArtistApiService) ListArtistExecute(r ApiListArtistRequest) ([]*ArtistResource, *http.Response, error) {
+func (a *ArtistAPIService) ListArtistExecute(r ApiListArtistRequest) ([]*ArtistResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -437,7 +437,7 @@ func (a *ArtistApiService) ListArtistExecute(r ApiListArtistRequest) ([]*ArtistR
 		localVarReturnValue  []*ArtistResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistApiService.ListArtist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistAPIService.ListArtist")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -534,7 +534,7 @@ func (a *ArtistApiService) ListArtistExecute(r ApiListArtistRequest) ([]*ArtistR
 }
 type ApiUpdateArtistRequest struct {
 	ctx context.Context
-	ApiService *ArtistApiService
+	ApiService *ArtistAPIService
 	id string
 	artistResource *ArtistResource
 }
@@ -555,7 +555,7 @@ UpdateArtist Method for UpdateArtist
  @param id
  @return ApiUpdateArtistRequest
 */
-func (a *ArtistApiService) UpdateArtist(ctx context.Context, id string) ApiUpdateArtistRequest {
+func (a *ArtistAPIService) UpdateArtist(ctx context.Context, id string) ApiUpdateArtistRequest {
 	return ApiUpdateArtistRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -565,7 +565,7 @@ func (a *ArtistApiService) UpdateArtist(ctx context.Context, id string) ApiUpdat
 
 // Execute executes the request
 //  @return ArtistResource
-func (a *ArtistApiService) UpdateArtistExecute(r ApiUpdateArtistRequest) (*ArtistResource, *http.Response, error) {
+func (a *ArtistAPIService) UpdateArtistExecute(r ApiUpdateArtistRequest) (*ArtistResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -573,7 +573,7 @@ func (a *ArtistApiService) UpdateArtistExecute(r ApiUpdateArtistRequest) (*Artis
 		localVarReturnValue  *ArtistResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistApiService.UpdateArtist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistAPIService.UpdateArtist")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

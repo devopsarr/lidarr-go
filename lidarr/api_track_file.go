@@ -21,11 +21,11 @@ import (
 )
 
 
-// TrackFileApiService TrackFileApi service
-type TrackFileApiService service
+// TrackFileAPIService TrackFileAPI service
+type TrackFileAPIService service
 type ApiDeleteTrackFileRequest struct {
 	ctx context.Context
-	ApiService *TrackFileApiService
+	ApiService *TrackFileAPIService
 	id int32
 }
 
@@ -40,7 +40,7 @@ DeleteTrackFile Method for DeleteTrackFile
  @param id
  @return ApiDeleteTrackFileRequest
 */
-func (a *TrackFileApiService) DeleteTrackFile(ctx context.Context, id int32) ApiDeleteTrackFileRequest {
+func (a *TrackFileAPIService) DeleteTrackFile(ctx context.Context, id int32) ApiDeleteTrackFileRequest {
 	return ApiDeleteTrackFileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -49,14 +49,14 @@ func (a *TrackFileApiService) DeleteTrackFile(ctx context.Context, id int32) Api
 }
 
 // Execute executes the request
-func (a *TrackFileApiService) DeleteTrackFileExecute(r ApiDeleteTrackFileRequest) (*http.Response, error) {
+func (a *TrackFileAPIService) DeleteTrackFileExecute(r ApiDeleteTrackFileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackFileApiService.DeleteTrackFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackFileAPIService.DeleteTrackFile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -142,7 +142,7 @@ func (a *TrackFileApiService) DeleteTrackFileExecute(r ApiDeleteTrackFileRequest
 }
 type ApiDeleteTrackFileBulkRequest struct {
 	ctx context.Context
-	ApiService *TrackFileApiService
+	ApiService *TrackFileAPIService
 	trackFileListResource *TrackFileListResource
 }
 
@@ -161,7 +161,7 @@ DeleteTrackFileBulk Method for DeleteTrackFileBulk
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteTrackFileBulkRequest
 */
-func (a *TrackFileApiService) DeleteTrackFileBulk(ctx context.Context) ApiDeleteTrackFileBulkRequest {
+func (a *TrackFileAPIService) DeleteTrackFileBulk(ctx context.Context) ApiDeleteTrackFileBulkRequest {
 	return ApiDeleteTrackFileBulkRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -169,14 +169,14 @@ func (a *TrackFileApiService) DeleteTrackFileBulk(ctx context.Context) ApiDelete
 }
 
 // Execute executes the request
-func (a *TrackFileApiService) DeleteTrackFileBulkExecute(r ApiDeleteTrackFileBulkRequest) (*http.Response, error) {
+func (a *TrackFileAPIService) DeleteTrackFileBulkExecute(r ApiDeleteTrackFileBulkRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackFileApiService.DeleteTrackFileBulk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackFileAPIService.DeleteTrackFileBulk")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -263,7 +263,7 @@ func (a *TrackFileApiService) DeleteTrackFileBulkExecute(r ApiDeleteTrackFileBul
 }
 type ApiGetTrackFileByIdRequest struct {
 	ctx context.Context
-	ApiService *TrackFileApiService
+	ApiService *TrackFileAPIService
 	id int32
 }
 
@@ -278,7 +278,7 @@ GetTrackFileById Method for GetTrackFileById
  @param id
  @return ApiGetTrackFileByIdRequest
 */
-func (a *TrackFileApiService) GetTrackFileById(ctx context.Context, id int32) ApiGetTrackFileByIdRequest {
+func (a *TrackFileAPIService) GetTrackFileById(ctx context.Context, id int32) ApiGetTrackFileByIdRequest {
 	return ApiGetTrackFileByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -288,7 +288,7 @@ func (a *TrackFileApiService) GetTrackFileById(ctx context.Context, id int32) Ap
 
 // Execute executes the request
 //  @return TrackFileResource
-func (a *TrackFileApiService) GetTrackFileByIdExecute(r ApiGetTrackFileByIdRequest) (*TrackFileResource, *http.Response, error) {
+func (a *TrackFileAPIService) GetTrackFileByIdExecute(r ApiGetTrackFileByIdRequest) (*TrackFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -296,7 +296,7 @@ func (a *TrackFileApiService) GetTrackFileByIdExecute(r ApiGetTrackFileByIdReque
 		localVarReturnValue  *TrackFileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackFileApiService.GetTrackFileById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackFileAPIService.GetTrackFileById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -391,7 +391,7 @@ func (a *TrackFileApiService) GetTrackFileByIdExecute(r ApiGetTrackFileByIdReque
 }
 type ApiListTrackFileRequest struct {
 	ctx context.Context
-	ApiService *TrackFileApiService
+	ApiService *TrackFileAPIService
 	artistId *int32
 	trackFileIds *[]int32
 	albumId *[]int32
@@ -428,7 +428,7 @@ ListTrackFile Method for ListTrackFile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListTrackFileRequest
 */
-func (a *TrackFileApiService) ListTrackFile(ctx context.Context) ApiListTrackFileRequest {
+func (a *TrackFileAPIService) ListTrackFile(ctx context.Context) ApiListTrackFileRequest {
 	return ApiListTrackFileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -437,7 +437,7 @@ func (a *TrackFileApiService) ListTrackFile(ctx context.Context) ApiListTrackFil
 
 // Execute executes the request
 //  @return []TrackFileResource
-func (a *TrackFileApiService) ListTrackFileExecute(r ApiListTrackFileRequest) ([]*TrackFileResource, *http.Response, error) {
+func (a *TrackFileAPIService) ListTrackFileExecute(r ApiListTrackFileRequest) ([]*TrackFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -445,7 +445,7 @@ func (a *TrackFileApiService) ListTrackFileExecute(r ApiListTrackFileRequest) ([
 		localVarReturnValue  []*TrackFileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackFileApiService.ListTrackFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackFileAPIService.ListTrackFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -567,7 +567,7 @@ func (a *TrackFileApiService) ListTrackFileExecute(r ApiListTrackFileRequest) ([
 }
 type ApiPutTrackFileEditorRequest struct {
 	ctx context.Context
-	ApiService *TrackFileApiService
+	ApiService *TrackFileAPIService
 	trackFileListResource *TrackFileListResource
 }
 
@@ -586,7 +586,7 @@ PutTrackFileEditor Method for PutTrackFileEditor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPutTrackFileEditorRequest
 */
-func (a *TrackFileApiService) PutTrackFileEditor(ctx context.Context) ApiPutTrackFileEditorRequest {
+func (a *TrackFileAPIService) PutTrackFileEditor(ctx context.Context) ApiPutTrackFileEditorRequest {
 	return ApiPutTrackFileEditorRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -594,14 +594,14 @@ func (a *TrackFileApiService) PutTrackFileEditor(ctx context.Context) ApiPutTrac
 }
 
 // Execute executes the request
-func (a *TrackFileApiService) PutTrackFileEditorExecute(r ApiPutTrackFileEditorRequest) (*http.Response, error) {
+func (a *TrackFileAPIService) PutTrackFileEditorExecute(r ApiPutTrackFileEditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackFileApiService.PutTrackFileEditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackFileAPIService.PutTrackFileEditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -688,7 +688,7 @@ func (a *TrackFileApiService) PutTrackFileEditorExecute(r ApiPutTrackFileEditorR
 }
 type ApiUpdateTrackFileRequest struct {
 	ctx context.Context
-	ApiService *TrackFileApiService
+	ApiService *TrackFileAPIService
 	id string
 	trackFileResource *TrackFileResource
 }
@@ -709,7 +709,7 @@ UpdateTrackFile Method for UpdateTrackFile
  @param id
  @return ApiUpdateTrackFileRequest
 */
-func (a *TrackFileApiService) UpdateTrackFile(ctx context.Context, id string) ApiUpdateTrackFileRequest {
+func (a *TrackFileAPIService) UpdateTrackFile(ctx context.Context, id string) ApiUpdateTrackFileRequest {
 	return ApiUpdateTrackFileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -719,7 +719,7 @@ func (a *TrackFileApiService) UpdateTrackFile(ctx context.Context, id string) Ap
 
 // Execute executes the request
 //  @return TrackFileResource
-func (a *TrackFileApiService) UpdateTrackFileExecute(r ApiUpdateTrackFileRequest) (*TrackFileResource, *http.Response, error) {
+func (a *TrackFileAPIService) UpdateTrackFileExecute(r ApiUpdateTrackFileRequest) (*TrackFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -727,7 +727,7 @@ func (a *TrackFileApiService) UpdateTrackFileExecute(r ApiUpdateTrackFileRequest
 		localVarReturnValue  *TrackFileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackFileApiService.UpdateTrackFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackFileAPIService.UpdateTrackFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
