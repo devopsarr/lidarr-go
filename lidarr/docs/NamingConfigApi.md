@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## GetNamingConfigExamples
 
-> GetNamingConfigExamples(ctx).RenameTracks(renameTracks).ReplaceIllegalCharacters(replaceIllegalCharacters).StandardTrackFormat(standardTrackFormat).MultiDiscTrackFormat(multiDiscTrackFormat).ArtistFolderFormat(artistFolderFormat).IncludeArtistName(includeArtistName).IncludeAlbumTitle(includeAlbumTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
+> GetNamingConfigExamples(ctx).RenameTracks(renameTracks).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).StandardTrackFormat(standardTrackFormat).MultiDiscTrackFormat(multiDiscTrackFormat).ArtistFolderFormat(artistFolderFormat).IncludeArtistName(includeArtistName).IncludeAlbumTitle(includeAlbumTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
 
 
 
@@ -159,6 +159,7 @@ import (
 func main() {
     renameTracks := true // bool |  (optional)
     replaceIllegalCharacters := true // bool |  (optional)
+    colonReplacementFormat := int32(56) // int32 |  (optional)
     standardTrackFormat := "standardTrackFormat_example" // string |  (optional)
     multiDiscTrackFormat := "multiDiscTrackFormat_example" // string |  (optional)
     artistFolderFormat := "artistFolderFormat_example" // string |  (optional)
@@ -173,7 +174,7 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.NamingConfigApi.GetNamingConfigExamples(context.Background()).RenameTracks(renameTracks).ReplaceIllegalCharacters(replaceIllegalCharacters).StandardTrackFormat(standardTrackFormat).MultiDiscTrackFormat(multiDiscTrackFormat).ArtistFolderFormat(artistFolderFormat).IncludeArtistName(includeArtistName).IncludeAlbumTitle(includeAlbumTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
+    resp, r, err := apiClient.NamingConfigApi.GetNamingConfigExamples(context.Background()).RenameTracks(renameTracks).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).StandardTrackFormat(standardTrackFormat).MultiDiscTrackFormat(multiDiscTrackFormat).ArtistFolderFormat(artistFolderFormat).IncludeArtistName(includeArtistName).IncludeAlbumTitle(includeAlbumTitle).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigApi.GetNamingConfigExamples``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -194,6 +195,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **renameTracks** | **bool** |  | 
  **replaceIllegalCharacters** | **bool** |  | 
+ **colonReplacementFormat** | **int32** |  | 
  **standardTrackFormat** | **string** |  | 
  **multiDiscTrackFormat** | **string** |  | 
  **artistFolderFormat** | **string** |  | 
