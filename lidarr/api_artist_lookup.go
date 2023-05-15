@@ -19,11 +19,11 @@ import (
 )
 
 
-// ArtistLookupAPIService ArtistLookupAPI service
-type ArtistLookupAPIService service
+// ArtistLookupApiService ArtistLookupApi service
+type ArtistLookupApiService service
 type ApiGetArtistLookupRequest struct {
 	ctx context.Context
-	ApiService *ArtistLookupAPIService
+	ApiService *ArtistLookupApiService
 	term *string
 }
 
@@ -42,7 +42,7 @@ GetArtistLookup Method for GetArtistLookup
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetArtistLookupRequest
 */
-func (a *ArtistLookupAPIService) GetArtistLookup(ctx context.Context) ApiGetArtistLookupRequest {
+func (a *ArtistLookupApiService) GetArtistLookup(ctx context.Context) ApiGetArtistLookupRequest {
 	return ApiGetArtistLookupRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *ArtistLookupAPIService) GetArtistLookup(ctx context.Context) ApiGetArti
 }
 
 // Execute executes the request
-func (a *ArtistLookupAPIService) GetArtistLookupExecute(r ApiGetArtistLookupRequest) (*http.Response, error) {
+func (a *ArtistLookupApiService) GetArtistLookupExecute(r ApiGetArtistLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistLookupAPIService.GetArtistLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistLookupApiService.GetArtistLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
