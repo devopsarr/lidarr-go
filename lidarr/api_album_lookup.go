@@ -19,11 +19,11 @@ import (
 )
 
 
-// AlbumLookupApiService AlbumLookupApi service
-type AlbumLookupApiService service
+// AlbumLookupAPIService AlbumLookupAPI service
+type AlbumLookupAPIService service
 type ApiGetAlbumLookupRequest struct {
 	ctx context.Context
-	ApiService *AlbumLookupApiService
+	ApiService *AlbumLookupAPIService
 	term *string
 }
 
@@ -42,7 +42,7 @@ GetAlbumLookup Method for GetAlbumLookup
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetAlbumLookupRequest
 */
-func (a *AlbumLookupApiService) GetAlbumLookup(ctx context.Context) ApiGetAlbumLookupRequest {
+func (a *AlbumLookupAPIService) GetAlbumLookup(ctx context.Context) ApiGetAlbumLookupRequest {
 	return ApiGetAlbumLookupRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *AlbumLookupApiService) GetAlbumLookup(ctx context.Context) ApiGetAlbumL
 }
 
 // Execute executes the request
-func (a *AlbumLookupApiService) GetAlbumLookupExecute(r ApiGetAlbumLookupRequest) (*http.Response, error) {
+func (a *AlbumLookupAPIService) GetAlbumLookupExecute(r ApiGetAlbumLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumLookupApiService.GetAlbumLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumLookupAPIService.GetAlbumLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
