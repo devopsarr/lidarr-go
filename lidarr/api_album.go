@@ -21,11 +21,11 @@ import (
 )
 
 
-// AlbumAPIService AlbumAPI service
-type AlbumAPIService service
+// AlbumApiService AlbumApi service
+type AlbumApiService service
 type ApiCreateAlbumRequest struct {
 	ctx context.Context
-	ApiService *AlbumAPIService
+	ApiService *AlbumApiService
 	albumResource *AlbumResource
 }
 
@@ -44,7 +44,7 @@ CreateAlbum Method for CreateAlbum
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateAlbumRequest
 */
-func (a *AlbumAPIService) CreateAlbum(ctx context.Context) ApiCreateAlbumRequest {
+func (a *AlbumApiService) CreateAlbum(ctx context.Context) ApiCreateAlbumRequest {
 	return ApiCreateAlbumRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -53,7 +53,7 @@ func (a *AlbumAPIService) CreateAlbum(ctx context.Context) ApiCreateAlbumRequest
 
 // Execute executes the request
 //  @return AlbumResource
-func (a *AlbumAPIService) CreateAlbumExecute(r ApiCreateAlbumRequest) (*AlbumResource, *http.Response, error) {
+func (a *AlbumApiService) CreateAlbumExecute(r ApiCreateAlbumRequest) (*AlbumResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -61,7 +61,7 @@ func (a *AlbumAPIService) CreateAlbumExecute(r ApiCreateAlbumRequest) (*AlbumRes
 		localVarReturnValue  *AlbumResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumAPIService.CreateAlbum")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumApiService.CreateAlbum")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -157,7 +157,7 @@ func (a *AlbumAPIService) CreateAlbumExecute(r ApiCreateAlbumRequest) (*AlbumRes
 }
 type ApiDeleteAlbumRequest struct {
 	ctx context.Context
-	ApiService *AlbumAPIService
+	ApiService *AlbumApiService
 	id int32
 }
 
@@ -172,7 +172,7 @@ DeleteAlbum Method for DeleteAlbum
  @param id
  @return ApiDeleteAlbumRequest
 */
-func (a *AlbumAPIService) DeleteAlbum(ctx context.Context, id int32) ApiDeleteAlbumRequest {
+func (a *AlbumApiService) DeleteAlbum(ctx context.Context, id int32) ApiDeleteAlbumRequest {
 	return ApiDeleteAlbumRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -181,14 +181,14 @@ func (a *AlbumAPIService) DeleteAlbum(ctx context.Context, id int32) ApiDeleteAl
 }
 
 // Execute executes the request
-func (a *AlbumAPIService) DeleteAlbumExecute(r ApiDeleteAlbumRequest) (*http.Response, error) {
+func (a *AlbumApiService) DeleteAlbumExecute(r ApiDeleteAlbumRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumAPIService.DeleteAlbum")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumApiService.DeleteAlbum")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -274,7 +274,7 @@ func (a *AlbumAPIService) DeleteAlbumExecute(r ApiDeleteAlbumRequest) (*http.Res
 }
 type ApiGetAlbumByIdRequest struct {
 	ctx context.Context
-	ApiService *AlbumAPIService
+	ApiService *AlbumApiService
 	id int32
 }
 
@@ -289,7 +289,7 @@ GetAlbumById Method for GetAlbumById
  @param id
  @return ApiGetAlbumByIdRequest
 */
-func (a *AlbumAPIService) GetAlbumById(ctx context.Context, id int32) ApiGetAlbumByIdRequest {
+func (a *AlbumApiService) GetAlbumById(ctx context.Context, id int32) ApiGetAlbumByIdRequest {
 	return ApiGetAlbumByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -299,7 +299,7 @@ func (a *AlbumAPIService) GetAlbumById(ctx context.Context, id int32) ApiGetAlbu
 
 // Execute executes the request
 //  @return AlbumResource
-func (a *AlbumAPIService) GetAlbumByIdExecute(r ApiGetAlbumByIdRequest) (*AlbumResource, *http.Response, error) {
+func (a *AlbumApiService) GetAlbumByIdExecute(r ApiGetAlbumByIdRequest) (*AlbumResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -307,7 +307,7 @@ func (a *AlbumAPIService) GetAlbumByIdExecute(r ApiGetAlbumByIdRequest) (*AlbumR
 		localVarReturnValue  *AlbumResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumAPIService.GetAlbumById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumApiService.GetAlbumById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -402,7 +402,7 @@ func (a *AlbumAPIService) GetAlbumByIdExecute(r ApiGetAlbumByIdRequest) (*AlbumR
 }
 type ApiListAlbumRequest struct {
 	ctx context.Context
-	ApiService *AlbumAPIService
+	ApiService *AlbumApiService
 	artistId *int32
 	albumIds *[]int32
 	foreignAlbumId *string
@@ -439,7 +439,7 @@ ListAlbum Method for ListAlbum
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListAlbumRequest
 */
-func (a *AlbumAPIService) ListAlbum(ctx context.Context) ApiListAlbumRequest {
+func (a *AlbumApiService) ListAlbum(ctx context.Context) ApiListAlbumRequest {
 	return ApiListAlbumRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -448,7 +448,7 @@ func (a *AlbumAPIService) ListAlbum(ctx context.Context) ApiListAlbumRequest {
 
 // Execute executes the request
 //  @return []AlbumResource
-func (a *AlbumAPIService) ListAlbumExecute(r ApiListAlbumRequest) ([]*AlbumResource, *http.Response, error) {
+func (a *AlbumApiService) ListAlbumExecute(r ApiListAlbumRequest) ([]*AlbumResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -456,7 +456,7 @@ func (a *AlbumAPIService) ListAlbumExecute(r ApiListAlbumRequest) ([]*AlbumResou
 		localVarReturnValue  []*AlbumResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumAPIService.ListAlbum")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumApiService.ListAlbum")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -570,7 +570,7 @@ func (a *AlbumAPIService) ListAlbumExecute(r ApiListAlbumRequest) ([]*AlbumResou
 }
 type ApiPutAlbumMonitorRequest struct {
 	ctx context.Context
-	ApiService *AlbumAPIService
+	ApiService *AlbumApiService
 	albumsMonitoredResource *AlbumsMonitoredResource
 }
 
@@ -589,7 +589,7 @@ PutAlbumMonitor Method for PutAlbumMonitor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPutAlbumMonitorRequest
 */
-func (a *AlbumAPIService) PutAlbumMonitor(ctx context.Context) ApiPutAlbumMonitorRequest {
+func (a *AlbumApiService) PutAlbumMonitor(ctx context.Context) ApiPutAlbumMonitorRequest {
 	return ApiPutAlbumMonitorRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -597,14 +597,14 @@ func (a *AlbumAPIService) PutAlbumMonitor(ctx context.Context) ApiPutAlbumMonito
 }
 
 // Execute executes the request
-func (a *AlbumAPIService) PutAlbumMonitorExecute(r ApiPutAlbumMonitorRequest) (*http.Response, error) {
+func (a *AlbumApiService) PutAlbumMonitorExecute(r ApiPutAlbumMonitorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumAPIService.PutAlbumMonitor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumApiService.PutAlbumMonitor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -691,7 +691,7 @@ func (a *AlbumAPIService) PutAlbumMonitorExecute(r ApiPutAlbumMonitorRequest) (*
 }
 type ApiUpdateAlbumRequest struct {
 	ctx context.Context
-	ApiService *AlbumAPIService
+	ApiService *AlbumApiService
 	id string
 	albumResource *AlbumResource
 }
@@ -712,7 +712,7 @@ UpdateAlbum Method for UpdateAlbum
  @param id
  @return ApiUpdateAlbumRequest
 */
-func (a *AlbumAPIService) UpdateAlbum(ctx context.Context, id string) ApiUpdateAlbumRequest {
+func (a *AlbumApiService) UpdateAlbum(ctx context.Context, id string) ApiUpdateAlbumRequest {
 	return ApiUpdateAlbumRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -722,7 +722,7 @@ func (a *AlbumAPIService) UpdateAlbum(ctx context.Context, id string) ApiUpdateA
 
 // Execute executes the request
 //  @return AlbumResource
-func (a *AlbumAPIService) UpdateAlbumExecute(r ApiUpdateAlbumRequest) (*AlbumResource, *http.Response, error) {
+func (a *AlbumApiService) UpdateAlbumExecute(r ApiUpdateAlbumRequest) (*AlbumResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -730,7 +730,7 @@ func (a *AlbumAPIService) UpdateAlbumExecute(r ApiUpdateAlbumRequest) (*AlbumRes
 		localVarReturnValue  *AlbumResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumAPIService.UpdateAlbum")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumApiService.UpdateAlbum")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

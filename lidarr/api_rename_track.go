@@ -19,11 +19,11 @@ import (
 )
 
 
-// RenameTrackAPIService RenameTrackAPI service
-type RenameTrackAPIService service
+// RenameTrackApiService RenameTrackApi service
+type RenameTrackApiService service
 type ApiListRenameRequest struct {
 	ctx context.Context
-	ApiService *RenameTrackAPIService
+	ApiService *RenameTrackApiService
 	artistId *int32
 	albumId *int32
 }
@@ -48,7 +48,7 @@ ListRename Method for ListRename
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListRenameRequest
 */
-func (a *RenameTrackAPIService) ListRename(ctx context.Context) ApiListRenameRequest {
+func (a *RenameTrackApiService) ListRename(ctx context.Context) ApiListRenameRequest {
 	return ApiListRenameRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -57,7 +57,7 @@ func (a *RenameTrackAPIService) ListRename(ctx context.Context) ApiListRenameReq
 
 // Execute executes the request
 //  @return []RenameTrackResource
-func (a *RenameTrackAPIService) ListRenameExecute(r ApiListRenameRequest) ([]*RenameTrackResource, *http.Response, error) {
+func (a *RenameTrackApiService) ListRenameExecute(r ApiListRenameRequest) ([]*RenameTrackResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -65,7 +65,7 @@ func (a *RenameTrackAPIService) ListRenameExecute(r ApiListRenameRequest) ([]*Re
 		localVarReturnValue  []*RenameTrackResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RenameTrackAPIService.ListRename")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RenameTrackApiService.ListRename")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
