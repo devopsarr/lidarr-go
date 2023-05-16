@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/devopsarr/lidarr-go/compare/v0.2.1...v0.3.0) (2023-05-16)
+
+
+### Features
+
+* pin openapi version and add version management ([38b4b8b](https://github.com/devopsarr/lidarr-go/commit/38b4b8bdee7d7cb5f892c13962b7ce961a478403))
+
 ## [0.2.1](https://github.com/devopsarr/lidarr-go/compare/v0.2.0...v0.2.1) (2023-03-27)
 
 
