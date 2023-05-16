@@ -159,6 +159,18 @@ type ApiDeleteAlbumRequest struct {
 	ctx context.Context
 	ApiService *AlbumApiService
 	id int32
+	deleteFiles *bool
+	addImportListExclusion *bool
+}
+
+func (r ApiDeleteAlbumRequest) DeleteFiles(deleteFiles bool) ApiDeleteAlbumRequest {
+	r.deleteFiles = &deleteFiles
+	return r
+}
+
+func (r ApiDeleteAlbumRequest) AddImportListExclusion(addImportListExclusion bool) ApiDeleteAlbumRequest {
+	r.addImportListExclusion = &addImportListExclusion
+	return r
 }
 
 func (r ApiDeleteAlbumRequest) Execute() (*http.Response, error) {
@@ -200,6 +212,12 @@ func (a *AlbumApiService) DeleteAlbumExecute(r ApiDeleteAlbumRequest) (*http.Res
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.deleteFiles != nil {
+		localVarQueryParams.Add("deleteFiles", parameterToString(*r.deleteFiles, ""))
+	}
+	if r.addImportListExclusion != nil {
+		localVarQueryParams.Add("addImportListExclusion", parameterToString(*r.addImportListExclusion, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

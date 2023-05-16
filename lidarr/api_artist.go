@@ -158,6 +158,18 @@ type ApiDeleteArtistRequest struct {
 	ctx context.Context
 	ApiService *ArtistApiService
 	id int32
+	deleteFiles *bool
+	addImportListExclusion *bool
+}
+
+func (r ApiDeleteArtistRequest) DeleteFiles(deleteFiles bool) ApiDeleteArtistRequest {
+	r.deleteFiles = &deleteFiles
+	return r
+}
+
+func (r ApiDeleteArtistRequest) AddImportListExclusion(addImportListExclusion bool) ApiDeleteArtistRequest {
+	r.addImportListExclusion = &addImportListExclusion
+	return r
 }
 
 func (r ApiDeleteArtistRequest) Execute() (*http.Response, error) {
@@ -199,6 +211,12 @@ func (a *ArtistApiService) DeleteArtistExecute(r ApiDeleteArtistRequest) (*http.
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.deleteFiles != nil {
+		localVarQueryParams.Add("deleteFiles", parameterToString(*r.deleteFiles, ""))
+	}
+	if r.addImportListExclusion != nil {
+		localVarQueryParams.Add("addImportListExclusion", parameterToString(*r.addImportListExclusion, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -536,7 +554,13 @@ type ApiUpdateArtistRequest struct {
 	ctx context.Context
 	ApiService *ArtistApiService
 	id string
+	moveFiles *bool
 	artistResource *ArtistResource
+}
+
+func (r ApiUpdateArtistRequest) MoveFiles(moveFiles bool) ApiUpdateArtistRequest {
+	r.moveFiles = &moveFiles
+	return r
 }
 
 func (r ApiUpdateArtistRequest) ArtistResource(artistResource ArtistResource) ApiUpdateArtistRequest {
@@ -585,6 +609,9 @@ func (a *ArtistApiService) UpdateArtistExecute(r ApiUpdateArtistRequest) (*Artis
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.moveFiles != nil {
+		localVarQueryParams.Add("moveFiles", parameterToString(*r.moveFiles, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
 

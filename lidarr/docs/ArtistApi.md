@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ## DeleteArtist
 
-> DeleteArtist(ctx, id).Execute()
+> DeleteArtist(ctx, id).DeleteFiles(deleteFiles).AddImportListExclusion(addImportListExclusion).Execute()
 
 
 
@@ -96,10 +96,12 @@ import (
 
 func main() {
     id := int32(56) // int32 | 
+    deleteFiles := true // bool |  (optional) (default to false)
+    addImportListExclusion := true // bool |  (optional) (default to false)
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArtistApi.DeleteArtist(context.Background(), id).Execute()
+    resp, r, err := apiClient.ArtistApi.DeleteArtist(context.Background(), id).DeleteFiles(deleteFiles).AddImportListExclusion(addImportListExclusion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ArtistApi.DeleteArtist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -123,6 +125,8 @@ Other parameters are passed through a pointer to a apiDeleteArtistRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **deleteFiles** | **bool** |  | [default to false]
+ **addImportListExclusion** | **bool** |  | [default to false]
 
 ### Return type
 
@@ -276,7 +280,7 @@ Name | Type | Description  | Notes
 
 ## UpdateArtist
 
-> ArtistResource UpdateArtist(ctx, id).ArtistResource(artistResource).Execute()
+> ArtistResource UpdateArtist(ctx, id).MoveFiles(moveFiles).ArtistResource(artistResource).Execute()
 
 
 
@@ -294,11 +298,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    moveFiles := true // bool |  (optional) (default to false)
     artistResource := *lidarrClient.NewArtistResource() // ArtistResource |  (optional)
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ArtistApi.UpdateArtist(context.Background(), id).ArtistResource(artistResource).Execute()
+    resp, r, err := apiClient.ArtistApi.UpdateArtist(context.Background(), id).MoveFiles(moveFiles).ArtistResource(artistResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ArtistApi.UpdateArtist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -324,6 +329,7 @@ Other parameters are passed through a pointer to a apiUpdateArtistRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **moveFiles** | **bool** |  | [default to false]
  **artistResource** | [**ArtistResource**](ArtistResource.md) |  | 
 
 ### Return type
