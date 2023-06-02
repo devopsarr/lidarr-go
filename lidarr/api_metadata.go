@@ -25,7 +25,13 @@ type MetadataApiService service
 type ApiCreateMetadataRequest struct {
 	ctx context.Context
 	ApiService *MetadataApiService
+	forceSave *bool
 	metadataResource *MetadataResource
+}
+
+func (r ApiCreateMetadataRequest) ForceSave(forceSave bool) ApiCreateMetadataRequest {
+	r.forceSave = &forceSave
+	return r
 }
 
 func (r ApiCreateMetadataRequest) MetadataResource(metadataResource MetadataResource) ApiCreateMetadataRequest {
@@ -71,8 +77,11 @@ func (a *MetadataApiService) CreateMetadataExecute(r ApiCreateMetadataRequest) (
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.forceSave != nil {
+		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -206,7 +215,7 @@ func (a *MetadataApiService) CreateMetadataActionByNameExecute(r ApiCreateMetada
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -577,7 +586,7 @@ func (a *MetadataApiService) ListMetadataExecute(r ApiListMetadataRequest) ([]*M
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -701,7 +710,7 @@ func (a *MetadataApiService) ListMetadataSchemaExecute(r ApiListMetadataSchemaRe
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -820,7 +829,7 @@ func (a *MetadataApiService) TestMetadataExecute(r ApiTestMetadataRequest) (*htt
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -1069,7 +1078,7 @@ func (a *MetadataApiService) UpdateMetadataExecute(r ApiUpdateMetadataRequest) (
 		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
 	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)

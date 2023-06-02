@@ -172,6 +172,7 @@ docs/LanguageApi.md
 docs/LanguageResource.md
 docs/Links.md
 docs/LocalizationApi.md
+docs/LocalizationResource.md
 docs/LogApi.md
 docs/LogFileApi.md
 docs/LogFileResource.md
@@ -369,6 +370,7 @@ model_indexer_resource.go
 model_iso_country.go
 model_language_resource.go
 model_links.go
+model_localization_resource.go
 model_log_file_resource.go
 model_log_resource.go
 model_log_resource_paging_resource.go

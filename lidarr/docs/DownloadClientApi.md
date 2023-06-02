@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateDownloadClient
 
-> DownloadClientResource CreateDownloadClient(ctx).DownloadClientResource(downloadClientResource).Execute()
+> DownloadClientResource CreateDownloadClient(ctx).ForceSave(forceSave).DownloadClientResource(downloadClientResource).Execute()
 
 
 
@@ -35,11 +35,12 @@ import (
 )
 
 func main() {
+    forceSave := true // bool |  (optional) (default to false)
     downloadClientResource := *lidarrClient.NewDownloadClientResource() // DownloadClientResource |  (optional)
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DownloadClientApi.CreateDownloadClient(context.Background()).DownloadClientResource(downloadClientResource).Execute()
+    resp, r, err := apiClient.DownloadClientApi.CreateDownloadClient(context.Background()).ForceSave(forceSave).DownloadClientResource(downloadClientResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientApi.CreateDownloadClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +61,7 @@ Other parameters are passed through a pointer to a apiCreateDownloadClientReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceSave** | **bool** |  | [default to false]
  **downloadClientResource** | [**DownloadClientResource**](DownloadClientResource.md) |  | 
 
 ### Return type
@@ -72,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -140,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -334,7 +336,7 @@ Other parameters are passed through a pointer to a apiListDownloadClientRequest 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -393,7 +395,7 @@ Other parameters are passed through a pointer to a apiListDownloadClientSchemaRe
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -454,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -583,7 +585,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

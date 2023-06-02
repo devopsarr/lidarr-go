@@ -25,7 +25,13 @@ type IndexerApiService service
 type ApiCreateIndexerRequest struct {
 	ctx context.Context
 	ApiService *IndexerApiService
+	forceSave *bool
 	indexerResource *IndexerResource
+}
+
+func (r ApiCreateIndexerRequest) ForceSave(forceSave bool) ApiCreateIndexerRequest {
+	r.forceSave = &forceSave
+	return r
 }
 
 func (r ApiCreateIndexerRequest) IndexerResource(indexerResource IndexerResource) ApiCreateIndexerRequest {
@@ -71,8 +77,11 @@ func (a *IndexerApiService) CreateIndexerExecute(r ApiCreateIndexerRequest) (*In
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.forceSave != nil {
+		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -206,7 +215,7 @@ func (a *IndexerApiService) CreateIndexerActionByNameExecute(r ApiCreateIndexerA
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -577,7 +586,7 @@ func (a *IndexerApiService) ListIndexerExecute(r ApiListIndexerRequest) ([]*Inde
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -701,7 +710,7 @@ func (a *IndexerApiService) ListIndexerSchemaExecute(r ApiListIndexerSchemaReque
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -820,7 +829,7 @@ func (a *IndexerApiService) TestIndexerExecute(r ApiTestIndexerRequest) (*http.R
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -1069,7 +1078,7 @@ func (a *IndexerApiService) UpdateIndexerExecute(r ApiUpdateIndexerRequest) (*In
 		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
 	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)

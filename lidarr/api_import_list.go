@@ -25,7 +25,13 @@ type ImportListApiService service
 type ApiCreateImportListRequest struct {
 	ctx context.Context
 	ApiService *ImportListApiService
+	forceSave *bool
 	importListResource *ImportListResource
+}
+
+func (r ApiCreateImportListRequest) ForceSave(forceSave bool) ApiCreateImportListRequest {
+	r.forceSave = &forceSave
+	return r
 }
 
 func (r ApiCreateImportListRequest) ImportListResource(importListResource ImportListResource) ApiCreateImportListRequest {
@@ -71,8 +77,11 @@ func (a *ImportListApiService) CreateImportListExecute(r ApiCreateImportListRequ
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.forceSave != nil {
+		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
+	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -206,7 +215,7 @@ func (a *ImportListApiService) CreateImportListActionByNameExecute(r ApiCreateIm
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -577,7 +586,7 @@ func (a *ImportListApiService) ListImportListExecute(r ApiListImportListRequest)
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -701,7 +710,7 @@ func (a *ImportListApiService) ListImportListSchemaExecute(r ApiListImportListSc
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -820,7 +829,7 @@ func (a *ImportListApiService) TestImportListExecute(r ApiTestImportListRequest)
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -1069,7 +1078,7 @@ func (a *ImportListApiService) UpdateImportListExecute(r ApiUpdateImportListRequ
 		localVarQueryParams.Add("forceSave", parameterToString(*r.forceSave, ""))
 	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)

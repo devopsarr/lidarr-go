@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetLocalization
 
-> string GetLocalization(ctx).Execute()
+> LocalizationResource GetLocalization(ctx).Execute()
 
 
 
@@ -35,7 +35,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LocalizationApi.GetLocalization``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetLocalization`: string
+    // response from `GetLocalization`: LocalizationResource
     fmt.Fprintf(os.Stdout, "Response from `LocalizationApi.GetLocalization`: %v\n", resp)
 }
 ```
@@ -51,7 +51,7 @@ Other parameters are passed through a pointer to a apiGetLocalizationRequest str
 
 ### Return type
 
-**string**
+[**LocalizationResource**](LocalizationResource.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ Other parameters are passed through a pointer to a apiGetLocalizationRequest str
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
