@@ -26,7 +26,7 @@ type ApiGetLocalizationRequest struct {
 	ApiService *LocalizationApiService
 }
 
-func (r ApiGetLocalizationRequest) Execute() (string, *http.Response, error) {
+func (r ApiGetLocalizationRequest) Execute() (*LocalizationResource, *http.Response, error) {
 	return r.ApiService.GetLocalizationExecute(r)
 }
 
@@ -44,13 +44,13 @@ func (a *LocalizationApiService) GetLocalization(ctx context.Context) ApiGetLoca
 }
 
 // Execute executes the request
-//  @return string
-func (a *LocalizationApiService) GetLocalizationExecute(r ApiGetLocalizationRequest) (string, *http.Response, error) {
+//  @return LocalizationResource
+func (a *LocalizationApiService) GetLocalizationExecute(r ApiGetLocalizationRequest) (*LocalizationResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  string
+		localVarReturnValue  *LocalizationResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationApiService.GetLocalization")
@@ -74,7 +74,7 @@ func (a *LocalizationApiService) GetLocalizationExecute(r ApiGetLocalizationRequ
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)

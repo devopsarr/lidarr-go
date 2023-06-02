@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateIndexer
 
-> IndexerResource CreateIndexer(ctx).IndexerResource(indexerResource).Execute()
+> IndexerResource CreateIndexer(ctx).ForceSave(forceSave).IndexerResource(indexerResource).Execute()
 
 
 
@@ -35,11 +35,12 @@ import (
 )
 
 func main() {
+    forceSave := true // bool |  (optional) (default to false)
     indexerResource := *lidarrClient.NewIndexerResource() // IndexerResource |  (optional)
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IndexerApi.CreateIndexer(context.Background()).IndexerResource(indexerResource).Execute()
+    resp, r, err := apiClient.IndexerApi.CreateIndexer(context.Background()).ForceSave(forceSave).IndexerResource(indexerResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IndexerApi.CreateIndexer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +61,7 @@ Other parameters are passed through a pointer to a apiCreateIndexerRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceSave** | **bool** |  | [default to false]
  **indexerResource** | [**IndexerResource**](IndexerResource.md) |  | 
 
 ### Return type
@@ -72,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -140,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -334,7 +336,7 @@ Other parameters are passed through a pointer to a apiListIndexerRequest struct 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -393,7 +395,7 @@ Other parameters are passed through a pointer to a apiListIndexerSchemaRequest s
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -454,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -583,7 +585,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

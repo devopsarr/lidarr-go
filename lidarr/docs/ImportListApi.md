@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateImportList
 
-> ImportListResource CreateImportList(ctx).ImportListResource(importListResource).Execute()
+> ImportListResource CreateImportList(ctx).ForceSave(forceSave).ImportListResource(importListResource).Execute()
 
 
 
@@ -35,11 +35,12 @@ import (
 )
 
 func main() {
+    forceSave := true // bool |  (optional) (default to false)
     importListResource := *lidarrClient.NewImportListResource() // ImportListResource |  (optional)
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListApi.CreateImportList(context.Background()).ImportListResource(importListResource).Execute()
+    resp, r, err := apiClient.ImportListApi.CreateImportList(context.Background()).ForceSave(forceSave).ImportListResource(importListResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.CreateImportList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +61,7 @@ Other parameters are passed through a pointer to a apiCreateImportListRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceSave** | **bool** |  | [default to false]
  **importListResource** | [**ImportListResource**](ImportListResource.md) |  | 
 
 ### Return type
@@ -72,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -140,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -334,7 +336,7 @@ Other parameters are passed through a pointer to a apiListImportListRequest stru
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -393,7 +395,7 @@ Other parameters are passed through a pointer to a apiListImportListSchemaReques
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -454,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -583,7 +585,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
