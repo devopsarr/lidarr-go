@@ -150,7 +150,6 @@ Class | Method | HTTP request | Description
 *FileSystemApi* | [**GetFileSystem**](lidarr/docs/FileSystemApi.md#getfilesystem) | **Get** /api/v1/filesystem | 
 *FileSystemApi* | [**GetFileSystemMediafiles**](lidarr/docs/FileSystemApi.md#getfilesystemmediafiles) | **Get** /api/v1/filesystem/mediafiles | 
 *FileSystemApi* | [**GetFileSystemType**](lidarr/docs/FileSystemApi.md#getfilesystemtype) | **Get** /api/v1/filesystem/type | 
-*HealthApi* | [**GetHealthById**](lidarr/docs/HealthApi.md#gethealthbyid) | **Get** /api/v1/health/{id} | 
 *HealthApi* | [**ListHealth**](lidarr/docs/HealthApi.md#listhealth) | **Get** /api/v1/health | 
 *HistoryApi* | [**CreateHistoryFailedById**](lidarr/docs/HistoryApi.md#createhistoryfailedbyid) | **Post** /api/v1/history/failed/{id} | 
 *HistoryApi* | [**GetHistory**](lidarr/docs/HistoryApi.md#gethistory) | **Get** /api/v1/history | 
@@ -247,15 +246,11 @@ Class | Method | HTTP request | Description
 *QueueApi* | [**DeleteQueue**](lidarr/docs/QueueApi.md#deletequeue) | **Delete** /api/v1/queue/{id} | 
 *QueueApi* | [**DeleteQueueBulk**](lidarr/docs/QueueApi.md#deletequeuebulk) | **Delete** /api/v1/queue/bulk | 
 *QueueApi* | [**GetQueue**](lidarr/docs/QueueApi.md#getqueue) | **Get** /api/v1/queue | 
-*QueueApi* | [**GetQueueById**](lidarr/docs/QueueApi.md#getqueuebyid) | **Get** /api/v1/queue/{id} | 
 *QueueActionApi* | [**CreateQueueGrabBulk**](lidarr/docs/QueueActionApi.md#createqueuegrabbulk) | **Post** /api/v1/queue/grab/bulk | 
 *QueueActionApi* | [**CreateQueueGrabById**](lidarr/docs/QueueActionApi.md#createqueuegrabbyid) | **Post** /api/v1/queue/grab/{id} | 
-*QueueDetailsApi* | [**GetQueueDetailsById**](lidarr/docs/QueueDetailsApi.md#getqueuedetailsbyid) | **Get** /api/v1/queue/details/{id} | 
 *QueueDetailsApi* | [**ListQueueDetails**](lidarr/docs/QueueDetailsApi.md#listqueuedetails) | **Get** /api/v1/queue/details | 
 *QueueStatusApi* | [**GetQueueStatus**](lidarr/docs/QueueStatusApi.md#getqueuestatus) | **Get** /api/v1/queue/status | 
-*QueueStatusApi* | [**GetQueueStatusById**](lidarr/docs/QueueStatusApi.md#getqueuestatusbyid) | **Get** /api/v1/queue/status/{id} | 
 *ReleaseApi* | [**CreateRelease**](lidarr/docs/ReleaseApi.md#createrelease) | **Post** /api/v1/release | 
-*ReleaseApi* | [**GetReleaseById**](lidarr/docs/ReleaseApi.md#getreleasebyid) | **Get** /api/v1/release/{id} | 
 *ReleaseApi* | [**ListRelease**](lidarr/docs/ReleaseApi.md#listrelease) | **Get** /api/v1/release | 
 *ReleaseProfileApi* | [**CreateReleaseProfile**](lidarr/docs/ReleaseProfileApi.md#createreleaseprofile) | **Post** /api/v1/releaseprofile | 
 *ReleaseProfileApi* | [**DeleteReleaseProfile**](lidarr/docs/ReleaseProfileApi.md#deletereleaseprofile) | **Delete** /api/v1/releaseprofile/{id} | 
@@ -263,7 +258,6 @@ Class | Method | HTTP request | Description
 *ReleaseProfileApi* | [**ListReleaseProfile**](lidarr/docs/ReleaseProfileApi.md#listreleaseprofile) | **Get** /api/v1/releaseprofile | 
 *ReleaseProfileApi* | [**UpdateReleaseProfile**](lidarr/docs/ReleaseProfileApi.md#updatereleaseprofile) | **Put** /api/v1/releaseprofile/{id} | 
 *ReleasePushApi* | [**CreateReleasePush**](lidarr/docs/ReleasePushApi.md#createreleasepush) | **Post** /api/v1/release/push | 
-*ReleasePushApi* | [**GetReleasePushById**](lidarr/docs/ReleasePushApi.md#getreleasepushbyid) | **Get** /api/v1/release/push/{id} | 
 *RemotePathMappingApi* | [**CreateRemotePathMapping**](lidarr/docs/RemotePathMappingApi.md#createremotepathmapping) | **Post** /api/v1/remotepathmapping | 
 *RemotePathMappingApi* | [**DeleteRemotePathMapping**](lidarr/docs/RemotePathMappingApi.md#deleteremotepathmapping) | **Delete** /api/v1/remotepathmapping/{id} | 
 *RemotePathMappingApi* | [**GetRemotePathMappingById**](lidarr/docs/RemotePathMappingApi.md#getremotepathmappingbyid) | **Get** /api/v1/remotepathmapping/{id} | 
