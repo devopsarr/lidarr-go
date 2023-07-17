@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **ReleaseGroup** | Pointer to **NullableString** |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
 **QualityWeight** | Pointer to **int32** |  | [optional] 
+**CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
+**CustomFormatScore** | Pointer to **int32** |  | [optional] 
 **MediaInfo** | Pointer to [**MediaInfoResource**](MediaInfoResource.md) |  | [optional] 
 **QualityCutoffNotMet** | Pointer to **bool** |  | [optional] 
 **AudioTags** | Pointer to [**ParsedTrackInfo**](ParsedTrackInfo.md) |  | [optional] 
@@ -316,6 +318,66 @@ SetQualityWeight sets QualityWeight field to given value.
 `func (o *TrackFileResource) HasQualityWeight() bool`
 
 HasQualityWeight returns a boolean if a field has been set.
+
+### GetCustomFormats
+
+`func (o *TrackFileResource) GetCustomFormats() []CustomFormatResource`
+
+GetCustomFormats returns the CustomFormats field if non-nil, zero value otherwise.
+
+### GetCustomFormatsOk
+
+`func (o *TrackFileResource) GetCustomFormatsOk() (*[]CustomFormatResource, bool)`
+
+GetCustomFormatsOk returns a tuple with the CustomFormats field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFormats
+
+`func (o *TrackFileResource) SetCustomFormats(v []CustomFormatResource)`
+
+SetCustomFormats sets CustomFormats field to given value.
+
+### HasCustomFormats
+
+`func (o *TrackFileResource) HasCustomFormats() bool`
+
+HasCustomFormats returns a boolean if a field has been set.
+
+### SetCustomFormatsNil
+
+`func (o *TrackFileResource) SetCustomFormatsNil(b bool)`
+
+ SetCustomFormatsNil sets the value for CustomFormats to be an explicit nil
+
+### UnsetCustomFormats
+`func (o *TrackFileResource) UnsetCustomFormats()`
+
+UnsetCustomFormats ensures that no value is present for CustomFormats, not even an explicit nil
+### GetCustomFormatScore
+
+`func (o *TrackFileResource) GetCustomFormatScore() int32`
+
+GetCustomFormatScore returns the CustomFormatScore field if non-nil, zero value otherwise.
+
+### GetCustomFormatScoreOk
+
+`func (o *TrackFileResource) GetCustomFormatScoreOk() (*int32, bool)`
+
+GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFormatScore
+
+`func (o *TrackFileResource) SetCustomFormatScore(v int32)`
+
+SetCustomFormatScore sets CustomFormatScore field to given value.
+
+### HasCustomFormatScore
+
+`func (o *TrackFileResource) HasCustomFormatScore() bool`
+
+HasCustomFormatScore returns a boolean if a field has been set.
 
 ### GetMediaInfo
 

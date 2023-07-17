@@ -7,9 +7,11 @@ Method | HTTP request | Description
 [**CreateImportList**](ImportListApi.md#CreateImportList) | **Post** /api/v1/importlist | 
 [**CreateImportListActionByName**](ImportListApi.md#CreateImportListActionByName) | **Post** /api/v1/importlist/action/{name} | 
 [**DeleteImportList**](ImportListApi.md#DeleteImportList) | **Delete** /api/v1/importlist/{id} | 
+[**DeleteImportListBulk**](ImportListApi.md#DeleteImportListBulk) | **Delete** /api/v1/importlist/bulk | 
 [**GetImportListById**](ImportListApi.md#GetImportListById) | **Get** /api/v1/importlist/{id} | 
 [**ListImportList**](ImportListApi.md#ListImportList) | **Get** /api/v1/importlist | 
 [**ListImportListSchema**](ImportListApi.md#ListImportListSchema) | **Get** /api/v1/importlist/schema | 
+[**PutImportListBulk**](ImportListApi.md#PutImportListBulk) | **Put** /api/v1/importlist/bulk | 
 [**TestImportList**](ImportListApi.md#TestImportList) | **Post** /api/v1/importlist/test | 
 [**TestallImportList**](ImportListApi.md#TestallImportList) | **Post** /api/v1/importlist/testall | 
 [**UpdateImportList**](ImportListApi.md#UpdateImportList) | **Put** /api/v1/importlist/{id} | 
@@ -216,6 +218,68 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DeleteImportListBulk
+
+> DeleteImportListBulk(ctx).ImportListBulkResource(importListBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    lidarrClient "./openapi"
+)
+
+func main() {
+    importListBulkResource := *lidarrClient.NewImportListBulkResource() // ImportListBulkResource |  (optional)
+
+    configuration := lidarrClient.NewConfiguration()
+    apiClient := lidarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportListApi.DeleteImportListBulk(context.Background()).ImportListBulkResource(importListBulkResource).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.DeleteImportListBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteImportListBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **importListBulkResource** | [**ImportListBulkResource**](ImportListBulkResource.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetImportListById
 
 > ImportListResource GetImportListById(ctx, id).Execute()
@@ -395,6 +459,70 @@ Other parameters are passed through a pointer to a apiListImportListSchemaReques
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PutImportListBulk
+
+> ImportListResource PutImportListBulk(ctx).ImportListBulkResource(importListBulkResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    lidarrClient "./openapi"
+)
+
+func main() {
+    importListBulkResource := *lidarrClient.NewImportListBulkResource() // ImportListBulkResource |  (optional)
+
+    configuration := lidarrClient.NewConfiguration()
+    apiClient := lidarrClient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportListApi.PutImportListBulk(context.Background()).ImportListBulkResource(importListBulkResource).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListApi.PutImportListBulk``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `PutImportListBulk`: ImportListResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListApi.PutImportListBulk`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPutImportListBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **importListBulkResource** | [**ImportListBulkResource**](ImportListBulkResource.md) |  | 
+
+### Return type
+
+[**ImportListResource**](ImportListResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
