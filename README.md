@@ -138,9 +138,11 @@ Class | Method | HTTP request | Description
 *DownloadClientApi* | [**CreateDownloadClient**](lidarr/docs/DownloadClientApi.md#createdownloadclient) | **Post** /api/v1/downloadclient | 
 *DownloadClientApi* | [**CreateDownloadClientActionByName**](lidarr/docs/DownloadClientApi.md#createdownloadclientactionbyname) | **Post** /api/v1/downloadclient/action/{name} | 
 *DownloadClientApi* | [**DeleteDownloadClient**](lidarr/docs/DownloadClientApi.md#deletedownloadclient) | **Delete** /api/v1/downloadclient/{id} | 
+*DownloadClientApi* | [**DeleteDownloadClientBulk**](lidarr/docs/DownloadClientApi.md#deletedownloadclientbulk) | **Delete** /api/v1/downloadclient/bulk | 
 *DownloadClientApi* | [**GetDownloadClientById**](lidarr/docs/DownloadClientApi.md#getdownloadclientbyid) | **Get** /api/v1/downloadclient/{id} | 
 *DownloadClientApi* | [**ListDownloadClient**](lidarr/docs/DownloadClientApi.md#listdownloadclient) | **Get** /api/v1/downloadclient | 
 *DownloadClientApi* | [**ListDownloadClientSchema**](lidarr/docs/DownloadClientApi.md#listdownloadclientschema) | **Get** /api/v1/downloadclient/schema | 
+*DownloadClientApi* | [**PutDownloadClientBulk**](lidarr/docs/DownloadClientApi.md#putdownloadclientbulk) | **Put** /api/v1/downloadclient/bulk | 
 *DownloadClientApi* | [**TestDownloadClient**](lidarr/docs/DownloadClientApi.md#testdownloadclient) | **Post** /api/v1/downloadclient/test | 
 *DownloadClientApi* | [**TestallDownloadClient**](lidarr/docs/DownloadClientApi.md#testalldownloadclient) | **Post** /api/v1/downloadclient/testall | 
 *DownloadClientApi* | [**UpdateDownloadClient**](lidarr/docs/DownloadClientApi.md#updatedownloadclient) | **Put** /api/v1/downloadclient/{id} | 
@@ -161,9 +163,11 @@ Class | Method | HTTP request | Description
 *ImportListApi* | [**CreateImportList**](lidarr/docs/ImportListApi.md#createimportlist) | **Post** /api/v1/importlist | 
 *ImportListApi* | [**CreateImportListActionByName**](lidarr/docs/ImportListApi.md#createimportlistactionbyname) | **Post** /api/v1/importlist/action/{name} | 
 *ImportListApi* | [**DeleteImportList**](lidarr/docs/ImportListApi.md#deleteimportlist) | **Delete** /api/v1/importlist/{id} | 
+*ImportListApi* | [**DeleteImportListBulk**](lidarr/docs/ImportListApi.md#deleteimportlistbulk) | **Delete** /api/v1/importlist/bulk | 
 *ImportListApi* | [**GetImportListById**](lidarr/docs/ImportListApi.md#getimportlistbyid) | **Get** /api/v1/importlist/{id} | 
 *ImportListApi* | [**ListImportList**](lidarr/docs/ImportListApi.md#listimportlist) | **Get** /api/v1/importlist | 
 *ImportListApi* | [**ListImportListSchema**](lidarr/docs/ImportListApi.md#listimportlistschema) | **Get** /api/v1/importlist/schema | 
+*ImportListApi* | [**PutImportListBulk**](lidarr/docs/ImportListApi.md#putimportlistbulk) | **Put** /api/v1/importlist/bulk | 
 *ImportListApi* | [**TestImportList**](lidarr/docs/ImportListApi.md#testimportlist) | **Post** /api/v1/importlist/test | 
 *ImportListApi* | [**TestallImportList**](lidarr/docs/ImportListApi.md#testallimportlist) | **Post** /api/v1/importlist/testall | 
 *ImportListApi* | [**UpdateImportList**](lidarr/docs/ImportListApi.md#updateimportlist) | **Put** /api/v1/importlist/{id} | 
@@ -175,9 +179,11 @@ Class | Method | HTTP request | Description
 *IndexerApi* | [**CreateIndexer**](lidarr/docs/IndexerApi.md#createindexer) | **Post** /api/v1/indexer | 
 *IndexerApi* | [**CreateIndexerActionByName**](lidarr/docs/IndexerApi.md#createindexeractionbyname) | **Post** /api/v1/indexer/action/{name} | 
 *IndexerApi* | [**DeleteIndexer**](lidarr/docs/IndexerApi.md#deleteindexer) | **Delete** /api/v1/indexer/{id} | 
+*IndexerApi* | [**DeleteIndexerBulk**](lidarr/docs/IndexerApi.md#deleteindexerbulk) | **Delete** /api/v1/indexer/bulk | 
 *IndexerApi* | [**GetIndexerById**](lidarr/docs/IndexerApi.md#getindexerbyid) | **Get** /api/v1/indexer/{id} | 
 *IndexerApi* | [**ListIndexer**](lidarr/docs/IndexerApi.md#listindexer) | **Get** /api/v1/indexer | 
 *IndexerApi* | [**ListIndexerSchema**](lidarr/docs/IndexerApi.md#listindexerschema) | **Get** /api/v1/indexer/schema | 
+*IndexerApi* | [**PutIndexerBulk**](lidarr/docs/IndexerApi.md#putindexerbulk) | **Put** /api/v1/indexer/bulk | 
 *IndexerApi* | [**TestIndexer**](lidarr/docs/IndexerApi.md#testindexer) | **Post** /api/v1/indexer/test | 
 *IndexerApi* | [**TestallIndexer**](lidarr/docs/IndexerApi.md#testallindexer) | **Post** /api/v1/indexer/testall | 
 *IndexerApi* | [**UpdateIndexer**](lidarr/docs/IndexerApi.md#updateindexer) | **Put** /api/v1/indexer/{id} | 
@@ -354,6 +360,7 @@ Class | Method | HTTP request | Description
  - [DatabaseType](docs/DatabaseType.md)
  - [DelayProfileResource](docs/DelayProfileResource.md)
  - [DiskSpaceResource](docs/DiskSpaceResource.md)
+ - [DownloadClientBulkResource](docs/DownloadClientBulkResource.md)
  - [DownloadClientConfigResource](docs/DownloadClientConfigResource.md)
  - [DownloadClientResource](docs/DownloadClientResource.md)
  - [DownloadProtocol](docs/DownloadProtocol.md)
@@ -366,10 +373,12 @@ Class | Method | HTTP request | Description
  - [HistoryResourcePagingResource](docs/HistoryResourcePagingResource.md)
  - [HostConfigResource](docs/HostConfigResource.md)
  - [ICustomFormatSpecification](docs/ICustomFormatSpecification.md)
+ - [ImportListBulkResource](docs/ImportListBulkResource.md)
  - [ImportListExclusionResource](docs/ImportListExclusionResource.md)
  - [ImportListMonitorType](docs/ImportListMonitorType.md)
  - [ImportListResource](docs/ImportListResource.md)
  - [ImportListType](docs/ImportListType.md)
+ - [IndexerBulkResource](docs/IndexerBulkResource.md)
  - [IndexerConfigResource](docs/IndexerConfigResource.md)
  - [IndexerResource](docs/IndexerResource.md)
  - [IsoCountry](docs/IsoCountry.md)

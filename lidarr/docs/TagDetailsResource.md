@@ -10,8 +10,9 @@ Name | Type | Description | Notes
 **ImportListIds** | Pointer to **[]int32** |  | [optional] 
 **NotificationIds** | Pointer to **[]int32** |  | [optional] 
 **RestrictionIds** | Pointer to **[]int32** |  | [optional] 
-**IndexerIds** | Pointer to **[]int32** |  | [optional] 
 **ArtistIds** | Pointer to **[]int32** |  | [optional] 
+**IndexerIds** | Pointer to **[]int32** |  | [optional] 
+**DownloadClientIds** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
 
@@ -232,41 +233,6 @@ HasRestrictionIds returns a boolean if a field has been set.
 `func (o *TagDetailsResource) UnsetRestrictionIds()`
 
 UnsetRestrictionIds ensures that no value is present for RestrictionIds, not even an explicit nil
-### GetIndexerIds
-
-`func (o *TagDetailsResource) GetIndexerIds() []int32`
-
-GetIndexerIds returns the IndexerIds field if non-nil, zero value otherwise.
-
-### GetIndexerIdsOk
-
-`func (o *TagDetailsResource) GetIndexerIdsOk() (*[]int32, bool)`
-
-GetIndexerIdsOk returns a tuple with the IndexerIds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIndexerIds
-
-`func (o *TagDetailsResource) SetIndexerIds(v []int32)`
-
-SetIndexerIds sets IndexerIds field to given value.
-
-### HasIndexerIds
-
-`func (o *TagDetailsResource) HasIndexerIds() bool`
-
-HasIndexerIds returns a boolean if a field has been set.
-
-### SetIndexerIdsNil
-
-`func (o *TagDetailsResource) SetIndexerIdsNil(b bool)`
-
- SetIndexerIdsNil sets the value for IndexerIds to be an explicit nil
-
-### UnsetIndexerIds
-`func (o *TagDetailsResource) UnsetIndexerIds()`
-
-UnsetIndexerIds ensures that no value is present for IndexerIds, not even an explicit nil
 ### GetArtistIds
 
 `func (o *TagDetailsResource) GetArtistIds() []int32`
@@ -302,6 +268,76 @@ HasArtistIds returns a boolean if a field has been set.
 `func (o *TagDetailsResource) UnsetArtistIds()`
 
 UnsetArtistIds ensures that no value is present for ArtistIds, not even an explicit nil
+### GetIndexerIds
+
+`func (o *TagDetailsResource) GetIndexerIds() []int32`
+
+GetIndexerIds returns the IndexerIds field if non-nil, zero value otherwise.
+
+### GetIndexerIdsOk
+
+`func (o *TagDetailsResource) GetIndexerIdsOk() (*[]int32, bool)`
+
+GetIndexerIdsOk returns a tuple with the IndexerIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexerIds
+
+`func (o *TagDetailsResource) SetIndexerIds(v []int32)`
+
+SetIndexerIds sets IndexerIds field to given value.
+
+### HasIndexerIds
+
+`func (o *TagDetailsResource) HasIndexerIds() bool`
+
+HasIndexerIds returns a boolean if a field has been set.
+
+### SetIndexerIdsNil
+
+`func (o *TagDetailsResource) SetIndexerIdsNil(b bool)`
+
+ SetIndexerIdsNil sets the value for IndexerIds to be an explicit nil
+
+### UnsetIndexerIds
+`func (o *TagDetailsResource) UnsetIndexerIds()`
+
+UnsetIndexerIds ensures that no value is present for IndexerIds, not even an explicit nil
+### GetDownloadClientIds
+
+`func (o *TagDetailsResource) GetDownloadClientIds() []int32`
+
+GetDownloadClientIds returns the DownloadClientIds field if non-nil, zero value otherwise.
+
+### GetDownloadClientIdsOk
+
+`func (o *TagDetailsResource) GetDownloadClientIdsOk() (*[]int32, bool)`
+
+GetDownloadClientIdsOk returns a tuple with the DownloadClientIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDownloadClientIds
+
+`func (o *TagDetailsResource) SetDownloadClientIds(v []int32)`
+
+SetDownloadClientIds sets DownloadClientIds field to given value.
+
+### HasDownloadClientIds
+
+`func (o *TagDetailsResource) HasDownloadClientIds() bool`
+
+HasDownloadClientIds returns a boolean if a field has been set.
+
+### SetDownloadClientIdsNil
+
+`func (o *TagDetailsResource) SetDownloadClientIdsNil(b bool)`
+
+ SetDownloadClientIdsNil sets the value for DownloadClientIds to be an explicit nil
+
+### UnsetDownloadClientIds
+`func (o *TagDetailsResource) UnsetDownloadClientIds()`
+
+UnsetDownloadClientIds ensures that no value is present for DownloadClientIds, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
