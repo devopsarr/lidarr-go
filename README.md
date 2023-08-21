@@ -190,7 +190,6 @@ Class | Method | HTTP request | Description
 *IndexerConfigApi* | [**GetIndexerConfig**](lidarr/docs/IndexerConfigApi.md#getindexerconfig) | **Get** /api/v1/config/indexer | 
 *IndexerConfigApi* | [**GetIndexerConfigById**](lidarr/docs/IndexerConfigApi.md#getindexerconfigbyid) | **Get** /api/v1/config/indexer/{id} | 
 *IndexerConfigApi* | [**UpdateIndexerConfig**](lidarr/docs/IndexerConfigApi.md#updateindexerconfig) | **Put** /api/v1/config/indexer/{id} | 
-*InitializeJsApi* | [**GetInitializeJs**](lidarr/docs/InitializeJsApi.md#getinitializejs) | **Get** /initialize.js | 
 *LanguageApi* | [**GetLanguageById**](lidarr/docs/LanguageApi.md#getlanguagebyid) | **Get** /api/v1/language/{id} | 
 *LanguageApi* | [**ListLanguage**](lidarr/docs/LanguageApi.md#listlanguage) | **Get** /api/v1/language | 
 *LocalizationApi* | [**GetLocalization**](lidarr/docs/LocalizationApi.md#getlocalization) | **Get** /api/v1/localization | 
