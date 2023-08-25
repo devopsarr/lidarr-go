@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **Monitored** | Pointer to **bool** |  | [optional] 
 **MonitorNewItems** | Pointer to [**NewItemMonitorTypes**](NewItemMonitorTypes.md) |  | [optional] 
 **RootFolderPath** | Pointer to **NullableString** |  | [optional] 
+**Folder** | Pointer to **NullableString** |  | [optional] 
 **Genres** | Pointer to **[]string** |  | [optional] 
 **CleanName** | Pointer to **NullableString** |  | [optional] 
 **SortName** | Pointer to **NullableString** |  | [optional] 
@@ -812,6 +813,41 @@ HasRootFolderPath returns a boolean if a field has been set.
 `func (o *ArtistResource) UnsetRootFolderPath()`
 
 UnsetRootFolderPath ensures that no value is present for RootFolderPath, not even an explicit nil
+### GetFolder
+
+`func (o *ArtistResource) GetFolder() string`
+
+GetFolder returns the Folder field if non-nil, zero value otherwise.
+
+### GetFolderOk
+
+`func (o *ArtistResource) GetFolderOk() (*string, bool)`
+
+GetFolderOk returns a tuple with the Folder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFolder
+
+`func (o *ArtistResource) SetFolder(v string)`
+
+SetFolder sets Folder field to given value.
+
+### HasFolder
+
+`func (o *ArtistResource) HasFolder() bool`
+
+HasFolder returns a boolean if a field has been set.
+
+### SetFolderNil
+
+`func (o *ArtistResource) SetFolderNil(b bool)`
+
+ SetFolderNil sets the value for Folder to be an explicit nil
+
+### UnsetFolder
+`func (o *ArtistResource) UnsetFolder()`
+
+UnsetFolder ensures that no value is present for Folder, not even an explicit nil
 ### GetGenres
 
 `func (o *ArtistResource) GetGenres() []string`

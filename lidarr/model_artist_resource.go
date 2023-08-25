@@ -42,6 +42,7 @@ type ArtistResource struct {
 	Monitored *bool `json:"monitored,omitempty"`
 	MonitorNewItems *NewItemMonitorTypes `json:"monitorNewItems,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
+	Folder NullableString `json:"folder,omitempty"`
 	Genres []*string `json:"genres,omitempty"`
 	CleanName NullableString `json:"cleanName,omitempty"`
 	SortName NullableString `json:"sortName,omitempty"`
@@ -972,6 +973,48 @@ func (o *ArtistResource) UnsetRootFolderPath() {
 	o.RootFolderPath.Unset()
 }
 
+// GetFolder returns the Folder field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ArtistResource) GetFolder() string {
+	if o == nil || isNil(o.Folder.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Folder.Get()
+}
+
+// GetFolderOk returns a tuple with the Folder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ArtistResource) GetFolderOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.Folder.Get(), o.Folder.IsSet()
+}
+
+// HasFolder returns a boolean if a field has been set.
+func (o *ArtistResource) HasFolder() bool {
+	if o != nil && o.Folder.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetFolder gets a reference to the given NullableString and assigns it to the Folder field.
+func (o *ArtistResource) SetFolder(v string) {
+	o.Folder.Set(&v)
+}
+// SetFolderNil sets the value for Folder to be an explicit nil
+func (o *ArtistResource) SetFolderNil() {
+	o.Folder.Set(nil)
+}
+
+// UnsetFolder ensures that no value is present for Folder, not even an explicit nil
+func (o *ArtistResource) UnsetFolder() {
+	o.Folder.Unset()
+}
+
 // GetGenres returns the Genres field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetGenres() []*string {
 	if o == nil {
@@ -1326,6 +1369,9 @@ func (o ArtistResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.RootFolderPath.IsSet() {
 		toSerialize["rootFolderPath"] = o.RootFolderPath.Get()
+	}
+	if o.Folder.IsSet() {
+		toSerialize["folder"] = o.Folder.Get()
 	}
 	if o.Genres != nil {
 		toSerialize["genres"] = o.Genres
