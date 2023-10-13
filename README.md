@@ -198,8 +198,8 @@ Class | Method | HTTP request | Description
 *LogFileApi* | [**ListLogFile**](lidarr/docs/LogFileApi.md#listlogfile) | **Get** /api/v1/log/file | 
 *ManualImportApi* | [**CreateManualImport**](lidarr/docs/ManualImportApi.md#createmanualimport) | **Post** /api/v1/manualimport | 
 *ManualImportApi* | [**ListManualImport**](lidarr/docs/ManualImportApi.md#listmanualimport) | **Get** /api/v1/manualimport | 
-*MediaCoverApi* | [**GetMediaCoverAlbumalbumIdByFilename**](lidarr/docs/MediaCoverApi.md#getmediacoveralbumalbumidbyfilename) | **Get** /api/v1/mediacover/album/{albumId}/{filename} | 
-*MediaCoverApi* | [**GetMediaCoverArtistartistIdByFilename**](lidarr/docs/MediaCoverApi.md#getmediacoverartistartistidbyfilename) | **Get** /api/v1/mediacover/artist/{artistId}/{filename} | 
+*MediaCoverApi* | [**GetMediaCoverAlbumByFilename**](lidarr/docs/MediaCoverApi.md#getmediacoveralbumbyfilename) | **Get** /api/v1/mediacover/album/{albumId}/{filename} | 
+*MediaCoverApi* | [**GetMediaCoverArtistByFilename**](lidarr/docs/MediaCoverApi.md#getmediacoverartistbyfilename) | **Get** /api/v1/mediacover/artist/{artistId}/{filename} | 
 *MediaManagementConfigApi* | [**GetMediaManagementConfig**](lidarr/docs/MediaManagementConfigApi.md#getmediamanagementconfig) | **Get** /api/v1/config/mediamanagement | 
 *MediaManagementConfigApi* | [**GetMediaManagementConfigById**](lidarr/docs/MediaManagementConfigApi.md#getmediamanagementconfigbyid) | **Get** /api/v1/config/mediamanagement/{id} | 
 *MediaManagementConfigApi* | [**UpdateMediaManagementConfig**](lidarr/docs/MediaManagementConfigApi.md#updatemediamanagementconfig) | **Put** /api/v1/config/mediamanagement/{id} | 

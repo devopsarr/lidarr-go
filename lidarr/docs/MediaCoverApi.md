@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetMediaCoverAlbumalbumIdByFilename**](MediaCoverApi.md#GetMediaCoverAlbumalbumIdByFilename) | **Get** /api/v1/mediacover/album/{albumId}/{filename} | 
-[**GetMediaCoverArtistartistIdByFilename**](MediaCoverApi.md#GetMediaCoverArtistartistIdByFilename) | **Get** /api/v1/mediacover/artist/{artistId}/{filename} | 
+[**GetMediaCoverAlbumByFilename**](MediaCoverApi.md#GetMediaCoverAlbumByFilename) | **Get** /api/v1/mediacover/album/{albumId}/{filename} | 
+[**GetMediaCoverArtistByFilename**](MediaCoverApi.md#GetMediaCoverArtistByFilename) | **Get** /api/v1/mediacover/artist/{artistId}/{filename} | 
 
 
 
-## GetMediaCoverAlbumalbumIdByFilename
+## GetMediaCoverAlbumByFilename
 
-> GetMediaCoverAlbumalbumIdByFilename(ctx, albumId, filename).Execute()
+> GetMediaCoverAlbumByFilename(ctx, albumId, filename).Execute()
 
 
 
@@ -33,9 +33,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaCoverApi.GetMediaCoverAlbumalbumIdByFilename(context.Background(), albumId, filename).Execute()
+    resp, r, err := apiClient.MediaCoverApi.GetMediaCoverAlbumByFilename(context.Background(), albumId, filename).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaCoverApi.GetMediaCoverAlbumalbumIdByFilename``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MediaCoverApi.GetMediaCoverAlbumByFilename``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetMediaCoverAlbumalbumIdByFilenameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMediaCoverAlbumByFilenameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -78,9 +78,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetMediaCoverArtistartistIdByFilename
+## GetMediaCoverArtistByFilename
 
-> GetMediaCoverArtistartistIdByFilename(ctx, artistId, filename).Execute()
+> GetMediaCoverArtistByFilename(ctx, artistId, filename).Execute()
 
 
 
@@ -102,9 +102,9 @@ func main() {
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaCoverApi.GetMediaCoverArtistartistIdByFilename(context.Background(), artistId, filename).Execute()
+    resp, r, err := apiClient.MediaCoverApi.GetMediaCoverArtistByFilename(context.Background(), artistId, filename).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaCoverApi.GetMediaCoverArtistartistIdByFilename``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MediaCoverApi.GetMediaCoverArtistByFilename``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetMediaCoverArtistartistIdByFilenameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMediaCoverArtistByFilenameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
