@@ -21,11 +21,11 @@ import (
 )
 
 
-// TrackApiService TrackApi service
-type TrackApiService service
+// TrackAPIService TrackAPI service
+type TrackAPIService service
 type ApiGetTrackByIdRequest struct {
 	ctx context.Context
-	ApiService *TrackApiService
+	ApiService *TrackAPIService
 	id int32
 }
 
@@ -40,7 +40,7 @@ GetTrackById Method for GetTrackById
  @param id
  @return ApiGetTrackByIdRequest
 */
-func (a *TrackApiService) GetTrackById(ctx context.Context, id int32) ApiGetTrackByIdRequest {
+func (a *TrackAPIService) GetTrackById(ctx context.Context, id int32) ApiGetTrackByIdRequest {
 	return ApiGetTrackByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,7 +50,7 @@ func (a *TrackApiService) GetTrackById(ctx context.Context, id int32) ApiGetTrac
 
 // Execute executes the request
 //  @return TrackResource
-func (a *TrackApiService) GetTrackByIdExecute(r ApiGetTrackByIdRequest) (*TrackResource, *http.Response, error) {
+func (a *TrackAPIService) GetTrackByIdExecute(r ApiGetTrackByIdRequest) (*TrackResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -58,7 +58,7 @@ func (a *TrackApiService) GetTrackByIdExecute(r ApiGetTrackByIdRequest) (*TrackR
 		localVarReturnValue  *TrackResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackApiService.GetTrackById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackAPIService.GetTrackById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -153,7 +153,7 @@ func (a *TrackApiService) GetTrackByIdExecute(r ApiGetTrackByIdRequest) (*TrackR
 }
 type ApiListTrackRequest struct {
 	ctx context.Context
-	ApiService *TrackApiService
+	ApiService *TrackAPIService
 	artistId *int32
 	albumId *int32
 	albumReleaseId *int32
@@ -190,7 +190,7 @@ ListTrack Method for ListTrack
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListTrackRequest
 */
-func (a *TrackApiService) ListTrack(ctx context.Context) ApiListTrackRequest {
+func (a *TrackAPIService) ListTrack(ctx context.Context) ApiListTrackRequest {
 	return ApiListTrackRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -199,7 +199,7 @@ func (a *TrackApiService) ListTrack(ctx context.Context) ApiListTrackRequest {
 
 // Execute executes the request
 //  @return []TrackResource
-func (a *TrackApiService) ListTrackExecute(r ApiListTrackRequest) ([]*TrackResource, *http.Response, error) {
+func (a *TrackAPIService) ListTrackExecute(r ApiListTrackRequest) ([]*TrackResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -207,7 +207,7 @@ func (a *TrackApiService) ListTrackExecute(r ApiListTrackRequest) ([]*TrackResou
 		localVarReturnValue  []*TrackResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackApiService.ListTrack")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackAPIService.ListTrack")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
