@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetFeedV1CalendarLidarrIcs
 
-> GetFeedV1CalendarLidarrIcs(ctx).PastDays(pastDays).FutureDays(futureDays).TagList(tagList).Unmonitored(unmonitored).Execute()
+> GetFeedV1CalendarLidarrIcs(ctx).PastDays(pastDays).FutureDays(futureDays).Tags(tags).Unmonitored(unmonitored).Execute()
 
 
 
@@ -29,12 +29,12 @@ import (
 func main() {
     pastDays := int32(56) // int32 |  (optional) (default to 7)
     futureDays := int32(56) // int32 |  (optional) (default to 28)
-    tagList := "tagList_example" // string |  (optional) (default to "")
+    tags := "tags_example" // string |  (optional) (default to "")
     unmonitored := true // bool |  (optional) (default to false)
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CalendarFeedAPI.GetFeedV1CalendarLidarrIcs(context.Background()).PastDays(pastDays).FutureDays(futureDays).TagList(tagList).Unmonitored(unmonitored).Execute()
+    resp, r, err := apiClient.CalendarFeedAPI.GetFeedV1CalendarLidarrIcs(context.Background()).PastDays(pastDays).FutureDays(futureDays).Tags(tags).Unmonitored(unmonitored).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CalendarFeedAPI.GetFeedV1CalendarLidarrIcs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pastDays** | **int32** |  | [default to 7]
  **futureDays** | **int32** |  | [default to 28]
- **tagList** | **string** |  | [default to &quot;&quot;]
+ **tags** | **string** |  | [default to &quot;&quot;]
  **unmonitored** | **bool** |  | [default to false]
 
 ### Return type
