@@ -26,7 +26,7 @@ type ApiGetFeedV1CalendarLidarrIcsRequest struct {
 	ApiService *CalendarFeedAPIService
 	pastDays *int32
 	futureDays *int32
-	tagList *string
+	tags *string
 	unmonitored *bool
 }
 
@@ -40,8 +40,8 @@ func (r ApiGetFeedV1CalendarLidarrIcsRequest) FutureDays(futureDays int32) ApiGe
 	return r
 }
 
-func (r ApiGetFeedV1CalendarLidarrIcsRequest) TagList(tagList string) ApiGetFeedV1CalendarLidarrIcsRequest {
-	r.tagList = &tagList
+func (r ApiGetFeedV1CalendarLidarrIcsRequest) Tags(tags string) ApiGetFeedV1CalendarLidarrIcsRequest {
+	r.tags = &tags
 	return r
 }
 
@@ -92,8 +92,8 @@ func (a *CalendarFeedAPIService) GetFeedV1CalendarLidarrIcsExecute(r ApiGetFeedV
 	if r.futureDays != nil {
 		localVarQueryParams.Add("futureDays", parameterToString(*r.futureDays, ""))
 	}
-	if r.tagList != nil {
-		localVarQueryParams.Add("tagList", parameterToString(*r.tagList, ""))
+	if r.tags != nil {
+		localVarQueryParams.Add("tags", parameterToString(*r.tags, ""))
 	}
 	if r.unmonitored != nil {
 		localVarQueryParams.Add("unmonitored", parameterToString(*r.unmonitored, ""))

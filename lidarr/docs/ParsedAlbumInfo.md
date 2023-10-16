@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AlbumTitle** | Pointer to **NullableString** |  | [optional] 
 **ArtistName** | Pointer to **NullableString** |  | [optional] 
+**AlbumType** | Pointer to **NullableString** |  | [optional] 
 **ArtistTitleInfo** | Pointer to [**ArtistTitleInfo**](ArtistTitleInfo.md) |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
 **ReleaseDate** | Pointer to **NullableString** |  | [optional] 
@@ -106,6 +107,41 @@ HasArtistName returns a boolean if a field has been set.
 `func (o *ParsedAlbumInfo) UnsetArtistName()`
 
 UnsetArtistName ensures that no value is present for ArtistName, not even an explicit nil
+### GetAlbumType
+
+`func (o *ParsedAlbumInfo) GetAlbumType() string`
+
+GetAlbumType returns the AlbumType field if non-nil, zero value otherwise.
+
+### GetAlbumTypeOk
+
+`func (o *ParsedAlbumInfo) GetAlbumTypeOk() (*string, bool)`
+
+GetAlbumTypeOk returns a tuple with the AlbumType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlbumType
+
+`func (o *ParsedAlbumInfo) SetAlbumType(v string)`
+
+SetAlbumType sets AlbumType field to given value.
+
+### HasAlbumType
+
+`func (o *ParsedAlbumInfo) HasAlbumType() bool`
+
+HasAlbumType returns a boolean if a field has been set.
+
+### SetAlbumTypeNil
+
+`func (o *ParsedAlbumInfo) SetAlbumTypeNil(b bool)`
+
+ SetAlbumTypeNil sets the value for AlbumType to be an explicit nil
+
+### UnsetAlbumType
+`func (o *ParsedAlbumInfo) UnsetAlbumType()`
+
+UnsetAlbumType ensures that no value is present for AlbumType, not even an explicit nil
 ### GetArtistTitleInfo
 
 `func (o *ParsedAlbumInfo) GetArtistTitleInfo() ArtistTitleInfo`

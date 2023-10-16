@@ -18,6 +18,7 @@ import (
 type ParsedAlbumInfo struct {
 	AlbumTitle NullableString `json:"albumTitle,omitempty"`
 	ArtistName NullableString `json:"artistName,omitempty"`
+	AlbumType NullableString `json:"albumType,omitempty"`
 	ArtistTitleInfo *ArtistTitleInfo `json:"artistTitleInfo,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
 	ReleaseDate NullableString `json:"releaseDate,omitempty"`
@@ -129,6 +130,48 @@ func (o *ParsedAlbumInfo) SetArtistNameNil() {
 // UnsetArtistName ensures that no value is present for ArtistName, not even an explicit nil
 func (o *ParsedAlbumInfo) UnsetArtistName() {
 	o.ArtistName.Unset()
+}
+
+// GetAlbumType returns the AlbumType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ParsedAlbumInfo) GetAlbumType() string {
+	if o == nil || isNil(o.AlbumType.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.AlbumType.Get()
+}
+
+// GetAlbumTypeOk returns a tuple with the AlbumType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ParsedAlbumInfo) GetAlbumTypeOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.AlbumType.Get(), o.AlbumType.IsSet()
+}
+
+// HasAlbumType returns a boolean if a field has been set.
+func (o *ParsedAlbumInfo) HasAlbumType() bool {
+	if o != nil && o.AlbumType.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetAlbumType gets a reference to the given NullableString and assigns it to the AlbumType field.
+func (o *ParsedAlbumInfo) SetAlbumType(v string) {
+	o.AlbumType.Set(&v)
+}
+// SetAlbumTypeNil sets the value for AlbumType to be an explicit nil
+func (o *ParsedAlbumInfo) SetAlbumTypeNil() {
+	o.AlbumType.Set(nil)
+}
+
+// UnsetAlbumType ensures that no value is present for AlbumType, not even an explicit nil
+func (o *ParsedAlbumInfo) UnsetAlbumType() {
+	o.AlbumType.Unset()
 }
 
 // GetArtistTitleInfo returns the ArtistTitleInfo field value if set, zero value otherwise.
@@ -508,6 +551,9 @@ func (o ParsedAlbumInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ArtistName.IsSet() {
 		toSerialize["artistName"] = o.ArtistName.Get()
+	}
+	if o.AlbumType.IsSet() {
+		toSerialize["albumType"] = o.AlbumType.Get()
 	}
 	if !isNil(o.ArtistTitleInfo) {
 		toSerialize["artistTitleInfo"] = o.ArtistTitleInfo
