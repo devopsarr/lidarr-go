@@ -107,6 +107,7 @@ docs/ArtistStatisticsResource.md
 docs/ArtistStatusType.md
 docs/ArtistTitleInfo.md
 docs/AuthenticationAPI.md
+docs/AuthenticationRequiredType.md
 docs/AuthenticationType.md
 docs/BackupAPI.md
 docs/BackupResource.md
@@ -217,6 +218,7 @@ docs/ParsedTrackInfo.md
 docs/PingAPI.md
 docs/PingResource.md
 docs/PrimaryAlbumType.md
+docs/PrivacyLevel.md
 docs/ProfileFormatItem.md
 docs/ProfileFormatItemResource.md
 docs/ProfilePrimaryAlbumTypeItem.md
@@ -330,6 +332,7 @@ model_artist_resource.go
 model_artist_statistics_resource.go
 model_artist_status_type.go
 model_artist_title_info.go
+model_authentication_required_type.go
 model_authentication_type.go
 model_backup_resource.go
 model_backup_type.go
@@ -404,6 +407,7 @@ model_parsed_album_info.go
 model_parsed_track_info.go
 model_ping_resource.go
 model_primary_album_type.go
+model_privacy_level.go
 model_profile_format_item.go
 model_profile_format_item_resource.go
 model_profile_primary_album_type_item.go
