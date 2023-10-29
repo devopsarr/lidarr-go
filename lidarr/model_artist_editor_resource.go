@@ -26,6 +26,7 @@ type ArtistEditorResource struct {
 	ApplyTags *ApplyTags `json:"applyTags,omitempty"`
 	MoveFiles *bool `json:"moveFiles,omitempty"`
 	DeleteFiles *bool `json:"deleteFiles,omitempty"`
+	AddImportListExclusion *bool `json:"addImportListExclusion,omitempty"`
 }
 
 // NewArtistEditorResource instantiates a new ArtistEditorResource object
@@ -407,6 +408,38 @@ func (o *ArtistEditorResource) SetDeleteFiles(v bool) {
 	o.DeleteFiles = &v
 }
 
+// GetAddImportListExclusion returns the AddImportListExclusion field value if set, zero value otherwise.
+func (o *ArtistEditorResource) GetAddImportListExclusion() bool {
+	if o == nil || isNil(o.AddImportListExclusion) {
+		var ret bool
+		return ret
+	}
+	return *o.AddImportListExclusion
+}
+
+// GetAddImportListExclusionOk returns a tuple with the AddImportListExclusion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ArtistEditorResource) GetAddImportListExclusionOk() (*bool, bool) {
+	if o == nil || isNil(o.AddImportListExclusion) {
+    return nil, false
+	}
+	return o.AddImportListExclusion, true
+}
+
+// HasAddImportListExclusion returns a boolean if a field has been set.
+func (o *ArtistEditorResource) HasAddImportListExclusion() bool {
+	if o != nil && !isNil(o.AddImportListExclusion) {
+		return true
+	}
+
+	return false
+}
+
+// SetAddImportListExclusion gets a reference to the given bool and assigns it to the AddImportListExclusion field.
+func (o *ArtistEditorResource) SetAddImportListExclusion(v bool) {
+	o.AddImportListExclusion = &v
+}
+
 func (o ArtistEditorResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.ArtistIds != nil {
@@ -438,6 +471,9 @@ func (o ArtistEditorResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.DeleteFiles) {
 		toSerialize["deleteFiles"] = o.DeleteFiles
+	}
+	if !isNil(o.AddImportListExclusion) {
+		toSerialize["addImportListExclusion"] = o.AddImportListExclusion
 	}
 	return json.Marshal(toSerialize)
 }

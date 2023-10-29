@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ApplyTags** | Pointer to [**ApplyTags**](ApplyTags.md) |  | [optional] 
 **MoveFiles** | Pointer to **bool** |  | [optional] 
 **DeleteFiles** | Pointer to **bool** |  | [optional] 
+**AddImportListExclusion** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -343,6 +344,31 @@ SetDeleteFiles sets DeleteFiles field to given value.
 `func (o *ArtistEditorResource) HasDeleteFiles() bool`
 
 HasDeleteFiles returns a boolean if a field has been set.
+
+### GetAddImportListExclusion
+
+`func (o *ArtistEditorResource) GetAddImportListExclusion() bool`
+
+GetAddImportListExclusion returns the AddImportListExclusion field if non-nil, zero value otherwise.
+
+### GetAddImportListExclusionOk
+
+`func (o *ArtistEditorResource) GetAddImportListExclusionOk() (*bool, bool)`
+
+GetAddImportListExclusionOk returns a tuple with the AddImportListExclusion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddImportListExclusion
+
+`func (o *ArtistEditorResource) SetAddImportListExclusion(v bool)`
+
+SetAddImportListExclusion sets AddImportListExclusion field to given value.
+
+### HasAddImportListExclusion
+
+`func (o *ArtistEditorResource) HasAddImportListExclusion() bool`
+
+HasAddImportListExclusion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
