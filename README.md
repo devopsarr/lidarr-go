@@ -101,6 +101,12 @@ Class | Method | HTTP request | Description
 *ArtistLookupAPI* | [**GetArtistLookup**](lidarr/docs/ArtistLookupAPI.md#getartistlookup) | **Get** /api/v1/artist/lookup | 
 *AuthenticationAPI* | [**CreateLogin**](lidarr/docs/AuthenticationAPI.md#createlogin) | **Post** /login | 
 *AuthenticationAPI* | [**GetLogout**](lidarr/docs/AuthenticationAPI.md#getlogout) | **Get** /logout | 
+*AutoTaggingAPI* | [**CreateAutoTagging**](lidarr/docs/AutoTaggingAPI.md#createautotagging) | **Post** /api/v1/autotagging | 
+*AutoTaggingAPI* | [**DeleteAutoTagging**](lidarr/docs/AutoTaggingAPI.md#deleteautotagging) | **Delete** /api/v1/autotagging/{id} | 
+*AutoTaggingAPI* | [**GetAutoTaggingById**](lidarr/docs/AutoTaggingAPI.md#getautotaggingbyid) | **Get** /api/v1/autotagging/{id} | 
+*AutoTaggingAPI* | [**GetAutoTaggingSchema**](lidarr/docs/AutoTaggingAPI.md#getautotaggingschema) | **Get** /api/v1/autotagging/schema | 
+*AutoTaggingAPI* | [**ListAutoTagging**](lidarr/docs/AutoTaggingAPI.md#listautotagging) | **Get** /api/v1/autotagging | 
+*AutoTaggingAPI* | [**UpdateAutoTagging**](lidarr/docs/AutoTaggingAPI.md#updateautotagging) | **Put** /api/v1/autotagging/{id} | 
 *BackupAPI* | [**CreateSystemBackupRestoreById**](lidarr/docs/BackupAPI.md#createsystembackuprestorebyid) | **Post** /api/v1/system/backup/restore/{id} | 
 *BackupAPI* | [**CreateSystemBackupRestoreUpload**](lidarr/docs/BackupAPI.md#createsystembackuprestoreupload) | **Post** /api/v1/system/backup/restore/upload | 
 *BackupAPI* | [**DeleteSystemBackup**](lidarr/docs/BackupAPI.md#deletesystembackup) | **Delete** /api/v1/system/backup/{id} | 
@@ -341,6 +347,8 @@ Class | Method | HTTP request | Description
  - [ArtistTitleInfo](docs/ArtistTitleInfo.md)
  - [AuthenticationRequiredType](docs/AuthenticationRequiredType.md)
  - [AuthenticationType](docs/AuthenticationType.md)
+ - [AutoTaggingResource](docs/AutoTaggingResource.md)
+ - [AutoTaggingSpecificationSchema](docs/AutoTaggingSpecificationSchema.md)
  - [BackupResource](docs/BackupResource.md)
  - [BackupType](docs/BackupType.md)
  - [BlocklistBulkResource](docs/BlocklistBulkResource.md)
@@ -408,7 +416,6 @@ Class | Method | HTTP request | Description
  - [NamingConfigResource](docs/NamingConfigResource.md)
  - [NewItemMonitorTypes](docs/NewItemMonitorTypes.md)
  - [NotificationResource](docs/NotificationResource.md)
- - [PagingResourceFilter](docs/PagingResourceFilter.md)
  - [ParseResource](docs/ParseResource.md)
  - [ParsedAlbumInfo](docs/ParsedAlbumInfo.md)
  - [ParsedTrackInfo](docs/ParsedTrackInfo.md)

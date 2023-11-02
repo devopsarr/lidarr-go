@@ -400,46 +400,46 @@ func (a *NamingConfigAPIService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	localVarFormParams := url.Values{}
 
 	if r.renameTracks != nil {
-		localVarQueryParams.Add("RenameTracks", parameterToString(*r.renameTracks, ""))
+		localVarQueryParams.Add("renameTracks", parameterToString(*r.renameTracks, ""))
 	}
 	if r.replaceIllegalCharacters != nil {
-		localVarQueryParams.Add("ReplaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
+		localVarQueryParams.Add("replaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
 	}
 	if r.colonReplacementFormat != nil {
-		localVarQueryParams.Add("ColonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
+		localVarQueryParams.Add("colonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
 	}
 	if r.standardTrackFormat != nil {
-		localVarQueryParams.Add("StandardTrackFormat", parameterToString(*r.standardTrackFormat, ""))
+		localVarQueryParams.Add("standardTrackFormat", parameterToString(*r.standardTrackFormat, ""))
 	}
 	if r.multiDiscTrackFormat != nil {
-		localVarQueryParams.Add("MultiDiscTrackFormat", parameterToString(*r.multiDiscTrackFormat, ""))
+		localVarQueryParams.Add("multiDiscTrackFormat", parameterToString(*r.multiDiscTrackFormat, ""))
 	}
 	if r.artistFolderFormat != nil {
-		localVarQueryParams.Add("ArtistFolderFormat", parameterToString(*r.artistFolderFormat, ""))
+		localVarQueryParams.Add("artistFolderFormat", parameterToString(*r.artistFolderFormat, ""))
 	}
 	if r.includeArtistName != nil {
-		localVarQueryParams.Add("IncludeArtistName", parameterToString(*r.includeArtistName, ""))
+		localVarQueryParams.Add("includeArtistName", parameterToString(*r.includeArtistName, ""))
 	}
 	if r.includeAlbumTitle != nil {
-		localVarQueryParams.Add("IncludeAlbumTitle", parameterToString(*r.includeAlbumTitle, ""))
+		localVarQueryParams.Add("includeAlbumTitle", parameterToString(*r.includeAlbumTitle, ""))
 	}
 	if r.includeQuality != nil {
-		localVarQueryParams.Add("IncludeQuality", parameterToString(*r.includeQuality, ""))
+		localVarQueryParams.Add("includeQuality", parameterToString(*r.includeQuality, ""))
 	}
 	if r.replaceSpaces != nil {
-		localVarQueryParams.Add("ReplaceSpaces", parameterToString(*r.replaceSpaces, ""))
+		localVarQueryParams.Add("replaceSpaces", parameterToString(*r.replaceSpaces, ""))
 	}
 	if r.separator != nil {
-		localVarQueryParams.Add("Separator", parameterToString(*r.separator, ""))
+		localVarQueryParams.Add("separator", parameterToString(*r.separator, ""))
 	}
 	if r.numberStyle != nil {
-		localVarQueryParams.Add("NumberStyle", parameterToString(*r.numberStyle, ""))
+		localVarQueryParams.Add("numberStyle", parameterToString(*r.numberStyle, ""))
 	}
 	if r.id != nil {
-		localVarQueryParams.Add("Id", parameterToString(*r.id, ""))
+		localVarQueryParams.Add("id", parameterToString(*r.id, ""))
 	}
 	if r.resourceName != nil {
-		localVarQueryParams.Add("ResourceName", parameterToString(*r.resourceName, ""))
+		localVarQueryParams.Add("resourceName", parameterToString(*r.resourceName, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

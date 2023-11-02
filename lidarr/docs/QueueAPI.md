@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GetQueue
 
-> QueueResourcePagingResource GetQueue(ctx).IncludeUnknownArtistItems(includeUnknownArtistItems).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).Execute()
+> QueueResourcePagingResource GetQueue(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownArtistItems(includeUnknownArtistItems).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).ArtistIds(artistIds).Protocol(protocol).Quality(quality).Execute()
 
 
 
@@ -169,13 +169,20 @@ import (
 )
 
 func main() {
+    page := int32(56) // int32 |  (optional) (default to 1)
+    pageSize := int32(56) // int32 |  (optional) (default to 10)
+    sortKey := "sortKey_example" // string |  (optional)
+    sortDirection := lidarrClient.SortDirection("default") // SortDirection |  (optional)
     includeUnknownArtistItems := true // bool |  (optional) (default to false)
     includeArtist := true // bool |  (optional) (default to false)
     includeAlbum := true // bool |  (optional) (default to false)
+    artistIds := []int32{int32(123)} // []int32 |  (optional)
+    protocol := lidarrClient.DownloadProtocol("unknown") // DownloadProtocol |  (optional)
+    quality := int32(56) // int32 |  (optional)
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueAPI.GetQueue(context.Background()).IncludeUnknownArtistItems(includeUnknownArtistItems).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).Execute()
+    resp, r, err := apiClient.QueueAPI.GetQueue(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownArtistItems(includeUnknownArtistItems).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).ArtistIds(artistIds).Protocol(protocol).Quality(quality).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueAPI.GetQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -196,9 +203,16 @@ Other parameters are passed through a pointer to a apiGetQueueRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page** | **int32** |  | [default to 1]
+ **pageSize** | **int32** |  | [default to 10]
+ **sortKey** | **string** |  | 
+ **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
  **includeUnknownArtistItems** | **bool** |  | [default to false]
  **includeArtist** | **bool** |  | [default to false]
  **includeAlbum** | **bool** |  | [default to false]
+ **artistIds** | **[]int32** |  | 
+ **protocol** | [**DownloadProtocol**](DownloadProtocol.md) |  | 
+ **quality** | **int32** |  | 
 
 ### Return type
 

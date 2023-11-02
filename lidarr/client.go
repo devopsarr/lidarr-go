@@ -55,6 +55,7 @@ type APIClient struct {
 	ArtistEditorAPI *ArtistEditorAPIService
 	ArtistLookupAPI *ArtistLookupAPIService
 	AuthenticationAPI *AuthenticationAPIService
+	AutoTaggingAPI *AutoTaggingAPIService
 	BackupAPI *BackupAPIService
 	BlocklistAPI *BlocklistAPIService
 	CalendarAPI *CalendarAPIService
@@ -142,6 +143,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ArtistEditorAPI = (*ArtistEditorAPIService)(&c.common)
 	c.ArtistLookupAPI = (*ArtistLookupAPIService)(&c.common)
 	c.AuthenticationAPI = (*AuthenticationAPIService)(&c.common)
+	c.AutoTaggingAPI = (*AutoTaggingAPIService)(&c.common)
 	c.BackupAPI = (*BackupAPIService)(&c.common)
 	c.BlocklistAPI = (*BlocklistAPIService)(&c.common)
 	c.CalendarAPI = (*CalendarAPIService)(&c.common)

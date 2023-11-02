@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## GetHistory
 
-> HistoryResourcePagingResource GetHistory(ctx).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
+> HistoryResourcePagingResource GetHistory(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).EventType(eventType).AlbumId(albumId).DownloadId(downloadId).ArtistIds(artistIds).Quality(quality).Execute()
 
 
 
@@ -96,13 +96,22 @@ import (
 )
 
 func main() {
-    includeArtist := true // bool |  (optional) (default to false)
-    includeAlbum := true // bool |  (optional) (default to false)
-    includeTrack := true // bool |  (optional) (default to false)
+    page := int32(56) // int32 |  (optional) (default to 1)
+    pageSize := int32(56) // int32 |  (optional) (default to 10)
+    sortKey := "sortKey_example" // string |  (optional)
+    sortDirection := lidarrClient.SortDirection("default") // SortDirection |  (optional)
+    includeArtist := true // bool |  (optional)
+    includeAlbum := true // bool |  (optional)
+    includeTrack := true // bool |  (optional)
+    eventType := int32(56) // int32 |  (optional)
+    albumId := int32(56) // int32 |  (optional)
+    downloadId := "downloadId_example" // string |  (optional)
+    artistIds := []int32{int32(123)} // []int32 |  (optional)
+    quality := []int32{int32(123)} // []int32 |  (optional)
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryAPI.GetHistory(context.Background()).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).Execute()
+    resp, r, err := apiClient.HistoryAPI.GetHistory(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeArtist(includeArtist).IncludeAlbum(includeAlbum).IncludeTrack(includeTrack).EventType(eventType).AlbumId(albumId).DownloadId(downloadId).ArtistIds(artistIds).Quality(quality).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoryAPI.GetHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -123,9 +132,18 @@ Other parameters are passed through a pointer to a apiGetHistoryRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **includeArtist** | **bool** |  | [default to false]
- **includeAlbum** | **bool** |  | [default to false]
- **includeTrack** | **bool** |  | [default to false]
+ **page** | **int32** |  | [default to 1]
+ **pageSize** | **int32** |  | [default to 10]
+ **sortKey** | **string** |  | 
+ **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
+ **includeArtist** | **bool** |  | 
+ **includeAlbum** | **bool** |  | 
+ **includeTrack** | **bool** |  | 
+ **eventType** | **int32** |  | 
+ **albumId** | **int32** |  | 
+ **downloadId** | **string** |  | 
+ **artistIds** | **[]int32** |  | 
+ **quality** | **[]int32** |  | 
 
 ### Return type
 
@@ -138,7 +156,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -212,7 +230,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -285,7 +303,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

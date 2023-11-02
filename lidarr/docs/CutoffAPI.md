@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetWantedCutoff
 
-> AlbumResourcePagingResource GetWantedCutoff(ctx).IncludeArtist(includeArtist).Execute()
+> AlbumResourcePagingResource GetWantedCutoff(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeArtist(includeArtist).Monitored(monitored).Execute()
 
 
 
@@ -28,11 +28,16 @@ import (
 )
 
 func main() {
+    page := int32(56) // int32 |  (optional) (default to 1)
+    pageSize := int32(56) // int32 |  (optional) (default to 10)
+    sortKey := "sortKey_example" // string |  (optional)
+    sortDirection := lidarrClient.SortDirection("default") // SortDirection |  (optional)
     includeArtist := true // bool |  (optional) (default to false)
+    monitored := true // bool |  (optional) (default to true)
 
     configuration := lidarrClient.NewConfiguration()
     apiClient := lidarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CutoffAPI.GetWantedCutoff(context.Background()).IncludeArtist(includeArtist).Execute()
+    resp, r, err := apiClient.CutoffAPI.GetWantedCutoff(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeArtist(includeArtist).Monitored(monitored).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CutoffAPI.GetWantedCutoff``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +58,12 @@ Other parameters are passed through a pointer to a apiGetWantedCutoffRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page** | **int32** |  | [default to 1]
+ **pageSize** | **int32** |  | [default to 10]
+ **sortKey** | **string** |  | 
+ **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
  **includeArtist** | **bool** |  | [default to false]
+ **monitored** | **bool** |  | [default to true]
 
 ### Return type
 

@@ -17,6 +17,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"reflect"
 	"time"
 )
 
@@ -143,9 +144,38 @@ func (a *HistoryAPIService) CreateHistoryFailedByIdExecute(r ApiCreateHistoryFai
 type ApiGetHistoryRequest struct {
 	ctx context.Context
 	ApiService *HistoryAPIService
+	page *int32
+	pageSize *int32
+	sortKey *string
+	sortDirection *SortDirection
 	includeArtist *bool
 	includeAlbum *bool
 	includeTrack *bool
+	eventType *int32
+	albumId *int32
+	downloadId *string
+	artistIds *[]int32
+	quality *[]int32
+}
+
+func (r ApiGetHistoryRequest) Page(page int32) ApiGetHistoryRequest {
+	r.page = &page
+	return r
+}
+
+func (r ApiGetHistoryRequest) PageSize(pageSize int32) ApiGetHistoryRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r ApiGetHistoryRequest) SortKey(sortKey string) ApiGetHistoryRequest {
+	r.sortKey = &sortKey
+	return r
+}
+
+func (r ApiGetHistoryRequest) SortDirection(sortDirection SortDirection) ApiGetHistoryRequest {
+	r.sortDirection = &sortDirection
+	return r
 }
 
 func (r ApiGetHistoryRequest) IncludeArtist(includeArtist bool) ApiGetHistoryRequest {
@@ -160,6 +190,31 @@ func (r ApiGetHistoryRequest) IncludeAlbum(includeAlbum bool) ApiGetHistoryReque
 
 func (r ApiGetHistoryRequest) IncludeTrack(includeTrack bool) ApiGetHistoryRequest {
 	r.includeTrack = &includeTrack
+	return r
+}
+
+func (r ApiGetHistoryRequest) EventType(eventType int32) ApiGetHistoryRequest {
+	r.eventType = &eventType
+	return r
+}
+
+func (r ApiGetHistoryRequest) AlbumId(albumId int32) ApiGetHistoryRequest {
+	r.albumId = &albumId
+	return r
+}
+
+func (r ApiGetHistoryRequest) DownloadId(downloadId string) ApiGetHistoryRequest {
+	r.downloadId = &downloadId
+	return r
+}
+
+func (r ApiGetHistoryRequest) ArtistIds(artistIds []int32) ApiGetHistoryRequest {
+	r.artistIds = &artistIds
+	return r
+}
+
+func (r ApiGetHistoryRequest) Quality(quality []int32) ApiGetHistoryRequest {
+	r.quality = &quality
 	return r
 }
 
@@ -201,6 +256,18 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.page != nil {
+		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+	}
+	if r.pageSize != nil {
+		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+	}
+	if r.sortKey != nil {
+		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+	}
+	if r.sortDirection != nil {
+		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+	}
 	if r.includeArtist != nil {
 		localVarQueryParams.Add("includeArtist", parameterToString(*r.includeArtist, ""))
 	}
@@ -209,6 +276,37 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	}
 	if r.includeTrack != nil {
 		localVarQueryParams.Add("includeTrack", parameterToString(*r.includeTrack, ""))
+	}
+	if r.eventType != nil {
+		localVarQueryParams.Add("eventType", parameterToString(*r.eventType, ""))
+	}
+	if r.albumId != nil {
+		localVarQueryParams.Add("albumId", parameterToString(*r.albumId, ""))
+	}
+	if r.downloadId != nil {
+		localVarQueryParams.Add("downloadId", parameterToString(*r.downloadId, ""))
+	}
+	if r.artistIds != nil {
+		t := *r.artistIds
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("artistIds", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("artistIds", parameterToString(t, "multi"))
+		}
+	}
+	if r.quality != nil {
+		t := *r.quality
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("quality", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("quality", parameterToString(t, "multi"))
+		}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -220,7 +318,7 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -398,7 +496,7 @@ func (a *HistoryAPIService) ListHistoryArtistExecute(r ApiListHistoryArtistReque
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -567,7 +665,7 @@ func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
