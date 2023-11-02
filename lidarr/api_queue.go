@@ -17,6 +17,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"reflect"
 )
 
 
@@ -317,9 +318,36 @@ func (a *QueueAPIService) DeleteQueueBulkExecute(r ApiDeleteQueueBulkRequest) (*
 type ApiGetQueueRequest struct {
 	ctx context.Context
 	ApiService *QueueAPIService
+	page *int32
+	pageSize *int32
+	sortKey *string
+	sortDirection *SortDirection
 	includeUnknownArtistItems *bool
 	includeArtist *bool
 	includeAlbum *bool
+	artistIds *[]int32
+	protocol *DownloadProtocol
+	quality *int32
+}
+
+func (r ApiGetQueueRequest) Page(page int32) ApiGetQueueRequest {
+	r.page = &page
+	return r
+}
+
+func (r ApiGetQueueRequest) PageSize(pageSize int32) ApiGetQueueRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r ApiGetQueueRequest) SortKey(sortKey string) ApiGetQueueRequest {
+	r.sortKey = &sortKey
+	return r
+}
+
+func (r ApiGetQueueRequest) SortDirection(sortDirection SortDirection) ApiGetQueueRequest {
+	r.sortDirection = &sortDirection
+	return r
 }
 
 func (r ApiGetQueueRequest) IncludeUnknownArtistItems(includeUnknownArtistItems bool) ApiGetQueueRequest {
@@ -334,6 +362,21 @@ func (r ApiGetQueueRequest) IncludeArtist(includeArtist bool) ApiGetQueueRequest
 
 func (r ApiGetQueueRequest) IncludeAlbum(includeAlbum bool) ApiGetQueueRequest {
 	r.includeAlbum = &includeAlbum
+	return r
+}
+
+func (r ApiGetQueueRequest) ArtistIds(artistIds []int32) ApiGetQueueRequest {
+	r.artistIds = &artistIds
+	return r
+}
+
+func (r ApiGetQueueRequest) Protocol(protocol DownloadProtocol) ApiGetQueueRequest {
+	r.protocol = &protocol
+	return r
+}
+
+func (r ApiGetQueueRequest) Quality(quality int32) ApiGetQueueRequest {
+	r.quality = &quality
 	return r
 }
 
@@ -375,6 +418,18 @@ func (a *QueueAPIService) GetQueueExecute(r ApiGetQueueRequest) (*QueueResourceP
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.page != nil {
+		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+	}
+	if r.pageSize != nil {
+		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+	}
+	if r.sortKey != nil {
+		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+	}
+	if r.sortDirection != nil {
+		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+	}
 	if r.includeUnknownArtistItems != nil {
 		localVarQueryParams.Add("includeUnknownArtistItems", parameterToString(*r.includeUnknownArtistItems, ""))
 	}
@@ -383,6 +438,23 @@ func (a *QueueAPIService) GetQueueExecute(r ApiGetQueueRequest) (*QueueResourceP
 	}
 	if r.includeAlbum != nil {
 		localVarQueryParams.Add("includeAlbum", parameterToString(*r.includeAlbum, ""))
+	}
+	if r.artistIds != nil {
+		t := *r.artistIds
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("artistIds", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("artistIds", parameterToString(t, "multi"))
+		}
+	}
+	if r.protocol != nil {
+		localVarQueryParams.Add("protocol", parameterToString(*r.protocol, ""))
+	}
+	if r.quality != nil {
+		localVarQueryParams.Add("quality", parameterToString(*r.quality, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

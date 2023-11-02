@@ -10,9 +10,10 @@ Name | Type | Description | Notes
 **ImportListIds** | Pointer to **[]int32** |  | [optional] 
 **NotificationIds** | Pointer to **[]int32** |  | [optional] 
 **RestrictionIds** | Pointer to **[]int32** |  | [optional] 
-**ArtistIds** | Pointer to **[]int32** |  | [optional] 
 **IndexerIds** | Pointer to **[]int32** |  | [optional] 
 **DownloadClientIds** | Pointer to **[]int32** |  | [optional] 
+**AutoTagIds** | Pointer to **[]int32** |  | [optional] 
+**ArtistIds** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
 
@@ -233,41 +234,6 @@ HasRestrictionIds returns a boolean if a field has been set.
 `func (o *TagDetailsResource) UnsetRestrictionIds()`
 
 UnsetRestrictionIds ensures that no value is present for RestrictionIds, not even an explicit nil
-### GetArtistIds
-
-`func (o *TagDetailsResource) GetArtistIds() []int32`
-
-GetArtistIds returns the ArtistIds field if non-nil, zero value otherwise.
-
-### GetArtistIdsOk
-
-`func (o *TagDetailsResource) GetArtistIdsOk() (*[]int32, bool)`
-
-GetArtistIdsOk returns a tuple with the ArtistIds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetArtistIds
-
-`func (o *TagDetailsResource) SetArtistIds(v []int32)`
-
-SetArtistIds sets ArtistIds field to given value.
-
-### HasArtistIds
-
-`func (o *TagDetailsResource) HasArtistIds() bool`
-
-HasArtistIds returns a boolean if a field has been set.
-
-### SetArtistIdsNil
-
-`func (o *TagDetailsResource) SetArtistIdsNil(b bool)`
-
- SetArtistIdsNil sets the value for ArtistIds to be an explicit nil
-
-### UnsetArtistIds
-`func (o *TagDetailsResource) UnsetArtistIds()`
-
-UnsetArtistIds ensures that no value is present for ArtistIds, not even an explicit nil
 ### GetIndexerIds
 
 `func (o *TagDetailsResource) GetIndexerIds() []int32`
@@ -338,6 +304,76 @@ HasDownloadClientIds returns a boolean if a field has been set.
 `func (o *TagDetailsResource) UnsetDownloadClientIds()`
 
 UnsetDownloadClientIds ensures that no value is present for DownloadClientIds, not even an explicit nil
+### GetAutoTagIds
+
+`func (o *TagDetailsResource) GetAutoTagIds() []int32`
+
+GetAutoTagIds returns the AutoTagIds field if non-nil, zero value otherwise.
+
+### GetAutoTagIdsOk
+
+`func (o *TagDetailsResource) GetAutoTagIdsOk() (*[]int32, bool)`
+
+GetAutoTagIdsOk returns a tuple with the AutoTagIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoTagIds
+
+`func (o *TagDetailsResource) SetAutoTagIds(v []int32)`
+
+SetAutoTagIds sets AutoTagIds field to given value.
+
+### HasAutoTagIds
+
+`func (o *TagDetailsResource) HasAutoTagIds() bool`
+
+HasAutoTagIds returns a boolean if a field has been set.
+
+### SetAutoTagIdsNil
+
+`func (o *TagDetailsResource) SetAutoTagIdsNil(b bool)`
+
+ SetAutoTagIdsNil sets the value for AutoTagIds to be an explicit nil
+
+### UnsetAutoTagIds
+`func (o *TagDetailsResource) UnsetAutoTagIds()`
+
+UnsetAutoTagIds ensures that no value is present for AutoTagIds, not even an explicit nil
+### GetArtistIds
+
+`func (o *TagDetailsResource) GetArtistIds() []int32`
+
+GetArtistIds returns the ArtistIds field if non-nil, zero value otherwise.
+
+### GetArtistIdsOk
+
+`func (o *TagDetailsResource) GetArtistIdsOk() (*[]int32, bool)`
+
+GetArtistIdsOk returns a tuple with the ArtistIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArtistIds
+
+`func (o *TagDetailsResource) SetArtistIds(v []int32)`
+
+SetArtistIds sets ArtistIds field to given value.
+
+### HasArtistIds
+
+`func (o *TagDetailsResource) HasArtistIds() bool`
+
+HasArtistIds returns a boolean if a field has been set.
+
+### SetArtistIdsNil
+
+`func (o *TagDetailsResource) SetArtistIdsNil(b bool)`
+
+ SetArtistIdsNil sets the value for ArtistIds to be an explicit nil
+
+### UnsetArtistIds
+`func (o *TagDetailsResource) UnsetArtistIds()`
+
+UnsetArtistIds ensures that no value is present for ArtistIds, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -22,9 +22,10 @@ type TagDetailsResource struct {
 	ImportListIds []*int32 `json:"importListIds,omitempty"`
 	NotificationIds []*int32 `json:"notificationIds,omitempty"`
 	RestrictionIds []*int32 `json:"restrictionIds,omitempty"`
-	ArtistIds []*int32 `json:"artistIds,omitempty"`
 	IndexerIds []*int32 `json:"indexerIds,omitempty"`
 	DownloadClientIds []*int32 `json:"downloadClientIds,omitempty"`
+	AutoTagIds []*int32 `json:"autoTagIds,omitempty"`
+	ArtistIds []*int32 `json:"artistIds,omitempty"`
 }
 
 // NewTagDetailsResource instantiates a new TagDetailsResource object
@@ -250,39 +251,6 @@ func (o *TagDetailsResource) SetRestrictionIds(v []*int32) {
 	o.RestrictionIds = v
 }
 
-// GetArtistIds returns the ArtistIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TagDetailsResource) GetArtistIds() []*int32 {
-	if o == nil {
-		var ret []*int32
-		return ret
-	}
-	return o.ArtistIds
-}
-
-// GetArtistIdsOk returns a tuple with the ArtistIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TagDetailsResource) GetArtistIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.ArtistIds) {
-    return nil, false
-	}
-	return o.ArtistIds, true
-}
-
-// HasArtistIds returns a boolean if a field has been set.
-func (o *TagDetailsResource) HasArtistIds() bool {
-	if o != nil && isNil(o.ArtistIds) {
-		return true
-	}
-
-	return false
-}
-
-// SetArtistIds gets a reference to the given []int32 and assigns it to the ArtistIds field.
-func (o *TagDetailsResource) SetArtistIds(v []*int32) {
-	o.ArtistIds = v
-}
-
 // GetIndexerIds returns the IndexerIds field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TagDetailsResource) GetIndexerIds() []*int32 {
 	if o == nil {
@@ -349,6 +317,72 @@ func (o *TagDetailsResource) SetDownloadClientIds(v []*int32) {
 	o.DownloadClientIds = v
 }
 
+// GetAutoTagIds returns the AutoTagIds field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TagDetailsResource) GetAutoTagIds() []*int32 {
+	if o == nil {
+		var ret []*int32
+		return ret
+	}
+	return o.AutoTagIds
+}
+
+// GetAutoTagIdsOk returns a tuple with the AutoTagIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TagDetailsResource) GetAutoTagIdsOk() ([]*int32, bool) {
+	if o == nil || isNil(o.AutoTagIds) {
+    return nil, false
+	}
+	return o.AutoTagIds, true
+}
+
+// HasAutoTagIds returns a boolean if a field has been set.
+func (o *TagDetailsResource) HasAutoTagIds() bool {
+	if o != nil && isNil(o.AutoTagIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoTagIds gets a reference to the given []int32 and assigns it to the AutoTagIds field.
+func (o *TagDetailsResource) SetAutoTagIds(v []*int32) {
+	o.AutoTagIds = v
+}
+
+// GetArtistIds returns the ArtistIds field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TagDetailsResource) GetArtistIds() []*int32 {
+	if o == nil {
+		var ret []*int32
+		return ret
+	}
+	return o.ArtistIds
+}
+
+// GetArtistIdsOk returns a tuple with the ArtistIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TagDetailsResource) GetArtistIdsOk() ([]*int32, bool) {
+	if o == nil || isNil(o.ArtistIds) {
+    return nil, false
+	}
+	return o.ArtistIds, true
+}
+
+// HasArtistIds returns a boolean if a field has been set.
+func (o *TagDetailsResource) HasArtistIds() bool {
+	if o != nil && isNil(o.ArtistIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetArtistIds gets a reference to the given []int32 and assigns it to the ArtistIds field.
+func (o *TagDetailsResource) SetArtistIds(v []*int32) {
+	o.ArtistIds = v
+}
+
 func (o TagDetailsResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -369,14 +403,17 @@ func (o TagDetailsResource) MarshalJSON() ([]byte, error) {
 	if o.RestrictionIds != nil {
 		toSerialize["restrictionIds"] = o.RestrictionIds
 	}
-	if o.ArtistIds != nil {
-		toSerialize["artistIds"] = o.ArtistIds
-	}
 	if o.IndexerIds != nil {
 		toSerialize["indexerIds"] = o.IndexerIds
 	}
 	if o.DownloadClientIds != nil {
 		toSerialize["downloadClientIds"] = o.DownloadClientIds
+	}
+	if o.AutoTagIds != nil {
+		toSerialize["autoTagIds"] = o.AutoTagIds
+	}
+	if o.ArtistIds != nil {
+		toSerialize["artistIds"] = o.ArtistIds
 	}
 	return json.Marshal(toSerialize)
 }

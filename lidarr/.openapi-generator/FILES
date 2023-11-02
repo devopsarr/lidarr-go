@@ -9,6 +9,7 @@ api_artist.go
 api_artist_editor.go
 api_artist_lookup.go
 api_authentication.go
+api_auto_tagging.go
 api_backup.go
 api_blocklist.go
 api_calendar.go
@@ -109,6 +110,9 @@ docs/ArtistTitleInfo.md
 docs/AuthenticationAPI.md
 docs/AuthenticationRequiredType.md
 docs/AuthenticationType.md
+docs/AutoTaggingAPI.md
+docs/AutoTaggingResource.md
+docs/AutoTaggingSpecificationSchema.md
 docs/BackupAPI.md
 docs/BackupResource.md
 docs/BackupType.md
@@ -210,7 +214,6 @@ docs/NamingConfigResource.md
 docs/NewItemMonitorTypes.md
 docs/NotificationAPI.md
 docs/NotificationResource.md
-docs/PagingResourceFilter.md
 docs/ParseAPI.md
 docs/ParseResource.md
 docs/ParsedAlbumInfo.md
@@ -334,6 +337,8 @@ model_artist_status_type.go
 model_artist_title_info.go
 model_authentication_required_type.go
 model_authentication_type.go
+model_auto_tagging_resource.go
+model_auto_tagging_specification_schema.go
 model_backup_resource.go
 model_backup_type.go
 model_blocklist_bulk_resource.go
@@ -401,7 +406,6 @@ model_monitoring_options.go
 model_naming_config_resource.go
 model_new_item_monitor_types.go
 model_notification_resource.go
-model_paging_resource_filter.go
 model_parse_resource.go
 model_parsed_album_info.go
 model_parsed_track_info.go
