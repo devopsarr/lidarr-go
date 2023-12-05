@@ -31,8 +31,8 @@ type ArtistResource struct {
 	ArtistType NullableString `json:"artistType,omitempty"`
 	Disambiguation NullableString `json:"disambiguation,omitempty"`
 	Links []*Links `json:"links,omitempty"`
-	NextAlbum *Album `json:"nextAlbum,omitempty"`
-	LastAlbum *Album `json:"lastAlbum,omitempty"`
+	NextAlbum *AlbumResource `json:"nextAlbum,omitempty"`
+	LastAlbum *AlbumResource `json:"lastAlbum,omitempty"`
 	Images []*MediaCover `json:"images,omitempty"`
 	Members []*Member `json:"members,omitempty"`
 	RemotePoster NullableString `json:"remotePoster,omitempty"`
@@ -590,9 +590,9 @@ func (o *ArtistResource) SetLinks(v []*Links) {
 }
 
 // GetNextAlbum returns the NextAlbum field value if set, zero value otherwise.
-func (o *ArtistResource) GetNextAlbum() Album {
+func (o *ArtistResource) GetNextAlbum() AlbumResource {
 	if o == nil || isNil(o.NextAlbum) {
-		var ret Album
+		var ret AlbumResource
 		return ret
 	}
 	return *o.NextAlbum
@@ -600,7 +600,7 @@ func (o *ArtistResource) GetNextAlbum() Album {
 
 // GetNextAlbumOk returns a tuple with the NextAlbum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ArtistResource) GetNextAlbumOk() (*Album, bool) {
+func (o *ArtistResource) GetNextAlbumOk() (*AlbumResource, bool) {
 	if o == nil || isNil(o.NextAlbum) {
     return nil, false
 	}
@@ -616,15 +616,15 @@ func (o *ArtistResource) HasNextAlbum() bool {
 	return false
 }
 
-// SetNextAlbum gets a reference to the given Album and assigns it to the NextAlbum field.
-func (o *ArtistResource) SetNextAlbum(v Album) {
+// SetNextAlbum gets a reference to the given AlbumResource and assigns it to the NextAlbum field.
+func (o *ArtistResource) SetNextAlbum(v AlbumResource) {
 	o.NextAlbum = &v
 }
 
 // GetLastAlbum returns the LastAlbum field value if set, zero value otherwise.
-func (o *ArtistResource) GetLastAlbum() Album {
+func (o *ArtistResource) GetLastAlbum() AlbumResource {
 	if o == nil || isNil(o.LastAlbum) {
-		var ret Album
+		var ret AlbumResource
 		return ret
 	}
 	return *o.LastAlbum
@@ -632,7 +632,7 @@ func (o *ArtistResource) GetLastAlbum() Album {
 
 // GetLastAlbumOk returns a tuple with the LastAlbum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ArtistResource) GetLastAlbumOk() (*Album, bool) {
+func (o *ArtistResource) GetLastAlbumOk() (*AlbumResource, bool) {
 	if o == nil || isNil(o.LastAlbum) {
     return nil, false
 	}
@@ -648,8 +648,8 @@ func (o *ArtistResource) HasLastAlbum() bool {
 	return false
 }
 
-// SetLastAlbum gets a reference to the given Album and assigns it to the LastAlbum field.
-func (o *ArtistResource) SetLastAlbum(v Album) {
+// SetLastAlbum gets a reference to the given AlbumResource and assigns it to the LastAlbum field.
+func (o *ArtistResource) SetLastAlbum(v AlbumResource) {
 	o.LastAlbum = &v
 }
 
