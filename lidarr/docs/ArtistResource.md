@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **ArtistType** | Pointer to **NullableString** |  | [optional] 
 **Disambiguation** | Pointer to **NullableString** |  | [optional] 
 **Links** | Pointer to [**[]Links**](Links.md) |  | [optional] 
-**NextAlbum** | Pointer to [**Album**](Album.md) |  | [optional] 
-**LastAlbum** | Pointer to [**Album**](Album.md) |  | [optional] 
+**NextAlbum** | Pointer to [**AlbumResource**](AlbumResource.md) |  | [optional] 
+**LastAlbum** | Pointer to [**AlbumResource**](AlbumResource.md) |  | [optional] 
 **Images** | Pointer to [**[]MediaCover**](MediaCover.md) |  | [optional] 
 **Members** | Pointer to [**[]Member**](Member.md) |  | [optional] 
 **RemotePoster** | Pointer to **NullableString** |  | [optional] 
@@ -490,20 +490,20 @@ HasLinks returns a boolean if a field has been set.
 UnsetLinks ensures that no value is present for Links, not even an explicit nil
 ### GetNextAlbum
 
-`func (o *ArtistResource) GetNextAlbum() Album`
+`func (o *ArtistResource) GetNextAlbum() AlbumResource`
 
 GetNextAlbum returns the NextAlbum field if non-nil, zero value otherwise.
 
 ### GetNextAlbumOk
 
-`func (o *ArtistResource) GetNextAlbumOk() (*Album, bool)`
+`func (o *ArtistResource) GetNextAlbumOk() (*AlbumResource, bool)`
 
 GetNextAlbumOk returns a tuple with the NextAlbum field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNextAlbum
 
-`func (o *ArtistResource) SetNextAlbum(v Album)`
+`func (o *ArtistResource) SetNextAlbum(v AlbumResource)`
 
 SetNextAlbum sets NextAlbum field to given value.
 
@@ -515,20 +515,20 @@ HasNextAlbum returns a boolean if a field has been set.
 
 ### GetLastAlbum
 
-`func (o *ArtistResource) GetLastAlbum() Album`
+`func (o *ArtistResource) GetLastAlbum() AlbumResource`
 
 GetLastAlbum returns the LastAlbum field if non-nil, zero value otherwise.
 
 ### GetLastAlbumOk
 
-`func (o *ArtistResource) GetLastAlbumOk() (*Album, bool)`
+`func (o *ArtistResource) GetLastAlbumOk() (*AlbumResource, bool)`
 
 GetLastAlbumOk returns a tuple with the LastAlbum field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastAlbum
 
-`func (o *ArtistResource) SetLastAlbum(v Album)`
+`func (o *ArtistResource) SetLastAlbum(v AlbumResource)`
 
 SetLastAlbum sets LastAlbum field to given value.
 
