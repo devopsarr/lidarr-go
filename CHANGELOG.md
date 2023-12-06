@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/devopsarr/lidarr-go/compare/v0.3.0...v0.3.1) (2023-12-06)
+
+
+### Bug Fixes
+
+* remove middle elements from method name ([9464fb1](https://github.com/devopsarr/lidarr-go/commit/9464fb190aec0ef1d3f85fc489e6fc72a11d580a))
+
 ## [0.3.0](https://github.com/devopsarr/lidarr-go/compare/v0.2.1...v0.3.0) (2023-05-16)
 
 
