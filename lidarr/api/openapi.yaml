@@ -17767,6 +17767,7 @@ components:
     QualityDefinitionResource:
       additionalProperties: false
       example:
+        preferredSize: 5.637376656633329
         weight: 6
         minSize: 1.4658129805029452
         maxSize: 5.962133916683182
@@ -17792,6 +17793,10 @@ components:
           nullable: true
           type: number
         maxSize:
+          format: double
+          nullable: true
+          type: number
+        preferredSize:
           format: double
           nullable: true
           type: number
