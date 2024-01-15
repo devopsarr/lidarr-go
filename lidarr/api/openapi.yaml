@@ -1851,8 +1851,10 @@ paths:
         name: eventType
         required: false
         schema:
-          format: int32
-          type: integer
+          items:
+            format: int32
+            type: integer
+          type: array
         style: form
       - explode: true
         in: query
@@ -4667,12 +4669,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/ReleaseResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ReleaseResource'
-          application/*+json:
             schema:
               $ref: '#/components/schemas/ReleaseResource'
       responses:
@@ -10048,6 +10044,7 @@ components:
     DownloadClientConfigResource:
       additionalProperties: false
       example:
+        autoRedownloadFailedFromInteractiveSearch: true
         enableCompletedDownloadHandling: true
         id: 0
         autoRedownloadFailed: true
@@ -10062,6 +10059,8 @@ components:
         enableCompletedDownloadHandling:
           type: boolean
         autoRedownloadFailed:
+          type: boolean
+        autoRedownloadFailedFromInteractiveSearch:
           type: boolean
       type: object
     DownloadClientResource:
@@ -17423,8 +17422,262 @@ components:
           artistName: artistName
           discographyStart: 6
           releaseGroup: releaseGroup
+        customFormats:
+        - name: name
+          includeCustomFormatWhenRenaming: true
+          id: 2
+          specifications:
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 4
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 4
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+        - name: name
+          includeCustomFormatWhenRenaming: true
+          id: 2
+          specifications:
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 4
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 4
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
         id: 0
         title: title
+        customFormatScore: 5
       properties:
         id:
           format: int32
@@ -17441,6 +17694,14 @@ components:
             $ref: '#/components/schemas/AlbumResource'
           nullable: true
           type: array
+        customFormats:
+          items:
+            $ref: '#/components/schemas/CustomFormatResource'
+          nullable: true
+          type: array
+        customFormatScore:
+          format: int32
+          type: integer
       type: object
     ParsedAlbumInfo:
       additionalProperties: false
@@ -19844,6 +20105,7 @@ components:
         rejections:
         - rejections
         - rejections
+        downloadClientId: 1
         ageMinutes: 5.637376656633329
         leechers: 4
         rejected: true
@@ -19865,6 +20127,7 @@ components:
         releaseWeight: 9
         qualityWeight: 6
         indexerId: 7
+        downloadClient: downloadClient
         subGroup: subGroup
         ageHours: 5.962133916683182
         customFormats:
@@ -20255,6 +20518,13 @@ components:
           format: int32
           nullable: true
           type: integer
+        downloadClientId:
+          format: int32
+          nullable: true
+          type: integer
+        downloadClient:
+          nullable: true
+          type: string
       type: object
     ReleaseStatus:
       additionalProperties: false
