@@ -18277,6 +18277,25 @@ components:
             trackFileCount: 9
             sizeOnDisk: 9
             percentOfTracks: 6.438423552598547
+        added: 2000-01-23T04:56:07.000+00:00
+        albumId: 2
+        downloadId: downloadId
+        artistId: 5
+        title: title
+        sizeleft: 3.616076749251911
+        statusMessages:
+        - messages:
+          - messages
+          - messages
+          title: title
+        - messages:
+          - messages
+          - messages
+          title: title
+        protocol: null
+        outputPath: outputPath
+        id: 5
+        downloadClient: downloadClient
         estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
         album:
           secondaryTypes:
@@ -18723,16 +18742,11 @@ components:
             required: true
             infoLink: infoLink
         errorMessage: errorMessage
-        albumId: 2
-        downloadId: downloadId
-        artistId: 5
         indexer: indexer
-        title: title
         timeleft: timeleft
         trackedDownloadState: null
         customFormatScore: 7
         trackedDownloadStatus: null
-        sizeleft: 3.616076749251911
         quality:
           quality:
             name: name
@@ -18741,22 +18755,9 @@ components:
             real: 3
             version: 9
             isRepack: true
-        statusMessages:
-        - messages:
-          - messages
-          - messages
-          title: title
-        - messages:
-          - messages
-          - messages
-          title: title
-        protocol: null
         size: 9.301444243932576
-        outputPath: outputPath
         downloadForced: true
-        id: 5
         status: status
-        downloadClient: downloadClient
       properties:
         id:
           format: int32
@@ -18795,6 +18796,10 @@ components:
         timeleft:
           type: string
         estimatedCompletionTime:
+          format: date-time
+          nullable: true
+          type: string
+        added:
           format: date-time
           nullable: true
           type: string
@@ -18924,6 +18929,25 @@ components:
               trackFileCount: 9
               sizeOnDisk: 9
               percentOfTracks: 6.438423552598547
+          added: 2000-01-23T04:56:07.000+00:00
+          albumId: 2
+          downloadId: downloadId
+          artistId: 5
+          title: title
+          sizeleft: 3.616076749251911
+          statusMessages:
+          - messages:
+            - messages
+            - messages
+            title: title
+          - messages:
+            - messages
+            - messages
+            title: title
+          protocol: null
+          outputPath: outputPath
+          id: 5
+          downloadClient: downloadClient
           estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
           album:
             secondaryTypes:
@@ -19370,16 +19394,11 @@ components:
               required: true
               infoLink: infoLink
           errorMessage: errorMessage
-          albumId: 2
-          downloadId: downloadId
-          artistId: 5
           indexer: indexer
-          title: title
           timeleft: timeleft
           trackedDownloadState: null
           customFormatScore: 7
           trackedDownloadStatus: null
-          sizeleft: 3.616076749251911
           quality:
             quality:
               name: name
@@ -19388,22 +19407,9 @@ components:
               real: 3
               version: 9
               isRepack: true
-          statusMessages:
-          - messages:
-            - messages
-            - messages
-            title: title
-          - messages:
-            - messages
-            - messages
-            title: title
-          protocol: null
           size: 9.301444243932576
-          outputPath: outputPath
           downloadForced: true
-          id: 5
           status: status
-          downloadClient: downloadClient
         - artist:
             sortName: sortName
             rootFolderPath: rootFolderPath
@@ -19491,6 +19497,25 @@ components:
               trackFileCount: 9
               sizeOnDisk: 9
               percentOfTracks: 6.438423552598547
+          added: 2000-01-23T04:56:07.000+00:00
+          albumId: 2
+          downloadId: downloadId
+          artistId: 5
+          title: title
+          sizeleft: 3.616076749251911
+          statusMessages:
+          - messages:
+            - messages
+            - messages
+            title: title
+          - messages:
+            - messages
+            - messages
+            title: title
+          protocol: null
+          outputPath: outputPath
+          id: 5
+          downloadClient: downloadClient
           estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
           album:
             secondaryTypes:
@@ -19937,16 +19962,11 @@ components:
               required: true
               infoLink: infoLink
           errorMessage: errorMessage
-          albumId: 2
-          downloadId: downloadId
-          artistId: 5
           indexer: indexer
-          title: title
           timeleft: timeleft
           trackedDownloadState: null
           customFormatScore: 7
           trackedDownloadStatus: null
-          sizeleft: 3.616076749251911
           quality:
             quality:
               name: name
@@ -19955,22 +19975,9 @@ components:
               real: 3
               version: 9
               isRepack: true
-          statusMessages:
-          - messages:
-            - messages
-            - messages
-            title: title
-          - messages:
-            - messages
-            - messages
-            title: title
-          protocol: null
           size: 9.301444243932576
-          outputPath: outputPath
           downloadForced: true
-          id: 5
           status: status
-          downloadClient: downloadClient
         pageSize: 6
         page: 0
       properties:
