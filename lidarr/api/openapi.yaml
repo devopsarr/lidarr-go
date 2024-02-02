@@ -4229,14 +4229,6 @@ paths:
           default: false
           type: boolean
         style: form
-      - explode: true
-        in: query
-        name: changeCategory
-        required: false
-        schema:
-          default: false
-          type: boolean
-        style: form
       responses:
         "200":
           description: Success
@@ -4265,14 +4257,6 @@ paths:
       - explode: true
         in: query
         name: skipRedownload
-        required: false
-        schema:
-          default: false
-          type: boolean
-        style: form
-      - explode: true
-        in: query
-        name: changeCategory
         required: false
         schema:
           default: false
@@ -18772,7 +18756,6 @@ components:
             version: 9
             isRepack: true
         size: 9.301444243932576
-        downloadClientHasPostImportCategory: true
         downloadForced: true
         status: status
       properties:
@@ -18843,8 +18826,6 @@ components:
         downloadClient:
           nullable: true
           type: string
-        downloadClientHasPostImportCategory:
-          type: boolean
         indexer:
           nullable: true
           type: string
@@ -19427,7 +19408,6 @@ components:
               version: 9
               isRepack: true
           size: 9.301444243932576
-          downloadClientHasPostImportCategory: true
           downloadForced: true
           status: status
         - artist:
@@ -19996,7 +19976,6 @@ components:
               version: 9
               isRepack: true
           size: 9.301444243932576
-          downloadClientHasPostImportCategory: true
           downloadForced: true
           status: status
         pageSize: 6
