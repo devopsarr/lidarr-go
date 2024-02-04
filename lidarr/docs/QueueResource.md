@@ -26,8 +26,11 @@ Name | Type | Description | Notes
 **DownloadId** | Pointer to **NullableString** |  | [optional] 
 **Protocol** | Pointer to [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
 **DownloadClient** | Pointer to **NullableString** |  | [optional] 
+**DownloadClientHasPostImportCategory** | Pointer to **bool** |  | [optional] 
 **Indexer** | Pointer to **NullableString** |  | [optional] 
 **OutputPath** | Pointer to **NullableString** |  | [optional] 
+**TrackFileCount** | Pointer to **int32** |  | [optional] 
+**TrackHasFileCount** | Pointer to **int32** |  | [optional] 
 **DownloadForced** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -709,6 +712,31 @@ HasDownloadClient returns a boolean if a field has been set.
 `func (o *QueueResource) UnsetDownloadClient()`
 
 UnsetDownloadClient ensures that no value is present for DownloadClient, not even an explicit nil
+### GetDownloadClientHasPostImportCategory
+
+`func (o *QueueResource) GetDownloadClientHasPostImportCategory() bool`
+
+GetDownloadClientHasPostImportCategory returns the DownloadClientHasPostImportCategory field if non-nil, zero value otherwise.
+
+### GetDownloadClientHasPostImportCategoryOk
+
+`func (o *QueueResource) GetDownloadClientHasPostImportCategoryOk() (*bool, bool)`
+
+GetDownloadClientHasPostImportCategoryOk returns a tuple with the DownloadClientHasPostImportCategory field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDownloadClientHasPostImportCategory
+
+`func (o *QueueResource) SetDownloadClientHasPostImportCategory(v bool)`
+
+SetDownloadClientHasPostImportCategory sets DownloadClientHasPostImportCategory field to given value.
+
+### HasDownloadClientHasPostImportCategory
+
+`func (o *QueueResource) HasDownloadClientHasPostImportCategory() bool`
+
+HasDownloadClientHasPostImportCategory returns a boolean if a field has been set.
+
 ### GetIndexer
 
 `func (o *QueueResource) GetIndexer() string`
@@ -779,6 +807,56 @@ HasOutputPath returns a boolean if a field has been set.
 `func (o *QueueResource) UnsetOutputPath()`
 
 UnsetOutputPath ensures that no value is present for OutputPath, not even an explicit nil
+### GetTrackFileCount
+
+`func (o *QueueResource) GetTrackFileCount() int32`
+
+GetTrackFileCount returns the TrackFileCount field if non-nil, zero value otherwise.
+
+### GetTrackFileCountOk
+
+`func (o *QueueResource) GetTrackFileCountOk() (*int32, bool)`
+
+GetTrackFileCountOk returns a tuple with the TrackFileCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrackFileCount
+
+`func (o *QueueResource) SetTrackFileCount(v int32)`
+
+SetTrackFileCount sets TrackFileCount field to given value.
+
+### HasTrackFileCount
+
+`func (o *QueueResource) HasTrackFileCount() bool`
+
+HasTrackFileCount returns a boolean if a field has been set.
+
+### GetTrackHasFileCount
+
+`func (o *QueueResource) GetTrackHasFileCount() int32`
+
+GetTrackHasFileCount returns the TrackHasFileCount field if non-nil, zero value otherwise.
+
+### GetTrackHasFileCountOk
+
+`func (o *QueueResource) GetTrackHasFileCountOk() (*int32, bool)`
+
+GetTrackHasFileCountOk returns a tuple with the TrackHasFileCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrackHasFileCount
+
+`func (o *QueueResource) SetTrackHasFileCount(v int32)`
+
+SetTrackHasFileCount sets TrackHasFileCount field to given value.
+
+### HasTrackHasFileCount
+
+`func (o *QueueResource) HasTrackHasFileCount() bool`
+
+HasTrackHasFileCount returns a boolean if a field has been set.
+
 ### GetDownloadForced
 
 `func (o *QueueResource) GetDownloadForced() bool`

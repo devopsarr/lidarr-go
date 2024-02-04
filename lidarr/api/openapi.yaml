@@ -4229,6 +4229,14 @@ paths:
           default: false
           type: boolean
         style: form
+      - explode: true
+        in: query
+        name: changeCategory
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       responses:
         "200":
           description: Success
@@ -4257,6 +4265,14 @@ paths:
       - explode: true
         in: query
         name: skipRedownload
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: changeCategory
         required: false
         schema:
           default: false
@@ -16748,6 +16764,7 @@ components:
         onImportFailure: true
         supportsOnTrackRetag: true
         onGrab: true
+        onArtistAdd: true
         onHealthRestored: true
         onArtistDelete: true
         id: 0
@@ -16759,6 +16776,7 @@ components:
         supportsOnReleaseImport: true
         testCommand: testCommand
         implementation: implementation
+        supportsOnArtistAdd: true
         message:
           message: message
           type: null
@@ -16881,9 +16899,11 @@ components:
           type: boolean
         onRename:
           type: boolean
-        onAlbumDelete:
+        onArtistAdd:
           type: boolean
         onArtistDelete:
+          type: boolean
+        onAlbumDelete:
           type: boolean
         onHealthIssue:
           type: boolean
@@ -16905,9 +16925,11 @@ components:
           type: boolean
         supportsOnRename:
           type: boolean
-        supportsOnAlbumDelete:
+        supportsOnArtistAdd:
           type: boolean
         supportsOnArtistDelete:
+          type: boolean
+        supportsOnAlbumDelete:
           type: boolean
         supportsOnHealthIssue:
           type: boolean
@@ -18190,6 +18212,7 @@ components:
     QueueResource:
       additionalProperties: false
       example:
+        trackHasFileCount: 4
         artist:
           sortName: sortName
           rootFolderPath: rootFolderPath
@@ -18293,6 +18316,7 @@ components:
           - messages
           title: title
         protocol: null
+        trackFileCount: 2
         outputPath: outputPath
         id: 5
         downloadClient: downloadClient
@@ -18756,6 +18780,7 @@ components:
             version: 9
             isRepack: true
         size: 9.301444243932576
+        downloadClientHasPostImportCategory: true
         downloadForced: true
         status: status
       properties:
@@ -18826,12 +18851,20 @@ components:
         downloadClient:
           nullable: true
           type: string
+        downloadClientHasPostImportCategory:
+          type: boolean
         indexer:
           nullable: true
           type: string
         outputPath:
           nullable: true
           type: string
+        trackFileCount:
+          format: int32
+          type: integer
+        trackHasFileCount:
+          format: int32
+          type: integer
         downloadForced:
           type: boolean
       type: object
@@ -18842,7 +18875,8 @@ components:
         totalRecords: 1
         sortKey: sortKey
         records:
-        - artist:
+        - trackHasFileCount: 4
+          artist:
             sortName: sortName
             rootFolderPath: rootFolderPath
             added: 2000-01-23T04:56:07.000+00:00
@@ -18945,6 +18979,7 @@ components:
             - messages
             title: title
           protocol: null
+          trackFileCount: 2
           outputPath: outputPath
           id: 5
           downloadClient: downloadClient
@@ -19408,9 +19443,11 @@ components:
               version: 9
               isRepack: true
           size: 9.301444243932576
+          downloadClientHasPostImportCategory: true
           downloadForced: true
           status: status
-        - artist:
+        - trackHasFileCount: 4
+          artist:
             sortName: sortName
             rootFolderPath: rootFolderPath
             added: 2000-01-23T04:56:07.000+00:00
@@ -19513,6 +19550,7 @@ components:
             - messages
             title: title
           protocol: null
+          trackFileCount: 2
           outputPath: outputPath
           id: 5
           downloadClient: downloadClient
@@ -19976,6 +20014,7 @@ components:
               version: 9
               isRepack: true
           size: 9.301444243932576
+          downloadClientHasPostImportCategory: true
           downloadForced: true
           status: status
         pageSize: 6

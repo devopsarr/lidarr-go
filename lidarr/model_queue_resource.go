@@ -39,8 +39,11 @@ type QueueResource struct {
 	DownloadId NullableString `json:"downloadId,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
 	DownloadClient NullableString `json:"downloadClient,omitempty"`
+	DownloadClientHasPostImportCategory *bool `json:"downloadClientHasPostImportCategory,omitempty"`
 	Indexer NullableString `json:"indexer,omitempty"`
 	OutputPath NullableString `json:"outputPath,omitempty"`
+	TrackFileCount *int32 `json:"trackFileCount,omitempty"`
+	TrackHasFileCount *int32 `json:"trackHasFileCount,omitempty"`
 	DownloadForced *bool `json:"downloadForced,omitempty"`
 }
 
@@ -857,6 +860,38 @@ func (o *QueueResource) UnsetDownloadClient() {
 	o.DownloadClient.Unset()
 }
 
+// GetDownloadClientHasPostImportCategory returns the DownloadClientHasPostImportCategory field value if set, zero value otherwise.
+func (o *QueueResource) GetDownloadClientHasPostImportCategory() bool {
+	if o == nil || isNil(o.DownloadClientHasPostImportCategory) {
+		var ret bool
+		return ret
+	}
+	return *o.DownloadClientHasPostImportCategory
+}
+
+// GetDownloadClientHasPostImportCategoryOk returns a tuple with the DownloadClientHasPostImportCategory field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QueueResource) GetDownloadClientHasPostImportCategoryOk() (*bool, bool) {
+	if o == nil || isNil(o.DownloadClientHasPostImportCategory) {
+    return nil, false
+	}
+	return o.DownloadClientHasPostImportCategory, true
+}
+
+// HasDownloadClientHasPostImportCategory returns a boolean if a field has been set.
+func (o *QueueResource) HasDownloadClientHasPostImportCategory() bool {
+	if o != nil && !isNil(o.DownloadClientHasPostImportCategory) {
+		return true
+	}
+
+	return false
+}
+
+// SetDownloadClientHasPostImportCategory gets a reference to the given bool and assigns it to the DownloadClientHasPostImportCategory field.
+func (o *QueueResource) SetDownloadClientHasPostImportCategory(v bool) {
+	o.DownloadClientHasPostImportCategory = &v
+}
+
 // GetIndexer returns the Indexer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetIndexer() string {
 	if o == nil || isNil(o.Indexer.Get()) {
@@ -939,6 +974,70 @@ func (o *QueueResource) SetOutputPathNil() {
 // UnsetOutputPath ensures that no value is present for OutputPath, not even an explicit nil
 func (o *QueueResource) UnsetOutputPath() {
 	o.OutputPath.Unset()
+}
+
+// GetTrackFileCount returns the TrackFileCount field value if set, zero value otherwise.
+func (o *QueueResource) GetTrackFileCount() int32 {
+	if o == nil || isNil(o.TrackFileCount) {
+		var ret int32
+		return ret
+	}
+	return *o.TrackFileCount
+}
+
+// GetTrackFileCountOk returns a tuple with the TrackFileCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QueueResource) GetTrackFileCountOk() (*int32, bool) {
+	if o == nil || isNil(o.TrackFileCount) {
+    return nil, false
+	}
+	return o.TrackFileCount, true
+}
+
+// HasTrackFileCount returns a boolean if a field has been set.
+func (o *QueueResource) HasTrackFileCount() bool {
+	if o != nil && !isNil(o.TrackFileCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetTrackFileCount gets a reference to the given int32 and assigns it to the TrackFileCount field.
+func (o *QueueResource) SetTrackFileCount(v int32) {
+	o.TrackFileCount = &v
+}
+
+// GetTrackHasFileCount returns the TrackHasFileCount field value if set, zero value otherwise.
+func (o *QueueResource) GetTrackHasFileCount() int32 {
+	if o == nil || isNil(o.TrackHasFileCount) {
+		var ret int32
+		return ret
+	}
+	return *o.TrackHasFileCount
+}
+
+// GetTrackHasFileCountOk returns a tuple with the TrackHasFileCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *QueueResource) GetTrackHasFileCountOk() (*int32, bool) {
+	if o == nil || isNil(o.TrackHasFileCount) {
+    return nil, false
+	}
+	return o.TrackHasFileCount, true
+}
+
+// HasTrackHasFileCount returns a boolean if a field has been set.
+func (o *QueueResource) HasTrackHasFileCount() bool {
+	if o != nil && !isNil(o.TrackHasFileCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetTrackHasFileCount gets a reference to the given int32 and assigns it to the TrackHasFileCount field.
+func (o *QueueResource) SetTrackHasFileCount(v int32) {
+	o.TrackHasFileCount = &v
 }
 
 // GetDownloadForced returns the DownloadForced field value if set, zero value otherwise.
@@ -1041,11 +1140,20 @@ func (o QueueResource) MarshalJSON() ([]byte, error) {
 	if o.DownloadClient.IsSet() {
 		toSerialize["downloadClient"] = o.DownloadClient.Get()
 	}
+	if !isNil(o.DownloadClientHasPostImportCategory) {
+		toSerialize["downloadClientHasPostImportCategory"] = o.DownloadClientHasPostImportCategory
+	}
 	if o.Indexer.IsSet() {
 		toSerialize["indexer"] = o.Indexer.Get()
 	}
 	if o.OutputPath.IsSet() {
 		toSerialize["outputPath"] = o.OutputPath.Get()
+	}
+	if !isNil(o.TrackFileCount) {
+		toSerialize["trackFileCount"] = o.TrackFileCount
+	}
+	if !isNil(o.TrackHasFileCount) {
+		toSerialize["trackHasFileCount"] = o.TrackHasFileCount
 	}
 	if !isNil(o.DownloadForced) {
 		toSerialize["downloadForced"] = o.DownloadForced
