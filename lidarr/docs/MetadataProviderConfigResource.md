@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **MetadataSource** | Pointer to **NullableString** |  | [optional] 
 **WriteAudioTags** | Pointer to [**WriteAudioTagsType**](WriteAudioTagsType.md) |  | [optional] 
 **ScrubAudioTags** | Pointer to **bool** |  | [optional] 
+**EmbedCoverArt** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -137,6 +138,31 @@ SetScrubAudioTags sets ScrubAudioTags field to given value.
 `func (o *MetadataProviderConfigResource) HasScrubAudioTags() bool`
 
 HasScrubAudioTags returns a boolean if a field has been set.
+
+### GetEmbedCoverArt
+
+`func (o *MetadataProviderConfigResource) GetEmbedCoverArt() bool`
+
+GetEmbedCoverArt returns the EmbedCoverArt field if non-nil, zero value otherwise.
+
+### GetEmbedCoverArtOk
+
+`func (o *MetadataProviderConfigResource) GetEmbedCoverArtOk() (*bool, bool)`
+
+GetEmbedCoverArtOk returns a tuple with the EmbedCoverArt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmbedCoverArt
+
+`func (o *MetadataProviderConfigResource) SetEmbedCoverArt(v bool)`
+
+SetEmbedCoverArt sets EmbedCoverArt field to given value.
+
+### HasEmbedCoverArt
+
+`func (o *MetadataProviderConfigResource) HasEmbedCoverArt() bool`
+
+HasEmbedCoverArt returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
