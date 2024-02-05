@@ -19,9 +19,8 @@ Name | Type | Description | Notes
 **OnReleaseImport** | Pointer to **bool** |  | [optional] 
 **OnUpgrade** | Pointer to **bool** |  | [optional] 
 **OnRename** | Pointer to **bool** |  | [optional] 
-**OnArtistAdd** | Pointer to **bool** |  | [optional] 
-**OnArtistDelete** | Pointer to **bool** |  | [optional] 
 **OnAlbumDelete** | Pointer to **bool** |  | [optional] 
+**OnArtistDelete** | Pointer to **bool** |  | [optional] 
 **OnHealthIssue** | Pointer to **bool** |  | [optional] 
 **OnHealthRestored** | Pointer to **bool** |  | [optional] 
 **OnDownloadFailure** | Pointer to **bool** |  | [optional] 
@@ -32,9 +31,8 @@ Name | Type | Description | Notes
 **SupportsOnReleaseImport** | Pointer to **bool** |  | [optional] 
 **SupportsOnUpgrade** | Pointer to **bool** |  | [optional] 
 **SupportsOnRename** | Pointer to **bool** |  | [optional] 
-**SupportsOnArtistAdd** | Pointer to **bool** |  | [optional] 
-**SupportsOnArtistDelete** | Pointer to **bool** |  | [optional] 
 **SupportsOnAlbumDelete** | Pointer to **bool** |  | [optional] 
+**SupportsOnArtistDelete** | Pointer to **bool** |  | [optional] 
 **SupportsOnHealthIssue** | Pointer to **bool** |  | [optional] 
 **SupportsOnHealthRestored** | Pointer to **bool** |  | [optional] 
 **IncludeHealthWarnings** | Pointer to **bool** |  | [optional] 
@@ -528,30 +526,30 @@ SetOnRename sets OnRename field to given value.
 
 HasOnRename returns a boolean if a field has been set.
 
-### GetOnArtistAdd
+### GetOnAlbumDelete
 
-`func (o *NotificationResource) GetOnArtistAdd() bool`
+`func (o *NotificationResource) GetOnAlbumDelete() bool`
 
-GetOnArtistAdd returns the OnArtistAdd field if non-nil, zero value otherwise.
+GetOnAlbumDelete returns the OnAlbumDelete field if non-nil, zero value otherwise.
 
-### GetOnArtistAddOk
+### GetOnAlbumDeleteOk
 
-`func (o *NotificationResource) GetOnArtistAddOk() (*bool, bool)`
+`func (o *NotificationResource) GetOnAlbumDeleteOk() (*bool, bool)`
 
-GetOnArtistAddOk returns a tuple with the OnArtistAdd field if it's non-nil, zero value otherwise
+GetOnAlbumDeleteOk returns a tuple with the OnAlbumDelete field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOnArtistAdd
+### SetOnAlbumDelete
 
-`func (o *NotificationResource) SetOnArtistAdd(v bool)`
+`func (o *NotificationResource) SetOnAlbumDelete(v bool)`
 
-SetOnArtistAdd sets OnArtistAdd field to given value.
+SetOnAlbumDelete sets OnAlbumDelete field to given value.
 
-### HasOnArtistAdd
+### HasOnAlbumDelete
 
-`func (o *NotificationResource) HasOnArtistAdd() bool`
+`func (o *NotificationResource) HasOnAlbumDelete() bool`
 
-HasOnArtistAdd returns a boolean if a field has been set.
+HasOnAlbumDelete returns a boolean if a field has been set.
 
 ### GetOnArtistDelete
 
@@ -577,31 +575,6 @@ SetOnArtistDelete sets OnArtistDelete field to given value.
 `func (o *NotificationResource) HasOnArtistDelete() bool`
 
 HasOnArtistDelete returns a boolean if a field has been set.
-
-### GetOnAlbumDelete
-
-`func (o *NotificationResource) GetOnAlbumDelete() bool`
-
-GetOnAlbumDelete returns the OnAlbumDelete field if non-nil, zero value otherwise.
-
-### GetOnAlbumDeleteOk
-
-`func (o *NotificationResource) GetOnAlbumDeleteOk() (*bool, bool)`
-
-GetOnAlbumDeleteOk returns a tuple with the OnAlbumDelete field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOnAlbumDelete
-
-`func (o *NotificationResource) SetOnAlbumDelete(v bool)`
-
-SetOnAlbumDelete sets OnAlbumDelete field to given value.
-
-### HasOnAlbumDelete
-
-`func (o *NotificationResource) HasOnAlbumDelete() bool`
-
-HasOnAlbumDelete returns a boolean if a field has been set.
 
 ### GetOnHealthIssue
 
@@ -853,30 +826,30 @@ SetSupportsOnRename sets SupportsOnRename field to given value.
 
 HasSupportsOnRename returns a boolean if a field has been set.
 
-### GetSupportsOnArtistAdd
+### GetSupportsOnAlbumDelete
 
-`func (o *NotificationResource) GetSupportsOnArtistAdd() bool`
+`func (o *NotificationResource) GetSupportsOnAlbumDelete() bool`
 
-GetSupportsOnArtistAdd returns the SupportsOnArtistAdd field if non-nil, zero value otherwise.
+GetSupportsOnAlbumDelete returns the SupportsOnAlbumDelete field if non-nil, zero value otherwise.
 
-### GetSupportsOnArtistAddOk
+### GetSupportsOnAlbumDeleteOk
 
-`func (o *NotificationResource) GetSupportsOnArtistAddOk() (*bool, bool)`
+`func (o *NotificationResource) GetSupportsOnAlbumDeleteOk() (*bool, bool)`
 
-GetSupportsOnArtistAddOk returns a tuple with the SupportsOnArtistAdd field if it's non-nil, zero value otherwise
+GetSupportsOnAlbumDeleteOk returns a tuple with the SupportsOnAlbumDelete field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSupportsOnArtistAdd
+### SetSupportsOnAlbumDelete
 
-`func (o *NotificationResource) SetSupportsOnArtistAdd(v bool)`
+`func (o *NotificationResource) SetSupportsOnAlbumDelete(v bool)`
 
-SetSupportsOnArtistAdd sets SupportsOnArtistAdd field to given value.
+SetSupportsOnAlbumDelete sets SupportsOnAlbumDelete field to given value.
 
-### HasSupportsOnArtistAdd
+### HasSupportsOnAlbumDelete
 
-`func (o *NotificationResource) HasSupportsOnArtistAdd() bool`
+`func (o *NotificationResource) HasSupportsOnAlbumDelete() bool`
 
-HasSupportsOnArtistAdd returns a boolean if a field has been set.
+HasSupportsOnAlbumDelete returns a boolean if a field has been set.
 
 ### GetSupportsOnArtistDelete
 
@@ -902,31 +875,6 @@ SetSupportsOnArtistDelete sets SupportsOnArtistDelete field to given value.
 `func (o *NotificationResource) HasSupportsOnArtistDelete() bool`
 
 HasSupportsOnArtistDelete returns a boolean if a field has been set.
-
-### GetSupportsOnAlbumDelete
-
-`func (o *NotificationResource) GetSupportsOnAlbumDelete() bool`
-
-GetSupportsOnAlbumDelete returns the SupportsOnAlbumDelete field if non-nil, zero value otherwise.
-
-### GetSupportsOnAlbumDeleteOk
-
-`func (o *NotificationResource) GetSupportsOnAlbumDeleteOk() (*bool, bool)`
-
-GetSupportsOnAlbumDeleteOk returns a tuple with the SupportsOnAlbumDelete field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSupportsOnAlbumDelete
-
-`func (o *NotificationResource) SetSupportsOnAlbumDelete(v bool)`
-
-SetSupportsOnAlbumDelete sets SupportsOnAlbumDelete field to given value.
-
-### HasSupportsOnAlbumDelete
-
-`func (o *NotificationResource) HasSupportsOnAlbumDelete() bool`
-
-HasSupportsOnAlbumDelete returns a boolean if a field has been set.
 
 ### GetSupportsOnHealthIssue
 
