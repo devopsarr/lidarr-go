@@ -103,7 +103,7 @@ func main() {
     includeArtist := true // bool |  (optional)
     includeAlbum := true // bool |  (optional)
     includeTrack := true // bool |  (optional)
-    eventType := []int32{int32(123)} // []int32 |  (optional)
+    eventType := int32(56) // int32 |  (optional)
     albumId := int32(56) // int32 |  (optional)
     downloadId := "downloadId_example" // string |  (optional)
     artistIds := []int32{int32(123)} // []int32 |  (optional)
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
  **includeArtist** | **bool** |  | 
  **includeAlbum** | **bool** |  | 
  **includeTrack** | **bool** |  | 
- **eventType** | **[]int32** |  | 
+ **eventType** | **int32** |  | 
  **albumId** | **int32** |  | 
  **downloadId** | **string** |  | 
  **artistIds** | **[]int32** |  | 
