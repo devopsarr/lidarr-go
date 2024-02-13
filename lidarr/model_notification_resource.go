@@ -31,8 +31,9 @@ type NotificationResource struct {
 	OnReleaseImport *bool `json:"onReleaseImport,omitempty"`
 	OnUpgrade *bool `json:"onUpgrade,omitempty"`
 	OnRename *bool `json:"onRename,omitempty"`
-	OnAlbumDelete *bool `json:"onAlbumDelete,omitempty"`
+	OnArtistAdd *bool `json:"onArtistAdd,omitempty"`
 	OnArtistDelete *bool `json:"onArtistDelete,omitempty"`
+	OnAlbumDelete *bool `json:"onAlbumDelete,omitempty"`
 	OnHealthIssue *bool `json:"onHealthIssue,omitempty"`
 	OnHealthRestored *bool `json:"onHealthRestored,omitempty"`
 	OnDownloadFailure *bool `json:"onDownloadFailure,omitempty"`
@@ -43,8 +44,9 @@ type NotificationResource struct {
 	SupportsOnReleaseImport *bool `json:"supportsOnReleaseImport,omitempty"`
 	SupportsOnUpgrade *bool `json:"supportsOnUpgrade,omitempty"`
 	SupportsOnRename *bool `json:"supportsOnRename,omitempty"`
-	SupportsOnAlbumDelete *bool `json:"supportsOnAlbumDelete,omitempty"`
+	SupportsOnArtistAdd *bool `json:"supportsOnArtistAdd,omitempty"`
 	SupportsOnArtistDelete *bool `json:"supportsOnArtistDelete,omitempty"`
+	SupportsOnAlbumDelete *bool `json:"supportsOnAlbumDelete,omitempty"`
 	SupportsOnHealthIssue *bool `json:"supportsOnHealthIssue,omitempty"`
 	SupportsOnHealthRestored *bool `json:"supportsOnHealthRestored,omitempty"`
 	IncludeHealthWarnings *bool `json:"includeHealthWarnings,omitempty"`
@@ -615,36 +617,36 @@ func (o *NotificationResource) SetOnRename(v bool) {
 	o.OnRename = &v
 }
 
-// GetOnAlbumDelete returns the OnAlbumDelete field value if set, zero value otherwise.
-func (o *NotificationResource) GetOnAlbumDelete() bool {
-	if o == nil || isNil(o.OnAlbumDelete) {
+// GetOnArtistAdd returns the OnArtistAdd field value if set, zero value otherwise.
+func (o *NotificationResource) GetOnArtistAdd() bool {
+	if o == nil || isNil(o.OnArtistAdd) {
 		var ret bool
 		return ret
 	}
-	return *o.OnAlbumDelete
+	return *o.OnArtistAdd
 }
 
-// GetOnAlbumDeleteOk returns a tuple with the OnAlbumDelete field value if set, nil otherwise
+// GetOnArtistAddOk returns a tuple with the OnArtistAdd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NotificationResource) GetOnAlbumDeleteOk() (*bool, bool) {
-	if o == nil || isNil(o.OnAlbumDelete) {
+func (o *NotificationResource) GetOnArtistAddOk() (*bool, bool) {
+	if o == nil || isNil(o.OnArtistAdd) {
     return nil, false
 	}
-	return o.OnAlbumDelete, true
+	return o.OnArtistAdd, true
 }
 
-// HasOnAlbumDelete returns a boolean if a field has been set.
-func (o *NotificationResource) HasOnAlbumDelete() bool {
-	if o != nil && !isNil(o.OnAlbumDelete) {
+// HasOnArtistAdd returns a boolean if a field has been set.
+func (o *NotificationResource) HasOnArtistAdd() bool {
+	if o != nil && !isNil(o.OnArtistAdd) {
 		return true
 	}
 
 	return false
 }
 
-// SetOnAlbumDelete gets a reference to the given bool and assigns it to the OnAlbumDelete field.
-func (o *NotificationResource) SetOnAlbumDelete(v bool) {
-	o.OnAlbumDelete = &v
+// SetOnArtistAdd gets a reference to the given bool and assigns it to the OnArtistAdd field.
+func (o *NotificationResource) SetOnArtistAdd(v bool) {
+	o.OnArtistAdd = &v
 }
 
 // GetOnArtistDelete returns the OnArtistDelete field value if set, zero value otherwise.
@@ -677,6 +679,38 @@ func (o *NotificationResource) HasOnArtistDelete() bool {
 // SetOnArtistDelete gets a reference to the given bool and assigns it to the OnArtistDelete field.
 func (o *NotificationResource) SetOnArtistDelete(v bool) {
 	o.OnArtistDelete = &v
+}
+
+// GetOnAlbumDelete returns the OnAlbumDelete field value if set, zero value otherwise.
+func (o *NotificationResource) GetOnAlbumDelete() bool {
+	if o == nil || isNil(o.OnAlbumDelete) {
+		var ret bool
+		return ret
+	}
+	return *o.OnAlbumDelete
+}
+
+// GetOnAlbumDeleteOk returns a tuple with the OnAlbumDelete field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationResource) GetOnAlbumDeleteOk() (*bool, bool) {
+	if o == nil || isNil(o.OnAlbumDelete) {
+    return nil, false
+	}
+	return o.OnAlbumDelete, true
+}
+
+// HasOnAlbumDelete returns a boolean if a field has been set.
+func (o *NotificationResource) HasOnAlbumDelete() bool {
+	if o != nil && !isNil(o.OnAlbumDelete) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnAlbumDelete gets a reference to the given bool and assigns it to the OnAlbumDelete field.
+func (o *NotificationResource) SetOnAlbumDelete(v bool) {
+	o.OnAlbumDelete = &v
 }
 
 // GetOnHealthIssue returns the OnHealthIssue field value if set, zero value otherwise.
@@ -999,36 +1033,36 @@ func (o *NotificationResource) SetSupportsOnRename(v bool) {
 	o.SupportsOnRename = &v
 }
 
-// GetSupportsOnAlbumDelete returns the SupportsOnAlbumDelete field value if set, zero value otherwise.
-func (o *NotificationResource) GetSupportsOnAlbumDelete() bool {
-	if o == nil || isNil(o.SupportsOnAlbumDelete) {
+// GetSupportsOnArtistAdd returns the SupportsOnArtistAdd field value if set, zero value otherwise.
+func (o *NotificationResource) GetSupportsOnArtistAdd() bool {
+	if o == nil || isNil(o.SupportsOnArtistAdd) {
 		var ret bool
 		return ret
 	}
-	return *o.SupportsOnAlbumDelete
+	return *o.SupportsOnArtistAdd
 }
 
-// GetSupportsOnAlbumDeleteOk returns a tuple with the SupportsOnAlbumDelete field value if set, nil otherwise
+// GetSupportsOnArtistAddOk returns a tuple with the SupportsOnArtistAdd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NotificationResource) GetSupportsOnAlbumDeleteOk() (*bool, bool) {
-	if o == nil || isNil(o.SupportsOnAlbumDelete) {
+func (o *NotificationResource) GetSupportsOnArtistAddOk() (*bool, bool) {
+	if o == nil || isNil(o.SupportsOnArtistAdd) {
     return nil, false
 	}
-	return o.SupportsOnAlbumDelete, true
+	return o.SupportsOnArtistAdd, true
 }
 
-// HasSupportsOnAlbumDelete returns a boolean if a field has been set.
-func (o *NotificationResource) HasSupportsOnAlbumDelete() bool {
-	if o != nil && !isNil(o.SupportsOnAlbumDelete) {
+// HasSupportsOnArtistAdd returns a boolean if a field has been set.
+func (o *NotificationResource) HasSupportsOnArtistAdd() bool {
+	if o != nil && !isNil(o.SupportsOnArtistAdd) {
 		return true
 	}
 
 	return false
 }
 
-// SetSupportsOnAlbumDelete gets a reference to the given bool and assigns it to the SupportsOnAlbumDelete field.
-func (o *NotificationResource) SetSupportsOnAlbumDelete(v bool) {
-	o.SupportsOnAlbumDelete = &v
+// SetSupportsOnArtistAdd gets a reference to the given bool and assigns it to the SupportsOnArtistAdd field.
+func (o *NotificationResource) SetSupportsOnArtistAdd(v bool) {
+	o.SupportsOnArtistAdd = &v
 }
 
 // GetSupportsOnArtistDelete returns the SupportsOnArtistDelete field value if set, zero value otherwise.
@@ -1061,6 +1095,38 @@ func (o *NotificationResource) HasSupportsOnArtistDelete() bool {
 // SetSupportsOnArtistDelete gets a reference to the given bool and assigns it to the SupportsOnArtistDelete field.
 func (o *NotificationResource) SetSupportsOnArtistDelete(v bool) {
 	o.SupportsOnArtistDelete = &v
+}
+
+// GetSupportsOnAlbumDelete returns the SupportsOnAlbumDelete field value if set, zero value otherwise.
+func (o *NotificationResource) GetSupportsOnAlbumDelete() bool {
+	if o == nil || isNil(o.SupportsOnAlbumDelete) {
+		var ret bool
+		return ret
+	}
+	return *o.SupportsOnAlbumDelete
+}
+
+// GetSupportsOnAlbumDeleteOk returns a tuple with the SupportsOnAlbumDelete field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NotificationResource) GetSupportsOnAlbumDeleteOk() (*bool, bool) {
+	if o == nil || isNil(o.SupportsOnAlbumDelete) {
+    return nil, false
+	}
+	return o.SupportsOnAlbumDelete, true
+}
+
+// HasSupportsOnAlbumDelete returns a boolean if a field has been set.
+func (o *NotificationResource) HasSupportsOnAlbumDelete() bool {
+	if o != nil && !isNil(o.SupportsOnAlbumDelete) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupportsOnAlbumDelete gets a reference to the given bool and assigns it to the SupportsOnAlbumDelete field.
+func (o *NotificationResource) SetSupportsOnAlbumDelete(v bool) {
+	o.SupportsOnAlbumDelete = &v
 }
 
 // GetSupportsOnHealthIssue returns the SupportsOnHealthIssue field value if set, zero value otherwise.
@@ -1376,11 +1442,14 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.OnRename) {
 		toSerialize["onRename"] = o.OnRename
 	}
-	if !isNil(o.OnAlbumDelete) {
-		toSerialize["onAlbumDelete"] = o.OnAlbumDelete
+	if !isNil(o.OnArtistAdd) {
+		toSerialize["onArtistAdd"] = o.OnArtistAdd
 	}
 	if !isNil(o.OnArtistDelete) {
 		toSerialize["onArtistDelete"] = o.OnArtistDelete
+	}
+	if !isNil(o.OnAlbumDelete) {
+		toSerialize["onAlbumDelete"] = o.OnAlbumDelete
 	}
 	if !isNil(o.OnHealthIssue) {
 		toSerialize["onHealthIssue"] = o.OnHealthIssue
@@ -1412,11 +1481,14 @@ func (o NotificationResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.SupportsOnRename) {
 		toSerialize["supportsOnRename"] = o.SupportsOnRename
 	}
-	if !isNil(o.SupportsOnAlbumDelete) {
-		toSerialize["supportsOnAlbumDelete"] = o.SupportsOnAlbumDelete
+	if !isNil(o.SupportsOnArtistAdd) {
+		toSerialize["supportsOnArtistAdd"] = o.SupportsOnArtistAdd
 	}
 	if !isNil(o.SupportsOnArtistDelete) {
 		toSerialize["supportsOnArtistDelete"] = o.SupportsOnArtistDelete
+	}
+	if !isNil(o.SupportsOnAlbumDelete) {
+		toSerialize["supportsOnAlbumDelete"] = o.SupportsOnAlbumDelete
 	}
 	if !isNil(o.SupportsOnHealthIssue) {
 		toSerialize["supportsOnHealthIssue"] = o.SupportsOnHealthIssue
