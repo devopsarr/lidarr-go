@@ -5,7 +5,7 @@ info:
     name: GPL-3.0
     url: https://github.com/Lidarr/Lidarr/blob/develop/LICENSE
   title: Lidarr
-  version: 1.0.0
+  version: v2.1.7.4030
 servers:
 - url: "{protocol}://{hostpath}"
   variables:
