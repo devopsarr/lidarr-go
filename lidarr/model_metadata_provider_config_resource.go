@@ -20,6 +20,7 @@ type MetadataProviderConfigResource struct {
 	MetadataSource NullableString `json:"metadataSource,omitempty"`
 	WriteAudioTags *WriteAudioTagsType `json:"writeAudioTags,omitempty"`
 	ScrubAudioTags *bool `json:"scrubAudioTags,omitempty"`
+	EmbedCoverArt *bool `json:"embedCoverArt,omitempty"`
 }
 
 // NewMetadataProviderConfigResource instantiates a new MetadataProviderConfigResource object
@@ -177,6 +178,38 @@ func (o *MetadataProviderConfigResource) SetScrubAudioTags(v bool) {
 	o.ScrubAudioTags = &v
 }
 
+// GetEmbedCoverArt returns the EmbedCoverArt field value if set, zero value otherwise.
+func (o *MetadataProviderConfigResource) GetEmbedCoverArt() bool {
+	if o == nil || isNil(o.EmbedCoverArt) {
+		var ret bool
+		return ret
+	}
+	return *o.EmbedCoverArt
+}
+
+// GetEmbedCoverArtOk returns a tuple with the EmbedCoverArt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MetadataProviderConfigResource) GetEmbedCoverArtOk() (*bool, bool) {
+	if o == nil || isNil(o.EmbedCoverArt) {
+    return nil, false
+	}
+	return o.EmbedCoverArt, true
+}
+
+// HasEmbedCoverArt returns a boolean if a field has been set.
+func (o *MetadataProviderConfigResource) HasEmbedCoverArt() bool {
+	if o != nil && !isNil(o.EmbedCoverArt) {
+		return true
+	}
+
+	return false
+}
+
+// SetEmbedCoverArt gets a reference to the given bool and assigns it to the EmbedCoverArt field.
+func (o *MetadataProviderConfigResource) SetEmbedCoverArt(v bool) {
+	o.EmbedCoverArt = &v
+}
+
 func (o MetadataProviderConfigResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -190,6 +223,9 @@ func (o MetadataProviderConfigResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.ScrubAudioTags) {
 		toSerialize["scrubAudioTags"] = o.ScrubAudioTags
+	}
+	if !isNil(o.EmbedCoverArt) {
+		toSerialize["embedCoverArt"] = o.EmbedCoverArt
 	}
 	return json.Marshal(toSerialize)
 }

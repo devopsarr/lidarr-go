@@ -1851,8 +1851,10 @@ paths:
         name: eventType
         required: false
         schema:
-          format: int32
-          type: integer
+          items:
+            format: int32
+            type: integer
+          type: array
         style: form
       - explode: true
         in: query
@@ -4227,6 +4229,14 @@ paths:
           default: false
           type: boolean
         style: form
+      - explode: true
+        in: query
+        name: changeCategory
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       responses:
         "2XX":
           description: Success
@@ -4255,6 +4265,14 @@ paths:
       - explode: true
         in: query
         name: skipRedownload
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: changeCategory
         required: false
         schema:
           default: false
@@ -4667,12 +4685,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/ReleaseResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ReleaseResource'
-          application/*+json:
             schema:
               $ref: '#/components/schemas/ReleaseResource'
       responses:
@@ -10048,6 +10060,7 @@ components:
     DownloadClientConfigResource:
       additionalProperties: false
       example:
+        autoRedownloadFailedFromInteractiveSearch: true
         enableCompletedDownloadHandling: true
         id: 0
         autoRedownloadFailed: true
@@ -10062,6 +10075,8 @@ components:
         enableCompletedDownloadHandling:
           type: boolean
         autoRedownloadFailed:
+          type: boolean
+        autoRedownloadFailedFromInteractiveSearch:
           type: boolean
       type: object
     DownloadClientResource:
@@ -16527,6 +16542,7 @@ components:
         metadataSource: metadataSource
         scrubAudioTags: true
         id: 0
+        embedCoverArt: true
       properties:
         id:
           format: int32
@@ -16537,6 +16553,8 @@ components:
         writeAudioTags:
           $ref: '#/components/schemas/WriteAudioTagsType'
         scrubAudioTags:
+          type: boolean
+        embedCoverArt:
           type: boolean
       type: object
     MetadataResource:
@@ -16749,6 +16767,7 @@ components:
         onImportFailure: true
         supportsOnTrackRetag: true
         onGrab: true
+        onArtistAdd: true
         onHealthRestored: true
         onArtistDelete: true
         id: 0
@@ -16760,6 +16779,7 @@ components:
         supportsOnReleaseImport: true
         testCommand: testCommand
         implementation: implementation
+        supportsOnArtistAdd: true
         message:
           message: message
           type: null
@@ -16882,9 +16902,11 @@ components:
           type: boolean
         onRename:
           type: boolean
-        onAlbumDelete:
+        onArtistAdd:
           type: boolean
         onArtistDelete:
+          type: boolean
+        onAlbumDelete:
           type: boolean
         onHealthIssue:
           type: boolean
@@ -16906,9 +16928,11 @@ components:
           type: boolean
         supportsOnRename:
           type: boolean
-        supportsOnAlbumDelete:
+        supportsOnArtistAdd:
           type: boolean
         supportsOnArtistDelete:
+          type: boolean
+        supportsOnAlbumDelete:
           type: boolean
         supportsOnHealthIssue:
           type: boolean
@@ -17423,8 +17447,262 @@ components:
           artistName: artistName
           discographyStart: 6
           releaseGroup: releaseGroup
+        customFormats:
+        - name: name
+          includeCustomFormatWhenRenaming: true
+          id: 2
+          specifications:
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 4
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 4
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+        - name: name
+          includeCustomFormatWhenRenaming: true
+          id: 2
+          specifications:
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 4
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 4
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              - hint: hint
+                name: name
+                value: 5
+                order: 2
+              privacy: null
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              isFloat: true
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 5
+            required: true
+            infoLink: infoLink
         id: 0
         title: title
+        customFormatScore: 5
       properties:
         id:
           format: int32
@@ -17441,6 +17719,14 @@ components:
             $ref: '#/components/schemas/AlbumResource'
           nullable: true
           type: array
+        customFormats:
+          items:
+            $ref: '#/components/schemas/CustomFormatResource'
+          nullable: true
+          type: array
+        customFormatScore:
+          format: int32
+          type: integer
       type: object
     ParsedAlbumInfo:
       additionalProperties: false
@@ -17767,6 +18053,7 @@ components:
     QualityDefinitionResource:
       additionalProperties: false
       example:
+        preferredSize: 5.637376656633329
         weight: 6
         minSize: 1.4658129805029452
         maxSize: 5.962133916683182
@@ -17792,6 +18079,10 @@ components:
           nullable: true
           type: number
         maxSize:
+          format: double
+          nullable: true
+          type: number
+        preferredSize:
           format: double
           nullable: true
           type: number
@@ -17924,6 +18215,7 @@ components:
     QueueResource:
       additionalProperties: false
       example:
+        trackHasFileCount: 4
         artist:
           sortName: sortName
           rootFolderPath: rootFolderPath
@@ -18011,6 +18303,26 @@ components:
             trackFileCount: 9
             sizeOnDisk: 9
             percentOfTracks: 6.438423552598547
+        added: 2000-01-23T04:56:07.000+00:00
+        albumId: 2
+        downloadId: downloadId
+        artistId: 5
+        title: title
+        sizeleft: 3.616076749251911
+        statusMessages:
+        - messages:
+          - messages
+          - messages
+          title: title
+        - messages:
+          - messages
+          - messages
+          title: title
+        protocol: null
+        trackFileCount: 2
+        outputPath: outputPath
+        id: 5
+        downloadClient: downloadClient
         estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
         album:
           secondaryTypes:
@@ -18457,16 +18769,11 @@ components:
             required: true
             infoLink: infoLink
         errorMessage: errorMessage
-        albumId: 2
-        downloadId: downloadId
-        artistId: 5
         indexer: indexer
-        title: title
         timeleft: timeleft
         trackedDownloadState: null
         customFormatScore: 7
         trackedDownloadStatus: null
-        sizeleft: 3.616076749251911
         quality:
           quality:
             name: name
@@ -18475,22 +18782,10 @@ components:
             real: 3
             version: 9
             isRepack: true
-        statusMessages:
-        - messages:
-          - messages
-          - messages
-          title: title
-        - messages:
-          - messages
-          - messages
-          title: title
-        protocol: null
         size: 9.301444243932576
-        outputPath: outputPath
+        downloadClientHasPostImportCategory: true
         downloadForced: true
-        id: 5
         status: status
-        downloadClient: downloadClient
       properties:
         id:
           format: int32
@@ -18532,6 +18827,10 @@ components:
           format: date-time
           nullable: true
           type: string
+        added:
+          format: date-time
+          nullable: true
+          type: string
         status:
           nullable: true
           type: string
@@ -18555,12 +18854,20 @@ components:
         downloadClient:
           nullable: true
           type: string
+        downloadClientHasPostImportCategory:
+          type: boolean
         indexer:
           nullable: true
           type: string
         outputPath:
           nullable: true
           type: string
+        trackFileCount:
+          format: int32
+          type: integer
+        trackHasFileCount:
+          format: int32
+          type: integer
         downloadForced:
           type: boolean
       type: object
@@ -18571,7 +18878,8 @@ components:
         totalRecords: 1
         sortKey: sortKey
         records:
-        - artist:
+        - trackHasFileCount: 4
+          artist:
             sortName: sortName
             rootFolderPath: rootFolderPath
             added: 2000-01-23T04:56:07.000+00:00
@@ -18658,6 +18966,26 @@ components:
               trackFileCount: 9
               sizeOnDisk: 9
               percentOfTracks: 6.438423552598547
+          added: 2000-01-23T04:56:07.000+00:00
+          albumId: 2
+          downloadId: downloadId
+          artistId: 5
+          title: title
+          sizeleft: 3.616076749251911
+          statusMessages:
+          - messages:
+            - messages
+            - messages
+            title: title
+          - messages:
+            - messages
+            - messages
+            title: title
+          protocol: null
+          trackFileCount: 2
+          outputPath: outputPath
+          id: 5
+          downloadClient: downloadClient
           estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
           album:
             secondaryTypes:
@@ -19104,16 +19432,11 @@ components:
               required: true
               infoLink: infoLink
           errorMessage: errorMessage
-          albumId: 2
-          downloadId: downloadId
-          artistId: 5
           indexer: indexer
-          title: title
           timeleft: timeleft
           trackedDownloadState: null
           customFormatScore: 7
           trackedDownloadStatus: null
-          sizeleft: 3.616076749251911
           quality:
             quality:
               name: name
@@ -19122,23 +19445,12 @@ components:
               real: 3
               version: 9
               isRepack: true
-          statusMessages:
-          - messages:
-            - messages
-            - messages
-            title: title
-          - messages:
-            - messages
-            - messages
-            title: title
-          protocol: null
           size: 9.301444243932576
-          outputPath: outputPath
+          downloadClientHasPostImportCategory: true
           downloadForced: true
-          id: 5
           status: status
-          downloadClient: downloadClient
-        - artist:
+        - trackHasFileCount: 4
+          artist:
             sortName: sortName
             rootFolderPath: rootFolderPath
             added: 2000-01-23T04:56:07.000+00:00
@@ -19225,6 +19537,26 @@ components:
               trackFileCount: 9
               sizeOnDisk: 9
               percentOfTracks: 6.438423552598547
+          added: 2000-01-23T04:56:07.000+00:00
+          albumId: 2
+          downloadId: downloadId
+          artistId: 5
+          title: title
+          sizeleft: 3.616076749251911
+          statusMessages:
+          - messages:
+            - messages
+            - messages
+            title: title
+          - messages:
+            - messages
+            - messages
+            title: title
+          protocol: null
+          trackFileCount: 2
+          outputPath: outputPath
+          id: 5
+          downloadClient: downloadClient
           estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
           album:
             secondaryTypes:
@@ -19671,16 +20003,11 @@ components:
               required: true
               infoLink: infoLink
           errorMessage: errorMessage
-          albumId: 2
-          downloadId: downloadId
-          artistId: 5
           indexer: indexer
-          title: title
           timeleft: timeleft
           trackedDownloadState: null
           customFormatScore: 7
           trackedDownloadStatus: null
-          sizeleft: 3.616076749251911
           quality:
             quality:
               name: name
@@ -19689,22 +20016,10 @@ components:
               real: 3
               version: 9
               isRepack: true
-          statusMessages:
-          - messages:
-            - messages
-            - messages
-            title: title
-          - messages:
-            - messages
-            - messages
-            title: title
-          protocol: null
           size: 9.301444243932576
-          outputPath: outputPath
+          downloadClientHasPostImportCategory: true
           downloadForced: true
-          id: 5
           status: status
-          downloadClient: downloadClient
         pageSize: 6
         page: 0
       properties:
@@ -19839,6 +20154,7 @@ components:
         rejections:
         - rejections
         - rejections
+        downloadClientId: 1
         ageMinutes: 5.637376656633329
         leechers: 4
         rejected: true
@@ -19860,6 +20176,7 @@ components:
         releaseWeight: 9
         qualityWeight: 6
         indexerId: 7
+        downloadClient: downloadClient
         subGroup: subGroup
         ageHours: 5.962133916683182
         customFormats:
@@ -20250,6 +20567,13 @@ components:
           format: int32
           nullable: true
           type: integer
+        downloadClientId:
+          format: int32
+          nullable: true
+          type: integer
+        downloadClient:
+          nullable: true
+          type: string
       type: object
     ReleaseStatus:
       additionalProperties: false
