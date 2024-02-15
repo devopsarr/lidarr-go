@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ArtistStatisticsResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ArtistStatisticsResource{}
+
 // ArtistStatisticsResource struct for ArtistStatisticsResource
 type ArtistStatisticsResource struct {
 	AlbumCount *int32 `json:"albumCount,omitempty"`
@@ -43,7 +46,7 @@ func NewArtistStatisticsResourceWithDefaults() *ArtistStatisticsResource {
 
 // GetAlbumCount returns the AlbumCount field value if set, zero value otherwise.
 func (o *ArtistStatisticsResource) GetAlbumCount() int32 {
-	if o == nil || isNil(o.AlbumCount) {
+	if o == nil || IsNil(o.AlbumCount) {
 		var ret int32
 		return ret
 	}
@@ -53,15 +56,15 @@ func (o *ArtistStatisticsResource) GetAlbumCount() int32 {
 // GetAlbumCountOk returns a tuple with the AlbumCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistStatisticsResource) GetAlbumCountOk() (*int32, bool) {
-	if o == nil || isNil(o.AlbumCount) {
-    return nil, false
+	if o == nil || IsNil(o.AlbumCount) {
+		return nil, false
 	}
 	return o.AlbumCount, true
 }
 
 // HasAlbumCount returns a boolean if a field has been set.
 func (o *ArtistStatisticsResource) HasAlbumCount() bool {
-	if o != nil && !isNil(o.AlbumCount) {
+	if o != nil && !IsNil(o.AlbumCount) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *ArtistStatisticsResource) SetAlbumCount(v int32) {
 
 // GetTrackFileCount returns the TrackFileCount field value if set, zero value otherwise.
 func (o *ArtistStatisticsResource) GetTrackFileCount() int32 {
-	if o == nil || isNil(o.TrackFileCount) {
+	if o == nil || IsNil(o.TrackFileCount) {
 		var ret int32
 		return ret
 	}
@@ -85,15 +88,15 @@ func (o *ArtistStatisticsResource) GetTrackFileCount() int32 {
 // GetTrackFileCountOk returns a tuple with the TrackFileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistStatisticsResource) GetTrackFileCountOk() (*int32, bool) {
-	if o == nil || isNil(o.TrackFileCount) {
-    return nil, false
+	if o == nil || IsNil(o.TrackFileCount) {
+		return nil, false
 	}
 	return o.TrackFileCount, true
 }
 
 // HasTrackFileCount returns a boolean if a field has been set.
 func (o *ArtistStatisticsResource) HasTrackFileCount() bool {
-	if o != nil && !isNil(o.TrackFileCount) {
+	if o != nil && !IsNil(o.TrackFileCount) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *ArtistStatisticsResource) SetTrackFileCount(v int32) {
 
 // GetTrackCount returns the TrackCount field value if set, zero value otherwise.
 func (o *ArtistStatisticsResource) GetTrackCount() int32 {
-	if o == nil || isNil(o.TrackCount) {
+	if o == nil || IsNil(o.TrackCount) {
 		var ret int32
 		return ret
 	}
@@ -117,15 +120,15 @@ func (o *ArtistStatisticsResource) GetTrackCount() int32 {
 // GetTrackCountOk returns a tuple with the TrackCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistStatisticsResource) GetTrackCountOk() (*int32, bool) {
-	if o == nil || isNil(o.TrackCount) {
-    return nil, false
+	if o == nil || IsNil(o.TrackCount) {
+		return nil, false
 	}
 	return o.TrackCount, true
 }
 
 // HasTrackCount returns a boolean if a field has been set.
 func (o *ArtistStatisticsResource) HasTrackCount() bool {
-	if o != nil && !isNil(o.TrackCount) {
+	if o != nil && !IsNil(o.TrackCount) {
 		return true
 	}
 
@@ -139,7 +142,7 @@ func (o *ArtistStatisticsResource) SetTrackCount(v int32) {
 
 // GetTotalTrackCount returns the TotalTrackCount field value if set, zero value otherwise.
 func (o *ArtistStatisticsResource) GetTotalTrackCount() int32 {
-	if o == nil || isNil(o.TotalTrackCount) {
+	if o == nil || IsNil(o.TotalTrackCount) {
 		var ret int32
 		return ret
 	}
@@ -149,15 +152,15 @@ func (o *ArtistStatisticsResource) GetTotalTrackCount() int32 {
 // GetTotalTrackCountOk returns a tuple with the TotalTrackCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistStatisticsResource) GetTotalTrackCountOk() (*int32, bool) {
-	if o == nil || isNil(o.TotalTrackCount) {
-    return nil, false
+	if o == nil || IsNil(o.TotalTrackCount) {
+		return nil, false
 	}
 	return o.TotalTrackCount, true
 }
 
 // HasTotalTrackCount returns a boolean if a field has been set.
 func (o *ArtistStatisticsResource) HasTotalTrackCount() bool {
-	if o != nil && !isNil(o.TotalTrackCount) {
+	if o != nil && !IsNil(o.TotalTrackCount) {
 		return true
 	}
 
@@ -171,7 +174,7 @@ func (o *ArtistStatisticsResource) SetTotalTrackCount(v int32) {
 
 // GetSizeOnDisk returns the SizeOnDisk field value if set, zero value otherwise.
 func (o *ArtistStatisticsResource) GetSizeOnDisk() int64 {
-	if o == nil || isNil(o.SizeOnDisk) {
+	if o == nil || IsNil(o.SizeOnDisk) {
 		var ret int64
 		return ret
 	}
@@ -181,15 +184,15 @@ func (o *ArtistStatisticsResource) GetSizeOnDisk() int64 {
 // GetSizeOnDiskOk returns a tuple with the SizeOnDisk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistStatisticsResource) GetSizeOnDiskOk() (*int64, bool) {
-	if o == nil || isNil(o.SizeOnDisk) {
-    return nil, false
+	if o == nil || IsNil(o.SizeOnDisk) {
+		return nil, false
 	}
 	return o.SizeOnDisk, true
 }
 
 // HasSizeOnDisk returns a boolean if a field has been set.
 func (o *ArtistStatisticsResource) HasSizeOnDisk() bool {
-	if o != nil && !isNil(o.SizeOnDisk) {
+	if o != nil && !IsNil(o.SizeOnDisk) {
 		return true
 	}
 
@@ -203,7 +206,7 @@ func (o *ArtistStatisticsResource) SetSizeOnDisk(v int64) {
 
 // GetPercentOfTracks returns the PercentOfTracks field value if set, zero value otherwise.
 func (o *ArtistStatisticsResource) GetPercentOfTracks() float64 {
-	if o == nil || isNil(o.PercentOfTracks) {
+	if o == nil || IsNil(o.PercentOfTracks) {
 		var ret float64
 		return ret
 	}
@@ -213,15 +216,15 @@ func (o *ArtistStatisticsResource) GetPercentOfTracks() float64 {
 // GetPercentOfTracksOk returns a tuple with the PercentOfTracks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistStatisticsResource) GetPercentOfTracksOk() (*float64, bool) {
-	if o == nil || isNil(o.PercentOfTracks) {
-    return nil, false
+	if o == nil || IsNil(o.PercentOfTracks) {
+		return nil, false
 	}
 	return o.PercentOfTracks, true
 }
 
 // HasPercentOfTracks returns a boolean if a field has been set.
 func (o *ArtistStatisticsResource) HasPercentOfTracks() bool {
-	if o != nil && !isNil(o.PercentOfTracks) {
+	if o != nil && !IsNil(o.PercentOfTracks) {
 		return true
 	}
 
@@ -234,26 +237,34 @@ func (o *ArtistStatisticsResource) SetPercentOfTracks(v float64) {
 }
 
 func (o ArtistStatisticsResource) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.AlbumCount) {
-		toSerialize["albumCount"] = o.AlbumCount
-	}
-	if !isNil(o.TrackFileCount) {
-		toSerialize["trackFileCount"] = o.TrackFileCount
-	}
-	if !isNil(o.TrackCount) {
-		toSerialize["trackCount"] = o.TrackCount
-	}
-	if !isNil(o.TotalTrackCount) {
-		toSerialize["totalTrackCount"] = o.TotalTrackCount
-	}
-	if !isNil(o.SizeOnDisk) {
-		toSerialize["sizeOnDisk"] = o.SizeOnDisk
-	}
-	if !isNil(o.PercentOfTracks) {
-		toSerialize["percentOfTracks"] = o.PercentOfTracks
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ArtistStatisticsResource) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AlbumCount) {
+		toSerialize["albumCount"] = o.AlbumCount
+	}
+	if !IsNil(o.TrackFileCount) {
+		toSerialize["trackFileCount"] = o.TrackFileCount
+	}
+	if !IsNil(o.TrackCount) {
+		toSerialize["trackCount"] = o.TrackCount
+	}
+	if !IsNil(o.TotalTrackCount) {
+		toSerialize["totalTrackCount"] = o.TotalTrackCount
+	}
+	if !IsNil(o.SizeOnDisk) {
+		toSerialize["sizeOnDisk"] = o.SizeOnDisk
+	}
+	if !IsNil(o.PercentOfTracks) {
+		toSerialize["percentOfTracks"] = o.PercentOfTracks
+	}
+	return toSerialize, nil
 }
 
 type NullableArtistStatisticsResource struct {

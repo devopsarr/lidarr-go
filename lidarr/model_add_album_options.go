@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddAlbumOptions type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddAlbumOptions{}
+
 // AddAlbumOptions struct for AddAlbumOptions
 type AddAlbumOptions struct {
 	AddType *AlbumAddType `json:"addType,omitempty"`
@@ -39,7 +42,7 @@ func NewAddAlbumOptionsWithDefaults() *AddAlbumOptions {
 
 // GetAddType returns the AddType field value if set, zero value otherwise.
 func (o *AddAlbumOptions) GetAddType() AlbumAddType {
-	if o == nil || isNil(o.AddType) {
+	if o == nil || IsNil(o.AddType) {
 		var ret AlbumAddType
 		return ret
 	}
@@ -49,15 +52,15 @@ func (o *AddAlbumOptions) GetAddType() AlbumAddType {
 // GetAddTypeOk returns a tuple with the AddType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAlbumOptions) GetAddTypeOk() (*AlbumAddType, bool) {
-	if o == nil || isNil(o.AddType) {
-    return nil, false
+	if o == nil || IsNil(o.AddType) {
+		return nil, false
 	}
 	return o.AddType, true
 }
 
 // HasAddType returns a boolean if a field has been set.
 func (o *AddAlbumOptions) HasAddType() bool {
-	if o != nil && !isNil(o.AddType) {
+	if o != nil && !IsNil(o.AddType) {
 		return true
 	}
 
@@ -71,7 +74,7 @@ func (o *AddAlbumOptions) SetAddType(v AlbumAddType) {
 
 // GetSearchForNewAlbum returns the SearchForNewAlbum field value if set, zero value otherwise.
 func (o *AddAlbumOptions) GetSearchForNewAlbum() bool {
-	if o == nil || isNil(o.SearchForNewAlbum) {
+	if o == nil || IsNil(o.SearchForNewAlbum) {
 		var ret bool
 		return ret
 	}
@@ -81,15 +84,15 @@ func (o *AddAlbumOptions) GetSearchForNewAlbum() bool {
 // GetSearchForNewAlbumOk returns a tuple with the SearchForNewAlbum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAlbumOptions) GetSearchForNewAlbumOk() (*bool, bool) {
-	if o == nil || isNil(o.SearchForNewAlbum) {
-    return nil, false
+	if o == nil || IsNil(o.SearchForNewAlbum) {
+		return nil, false
 	}
 	return o.SearchForNewAlbum, true
 }
 
 // HasSearchForNewAlbum returns a boolean if a field has been set.
 func (o *AddAlbumOptions) HasSearchForNewAlbum() bool {
-	if o != nil && !isNil(o.SearchForNewAlbum) {
+	if o != nil && !IsNil(o.SearchForNewAlbum) {
 		return true
 	}
 
@@ -102,14 +105,22 @@ func (o *AddAlbumOptions) SetSearchForNewAlbum(v bool) {
 }
 
 func (o AddAlbumOptions) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.AddType) {
-		toSerialize["addType"] = o.AddType
-	}
-	if !isNil(o.SearchForNewAlbum) {
-		toSerialize["searchForNewAlbum"] = o.SearchForNewAlbum
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddAlbumOptions) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AddType) {
+		toSerialize["addType"] = o.AddType
+	}
+	if !IsNil(o.SearchForNewAlbum) {
+		toSerialize["searchForNewAlbum"] = o.SearchForNewAlbum
+	}
+	return toSerialize, nil
 }
 
 type NullableAddAlbumOptions struct {

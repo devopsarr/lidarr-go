@@ -23,6 +23,7 @@ import (
 
 // AlbumAPIService AlbumAPI service
 type AlbumAPIService service
+
 type ApiCreateAlbumRequest struct {
 	ctx context.Context
 	ApiService *AlbumAPIService
@@ -155,6 +156,7 @@ func (a *AlbumAPIService) CreateAlbumExecute(r ApiCreateAlbumRequest) (*AlbumRes
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteAlbumRequest struct {
 	ctx context.Context
 	ApiService *AlbumAPIService
@@ -206,17 +208,23 @@ func (a *AlbumAPIService) DeleteAlbumExecute(r ApiDeleteAlbumRequest) (*http.Res
 	}
 
 	localVarPath := localBasePath + "/api/v1/album/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.deleteFiles != nil {
-		localVarQueryParams.Add("deleteFiles", parameterToString(*r.deleteFiles, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "")
+	} else {
+		var defaultValue bool = false
+		r.deleteFiles = &defaultValue
 	}
 	if r.addImportListExclusion != nil {
-		localVarQueryParams.Add("addImportListExclusion", parameterToString(*r.addImportListExclusion, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "")
+	} else {
+		var defaultValue bool = false
+		r.addImportListExclusion = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -290,6 +298,7 @@ func (a *AlbumAPIService) DeleteAlbumExecute(r ApiDeleteAlbumRequest) (*http.Res
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetAlbumByIdRequest struct {
 	ctx context.Context
 	ApiService *AlbumAPIService
@@ -331,7 +340,7 @@ func (a *AlbumAPIService) GetAlbumByIdExecute(r ApiGetAlbumByIdRequest) (*AlbumR
 	}
 
 	localVarPath := localBasePath + "/api/v1/album/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -418,6 +427,7 @@ func (a *AlbumAPIService) GetAlbumByIdExecute(r ApiGetAlbumByIdRequest) (*AlbumR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListAlbumRequest struct {
 	ctx context.Context
 	ApiService *AlbumAPIService
@@ -447,7 +457,7 @@ func (r ApiListAlbumRequest) IncludeAllArtistAlbums(includeAllArtistAlbums bool)
 	return r
 }
 
-func (r ApiListAlbumRequest) Execute() ([]*AlbumResource, *http.Response, error) {
+func (r ApiListAlbumRequest) Execute() ([]AlbumResource, *http.Response, error) {
 	return r.ApiService.ListAlbumExecute(r)
 }
 
@@ -466,12 +476,12 @@ func (a *AlbumAPIService) ListAlbum(ctx context.Context) ApiListAlbumRequest {
 
 // Execute executes the request
 //  @return []AlbumResource
-func (a *AlbumAPIService) ListAlbumExecute(r ApiListAlbumRequest) ([]*AlbumResource, *http.Response, error) {
+func (a *AlbumAPIService) ListAlbumExecute(r ApiListAlbumRequest) ([]AlbumResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*AlbumResource
+		localVarReturnValue  []AlbumResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlbumAPIService.ListAlbum")
@@ -486,24 +496,27 @@ func (a *AlbumAPIService) ListAlbumExecute(r ApiListAlbumRequest) ([]*AlbumResou
 	localVarFormParams := url.Values{}
 
 	if r.artistId != nil {
-		localVarQueryParams.Add("artistId", parameterToString(*r.artistId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
 	}
 	if r.albumIds != nil {
 		t := *r.albumIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("albumIds", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "albumIds", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("albumIds", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "albumIds", t, "multi")
 		}
 	}
 	if r.foreignAlbumId != nil {
-		localVarQueryParams.Add("foreignAlbumId", parameterToString(*r.foreignAlbumId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "foreignAlbumId", r.foreignAlbumId, "")
 	}
 	if r.includeAllArtistAlbums != nil {
-		localVarQueryParams.Add("includeAllArtistAlbums", parameterToString(*r.includeAllArtistAlbums, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAllArtistAlbums", r.includeAllArtistAlbums, "")
+	} else {
+		var defaultValue bool = false
+		r.includeAllArtistAlbums = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -586,6 +599,7 @@ func (a *AlbumAPIService) ListAlbumExecute(r ApiListAlbumRequest) ([]*AlbumResou
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiPutAlbumMonitorRequest struct {
 	ctx context.Context
 	ApiService *AlbumAPIService
@@ -707,6 +721,7 @@ func (a *AlbumAPIService) PutAlbumMonitorExecute(r ApiPutAlbumMonitorRequest) (*
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateAlbumRequest struct {
 	ctx context.Context
 	ApiService *AlbumAPIService
@@ -754,7 +769,7 @@ func (a *AlbumAPIService) UpdateAlbumExecute(r ApiUpdateAlbumRequest) (*AlbumRes
 	}
 
 	localVarPath := localBasePath + "/api/v1/album/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

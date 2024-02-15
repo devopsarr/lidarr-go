@@ -21,6 +21,7 @@ import (
 
 // RenameTrackAPIService RenameTrackAPI service
 type RenameTrackAPIService service
+
 type ApiListRenameRequest struct {
 	ctx context.Context
 	ApiService *RenameTrackAPIService
@@ -38,7 +39,7 @@ func (r ApiListRenameRequest) AlbumId(albumId int32) ApiListRenameRequest {
 	return r
 }
 
-func (r ApiListRenameRequest) Execute() ([]*RenameTrackResource, *http.Response, error) {
+func (r ApiListRenameRequest) Execute() ([]RenameTrackResource, *http.Response, error) {
 	return r.ApiService.ListRenameExecute(r)
 }
 
@@ -57,12 +58,12 @@ func (a *RenameTrackAPIService) ListRename(ctx context.Context) ApiListRenameReq
 
 // Execute executes the request
 //  @return []RenameTrackResource
-func (a *RenameTrackAPIService) ListRenameExecute(r ApiListRenameRequest) ([]*RenameTrackResource, *http.Response, error) {
+func (a *RenameTrackAPIService) ListRenameExecute(r ApiListRenameRequest) ([]RenameTrackResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*RenameTrackResource
+		localVarReturnValue  []RenameTrackResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RenameTrackAPIService.ListRename")
@@ -77,10 +78,10 @@ func (a *RenameTrackAPIService) ListRenameExecute(r ApiListRenameRequest) ([]*Re
 	localVarFormParams := url.Values{}
 
 	if r.artistId != nil {
-		localVarQueryParams.Add("artistId", parameterToString(*r.artistId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
 	}
 	if r.albumId != nil {
-		localVarQueryParams.Add("albumId", parameterToString(*r.albumId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

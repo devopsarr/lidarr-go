@@ -14,9 +14,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the TrackFileListResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TrackFileListResource{}
+
 // TrackFileListResource struct for TrackFileListResource
 type TrackFileListResource struct {
-	TrackFileIds []*int32 `json:"trackFileIds,omitempty"`
+	TrackFileIds []int32 `json:"trackFileIds,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
 	SceneName NullableString `json:"sceneName,omitempty"`
 	ReleaseGroup NullableString `json:"releaseGroup,omitempty"`
@@ -40,9 +43,9 @@ func NewTrackFileListResourceWithDefaults() *TrackFileListResource {
 }
 
 // GetTrackFileIds returns the TrackFileIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TrackFileListResource) GetTrackFileIds() []*int32 {
+func (o *TrackFileListResource) GetTrackFileIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.TrackFileIds
@@ -51,16 +54,16 @@ func (o *TrackFileListResource) GetTrackFileIds() []*int32 {
 // GetTrackFileIdsOk returns a tuple with the TrackFileIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TrackFileListResource) GetTrackFileIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.TrackFileIds) {
-    return nil, false
+func (o *TrackFileListResource) GetTrackFileIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.TrackFileIds) {
+		return nil, false
 	}
 	return o.TrackFileIds, true
 }
 
 // HasTrackFileIds returns a boolean if a field has been set.
 func (o *TrackFileListResource) HasTrackFileIds() bool {
-	if o != nil && isNil(o.TrackFileIds) {
+	if o != nil && IsNil(o.TrackFileIds) {
 		return true
 	}
 
@@ -68,13 +71,13 @@ func (o *TrackFileListResource) HasTrackFileIds() bool {
 }
 
 // SetTrackFileIds gets a reference to the given []int32 and assigns it to the TrackFileIds field.
-func (o *TrackFileListResource) SetTrackFileIds(v []*int32) {
+func (o *TrackFileListResource) SetTrackFileIds(v []int32) {
 	o.TrackFileIds = v
 }
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *TrackFileListResource) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -84,15 +87,15 @@ func (o *TrackFileListResource) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackFileListResource) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *TrackFileListResource) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -106,7 +109,7 @@ func (o *TrackFileListResource) SetQuality(v QualityModel) {
 
 // GetSceneName returns the SceneName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TrackFileListResource) GetSceneName() string {
-	if o == nil || isNil(o.SceneName.Get()) {
+	if o == nil || IsNil(o.SceneName.Get()) {
 		var ret string
 		return ret
 	}
@@ -118,7 +121,7 @@ func (o *TrackFileListResource) GetSceneName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TrackFileListResource) GetSceneNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SceneName.Get(), o.SceneName.IsSet()
 }
@@ -148,7 +151,7 @@ func (o *TrackFileListResource) UnsetSceneName() {
 
 // GetReleaseGroup returns the ReleaseGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TrackFileListResource) GetReleaseGroup() string {
-	if o == nil || isNil(o.ReleaseGroup.Get()) {
+	if o == nil || IsNil(o.ReleaseGroup.Get()) {
 		var ret string
 		return ret
 	}
@@ -160,7 +163,7 @@ func (o *TrackFileListResource) GetReleaseGroup() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TrackFileListResource) GetReleaseGroupOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseGroup.Get(), o.ReleaseGroup.IsSet()
 }
@@ -189,11 +192,19 @@ func (o *TrackFileListResource) UnsetReleaseGroup() {
 }
 
 func (o TrackFileListResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o TrackFileListResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.TrackFileIds != nil {
 		toSerialize["trackFileIds"] = o.TrackFileIds
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
 	if o.SceneName.IsSet() {
@@ -202,7 +213,7 @@ func (o TrackFileListResource) MarshalJSON() ([]byte, error) {
 	if o.ReleaseGroup.IsSet() {
 		toSerialize["releaseGroup"] = o.ReleaseGroup.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableTrackFileListResource struct {

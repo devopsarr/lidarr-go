@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AlbumReleaseResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AlbumReleaseResource{}
+
 // AlbumReleaseResource struct for AlbumReleaseResource
 type AlbumReleaseResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -23,11 +26,11 @@ type AlbumReleaseResource struct {
 	Status NullableString `json:"status,omitempty"`
 	Duration *int32 `json:"duration,omitempty"`
 	TrackCount *int32 `json:"trackCount,omitempty"`
-	Media []*MediumResource `json:"media,omitempty"`
+	Media []MediumResource `json:"media,omitempty"`
 	MediumCount *int32 `json:"mediumCount,omitempty"`
 	Disambiguation NullableString `json:"disambiguation,omitempty"`
-	Country []*string `json:"country,omitempty"`
-	Label []*string `json:"label,omitempty"`
+	Country []string `json:"country,omitempty"`
+	Label []string `json:"label,omitempty"`
 	Format NullableString `json:"format,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
 }
@@ -51,7 +54,7 @@ func NewAlbumReleaseResourceWithDefaults() *AlbumReleaseResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *AlbumReleaseResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -61,15 +64,15 @@ func (o *AlbumReleaseResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlbumReleaseResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *AlbumReleaseResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -83,7 +86,7 @@ func (o *AlbumReleaseResource) SetId(v int32) {
 
 // GetAlbumId returns the AlbumId field value if set, zero value otherwise.
 func (o *AlbumReleaseResource) GetAlbumId() int32 {
-	if o == nil || isNil(o.AlbumId) {
+	if o == nil || IsNil(o.AlbumId) {
 		var ret int32
 		return ret
 	}
@@ -93,15 +96,15 @@ func (o *AlbumReleaseResource) GetAlbumId() int32 {
 // GetAlbumIdOk returns a tuple with the AlbumId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlbumReleaseResource) GetAlbumIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AlbumId) {
-    return nil, false
+	if o == nil || IsNil(o.AlbumId) {
+		return nil, false
 	}
 	return o.AlbumId, true
 }
 
 // HasAlbumId returns a boolean if a field has been set.
 func (o *AlbumReleaseResource) HasAlbumId() bool {
-	if o != nil && !isNil(o.AlbumId) {
+	if o != nil && !IsNil(o.AlbumId) {
 		return true
 	}
 
@@ -115,7 +118,7 @@ func (o *AlbumReleaseResource) SetAlbumId(v int32) {
 
 // GetForeignReleaseId returns the ForeignReleaseId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlbumReleaseResource) GetForeignReleaseId() string {
-	if o == nil || isNil(o.ForeignReleaseId.Get()) {
+	if o == nil || IsNil(o.ForeignReleaseId.Get()) {
 		var ret string
 		return ret
 	}
@@ -127,7 +130,7 @@ func (o *AlbumReleaseResource) GetForeignReleaseId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AlbumReleaseResource) GetForeignReleaseIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ForeignReleaseId.Get(), o.ForeignReleaseId.IsSet()
 }
@@ -157,7 +160,7 @@ func (o *AlbumReleaseResource) UnsetForeignReleaseId() {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlbumReleaseResource) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -169,7 +172,7 @@ func (o *AlbumReleaseResource) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AlbumReleaseResource) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -199,7 +202,7 @@ func (o *AlbumReleaseResource) UnsetTitle() {
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlbumReleaseResource) GetStatus() string {
-	if o == nil || isNil(o.Status.Get()) {
+	if o == nil || IsNil(o.Status.Get()) {
 		var ret string
 		return ret
 	}
@@ -211,7 +214,7 @@ func (o *AlbumReleaseResource) GetStatus() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AlbumReleaseResource) GetStatusOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Status.Get(), o.Status.IsSet()
 }
@@ -241,7 +244,7 @@ func (o *AlbumReleaseResource) UnsetStatus() {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *AlbumReleaseResource) GetDuration() int32 {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		var ret int32
 		return ret
 	}
@@ -251,15 +254,15 @@ func (o *AlbumReleaseResource) GetDuration() int32 {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlbumReleaseResource) GetDurationOk() (*int32, bool) {
-	if o == nil || isNil(o.Duration) {
-    return nil, false
+	if o == nil || IsNil(o.Duration) {
+		return nil, false
 	}
 	return o.Duration, true
 }
 
 // HasDuration returns a boolean if a field has been set.
 func (o *AlbumReleaseResource) HasDuration() bool {
-	if o != nil && !isNil(o.Duration) {
+	if o != nil && !IsNil(o.Duration) {
 		return true
 	}
 
@@ -273,7 +276,7 @@ func (o *AlbumReleaseResource) SetDuration(v int32) {
 
 // GetTrackCount returns the TrackCount field value if set, zero value otherwise.
 func (o *AlbumReleaseResource) GetTrackCount() int32 {
-	if o == nil || isNil(o.TrackCount) {
+	if o == nil || IsNil(o.TrackCount) {
 		var ret int32
 		return ret
 	}
@@ -283,15 +286,15 @@ func (o *AlbumReleaseResource) GetTrackCount() int32 {
 // GetTrackCountOk returns a tuple with the TrackCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlbumReleaseResource) GetTrackCountOk() (*int32, bool) {
-	if o == nil || isNil(o.TrackCount) {
-    return nil, false
+	if o == nil || IsNil(o.TrackCount) {
+		return nil, false
 	}
 	return o.TrackCount, true
 }
 
 // HasTrackCount returns a boolean if a field has been set.
 func (o *AlbumReleaseResource) HasTrackCount() bool {
-	if o != nil && !isNil(o.TrackCount) {
+	if o != nil && !IsNil(o.TrackCount) {
 		return true
 	}
 
@@ -304,9 +307,9 @@ func (o *AlbumReleaseResource) SetTrackCount(v int32) {
 }
 
 // GetMedia returns the Media field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AlbumReleaseResource) GetMedia() []*MediumResource {
+func (o *AlbumReleaseResource) GetMedia() []MediumResource {
 	if o == nil {
-		var ret []*MediumResource
+		var ret []MediumResource
 		return ret
 	}
 	return o.Media
@@ -315,16 +318,16 @@ func (o *AlbumReleaseResource) GetMedia() []*MediumResource {
 // GetMediaOk returns a tuple with the Media field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AlbumReleaseResource) GetMediaOk() ([]*MediumResource, bool) {
-	if o == nil || isNil(o.Media) {
-    return nil, false
+func (o *AlbumReleaseResource) GetMediaOk() ([]MediumResource, bool) {
+	if o == nil || IsNil(o.Media) {
+		return nil, false
 	}
 	return o.Media, true
 }
 
 // HasMedia returns a boolean if a field has been set.
 func (o *AlbumReleaseResource) HasMedia() bool {
-	if o != nil && isNil(o.Media) {
+	if o != nil && IsNil(o.Media) {
 		return true
 	}
 
@@ -332,13 +335,13 @@ func (o *AlbumReleaseResource) HasMedia() bool {
 }
 
 // SetMedia gets a reference to the given []MediumResource and assigns it to the Media field.
-func (o *AlbumReleaseResource) SetMedia(v []*MediumResource) {
+func (o *AlbumReleaseResource) SetMedia(v []MediumResource) {
 	o.Media = v
 }
 
 // GetMediumCount returns the MediumCount field value if set, zero value otherwise.
 func (o *AlbumReleaseResource) GetMediumCount() int32 {
-	if o == nil || isNil(o.MediumCount) {
+	if o == nil || IsNil(o.MediumCount) {
 		var ret int32
 		return ret
 	}
@@ -348,15 +351,15 @@ func (o *AlbumReleaseResource) GetMediumCount() int32 {
 // GetMediumCountOk returns a tuple with the MediumCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlbumReleaseResource) GetMediumCountOk() (*int32, bool) {
-	if o == nil || isNil(o.MediumCount) {
-    return nil, false
+	if o == nil || IsNil(o.MediumCount) {
+		return nil, false
 	}
 	return o.MediumCount, true
 }
 
 // HasMediumCount returns a boolean if a field has been set.
 func (o *AlbumReleaseResource) HasMediumCount() bool {
-	if o != nil && !isNil(o.MediumCount) {
+	if o != nil && !IsNil(o.MediumCount) {
 		return true
 	}
 
@@ -370,7 +373,7 @@ func (o *AlbumReleaseResource) SetMediumCount(v int32) {
 
 // GetDisambiguation returns the Disambiguation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlbumReleaseResource) GetDisambiguation() string {
-	if o == nil || isNil(o.Disambiguation.Get()) {
+	if o == nil || IsNil(o.Disambiguation.Get()) {
 		var ret string
 		return ret
 	}
@@ -382,7 +385,7 @@ func (o *AlbumReleaseResource) GetDisambiguation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AlbumReleaseResource) GetDisambiguationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Disambiguation.Get(), o.Disambiguation.IsSet()
 }
@@ -411,9 +414,9 @@ func (o *AlbumReleaseResource) UnsetDisambiguation() {
 }
 
 // GetCountry returns the Country field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AlbumReleaseResource) GetCountry() []*string {
+func (o *AlbumReleaseResource) GetCountry() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.Country
@@ -422,16 +425,16 @@ func (o *AlbumReleaseResource) GetCountry() []*string {
 // GetCountryOk returns a tuple with the Country field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AlbumReleaseResource) GetCountryOk() ([]*string, bool) {
-	if o == nil || isNil(o.Country) {
-    return nil, false
+func (o *AlbumReleaseResource) GetCountryOk() ([]string, bool) {
+	if o == nil || IsNil(o.Country) {
+		return nil, false
 	}
 	return o.Country, true
 }
 
 // HasCountry returns a boolean if a field has been set.
 func (o *AlbumReleaseResource) HasCountry() bool {
-	if o != nil && isNil(o.Country) {
+	if o != nil && IsNil(o.Country) {
 		return true
 	}
 
@@ -439,14 +442,14 @@ func (o *AlbumReleaseResource) HasCountry() bool {
 }
 
 // SetCountry gets a reference to the given []string and assigns it to the Country field.
-func (o *AlbumReleaseResource) SetCountry(v []*string) {
+func (o *AlbumReleaseResource) SetCountry(v []string) {
 	o.Country = v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AlbumReleaseResource) GetLabel() []*string {
+func (o *AlbumReleaseResource) GetLabel() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.Label
@@ -455,16 +458,16 @@ func (o *AlbumReleaseResource) GetLabel() []*string {
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AlbumReleaseResource) GetLabelOk() ([]*string, bool) {
-	if o == nil || isNil(o.Label) {
-    return nil, false
+func (o *AlbumReleaseResource) GetLabelOk() ([]string, bool) {
+	if o == nil || IsNil(o.Label) {
+		return nil, false
 	}
 	return o.Label, true
 }
 
 // HasLabel returns a boolean if a field has been set.
 func (o *AlbumReleaseResource) HasLabel() bool {
-	if o != nil && isNil(o.Label) {
+	if o != nil && IsNil(o.Label) {
 		return true
 	}
 
@@ -472,13 +475,13 @@ func (o *AlbumReleaseResource) HasLabel() bool {
 }
 
 // SetLabel gets a reference to the given []string and assigns it to the Label field.
-func (o *AlbumReleaseResource) SetLabel(v []*string) {
+func (o *AlbumReleaseResource) SetLabel(v []string) {
 	o.Label = v
 }
 
 // GetFormat returns the Format field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlbumReleaseResource) GetFormat() string {
-	if o == nil || isNil(o.Format.Get()) {
+	if o == nil || IsNil(o.Format.Get()) {
 		var ret string
 		return ret
 	}
@@ -490,7 +493,7 @@ func (o *AlbumReleaseResource) GetFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AlbumReleaseResource) GetFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Format.Get(), o.Format.IsSet()
 }
@@ -520,7 +523,7 @@ func (o *AlbumReleaseResource) UnsetFormat() {
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise.
 func (o *AlbumReleaseResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored) {
+	if o == nil || IsNil(o.Monitored) {
 		var ret bool
 		return ret
 	}
@@ -530,15 +533,15 @@ func (o *AlbumReleaseResource) GetMonitored() bool {
 // GetMonitoredOk returns a tuple with the Monitored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlbumReleaseResource) GetMonitoredOk() (*bool, bool) {
-	if o == nil || isNil(o.Monitored) {
-    return nil, false
+	if o == nil || IsNil(o.Monitored) {
+		return nil, false
 	}
 	return o.Monitored, true
 }
 
 // HasMonitored returns a boolean if a field has been set.
 func (o *AlbumReleaseResource) HasMonitored() bool {
-	if o != nil && !isNil(o.Monitored) {
+	if o != nil && !IsNil(o.Monitored) {
 		return true
 	}
 
@@ -551,11 +554,19 @@ func (o *AlbumReleaseResource) SetMonitored(v bool) {
 }
 
 func (o AlbumReleaseResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AlbumReleaseResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.AlbumId) {
+	if !IsNil(o.AlbumId) {
 		toSerialize["albumId"] = o.AlbumId
 	}
 	if o.ForeignReleaseId.IsSet() {
@@ -567,16 +578,16 @@ func (o AlbumReleaseResource) MarshalJSON() ([]byte, error) {
 	if o.Status.IsSet() {
 		toSerialize["status"] = o.Status.Get()
 	}
-	if !isNil(o.Duration) {
+	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
-	if !isNil(o.TrackCount) {
+	if !IsNil(o.TrackCount) {
 		toSerialize["trackCount"] = o.TrackCount
 	}
 	if o.Media != nil {
 		toSerialize["media"] = o.Media
 	}
-	if !isNil(o.MediumCount) {
+	if !IsNil(o.MediumCount) {
 		toSerialize["mediumCount"] = o.MediumCount
 	}
 	if o.Disambiguation.IsSet() {
@@ -591,10 +602,10 @@ func (o AlbumReleaseResource) MarshalJSON() ([]byte, error) {
 	if o.Format.IsSet() {
 		toSerialize["format"] = o.Format.Get()
 	}
-	if !isNil(o.Monitored) {
+	if !IsNil(o.Monitored) {
 		toSerialize["monitored"] = o.Monitored
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAlbumReleaseResource struct {

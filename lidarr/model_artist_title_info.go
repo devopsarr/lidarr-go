@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ArtistTitleInfo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ArtistTitleInfo{}
+
 // ArtistTitleInfo struct for ArtistTitleInfo
 type ArtistTitleInfo struct {
 	Title NullableString `json:"title,omitempty"`
@@ -40,7 +43,7 @@ func NewArtistTitleInfoWithDefaults() *ArtistTitleInfo {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistTitleInfo) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -52,7 +55,7 @@ func (o *ArtistTitleInfo) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistTitleInfo) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -82,7 +85,7 @@ func (o *ArtistTitleInfo) UnsetTitle() {
 
 // GetTitleWithoutYear returns the TitleWithoutYear field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistTitleInfo) GetTitleWithoutYear() string {
-	if o == nil || isNil(o.TitleWithoutYear.Get()) {
+	if o == nil || IsNil(o.TitleWithoutYear.Get()) {
 		var ret string
 		return ret
 	}
@@ -94,7 +97,7 @@ func (o *ArtistTitleInfo) GetTitleWithoutYear() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistTitleInfo) GetTitleWithoutYearOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TitleWithoutYear.Get(), o.TitleWithoutYear.IsSet()
 }
@@ -124,7 +127,7 @@ func (o *ArtistTitleInfo) UnsetTitleWithoutYear() {
 
 // GetYear returns the Year field value if set, zero value otherwise.
 func (o *ArtistTitleInfo) GetYear() int32 {
-	if o == nil || isNil(o.Year) {
+	if o == nil || IsNil(o.Year) {
 		var ret int32
 		return ret
 	}
@@ -134,15 +137,15 @@ func (o *ArtistTitleInfo) GetYear() int32 {
 // GetYearOk returns a tuple with the Year field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistTitleInfo) GetYearOk() (*int32, bool) {
-	if o == nil || isNil(o.Year) {
-    return nil, false
+	if o == nil || IsNil(o.Year) {
+		return nil, false
 	}
 	return o.Year, true
 }
 
 // HasYear returns a boolean if a field has been set.
 func (o *ArtistTitleInfo) HasYear() bool {
-	if o != nil && !isNil(o.Year) {
+	if o != nil && !IsNil(o.Year) {
 		return true
 	}
 
@@ -155,6 +158,14 @@ func (o *ArtistTitleInfo) SetYear(v int32) {
 }
 
 func (o ArtistTitleInfo) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ArtistTitleInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
@@ -162,10 +173,10 @@ func (o ArtistTitleInfo) MarshalJSON() ([]byte, error) {
 	if o.TitleWithoutYear.IsSet() {
 		toSerialize["titleWithoutYear"] = o.TitleWithoutYear.Get()
 	}
-	if !isNil(o.Year) {
+	if !IsNil(o.Year) {
 		toSerialize["year"] = o.Year
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableArtistTitleInfo struct {

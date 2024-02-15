@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the ArtistResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ArtistResource{}
+
 // ArtistResource struct for ArtistResource
 type ArtistResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -30,11 +33,11 @@ type ArtistResource struct {
 	Overview NullableString `json:"overview,omitempty"`
 	ArtistType NullableString `json:"artistType,omitempty"`
 	Disambiguation NullableString `json:"disambiguation,omitempty"`
-	Links []*Links `json:"links,omitempty"`
+	Links []Links `json:"links,omitempty"`
 	NextAlbum *AlbumResource `json:"nextAlbum,omitempty"`
 	LastAlbum *AlbumResource `json:"lastAlbum,omitempty"`
-	Images []*MediaCover `json:"images,omitempty"`
-	Members []*Member `json:"members,omitempty"`
+	Images []MediaCover `json:"images,omitempty"`
+	Members []Member `json:"members,omitempty"`
 	RemotePoster NullableString `json:"remotePoster,omitempty"`
 	Path NullableString `json:"path,omitempty"`
 	QualityProfileId *int32 `json:"qualityProfileId,omitempty"`
@@ -43,10 +46,10 @@ type ArtistResource struct {
 	MonitorNewItems *NewItemMonitorTypes `json:"monitorNewItems,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
 	Folder NullableString `json:"folder,omitempty"`
-	Genres []*string `json:"genres,omitempty"`
+	Genres []string `json:"genres,omitempty"`
 	CleanName NullableString `json:"cleanName,omitempty"`
 	SortName NullableString `json:"sortName,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
 	Added *time.Time `json:"added,omitempty"`
 	AddOptions *AddArtistOptions `json:"addOptions,omitempty"`
 	Ratings *Ratings `json:"ratings,omitempty"`
@@ -72,7 +75,7 @@ func NewArtistResourceWithDefaults() *ArtistResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ArtistResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -82,15 +85,15 @@ func (o *ArtistResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ArtistResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *ArtistResource) SetId(v int32) {
 
 // GetArtistMetadataId returns the ArtistMetadataId field value if set, zero value otherwise.
 func (o *ArtistResource) GetArtistMetadataId() int32 {
-	if o == nil || isNil(o.ArtistMetadataId) {
+	if o == nil || IsNil(o.ArtistMetadataId) {
 		var ret int32
 		return ret
 	}
@@ -114,15 +117,15 @@ func (o *ArtistResource) GetArtistMetadataId() int32 {
 // GetArtistMetadataIdOk returns a tuple with the ArtistMetadataId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetArtistMetadataIdOk() (*int32, bool) {
-	if o == nil || isNil(o.ArtistMetadataId) {
-    return nil, false
+	if o == nil || IsNil(o.ArtistMetadataId) {
+		return nil, false
 	}
 	return o.ArtistMetadataId, true
 }
 
 // HasArtistMetadataId returns a boolean if a field has been set.
 func (o *ArtistResource) HasArtistMetadataId() bool {
-	if o != nil && !isNil(o.ArtistMetadataId) {
+	if o != nil && !IsNil(o.ArtistMetadataId) {
 		return true
 	}
 
@@ -136,7 +139,7 @@ func (o *ArtistResource) SetArtistMetadataId(v int32) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *ArtistResource) GetStatus() ArtistStatusType {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		var ret ArtistStatusType
 		return ret
 	}
@@ -146,15 +149,15 @@ func (o *ArtistResource) GetStatus() ArtistStatusType {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetStatusOk() (*ArtistStatusType, bool) {
-	if o == nil || isNil(o.Status) {
-    return nil, false
+	if o == nil || IsNil(o.Status) {
+		return nil, false
 	}
 	return o.Status, true
 }
 
 // HasStatus returns a boolean if a field has been set.
 func (o *ArtistResource) HasStatus() bool {
-	if o != nil && !isNil(o.Status) {
+	if o != nil && !IsNil(o.Status) {
 		return true
 	}
 
@@ -168,7 +171,7 @@ func (o *ArtistResource) SetStatus(v ArtistStatusType) {
 
 // GetEnded returns the Ended field value if set, zero value otherwise.
 func (o *ArtistResource) GetEnded() bool {
-	if o == nil || isNil(o.Ended) {
+	if o == nil || IsNil(o.Ended) {
 		var ret bool
 		return ret
 	}
@@ -178,15 +181,15 @@ func (o *ArtistResource) GetEnded() bool {
 // GetEndedOk returns a tuple with the Ended field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetEndedOk() (*bool, bool) {
-	if o == nil || isNil(o.Ended) {
-    return nil, false
+	if o == nil || IsNil(o.Ended) {
+		return nil, false
 	}
 	return o.Ended, true
 }
 
 // HasEnded returns a boolean if a field has been set.
 func (o *ArtistResource) HasEnded() bool {
-	if o != nil && !isNil(o.Ended) {
+	if o != nil && !IsNil(o.Ended) {
 		return true
 	}
 
@@ -200,7 +203,7 @@ func (o *ArtistResource) SetEnded(v bool) {
 
 // GetArtistName returns the ArtistName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetArtistName() string {
-	if o == nil || isNil(o.ArtistName.Get()) {
+	if o == nil || IsNil(o.ArtistName.Get()) {
 		var ret string
 		return ret
 	}
@@ -212,7 +215,7 @@ func (o *ArtistResource) GetArtistName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistResource) GetArtistNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ArtistName.Get(), o.ArtistName.IsSet()
 }
@@ -242,7 +245,7 @@ func (o *ArtistResource) UnsetArtistName() {
 
 // GetForeignArtistId returns the ForeignArtistId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetForeignArtistId() string {
-	if o == nil || isNil(o.ForeignArtistId.Get()) {
+	if o == nil || IsNil(o.ForeignArtistId.Get()) {
 		var ret string
 		return ret
 	}
@@ -254,7 +257,7 @@ func (o *ArtistResource) GetForeignArtistId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistResource) GetForeignArtistIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ForeignArtistId.Get(), o.ForeignArtistId.IsSet()
 }
@@ -284,7 +287,7 @@ func (o *ArtistResource) UnsetForeignArtistId() {
 
 // GetMbId returns the MbId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetMbId() string {
-	if o == nil || isNil(o.MbId.Get()) {
+	if o == nil || IsNil(o.MbId.Get()) {
 		var ret string
 		return ret
 	}
@@ -296,7 +299,7 @@ func (o *ArtistResource) GetMbId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistResource) GetMbIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MbId.Get(), o.MbId.IsSet()
 }
@@ -326,7 +329,7 @@ func (o *ArtistResource) UnsetMbId() {
 
 // GetTadbId returns the TadbId field value if set, zero value otherwise.
 func (o *ArtistResource) GetTadbId() int32 {
-	if o == nil || isNil(o.TadbId) {
+	if o == nil || IsNil(o.TadbId) {
 		var ret int32
 		return ret
 	}
@@ -336,15 +339,15 @@ func (o *ArtistResource) GetTadbId() int32 {
 // GetTadbIdOk returns a tuple with the TadbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetTadbIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TadbId) {
-    return nil, false
+	if o == nil || IsNil(o.TadbId) {
+		return nil, false
 	}
 	return o.TadbId, true
 }
 
 // HasTadbId returns a boolean if a field has been set.
 func (o *ArtistResource) HasTadbId() bool {
-	if o != nil && !isNil(o.TadbId) {
+	if o != nil && !IsNil(o.TadbId) {
 		return true
 	}
 
@@ -358,7 +361,7 @@ func (o *ArtistResource) SetTadbId(v int32) {
 
 // GetDiscogsId returns the DiscogsId field value if set, zero value otherwise.
 func (o *ArtistResource) GetDiscogsId() int32 {
-	if o == nil || isNil(o.DiscogsId) {
+	if o == nil || IsNil(o.DiscogsId) {
 		var ret int32
 		return ret
 	}
@@ -368,15 +371,15 @@ func (o *ArtistResource) GetDiscogsId() int32 {
 // GetDiscogsIdOk returns a tuple with the DiscogsId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetDiscogsIdOk() (*int32, bool) {
-	if o == nil || isNil(o.DiscogsId) {
-    return nil, false
+	if o == nil || IsNil(o.DiscogsId) {
+		return nil, false
 	}
 	return o.DiscogsId, true
 }
 
 // HasDiscogsId returns a boolean if a field has been set.
 func (o *ArtistResource) HasDiscogsId() bool {
-	if o != nil && !isNil(o.DiscogsId) {
+	if o != nil && !IsNil(o.DiscogsId) {
 		return true
 	}
 
@@ -390,7 +393,7 @@ func (o *ArtistResource) SetDiscogsId(v int32) {
 
 // GetAllMusicId returns the AllMusicId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetAllMusicId() string {
-	if o == nil || isNil(o.AllMusicId.Get()) {
+	if o == nil || IsNil(o.AllMusicId.Get()) {
 		var ret string
 		return ret
 	}
@@ -402,7 +405,7 @@ func (o *ArtistResource) GetAllMusicId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistResource) GetAllMusicIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AllMusicId.Get(), o.AllMusicId.IsSet()
 }
@@ -432,7 +435,7 @@ func (o *ArtistResource) UnsetAllMusicId() {
 
 // GetOverview returns the Overview field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetOverview() string {
-	if o == nil || isNil(o.Overview.Get()) {
+	if o == nil || IsNil(o.Overview.Get()) {
 		var ret string
 		return ret
 	}
@@ -444,7 +447,7 @@ func (o *ArtistResource) GetOverview() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistResource) GetOverviewOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Overview.Get(), o.Overview.IsSet()
 }
@@ -474,7 +477,7 @@ func (o *ArtistResource) UnsetOverview() {
 
 // GetArtistType returns the ArtistType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetArtistType() string {
-	if o == nil || isNil(o.ArtistType.Get()) {
+	if o == nil || IsNil(o.ArtistType.Get()) {
 		var ret string
 		return ret
 	}
@@ -486,7 +489,7 @@ func (o *ArtistResource) GetArtistType() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistResource) GetArtistTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ArtistType.Get(), o.ArtistType.IsSet()
 }
@@ -516,7 +519,7 @@ func (o *ArtistResource) UnsetArtistType() {
 
 // GetDisambiguation returns the Disambiguation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetDisambiguation() string {
-	if o == nil || isNil(o.Disambiguation.Get()) {
+	if o == nil || IsNil(o.Disambiguation.Get()) {
 		var ret string
 		return ret
 	}
@@ -528,7 +531,7 @@ func (o *ArtistResource) GetDisambiguation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistResource) GetDisambiguationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Disambiguation.Get(), o.Disambiguation.IsSet()
 }
@@ -557,9 +560,9 @@ func (o *ArtistResource) UnsetDisambiguation() {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ArtistResource) GetLinks() []*Links {
+func (o *ArtistResource) GetLinks() []Links {
 	if o == nil {
-		var ret []*Links
+		var ret []Links
 		return ret
 	}
 	return o.Links
@@ -568,16 +571,16 @@ func (o *ArtistResource) GetLinks() []*Links {
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ArtistResource) GetLinksOk() ([]*Links, bool) {
-	if o == nil || isNil(o.Links) {
-    return nil, false
+func (o *ArtistResource) GetLinksOk() ([]Links, bool) {
+	if o == nil || IsNil(o.Links) {
+		return nil, false
 	}
 	return o.Links, true
 }
 
 // HasLinks returns a boolean if a field has been set.
 func (o *ArtistResource) HasLinks() bool {
-	if o != nil && isNil(o.Links) {
+	if o != nil && IsNil(o.Links) {
 		return true
 	}
 
@@ -585,13 +588,13 @@ func (o *ArtistResource) HasLinks() bool {
 }
 
 // SetLinks gets a reference to the given []Links and assigns it to the Links field.
-func (o *ArtistResource) SetLinks(v []*Links) {
+func (o *ArtistResource) SetLinks(v []Links) {
 	o.Links = v
 }
 
 // GetNextAlbum returns the NextAlbum field value if set, zero value otherwise.
 func (o *ArtistResource) GetNextAlbum() AlbumResource {
-	if o == nil || isNil(o.NextAlbum) {
+	if o == nil || IsNil(o.NextAlbum) {
 		var ret AlbumResource
 		return ret
 	}
@@ -601,15 +604,15 @@ func (o *ArtistResource) GetNextAlbum() AlbumResource {
 // GetNextAlbumOk returns a tuple with the NextAlbum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetNextAlbumOk() (*AlbumResource, bool) {
-	if o == nil || isNil(o.NextAlbum) {
-    return nil, false
+	if o == nil || IsNil(o.NextAlbum) {
+		return nil, false
 	}
 	return o.NextAlbum, true
 }
 
 // HasNextAlbum returns a boolean if a field has been set.
 func (o *ArtistResource) HasNextAlbum() bool {
-	if o != nil && !isNil(o.NextAlbum) {
+	if o != nil && !IsNil(o.NextAlbum) {
 		return true
 	}
 
@@ -623,7 +626,7 @@ func (o *ArtistResource) SetNextAlbum(v AlbumResource) {
 
 // GetLastAlbum returns the LastAlbum field value if set, zero value otherwise.
 func (o *ArtistResource) GetLastAlbum() AlbumResource {
-	if o == nil || isNil(o.LastAlbum) {
+	if o == nil || IsNil(o.LastAlbum) {
 		var ret AlbumResource
 		return ret
 	}
@@ -633,15 +636,15 @@ func (o *ArtistResource) GetLastAlbum() AlbumResource {
 // GetLastAlbumOk returns a tuple with the LastAlbum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetLastAlbumOk() (*AlbumResource, bool) {
-	if o == nil || isNil(o.LastAlbum) {
-    return nil, false
+	if o == nil || IsNil(o.LastAlbum) {
+		return nil, false
 	}
 	return o.LastAlbum, true
 }
 
 // HasLastAlbum returns a boolean if a field has been set.
 func (o *ArtistResource) HasLastAlbum() bool {
-	if o != nil && !isNil(o.LastAlbum) {
+	if o != nil && !IsNil(o.LastAlbum) {
 		return true
 	}
 
@@ -654,9 +657,9 @@ func (o *ArtistResource) SetLastAlbum(v AlbumResource) {
 }
 
 // GetImages returns the Images field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ArtistResource) GetImages() []*MediaCover {
+func (o *ArtistResource) GetImages() []MediaCover {
 	if o == nil {
-		var ret []*MediaCover
+		var ret []MediaCover
 		return ret
 	}
 	return o.Images
@@ -665,16 +668,16 @@ func (o *ArtistResource) GetImages() []*MediaCover {
 // GetImagesOk returns a tuple with the Images field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ArtistResource) GetImagesOk() ([]*MediaCover, bool) {
-	if o == nil || isNil(o.Images) {
-    return nil, false
+func (o *ArtistResource) GetImagesOk() ([]MediaCover, bool) {
+	if o == nil || IsNil(o.Images) {
+		return nil, false
 	}
 	return o.Images, true
 }
 
 // HasImages returns a boolean if a field has been set.
 func (o *ArtistResource) HasImages() bool {
-	if o != nil && isNil(o.Images) {
+	if o != nil && IsNil(o.Images) {
 		return true
 	}
 
@@ -682,14 +685,14 @@ func (o *ArtistResource) HasImages() bool {
 }
 
 // SetImages gets a reference to the given []MediaCover and assigns it to the Images field.
-func (o *ArtistResource) SetImages(v []*MediaCover) {
+func (o *ArtistResource) SetImages(v []MediaCover) {
 	o.Images = v
 }
 
 // GetMembers returns the Members field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ArtistResource) GetMembers() []*Member {
+func (o *ArtistResource) GetMembers() []Member {
 	if o == nil {
-		var ret []*Member
+		var ret []Member
 		return ret
 	}
 	return o.Members
@@ -698,16 +701,16 @@ func (o *ArtistResource) GetMembers() []*Member {
 // GetMembersOk returns a tuple with the Members field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ArtistResource) GetMembersOk() ([]*Member, bool) {
-	if o == nil || isNil(o.Members) {
-    return nil, false
+func (o *ArtistResource) GetMembersOk() ([]Member, bool) {
+	if o == nil || IsNil(o.Members) {
+		return nil, false
 	}
 	return o.Members, true
 }
 
 // HasMembers returns a boolean if a field has been set.
 func (o *ArtistResource) HasMembers() bool {
-	if o != nil && isNil(o.Members) {
+	if o != nil && IsNil(o.Members) {
 		return true
 	}
 
@@ -715,13 +718,13 @@ func (o *ArtistResource) HasMembers() bool {
 }
 
 // SetMembers gets a reference to the given []Member and assigns it to the Members field.
-func (o *ArtistResource) SetMembers(v []*Member) {
+func (o *ArtistResource) SetMembers(v []Member) {
 	o.Members = v
 }
 
 // GetRemotePoster returns the RemotePoster field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetRemotePoster() string {
-	if o == nil || isNil(o.RemotePoster.Get()) {
+	if o == nil || IsNil(o.RemotePoster.Get()) {
 		var ret string
 		return ret
 	}
@@ -733,7 +736,7 @@ func (o *ArtistResource) GetRemotePoster() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistResource) GetRemotePosterOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RemotePoster.Get(), o.RemotePoster.IsSet()
 }
@@ -763,7 +766,7 @@ func (o *ArtistResource) UnsetRemotePoster() {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetPath() string {
-	if o == nil || isNil(o.Path.Get()) {
+	if o == nil || IsNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -775,7 +778,7 @@ func (o *ArtistResource) GetPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistResource) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
 }
@@ -805,7 +808,7 @@ func (o *ArtistResource) UnsetPath() {
 
 // GetQualityProfileId returns the QualityProfileId field value if set, zero value otherwise.
 func (o *ArtistResource) GetQualityProfileId() int32 {
-	if o == nil || isNil(o.QualityProfileId) {
+	if o == nil || IsNil(o.QualityProfileId) {
 		var ret int32
 		return ret
 	}
@@ -815,15 +818,15 @@ func (o *ArtistResource) GetQualityProfileId() int32 {
 // GetQualityProfileIdOk returns a tuple with the QualityProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetQualityProfileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.QualityProfileId) {
-    return nil, false
+	if o == nil || IsNil(o.QualityProfileId) {
+		return nil, false
 	}
 	return o.QualityProfileId, true
 }
 
 // HasQualityProfileId returns a boolean if a field has been set.
 func (o *ArtistResource) HasQualityProfileId() bool {
-	if o != nil && !isNil(o.QualityProfileId) {
+	if o != nil && !IsNil(o.QualityProfileId) {
 		return true
 	}
 
@@ -837,7 +840,7 @@ func (o *ArtistResource) SetQualityProfileId(v int32) {
 
 // GetMetadataProfileId returns the MetadataProfileId field value if set, zero value otherwise.
 func (o *ArtistResource) GetMetadataProfileId() int32 {
-	if o == nil || isNil(o.MetadataProfileId) {
+	if o == nil || IsNil(o.MetadataProfileId) {
 		var ret int32
 		return ret
 	}
@@ -847,15 +850,15 @@ func (o *ArtistResource) GetMetadataProfileId() int32 {
 // GetMetadataProfileIdOk returns a tuple with the MetadataProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetMetadataProfileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.MetadataProfileId) {
-    return nil, false
+	if o == nil || IsNil(o.MetadataProfileId) {
+		return nil, false
 	}
 	return o.MetadataProfileId, true
 }
 
 // HasMetadataProfileId returns a boolean if a field has been set.
 func (o *ArtistResource) HasMetadataProfileId() bool {
-	if o != nil && !isNil(o.MetadataProfileId) {
+	if o != nil && !IsNil(o.MetadataProfileId) {
 		return true
 	}
 
@@ -869,7 +872,7 @@ func (o *ArtistResource) SetMetadataProfileId(v int32) {
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise.
 func (o *ArtistResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored) {
+	if o == nil || IsNil(o.Monitored) {
 		var ret bool
 		return ret
 	}
@@ -879,15 +882,15 @@ func (o *ArtistResource) GetMonitored() bool {
 // GetMonitoredOk returns a tuple with the Monitored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetMonitoredOk() (*bool, bool) {
-	if o == nil || isNil(o.Monitored) {
-    return nil, false
+	if o == nil || IsNil(o.Monitored) {
+		return nil, false
 	}
 	return o.Monitored, true
 }
 
 // HasMonitored returns a boolean if a field has been set.
 func (o *ArtistResource) HasMonitored() bool {
-	if o != nil && !isNil(o.Monitored) {
+	if o != nil && !IsNil(o.Monitored) {
 		return true
 	}
 
@@ -901,7 +904,7 @@ func (o *ArtistResource) SetMonitored(v bool) {
 
 // GetMonitorNewItems returns the MonitorNewItems field value if set, zero value otherwise.
 func (o *ArtistResource) GetMonitorNewItems() NewItemMonitorTypes {
-	if o == nil || isNil(o.MonitorNewItems) {
+	if o == nil || IsNil(o.MonitorNewItems) {
 		var ret NewItemMonitorTypes
 		return ret
 	}
@@ -911,15 +914,15 @@ func (o *ArtistResource) GetMonitorNewItems() NewItemMonitorTypes {
 // GetMonitorNewItemsOk returns a tuple with the MonitorNewItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetMonitorNewItemsOk() (*NewItemMonitorTypes, bool) {
-	if o == nil || isNil(o.MonitorNewItems) {
-    return nil, false
+	if o == nil || IsNil(o.MonitorNewItems) {
+		return nil, false
 	}
 	return o.MonitorNewItems, true
 }
 
 // HasMonitorNewItems returns a boolean if a field has been set.
 func (o *ArtistResource) HasMonitorNewItems() bool {
-	if o != nil && !isNil(o.MonitorNewItems) {
+	if o != nil && !IsNil(o.MonitorNewItems) {
 		return true
 	}
 
@@ -933,7 +936,7 @@ func (o *ArtistResource) SetMonitorNewItems(v NewItemMonitorTypes) {
 
 // GetRootFolderPath returns the RootFolderPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetRootFolderPath() string {
-	if o == nil || isNil(o.RootFolderPath.Get()) {
+	if o == nil || IsNil(o.RootFolderPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -945,7 +948,7 @@ func (o *ArtistResource) GetRootFolderPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistResource) GetRootFolderPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RootFolderPath.Get(), o.RootFolderPath.IsSet()
 }
@@ -975,7 +978,7 @@ func (o *ArtistResource) UnsetRootFolderPath() {
 
 // GetFolder returns the Folder field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetFolder() string {
-	if o == nil || isNil(o.Folder.Get()) {
+	if o == nil || IsNil(o.Folder.Get()) {
 		var ret string
 		return ret
 	}
@@ -987,7 +990,7 @@ func (o *ArtistResource) GetFolder() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistResource) GetFolderOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Folder.Get(), o.Folder.IsSet()
 }
@@ -1016,9 +1019,9 @@ func (o *ArtistResource) UnsetFolder() {
 }
 
 // GetGenres returns the Genres field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ArtistResource) GetGenres() []*string {
+func (o *ArtistResource) GetGenres() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.Genres
@@ -1027,16 +1030,16 @@ func (o *ArtistResource) GetGenres() []*string {
 // GetGenresOk returns a tuple with the Genres field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ArtistResource) GetGenresOk() ([]*string, bool) {
-	if o == nil || isNil(o.Genres) {
-    return nil, false
+func (o *ArtistResource) GetGenresOk() ([]string, bool) {
+	if o == nil || IsNil(o.Genres) {
+		return nil, false
 	}
 	return o.Genres, true
 }
 
 // HasGenres returns a boolean if a field has been set.
 func (o *ArtistResource) HasGenres() bool {
-	if o != nil && isNil(o.Genres) {
+	if o != nil && IsNil(o.Genres) {
 		return true
 	}
 
@@ -1044,13 +1047,13 @@ func (o *ArtistResource) HasGenres() bool {
 }
 
 // SetGenres gets a reference to the given []string and assigns it to the Genres field.
-func (o *ArtistResource) SetGenres(v []*string) {
+func (o *ArtistResource) SetGenres(v []string) {
 	o.Genres = v
 }
 
 // GetCleanName returns the CleanName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetCleanName() string {
-	if o == nil || isNil(o.CleanName.Get()) {
+	if o == nil || IsNil(o.CleanName.Get()) {
 		var ret string
 		return ret
 	}
@@ -1062,7 +1065,7 @@ func (o *ArtistResource) GetCleanName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistResource) GetCleanNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.CleanName.Get(), o.CleanName.IsSet()
 }
@@ -1092,7 +1095,7 @@ func (o *ArtistResource) UnsetCleanName() {
 
 // GetSortName returns the SortName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ArtistResource) GetSortName() string {
-	if o == nil || isNil(o.SortName.Get()) {
+	if o == nil || IsNil(o.SortName.Get()) {
 		var ret string
 		return ret
 	}
@@ -1104,7 +1107,7 @@ func (o *ArtistResource) GetSortName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ArtistResource) GetSortNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SortName.Get(), o.SortName.IsSet()
 }
@@ -1133,9 +1136,9 @@ func (o *ArtistResource) UnsetSortName() {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ArtistResource) GetTags() []*int32 {
+func (o *ArtistResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -1144,16 +1147,16 @@ func (o *ArtistResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ArtistResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *ArtistResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *ArtistResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -1161,13 +1164,13 @@ func (o *ArtistResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *ArtistResource) SetTags(v []*int32) {
+func (o *ArtistResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetAdded returns the Added field value if set, zero value otherwise.
 func (o *ArtistResource) GetAdded() time.Time {
-	if o == nil || isNil(o.Added) {
+	if o == nil || IsNil(o.Added) {
 		var ret time.Time
 		return ret
 	}
@@ -1177,15 +1180,15 @@ func (o *ArtistResource) GetAdded() time.Time {
 // GetAddedOk returns a tuple with the Added field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetAddedOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Added) {
-    return nil, false
+	if o == nil || IsNil(o.Added) {
+		return nil, false
 	}
 	return o.Added, true
 }
 
 // HasAdded returns a boolean if a field has been set.
 func (o *ArtistResource) HasAdded() bool {
-	if o != nil && !isNil(o.Added) {
+	if o != nil && !IsNil(o.Added) {
 		return true
 	}
 
@@ -1199,7 +1202,7 @@ func (o *ArtistResource) SetAdded(v time.Time) {
 
 // GetAddOptions returns the AddOptions field value if set, zero value otherwise.
 func (o *ArtistResource) GetAddOptions() AddArtistOptions {
-	if o == nil || isNil(o.AddOptions) {
+	if o == nil || IsNil(o.AddOptions) {
 		var ret AddArtistOptions
 		return ret
 	}
@@ -1209,15 +1212,15 @@ func (o *ArtistResource) GetAddOptions() AddArtistOptions {
 // GetAddOptionsOk returns a tuple with the AddOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetAddOptionsOk() (*AddArtistOptions, bool) {
-	if o == nil || isNil(o.AddOptions) {
-    return nil, false
+	if o == nil || IsNil(o.AddOptions) {
+		return nil, false
 	}
 	return o.AddOptions, true
 }
 
 // HasAddOptions returns a boolean if a field has been set.
 func (o *ArtistResource) HasAddOptions() bool {
-	if o != nil && !isNil(o.AddOptions) {
+	if o != nil && !IsNil(o.AddOptions) {
 		return true
 	}
 
@@ -1231,7 +1234,7 @@ func (o *ArtistResource) SetAddOptions(v AddArtistOptions) {
 
 // GetRatings returns the Ratings field value if set, zero value otherwise.
 func (o *ArtistResource) GetRatings() Ratings {
-	if o == nil || isNil(o.Ratings) {
+	if o == nil || IsNil(o.Ratings) {
 		var ret Ratings
 		return ret
 	}
@@ -1241,15 +1244,15 @@ func (o *ArtistResource) GetRatings() Ratings {
 // GetRatingsOk returns a tuple with the Ratings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetRatingsOk() (*Ratings, bool) {
-	if o == nil || isNil(o.Ratings) {
-    return nil, false
+	if o == nil || IsNil(o.Ratings) {
+		return nil, false
 	}
 	return o.Ratings, true
 }
 
 // HasRatings returns a boolean if a field has been set.
 func (o *ArtistResource) HasRatings() bool {
-	if o != nil && !isNil(o.Ratings) {
+	if o != nil && !IsNil(o.Ratings) {
 		return true
 	}
 
@@ -1263,7 +1266,7 @@ func (o *ArtistResource) SetRatings(v Ratings) {
 
 // GetStatistics returns the Statistics field value if set, zero value otherwise.
 func (o *ArtistResource) GetStatistics() ArtistStatisticsResource {
-	if o == nil || isNil(o.Statistics) {
+	if o == nil || IsNil(o.Statistics) {
 		var ret ArtistStatisticsResource
 		return ret
 	}
@@ -1273,15 +1276,15 @@ func (o *ArtistResource) GetStatistics() ArtistStatisticsResource {
 // GetStatisticsOk returns a tuple with the Statistics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ArtistResource) GetStatisticsOk() (*ArtistStatisticsResource, bool) {
-	if o == nil || isNil(o.Statistics) {
-    return nil, false
+	if o == nil || IsNil(o.Statistics) {
+		return nil, false
 	}
 	return o.Statistics, true
 }
 
 // HasStatistics returns a boolean if a field has been set.
 func (o *ArtistResource) HasStatistics() bool {
-	if o != nil && !isNil(o.Statistics) {
+	if o != nil && !IsNil(o.Statistics) {
 		return true
 	}
 
@@ -1294,17 +1297,25 @@ func (o *ArtistResource) SetStatistics(v ArtistStatisticsResource) {
 }
 
 func (o ArtistResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ArtistResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.ArtistMetadataId) {
+	if !IsNil(o.ArtistMetadataId) {
 		toSerialize["artistMetadataId"] = o.ArtistMetadataId
 	}
-	if !isNil(o.Status) {
+	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !isNil(o.Ended) {
+	if !IsNil(o.Ended) {
 		toSerialize["ended"] = o.Ended
 	}
 	if o.ArtistName.IsSet() {
@@ -1316,10 +1327,10 @@ func (o ArtistResource) MarshalJSON() ([]byte, error) {
 	if o.MbId.IsSet() {
 		toSerialize["mbId"] = o.MbId.Get()
 	}
-	if !isNil(o.TadbId) {
+	if !IsNil(o.TadbId) {
 		toSerialize["tadbId"] = o.TadbId
 	}
-	if !isNil(o.DiscogsId) {
+	if !IsNil(o.DiscogsId) {
 		toSerialize["discogsId"] = o.DiscogsId
 	}
 	if o.AllMusicId.IsSet() {
@@ -1337,10 +1348,10 @@ func (o ArtistResource) MarshalJSON() ([]byte, error) {
 	if o.Links != nil {
 		toSerialize["links"] = o.Links
 	}
-	if !isNil(o.NextAlbum) {
+	if !IsNil(o.NextAlbum) {
 		toSerialize["nextAlbum"] = o.NextAlbum
 	}
-	if !isNil(o.LastAlbum) {
+	if !IsNil(o.LastAlbum) {
 		toSerialize["lastAlbum"] = o.LastAlbum
 	}
 	if o.Images != nil {
@@ -1355,16 +1366,16 @@ func (o ArtistResource) MarshalJSON() ([]byte, error) {
 	if o.Path.IsSet() {
 		toSerialize["path"] = o.Path.Get()
 	}
-	if !isNil(o.QualityProfileId) {
+	if !IsNil(o.QualityProfileId) {
 		toSerialize["qualityProfileId"] = o.QualityProfileId
 	}
-	if !isNil(o.MetadataProfileId) {
+	if !IsNil(o.MetadataProfileId) {
 		toSerialize["metadataProfileId"] = o.MetadataProfileId
 	}
-	if !isNil(o.Monitored) {
+	if !IsNil(o.Monitored) {
 		toSerialize["monitored"] = o.Monitored
 	}
-	if !isNil(o.MonitorNewItems) {
+	if !IsNil(o.MonitorNewItems) {
 		toSerialize["monitorNewItems"] = o.MonitorNewItems
 	}
 	if o.RootFolderPath.IsSet() {
@@ -1385,19 +1396,19 @@ func (o ArtistResource) MarshalJSON() ([]byte, error) {
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
-	if !isNil(o.Added) {
+	if !IsNil(o.Added) {
 		toSerialize["added"] = o.Added
 	}
-	if !isNil(o.AddOptions) {
+	if !IsNil(o.AddOptions) {
 		toSerialize["addOptions"] = o.AddOptions
 	}
-	if !isNil(o.Ratings) {
+	if !IsNil(o.Ratings) {
 		toSerialize["ratings"] = o.Ratings
 	}
-	if !isNil(o.Statistics) {
+	if !IsNil(o.Statistics) {
 		toSerialize["statistics"] = o.Statistics
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableArtistResource struct {

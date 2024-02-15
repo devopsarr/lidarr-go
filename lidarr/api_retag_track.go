@@ -21,6 +21,7 @@ import (
 
 // RetagTrackAPIService RetagTrackAPI service
 type RetagTrackAPIService service
+
 type ApiListRetagRequest struct {
 	ctx context.Context
 	ApiService *RetagTrackAPIService
@@ -38,7 +39,7 @@ func (r ApiListRetagRequest) AlbumId(albumId int32) ApiListRetagRequest {
 	return r
 }
 
-func (r ApiListRetagRequest) Execute() ([]*RetagTrackResource, *http.Response, error) {
+func (r ApiListRetagRequest) Execute() ([]RetagTrackResource, *http.Response, error) {
 	return r.ApiService.ListRetagExecute(r)
 }
 
@@ -57,12 +58,12 @@ func (a *RetagTrackAPIService) ListRetag(ctx context.Context) ApiListRetagReques
 
 // Execute executes the request
 //  @return []RetagTrackResource
-func (a *RetagTrackAPIService) ListRetagExecute(r ApiListRetagRequest) ([]*RetagTrackResource, *http.Response, error) {
+func (a *RetagTrackAPIService) ListRetagExecute(r ApiListRetagRequest) ([]RetagTrackResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*RetagTrackResource
+		localVarReturnValue  []RetagTrackResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RetagTrackAPIService.ListRetag")
@@ -77,10 +78,10 @@ func (a *RetagTrackAPIService) ListRetagExecute(r ApiListRetagRequest) ([]*Retag
 	localVarFormParams := url.Values{}
 
 	if r.artistId != nil {
-		localVarQueryParams.Add("artistId", parameterToString(*r.artistId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
 	}
 	if r.albumId != nil {
-		localVarQueryParams.Add("albumId", parameterToString(*r.albumId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

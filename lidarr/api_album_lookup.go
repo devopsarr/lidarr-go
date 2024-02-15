@@ -21,6 +21,7 @@ import (
 
 // AlbumLookupAPIService AlbumLookupAPI service
 type AlbumLookupAPIService service
+
 type ApiGetAlbumLookupRequest struct {
 	ctx context.Context
 	ApiService *AlbumLookupAPIService
@@ -69,7 +70,7 @@ func (a *AlbumLookupAPIService) GetAlbumLookupExecute(r ApiGetAlbumLookupRequest
 	localVarFormParams := url.Values{}
 
 	if r.term != nil {
-		localVarQueryParams.Add("term", parameterToString(*r.term, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "term", r.term, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

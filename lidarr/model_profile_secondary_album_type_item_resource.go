@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ProfileSecondaryAlbumTypeItemResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ProfileSecondaryAlbumTypeItemResource{}
+
 // ProfileSecondaryAlbumTypeItemResource struct for ProfileSecondaryAlbumTypeItemResource
 type ProfileSecondaryAlbumTypeItemResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -40,7 +43,7 @@ func NewProfileSecondaryAlbumTypeItemResourceWithDefaults() *ProfileSecondaryAlb
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ProfileSecondaryAlbumTypeItemResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *ProfileSecondaryAlbumTypeItemResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProfileSecondaryAlbumTypeItemResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ProfileSecondaryAlbumTypeItemResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *ProfileSecondaryAlbumTypeItemResource) SetId(v int32) {
 
 // GetAlbumType returns the AlbumType field value if set, zero value otherwise.
 func (o *ProfileSecondaryAlbumTypeItemResource) GetAlbumType() SecondaryAlbumType {
-	if o == nil || isNil(o.AlbumType) {
+	if o == nil || IsNil(o.AlbumType) {
 		var ret SecondaryAlbumType
 		return ret
 	}
@@ -82,15 +85,15 @@ func (o *ProfileSecondaryAlbumTypeItemResource) GetAlbumType() SecondaryAlbumTyp
 // GetAlbumTypeOk returns a tuple with the AlbumType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProfileSecondaryAlbumTypeItemResource) GetAlbumTypeOk() (*SecondaryAlbumType, bool) {
-	if o == nil || isNil(o.AlbumType) {
-    return nil, false
+	if o == nil || IsNil(o.AlbumType) {
+		return nil, false
 	}
 	return o.AlbumType, true
 }
 
 // HasAlbumType returns a boolean if a field has been set.
 func (o *ProfileSecondaryAlbumTypeItemResource) HasAlbumType() bool {
-	if o != nil && !isNil(o.AlbumType) {
+	if o != nil && !IsNil(o.AlbumType) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *ProfileSecondaryAlbumTypeItemResource) SetAlbumType(v SecondaryAlbumTyp
 
 // GetAllowed returns the Allowed field value if set, zero value otherwise.
 func (o *ProfileSecondaryAlbumTypeItemResource) GetAllowed() bool {
-	if o == nil || isNil(o.Allowed) {
+	if o == nil || IsNil(o.Allowed) {
 		var ret bool
 		return ret
 	}
@@ -114,15 +117,15 @@ func (o *ProfileSecondaryAlbumTypeItemResource) GetAllowed() bool {
 // GetAllowedOk returns a tuple with the Allowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProfileSecondaryAlbumTypeItemResource) GetAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.Allowed) {
-    return nil, false
+	if o == nil || IsNil(o.Allowed) {
+		return nil, false
 	}
 	return o.Allowed, true
 }
 
 // HasAllowed returns a boolean if a field has been set.
 func (o *ProfileSecondaryAlbumTypeItemResource) HasAllowed() bool {
-	if o != nil && !isNil(o.Allowed) {
+	if o != nil && !IsNil(o.Allowed) {
 		return true
 	}
 
@@ -135,17 +138,25 @@ func (o *ProfileSecondaryAlbumTypeItemResource) SetAllowed(v bool) {
 }
 
 func (o ProfileSecondaryAlbumTypeItemResource) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.AlbumType) {
-		toSerialize["albumType"] = o.AlbumType
-	}
-	if !isNil(o.Allowed) {
-		toSerialize["allowed"] = o.Allowed
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ProfileSecondaryAlbumTypeItemResource) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.AlbumType) {
+		toSerialize["albumType"] = o.AlbumType
+	}
+	if !IsNil(o.Allowed) {
+		toSerialize["allowed"] = o.Allowed
+	}
+	return toSerialize, nil
 }
 
 type NullableProfileSecondaryAlbumTypeItemResource struct {

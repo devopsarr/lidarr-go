@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SecondaryAlbumType type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SecondaryAlbumType{}
+
 // SecondaryAlbumType struct for SecondaryAlbumType
 type SecondaryAlbumType struct {
 	Id *int32 `json:"id,omitempty"`
@@ -39,7 +42,7 @@ func NewSecondaryAlbumTypeWithDefaults() *SecondaryAlbumType {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *SecondaryAlbumType) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -49,15 +52,15 @@ func (o *SecondaryAlbumType) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecondaryAlbumType) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *SecondaryAlbumType) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -71,7 +74,7 @@ func (o *SecondaryAlbumType) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SecondaryAlbumType) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *SecondaryAlbumType) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SecondaryAlbumType) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -112,14 +115,22 @@ func (o *SecondaryAlbumType) UnsetName() {
 }
 
 func (o SecondaryAlbumType) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SecondaryAlbumType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSecondaryAlbumType struct {

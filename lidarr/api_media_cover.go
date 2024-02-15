@@ -22,6 +22,7 @@ import (
 
 // MediaCoverAPIService MediaCoverAPI service
 type MediaCoverAPIService service
+
 type ApiGetMediaCoverAlbumByFilenameRequest struct {
 	ctx context.Context
 	ApiService *MediaCoverAPIService
@@ -64,8 +65,8 @@ func (a *MediaCoverAPIService) GetMediaCoverAlbumByFilenameExecute(r ApiGetMedia
 	}
 
 	localVarPath := localBasePath + "/api/v1/mediacover/album/{albumId}/{filename}"
-	localVarPath = strings.Replace(localVarPath, "{"+"albumId"+"}", url.PathEscape(parameterToString(r.albumId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"filename"+"}", url.PathEscape(parameterToString(r.filename, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"albumId"+"}", url.PathEscape(parameterValueToString(r.albumId, "albumId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"filename"+"}", url.PathEscape(parameterValueToString(r.filename, "filename")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -143,6 +144,7 @@ func (a *MediaCoverAPIService) GetMediaCoverAlbumByFilenameExecute(r ApiGetMedia
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetMediaCoverArtistByFilenameRequest struct {
 	ctx context.Context
 	ApiService *MediaCoverAPIService
@@ -185,8 +187,8 @@ func (a *MediaCoverAPIService) GetMediaCoverArtistByFilenameExecute(r ApiGetMedi
 	}
 
 	localVarPath := localBasePath + "/api/v1/mediacover/artist/{artistId}/{filename}"
-	localVarPath = strings.Replace(localVarPath, "{"+"artistId"+"}", url.PathEscape(parameterToString(r.artistId, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"filename"+"}", url.PathEscape(parameterToString(r.filename, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"artistId"+"}", url.PathEscape(parameterValueToString(r.artistId, "artistId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"filename"+"}", url.PathEscape(parameterValueToString(r.filename, "filename")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

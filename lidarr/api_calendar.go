@@ -23,6 +23,7 @@ import (
 
 // CalendarAPIService CalendarAPI service
 type CalendarAPIService service
+
 type ApiGetCalendarByIdRequest struct {
 	ctx context.Context
 	ApiService *CalendarAPIService
@@ -64,7 +65,7 @@ func (a *CalendarAPIService) GetCalendarByIdExecute(r ApiGetCalendarByIdRequest)
 	}
 
 	localVarPath := localBasePath + "/api/v1/calendar/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -151,6 +152,7 @@ func (a *CalendarAPIService) GetCalendarByIdExecute(r ApiGetCalendarByIdRequest)
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListCalendarRequest struct {
 	ctx context.Context
 	ApiService *CalendarAPIService
@@ -180,7 +182,7 @@ func (r ApiListCalendarRequest) IncludeArtist(includeArtist bool) ApiListCalenda
 	return r
 }
 
-func (r ApiListCalendarRequest) Execute() ([]*AlbumResource, *http.Response, error) {
+func (r ApiListCalendarRequest) Execute() ([]AlbumResource, *http.Response, error) {
 	return r.ApiService.ListCalendarExecute(r)
 }
 
@@ -199,12 +201,12 @@ func (a *CalendarAPIService) ListCalendar(ctx context.Context) ApiListCalendarRe
 
 // Execute executes the request
 //  @return []AlbumResource
-func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]*AlbumResource, *http.Response, error) {
+func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]AlbumResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*AlbumResource
+		localVarReturnValue  []AlbumResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarAPIService.ListCalendar")
@@ -219,16 +221,22 @@ func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]*A
 	localVarFormParams := url.Values{}
 
 	if r.start != nil {
-		localVarQueryParams.Add("start", parameterToString(*r.start, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "")
 	}
 	if r.end != nil {
-		localVarQueryParams.Add("end", parameterToString(*r.end, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "")
 	}
 	if r.unmonitored != nil {
-		localVarQueryParams.Add("unmonitored", parameterToString(*r.unmonitored, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "")
+	} else {
+		var defaultValue bool = false
+		r.unmonitored = &defaultValue
 	}
 	if r.includeArtist != nil {
-		localVarQueryParams.Add("includeArtist", parameterToString(*r.includeArtist, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "")
+	} else {
+		var defaultValue bool = false
+		r.includeArtist = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

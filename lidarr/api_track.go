@@ -23,6 +23,7 @@ import (
 
 // TrackAPIService TrackAPI service
 type TrackAPIService service
+
 type ApiGetTrackByIdRequest struct {
 	ctx context.Context
 	ApiService *TrackAPIService
@@ -64,7 +65,7 @@ func (a *TrackAPIService) GetTrackByIdExecute(r ApiGetTrackByIdRequest) (*TrackR
 	}
 
 	localVarPath := localBasePath + "/api/v1/track/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -151,6 +152,7 @@ func (a *TrackAPIService) GetTrackByIdExecute(r ApiGetTrackByIdRequest) (*TrackR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListTrackRequest struct {
 	ctx context.Context
 	ApiService *TrackAPIService
@@ -180,7 +182,7 @@ func (r ApiListTrackRequest) TrackIds(trackIds []int32) ApiListTrackRequest {
 	return r
 }
 
-func (r ApiListTrackRequest) Execute() ([]*TrackResource, *http.Response, error) {
+func (r ApiListTrackRequest) Execute() ([]TrackResource, *http.Response, error) {
 	return r.ApiService.ListTrackExecute(r)
 }
 
@@ -199,12 +201,12 @@ func (a *TrackAPIService) ListTrack(ctx context.Context) ApiListTrackRequest {
 
 // Execute executes the request
 //  @return []TrackResource
-func (a *TrackAPIService) ListTrackExecute(r ApiListTrackRequest) ([]*TrackResource, *http.Response, error) {
+func (a *TrackAPIService) ListTrackExecute(r ApiListTrackRequest) ([]TrackResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*TrackResource
+		localVarReturnValue  []TrackResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackAPIService.ListTrack")
@@ -219,23 +221,23 @@ func (a *TrackAPIService) ListTrackExecute(r ApiListTrackRequest) ([]*TrackResou
 	localVarFormParams := url.Values{}
 
 	if r.artistId != nil {
-		localVarQueryParams.Add("artistId", parameterToString(*r.artistId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
 	}
 	if r.albumId != nil {
-		localVarQueryParams.Add("albumId", parameterToString(*r.albumId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "")
 	}
 	if r.albumReleaseId != nil {
-		localVarQueryParams.Add("albumReleaseId", parameterToString(*r.albumReleaseId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "albumReleaseId", r.albumReleaseId, "")
 	}
 	if r.trackIds != nil {
 		t := *r.trackIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("trackIds", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "trackIds", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("trackIds", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "trackIds", t, "multi")
 		}
 	}
 	// to determine the Content-Type header

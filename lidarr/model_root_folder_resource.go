@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RootFolderResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RootFolderResource{}
+
 // RootFolderResource struct for RootFolderResource
 type RootFolderResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -23,7 +26,7 @@ type RootFolderResource struct {
 	DefaultQualityProfileId *int32 `json:"defaultQualityProfileId,omitempty"`
 	DefaultMonitorOption *MonitorTypes `json:"defaultMonitorOption,omitempty"`
 	DefaultNewItemMonitorOption *NewItemMonitorTypes `json:"defaultNewItemMonitorOption,omitempty"`
-	DefaultTags []*int32 `json:"defaultTags,omitempty"`
+	DefaultTags []int32 `json:"defaultTags,omitempty"`
 	Accessible *bool `json:"accessible,omitempty"`
 	FreeSpace NullableInt64 `json:"freeSpace,omitempty"`
 	TotalSpace NullableInt64 `json:"totalSpace,omitempty"`
@@ -48,7 +51,7 @@ func NewRootFolderResourceWithDefaults() *RootFolderResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *RootFolderResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -58,15 +61,15 @@ func (o *RootFolderResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootFolderResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *RootFolderResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -80,7 +83,7 @@ func (o *RootFolderResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RootFolderResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -92,7 +95,7 @@ func (o *RootFolderResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RootFolderResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -122,7 +125,7 @@ func (o *RootFolderResource) UnsetName() {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RootFolderResource) GetPath() string {
-	if o == nil || isNil(o.Path.Get()) {
+	if o == nil || IsNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *RootFolderResource) GetPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RootFolderResource) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
 }
@@ -164,7 +167,7 @@ func (o *RootFolderResource) UnsetPath() {
 
 // GetDefaultMetadataProfileId returns the DefaultMetadataProfileId field value if set, zero value otherwise.
 func (o *RootFolderResource) GetDefaultMetadataProfileId() int32 {
-	if o == nil || isNil(o.DefaultMetadataProfileId) {
+	if o == nil || IsNil(o.DefaultMetadataProfileId) {
 		var ret int32
 		return ret
 	}
@@ -174,15 +177,15 @@ func (o *RootFolderResource) GetDefaultMetadataProfileId() int32 {
 // GetDefaultMetadataProfileIdOk returns a tuple with the DefaultMetadataProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootFolderResource) GetDefaultMetadataProfileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.DefaultMetadataProfileId) {
-    return nil, false
+	if o == nil || IsNil(o.DefaultMetadataProfileId) {
+		return nil, false
 	}
 	return o.DefaultMetadataProfileId, true
 }
 
 // HasDefaultMetadataProfileId returns a boolean if a field has been set.
 func (o *RootFolderResource) HasDefaultMetadataProfileId() bool {
-	if o != nil && !isNil(o.DefaultMetadataProfileId) {
+	if o != nil && !IsNil(o.DefaultMetadataProfileId) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *RootFolderResource) SetDefaultMetadataProfileId(v int32) {
 
 // GetDefaultQualityProfileId returns the DefaultQualityProfileId field value if set, zero value otherwise.
 func (o *RootFolderResource) GetDefaultQualityProfileId() int32 {
-	if o == nil || isNil(o.DefaultQualityProfileId) {
+	if o == nil || IsNil(o.DefaultQualityProfileId) {
 		var ret int32
 		return ret
 	}
@@ -206,15 +209,15 @@ func (o *RootFolderResource) GetDefaultQualityProfileId() int32 {
 // GetDefaultQualityProfileIdOk returns a tuple with the DefaultQualityProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootFolderResource) GetDefaultQualityProfileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.DefaultQualityProfileId) {
-    return nil, false
+	if o == nil || IsNil(o.DefaultQualityProfileId) {
+		return nil, false
 	}
 	return o.DefaultQualityProfileId, true
 }
 
 // HasDefaultQualityProfileId returns a boolean if a field has been set.
 func (o *RootFolderResource) HasDefaultQualityProfileId() bool {
-	if o != nil && !isNil(o.DefaultQualityProfileId) {
+	if o != nil && !IsNil(o.DefaultQualityProfileId) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *RootFolderResource) SetDefaultQualityProfileId(v int32) {
 
 // GetDefaultMonitorOption returns the DefaultMonitorOption field value if set, zero value otherwise.
 func (o *RootFolderResource) GetDefaultMonitorOption() MonitorTypes {
-	if o == nil || isNil(o.DefaultMonitorOption) {
+	if o == nil || IsNil(o.DefaultMonitorOption) {
 		var ret MonitorTypes
 		return ret
 	}
@@ -238,15 +241,15 @@ func (o *RootFolderResource) GetDefaultMonitorOption() MonitorTypes {
 // GetDefaultMonitorOptionOk returns a tuple with the DefaultMonitorOption field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootFolderResource) GetDefaultMonitorOptionOk() (*MonitorTypes, bool) {
-	if o == nil || isNil(o.DefaultMonitorOption) {
-    return nil, false
+	if o == nil || IsNil(o.DefaultMonitorOption) {
+		return nil, false
 	}
 	return o.DefaultMonitorOption, true
 }
 
 // HasDefaultMonitorOption returns a boolean if a field has been set.
 func (o *RootFolderResource) HasDefaultMonitorOption() bool {
-	if o != nil && !isNil(o.DefaultMonitorOption) {
+	if o != nil && !IsNil(o.DefaultMonitorOption) {
 		return true
 	}
 
@@ -260,7 +263,7 @@ func (o *RootFolderResource) SetDefaultMonitorOption(v MonitorTypes) {
 
 // GetDefaultNewItemMonitorOption returns the DefaultNewItemMonitorOption field value if set, zero value otherwise.
 func (o *RootFolderResource) GetDefaultNewItemMonitorOption() NewItemMonitorTypes {
-	if o == nil || isNil(o.DefaultNewItemMonitorOption) {
+	if o == nil || IsNil(o.DefaultNewItemMonitorOption) {
 		var ret NewItemMonitorTypes
 		return ret
 	}
@@ -270,15 +273,15 @@ func (o *RootFolderResource) GetDefaultNewItemMonitorOption() NewItemMonitorType
 // GetDefaultNewItemMonitorOptionOk returns a tuple with the DefaultNewItemMonitorOption field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootFolderResource) GetDefaultNewItemMonitorOptionOk() (*NewItemMonitorTypes, bool) {
-	if o == nil || isNil(o.DefaultNewItemMonitorOption) {
-    return nil, false
+	if o == nil || IsNil(o.DefaultNewItemMonitorOption) {
+		return nil, false
 	}
 	return o.DefaultNewItemMonitorOption, true
 }
 
 // HasDefaultNewItemMonitorOption returns a boolean if a field has been set.
 func (o *RootFolderResource) HasDefaultNewItemMonitorOption() bool {
-	if o != nil && !isNil(o.DefaultNewItemMonitorOption) {
+	if o != nil && !IsNil(o.DefaultNewItemMonitorOption) {
 		return true
 	}
 
@@ -291,9 +294,9 @@ func (o *RootFolderResource) SetDefaultNewItemMonitorOption(v NewItemMonitorType
 }
 
 // GetDefaultTags returns the DefaultTags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RootFolderResource) GetDefaultTags() []*int32 {
+func (o *RootFolderResource) GetDefaultTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.DefaultTags
@@ -302,16 +305,16 @@ func (o *RootFolderResource) GetDefaultTags() []*int32 {
 // GetDefaultTagsOk returns a tuple with the DefaultTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RootFolderResource) GetDefaultTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.DefaultTags) {
-    return nil, false
+func (o *RootFolderResource) GetDefaultTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.DefaultTags) {
+		return nil, false
 	}
 	return o.DefaultTags, true
 }
 
 // HasDefaultTags returns a boolean if a field has been set.
 func (o *RootFolderResource) HasDefaultTags() bool {
-	if o != nil && isNil(o.DefaultTags) {
+	if o != nil && IsNil(o.DefaultTags) {
 		return true
 	}
 
@@ -319,13 +322,13 @@ func (o *RootFolderResource) HasDefaultTags() bool {
 }
 
 // SetDefaultTags gets a reference to the given []int32 and assigns it to the DefaultTags field.
-func (o *RootFolderResource) SetDefaultTags(v []*int32) {
+func (o *RootFolderResource) SetDefaultTags(v []int32) {
 	o.DefaultTags = v
 }
 
 // GetAccessible returns the Accessible field value if set, zero value otherwise.
 func (o *RootFolderResource) GetAccessible() bool {
-	if o == nil || isNil(o.Accessible) {
+	if o == nil || IsNil(o.Accessible) {
 		var ret bool
 		return ret
 	}
@@ -335,15 +338,15 @@ func (o *RootFolderResource) GetAccessible() bool {
 // GetAccessibleOk returns a tuple with the Accessible field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RootFolderResource) GetAccessibleOk() (*bool, bool) {
-	if o == nil || isNil(o.Accessible) {
-    return nil, false
+	if o == nil || IsNil(o.Accessible) {
+		return nil, false
 	}
 	return o.Accessible, true
 }
 
 // HasAccessible returns a boolean if a field has been set.
 func (o *RootFolderResource) HasAccessible() bool {
-	if o != nil && !isNil(o.Accessible) {
+	if o != nil && !IsNil(o.Accessible) {
 		return true
 	}
 
@@ -357,7 +360,7 @@ func (o *RootFolderResource) SetAccessible(v bool) {
 
 // GetFreeSpace returns the FreeSpace field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RootFolderResource) GetFreeSpace() int64 {
-	if o == nil || isNil(o.FreeSpace.Get()) {
+	if o == nil || IsNil(o.FreeSpace.Get()) {
 		var ret int64
 		return ret
 	}
@@ -369,7 +372,7 @@ func (o *RootFolderResource) GetFreeSpace() int64 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RootFolderResource) GetFreeSpaceOk() (*int64, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.FreeSpace.Get(), o.FreeSpace.IsSet()
 }
@@ -399,7 +402,7 @@ func (o *RootFolderResource) UnsetFreeSpace() {
 
 // GetTotalSpace returns the TotalSpace field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RootFolderResource) GetTotalSpace() int64 {
-	if o == nil || isNil(o.TotalSpace.Get()) {
+	if o == nil || IsNil(o.TotalSpace.Get()) {
 		var ret int64
 		return ret
 	}
@@ -411,7 +414,7 @@ func (o *RootFolderResource) GetTotalSpace() int64 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RootFolderResource) GetTotalSpaceOk() (*int64, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TotalSpace.Get(), o.TotalSpace.IsSet()
 }
@@ -440,8 +443,16 @@ func (o *RootFolderResource) UnsetTotalSpace() {
 }
 
 func (o RootFolderResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o RootFolderResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -450,22 +461,22 @@ func (o RootFolderResource) MarshalJSON() ([]byte, error) {
 	if o.Path.IsSet() {
 		toSerialize["path"] = o.Path.Get()
 	}
-	if !isNil(o.DefaultMetadataProfileId) {
+	if !IsNil(o.DefaultMetadataProfileId) {
 		toSerialize["defaultMetadataProfileId"] = o.DefaultMetadataProfileId
 	}
-	if !isNil(o.DefaultQualityProfileId) {
+	if !IsNil(o.DefaultQualityProfileId) {
 		toSerialize["defaultQualityProfileId"] = o.DefaultQualityProfileId
 	}
-	if !isNil(o.DefaultMonitorOption) {
+	if !IsNil(o.DefaultMonitorOption) {
 		toSerialize["defaultMonitorOption"] = o.DefaultMonitorOption
 	}
-	if !isNil(o.DefaultNewItemMonitorOption) {
+	if !IsNil(o.DefaultNewItemMonitorOption) {
 		toSerialize["defaultNewItemMonitorOption"] = o.DefaultNewItemMonitorOption
 	}
 	if o.DefaultTags != nil {
 		toSerialize["defaultTags"] = o.DefaultTags
 	}
-	if !isNil(o.Accessible) {
+	if !IsNil(o.Accessible) {
 		toSerialize["accessible"] = o.Accessible
 	}
 	if o.FreeSpace.IsSet() {
@@ -474,7 +485,7 @@ func (o RootFolderResource) MarshalJSON() ([]byte, error) {
 	if o.TotalSpace.IsSet() {
 		toSerialize["totalSpace"] = o.TotalSpace.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRootFolderResource struct {

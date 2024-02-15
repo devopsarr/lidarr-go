@@ -14,13 +14,16 @@ import (
 	"encoding/json"
 )
 
+// checks if the MetadataProfileResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MetadataProfileResource{}
+
 // MetadataProfileResource struct for MetadataProfileResource
 type MetadataProfileResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
-	PrimaryAlbumTypes []*ProfilePrimaryAlbumTypeItemResource `json:"primaryAlbumTypes,omitempty"`
-	SecondaryAlbumTypes []*ProfileSecondaryAlbumTypeItemResource `json:"secondaryAlbumTypes,omitempty"`
-	ReleaseStatuses []*ProfileReleaseStatusItemResource `json:"releaseStatuses,omitempty"`
+	PrimaryAlbumTypes []ProfilePrimaryAlbumTypeItemResource `json:"primaryAlbumTypes,omitempty"`
+	SecondaryAlbumTypes []ProfileSecondaryAlbumTypeItemResource `json:"secondaryAlbumTypes,omitempty"`
+	ReleaseStatuses []ProfileReleaseStatusItemResource `json:"releaseStatuses,omitempty"`
 }
 
 // NewMetadataProfileResource instantiates a new MetadataProfileResource object
@@ -42,7 +45,7 @@ func NewMetadataProfileResourceWithDefaults() *MetadataProfileResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *MetadataProfileResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -52,15 +55,15 @@ func (o *MetadataProfileResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataProfileResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *MetadataProfileResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *MetadataProfileResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MetadataProfileResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *MetadataProfileResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MetadataProfileResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -115,9 +118,9 @@ func (o *MetadataProfileResource) UnsetName() {
 }
 
 // GetPrimaryAlbumTypes returns the PrimaryAlbumTypes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MetadataProfileResource) GetPrimaryAlbumTypes() []*ProfilePrimaryAlbumTypeItemResource {
+func (o *MetadataProfileResource) GetPrimaryAlbumTypes() []ProfilePrimaryAlbumTypeItemResource {
 	if o == nil {
-		var ret []*ProfilePrimaryAlbumTypeItemResource
+		var ret []ProfilePrimaryAlbumTypeItemResource
 		return ret
 	}
 	return o.PrimaryAlbumTypes
@@ -126,16 +129,16 @@ func (o *MetadataProfileResource) GetPrimaryAlbumTypes() []*ProfilePrimaryAlbumT
 // GetPrimaryAlbumTypesOk returns a tuple with the PrimaryAlbumTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MetadataProfileResource) GetPrimaryAlbumTypesOk() ([]*ProfilePrimaryAlbumTypeItemResource, bool) {
-	if o == nil || isNil(o.PrimaryAlbumTypes) {
-    return nil, false
+func (o *MetadataProfileResource) GetPrimaryAlbumTypesOk() ([]ProfilePrimaryAlbumTypeItemResource, bool) {
+	if o == nil || IsNil(o.PrimaryAlbumTypes) {
+		return nil, false
 	}
 	return o.PrimaryAlbumTypes, true
 }
 
 // HasPrimaryAlbumTypes returns a boolean if a field has been set.
 func (o *MetadataProfileResource) HasPrimaryAlbumTypes() bool {
-	if o != nil && isNil(o.PrimaryAlbumTypes) {
+	if o != nil && IsNil(o.PrimaryAlbumTypes) {
 		return true
 	}
 
@@ -143,14 +146,14 @@ func (o *MetadataProfileResource) HasPrimaryAlbumTypes() bool {
 }
 
 // SetPrimaryAlbumTypes gets a reference to the given []ProfilePrimaryAlbumTypeItemResource and assigns it to the PrimaryAlbumTypes field.
-func (o *MetadataProfileResource) SetPrimaryAlbumTypes(v []*ProfilePrimaryAlbumTypeItemResource) {
+func (o *MetadataProfileResource) SetPrimaryAlbumTypes(v []ProfilePrimaryAlbumTypeItemResource) {
 	o.PrimaryAlbumTypes = v
 }
 
 // GetSecondaryAlbumTypes returns the SecondaryAlbumTypes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MetadataProfileResource) GetSecondaryAlbumTypes() []*ProfileSecondaryAlbumTypeItemResource {
+func (o *MetadataProfileResource) GetSecondaryAlbumTypes() []ProfileSecondaryAlbumTypeItemResource {
 	if o == nil {
-		var ret []*ProfileSecondaryAlbumTypeItemResource
+		var ret []ProfileSecondaryAlbumTypeItemResource
 		return ret
 	}
 	return o.SecondaryAlbumTypes
@@ -159,16 +162,16 @@ func (o *MetadataProfileResource) GetSecondaryAlbumTypes() []*ProfileSecondaryAl
 // GetSecondaryAlbumTypesOk returns a tuple with the SecondaryAlbumTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MetadataProfileResource) GetSecondaryAlbumTypesOk() ([]*ProfileSecondaryAlbumTypeItemResource, bool) {
-	if o == nil || isNil(o.SecondaryAlbumTypes) {
-    return nil, false
+func (o *MetadataProfileResource) GetSecondaryAlbumTypesOk() ([]ProfileSecondaryAlbumTypeItemResource, bool) {
+	if o == nil || IsNil(o.SecondaryAlbumTypes) {
+		return nil, false
 	}
 	return o.SecondaryAlbumTypes, true
 }
 
 // HasSecondaryAlbumTypes returns a boolean if a field has been set.
 func (o *MetadataProfileResource) HasSecondaryAlbumTypes() bool {
-	if o != nil && isNil(o.SecondaryAlbumTypes) {
+	if o != nil && IsNil(o.SecondaryAlbumTypes) {
 		return true
 	}
 
@@ -176,14 +179,14 @@ func (o *MetadataProfileResource) HasSecondaryAlbumTypes() bool {
 }
 
 // SetSecondaryAlbumTypes gets a reference to the given []ProfileSecondaryAlbumTypeItemResource and assigns it to the SecondaryAlbumTypes field.
-func (o *MetadataProfileResource) SetSecondaryAlbumTypes(v []*ProfileSecondaryAlbumTypeItemResource) {
+func (o *MetadataProfileResource) SetSecondaryAlbumTypes(v []ProfileSecondaryAlbumTypeItemResource) {
 	o.SecondaryAlbumTypes = v
 }
 
 // GetReleaseStatuses returns the ReleaseStatuses field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MetadataProfileResource) GetReleaseStatuses() []*ProfileReleaseStatusItemResource {
+func (o *MetadataProfileResource) GetReleaseStatuses() []ProfileReleaseStatusItemResource {
 	if o == nil {
-		var ret []*ProfileReleaseStatusItemResource
+		var ret []ProfileReleaseStatusItemResource
 		return ret
 	}
 	return o.ReleaseStatuses
@@ -192,16 +195,16 @@ func (o *MetadataProfileResource) GetReleaseStatuses() []*ProfileReleaseStatusIt
 // GetReleaseStatusesOk returns a tuple with the ReleaseStatuses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MetadataProfileResource) GetReleaseStatusesOk() ([]*ProfileReleaseStatusItemResource, bool) {
-	if o == nil || isNil(o.ReleaseStatuses) {
-    return nil, false
+func (o *MetadataProfileResource) GetReleaseStatusesOk() ([]ProfileReleaseStatusItemResource, bool) {
+	if o == nil || IsNil(o.ReleaseStatuses) {
+		return nil, false
 	}
 	return o.ReleaseStatuses, true
 }
 
 // HasReleaseStatuses returns a boolean if a field has been set.
 func (o *MetadataProfileResource) HasReleaseStatuses() bool {
-	if o != nil && isNil(o.ReleaseStatuses) {
+	if o != nil && IsNil(o.ReleaseStatuses) {
 		return true
 	}
 
@@ -209,13 +212,21 @@ func (o *MetadataProfileResource) HasReleaseStatuses() bool {
 }
 
 // SetReleaseStatuses gets a reference to the given []ProfileReleaseStatusItemResource and assigns it to the ReleaseStatuses field.
-func (o *MetadataProfileResource) SetReleaseStatuses(v []*ProfileReleaseStatusItemResource) {
+func (o *MetadataProfileResource) SetReleaseStatuses(v []ProfileReleaseStatusItemResource) {
 	o.ReleaseStatuses = v
 }
 
 func (o MetadataProfileResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o MetadataProfileResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -230,7 +241,7 @@ func (o MetadataProfileResource) MarshalJSON() ([]byte, error) {
 	if o.ReleaseStatuses != nil {
 		toSerialize["releaseStatuses"] = o.ReleaseStatuses
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableMetadataProfileResource struct {

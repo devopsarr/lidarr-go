@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ProfileReleaseStatusItemResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ProfileReleaseStatusItemResource{}
+
 // ProfileReleaseStatusItemResource struct for ProfileReleaseStatusItemResource
 type ProfileReleaseStatusItemResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -40,7 +43,7 @@ func NewProfileReleaseStatusItemResourceWithDefaults() *ProfileReleaseStatusItem
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ProfileReleaseStatusItemResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *ProfileReleaseStatusItemResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProfileReleaseStatusItemResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ProfileReleaseStatusItemResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *ProfileReleaseStatusItemResource) SetId(v int32) {
 
 // GetReleaseStatus returns the ReleaseStatus field value if set, zero value otherwise.
 func (o *ProfileReleaseStatusItemResource) GetReleaseStatus() ReleaseStatus {
-	if o == nil || isNil(o.ReleaseStatus) {
+	if o == nil || IsNil(o.ReleaseStatus) {
 		var ret ReleaseStatus
 		return ret
 	}
@@ -82,15 +85,15 @@ func (o *ProfileReleaseStatusItemResource) GetReleaseStatus() ReleaseStatus {
 // GetReleaseStatusOk returns a tuple with the ReleaseStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProfileReleaseStatusItemResource) GetReleaseStatusOk() (*ReleaseStatus, bool) {
-	if o == nil || isNil(o.ReleaseStatus) {
-    return nil, false
+	if o == nil || IsNil(o.ReleaseStatus) {
+		return nil, false
 	}
 	return o.ReleaseStatus, true
 }
 
 // HasReleaseStatus returns a boolean if a field has been set.
 func (o *ProfileReleaseStatusItemResource) HasReleaseStatus() bool {
-	if o != nil && !isNil(o.ReleaseStatus) {
+	if o != nil && !IsNil(o.ReleaseStatus) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *ProfileReleaseStatusItemResource) SetReleaseStatus(v ReleaseStatus) {
 
 // GetAllowed returns the Allowed field value if set, zero value otherwise.
 func (o *ProfileReleaseStatusItemResource) GetAllowed() bool {
-	if o == nil || isNil(o.Allowed) {
+	if o == nil || IsNil(o.Allowed) {
 		var ret bool
 		return ret
 	}
@@ -114,15 +117,15 @@ func (o *ProfileReleaseStatusItemResource) GetAllowed() bool {
 // GetAllowedOk returns a tuple with the Allowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProfileReleaseStatusItemResource) GetAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.Allowed) {
-    return nil, false
+	if o == nil || IsNil(o.Allowed) {
+		return nil, false
 	}
 	return o.Allowed, true
 }
 
 // HasAllowed returns a boolean if a field has been set.
 func (o *ProfileReleaseStatusItemResource) HasAllowed() bool {
-	if o != nil && !isNil(o.Allowed) {
+	if o != nil && !IsNil(o.Allowed) {
 		return true
 	}
 
@@ -135,17 +138,25 @@ func (o *ProfileReleaseStatusItemResource) SetAllowed(v bool) {
 }
 
 func (o ProfileReleaseStatusItemResource) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.ReleaseStatus) {
-		toSerialize["releaseStatus"] = o.ReleaseStatus
-	}
-	if !isNil(o.Allowed) {
-		toSerialize["allowed"] = o.Allowed
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ProfileReleaseStatusItemResource) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.ReleaseStatus) {
+		toSerialize["releaseStatus"] = o.ReleaseStatus
+	}
+	if !IsNil(o.Allowed) {
+		toSerialize["allowed"] = o.Allowed
+	}
+	return toSerialize, nil
 }
 
 type NullableProfileReleaseStatusItemResource struct {

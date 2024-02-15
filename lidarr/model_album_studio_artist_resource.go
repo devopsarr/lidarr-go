@@ -14,11 +14,14 @@ import (
 	"encoding/json"
 )
 
+// checks if the AlbumStudioArtistResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AlbumStudioArtistResource{}
+
 // AlbumStudioArtistResource struct for AlbumStudioArtistResource
 type AlbumStudioArtistResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Monitored NullableBool `json:"monitored,omitempty"`
-	Albums []*AlbumResource `json:"albums,omitempty"`
+	Albums []AlbumResource `json:"albums,omitempty"`
 }
 
 // NewAlbumStudioArtistResource instantiates a new AlbumStudioArtistResource object
@@ -40,7 +43,7 @@ func NewAlbumStudioArtistResourceWithDefaults() *AlbumStudioArtistResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *AlbumStudioArtistResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *AlbumStudioArtistResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlbumStudioArtistResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *AlbumStudioArtistResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *AlbumStudioArtistResource) SetId(v int32) {
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlbumStudioArtistResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored.Get()) {
+	if o == nil || IsNil(o.Monitored.Get()) {
 		var ret bool
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *AlbumStudioArtistResource) GetMonitored() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AlbumStudioArtistResource) GetMonitoredOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Monitored.Get(), o.Monitored.IsSet()
 }
@@ -113,9 +116,9 @@ func (o *AlbumStudioArtistResource) UnsetMonitored() {
 }
 
 // GetAlbums returns the Albums field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AlbumStudioArtistResource) GetAlbums() []*AlbumResource {
+func (o *AlbumStudioArtistResource) GetAlbums() []AlbumResource {
 	if o == nil {
-		var ret []*AlbumResource
+		var ret []AlbumResource
 		return ret
 	}
 	return o.Albums
@@ -124,16 +127,16 @@ func (o *AlbumStudioArtistResource) GetAlbums() []*AlbumResource {
 // GetAlbumsOk returns a tuple with the Albums field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AlbumStudioArtistResource) GetAlbumsOk() ([]*AlbumResource, bool) {
-	if o == nil || isNil(o.Albums) {
-    return nil, false
+func (o *AlbumStudioArtistResource) GetAlbumsOk() ([]AlbumResource, bool) {
+	if o == nil || IsNil(o.Albums) {
+		return nil, false
 	}
 	return o.Albums, true
 }
 
 // HasAlbums returns a boolean if a field has been set.
 func (o *AlbumStudioArtistResource) HasAlbums() bool {
-	if o != nil && isNil(o.Albums) {
+	if o != nil && IsNil(o.Albums) {
 		return true
 	}
 
@@ -141,13 +144,21 @@ func (o *AlbumStudioArtistResource) HasAlbums() bool {
 }
 
 // SetAlbums gets a reference to the given []AlbumResource and assigns it to the Albums field.
-func (o *AlbumStudioArtistResource) SetAlbums(v []*AlbumResource) {
+func (o *AlbumStudioArtistResource) SetAlbums(v []AlbumResource) {
 	o.Albums = v
 }
 
 func (o AlbumStudioArtistResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AlbumStudioArtistResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Monitored.IsSet() {
@@ -156,7 +167,7 @@ func (o AlbumStudioArtistResource) MarshalJSON() ([]byte, error) {
 	if o.Albums != nil {
 		toSerialize["albums"] = o.Albums
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAlbumStudioArtistResource struct {

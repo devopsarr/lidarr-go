@@ -14,10 +14,13 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddArtistOptions type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddArtistOptions{}
+
 // AddArtistOptions struct for AddArtistOptions
 type AddArtistOptions struct {
 	Monitor *MonitorTypes `json:"monitor,omitempty"`
-	AlbumsToMonitor []*string `json:"albumsToMonitor,omitempty"`
+	AlbumsToMonitor []string `json:"albumsToMonitor,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
 	SearchForMissingAlbums *bool `json:"searchForMissingAlbums,omitempty"`
 }
@@ -41,7 +44,7 @@ func NewAddArtistOptionsWithDefaults() *AddArtistOptions {
 
 // GetMonitor returns the Monitor field value if set, zero value otherwise.
 func (o *AddArtistOptions) GetMonitor() MonitorTypes {
-	if o == nil || isNil(o.Monitor) {
+	if o == nil || IsNil(o.Monitor) {
 		var ret MonitorTypes
 		return ret
 	}
@@ -51,15 +54,15 @@ func (o *AddArtistOptions) GetMonitor() MonitorTypes {
 // GetMonitorOk returns a tuple with the Monitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddArtistOptions) GetMonitorOk() (*MonitorTypes, bool) {
-	if o == nil || isNil(o.Monitor) {
-    return nil, false
+	if o == nil || IsNil(o.Monitor) {
+		return nil, false
 	}
 	return o.Monitor, true
 }
 
 // HasMonitor returns a boolean if a field has been set.
 func (o *AddArtistOptions) HasMonitor() bool {
-	if o != nil && !isNil(o.Monitor) {
+	if o != nil && !IsNil(o.Monitor) {
 		return true
 	}
 
@@ -72,9 +75,9 @@ func (o *AddArtistOptions) SetMonitor(v MonitorTypes) {
 }
 
 // GetAlbumsToMonitor returns the AlbumsToMonitor field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddArtistOptions) GetAlbumsToMonitor() []*string {
+func (o *AddArtistOptions) GetAlbumsToMonitor() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.AlbumsToMonitor
@@ -83,16 +86,16 @@ func (o *AddArtistOptions) GetAlbumsToMonitor() []*string {
 // GetAlbumsToMonitorOk returns a tuple with the AlbumsToMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddArtistOptions) GetAlbumsToMonitorOk() ([]*string, bool) {
-	if o == nil || isNil(o.AlbumsToMonitor) {
-    return nil, false
+func (o *AddArtistOptions) GetAlbumsToMonitorOk() ([]string, bool) {
+	if o == nil || IsNil(o.AlbumsToMonitor) {
+		return nil, false
 	}
 	return o.AlbumsToMonitor, true
 }
 
 // HasAlbumsToMonitor returns a boolean if a field has been set.
 func (o *AddArtistOptions) HasAlbumsToMonitor() bool {
-	if o != nil && isNil(o.AlbumsToMonitor) {
+	if o != nil && IsNil(o.AlbumsToMonitor) {
 		return true
 	}
 
@@ -100,13 +103,13 @@ func (o *AddArtistOptions) HasAlbumsToMonitor() bool {
 }
 
 // SetAlbumsToMonitor gets a reference to the given []string and assigns it to the AlbumsToMonitor field.
-func (o *AddArtistOptions) SetAlbumsToMonitor(v []*string) {
+func (o *AddArtistOptions) SetAlbumsToMonitor(v []string) {
 	o.AlbumsToMonitor = v
 }
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise.
 func (o *AddArtistOptions) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored) {
+	if o == nil || IsNil(o.Monitored) {
 		var ret bool
 		return ret
 	}
@@ -116,15 +119,15 @@ func (o *AddArtistOptions) GetMonitored() bool {
 // GetMonitoredOk returns a tuple with the Monitored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddArtistOptions) GetMonitoredOk() (*bool, bool) {
-	if o == nil || isNil(o.Monitored) {
-    return nil, false
+	if o == nil || IsNil(o.Monitored) {
+		return nil, false
 	}
 	return o.Monitored, true
 }
 
 // HasMonitored returns a boolean if a field has been set.
 func (o *AddArtistOptions) HasMonitored() bool {
-	if o != nil && !isNil(o.Monitored) {
+	if o != nil && !IsNil(o.Monitored) {
 		return true
 	}
 
@@ -138,7 +141,7 @@ func (o *AddArtistOptions) SetMonitored(v bool) {
 
 // GetSearchForMissingAlbums returns the SearchForMissingAlbums field value if set, zero value otherwise.
 func (o *AddArtistOptions) GetSearchForMissingAlbums() bool {
-	if o == nil || isNil(o.SearchForMissingAlbums) {
+	if o == nil || IsNil(o.SearchForMissingAlbums) {
 		var ret bool
 		return ret
 	}
@@ -148,15 +151,15 @@ func (o *AddArtistOptions) GetSearchForMissingAlbums() bool {
 // GetSearchForMissingAlbumsOk returns a tuple with the SearchForMissingAlbums field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddArtistOptions) GetSearchForMissingAlbumsOk() (*bool, bool) {
-	if o == nil || isNil(o.SearchForMissingAlbums) {
-    return nil, false
+	if o == nil || IsNil(o.SearchForMissingAlbums) {
+		return nil, false
 	}
 	return o.SearchForMissingAlbums, true
 }
 
 // HasSearchForMissingAlbums returns a boolean if a field has been set.
 func (o *AddArtistOptions) HasSearchForMissingAlbums() bool {
-	if o != nil && !isNil(o.SearchForMissingAlbums) {
+	if o != nil && !IsNil(o.SearchForMissingAlbums) {
 		return true
 	}
 
@@ -169,20 +172,28 @@ func (o *AddArtistOptions) SetSearchForMissingAlbums(v bool) {
 }
 
 func (o AddArtistOptions) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AddArtistOptions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Monitor) {
+	if !IsNil(o.Monitor) {
 		toSerialize["monitor"] = o.Monitor
 	}
 	if o.AlbumsToMonitor != nil {
 		toSerialize["albumsToMonitor"] = o.AlbumsToMonitor
 	}
-	if !isNil(o.Monitored) {
+	if !IsNil(o.Monitored) {
 		toSerialize["monitored"] = o.Monitored
 	}
-	if !isNil(o.SearchForMissingAlbums) {
+	if !IsNil(o.SearchForMissingAlbums) {
 		toSerialize["searchForMissingAlbums"] = o.SearchForMissingAlbums
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAddArtistOptions struct {
