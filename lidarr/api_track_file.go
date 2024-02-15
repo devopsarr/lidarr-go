@@ -23,6 +23,7 @@ import (
 
 // TrackFileAPIService TrackFileAPI service
 type TrackFileAPIService service
+
 type ApiDeleteTrackFileRequest struct {
 	ctx context.Context
 	ApiService *TrackFileAPIService
@@ -62,7 +63,7 @@ func (a *TrackFileAPIService) DeleteTrackFileExecute(r ApiDeleteTrackFileRequest
 	}
 
 	localVarPath := localBasePath + "/api/v1/trackfile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -140,6 +141,7 @@ func (a *TrackFileAPIService) DeleteTrackFileExecute(r ApiDeleteTrackFileRequest
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteTrackFileBulkRequest struct {
 	ctx context.Context
 	ApiService *TrackFileAPIService
@@ -261,6 +263,7 @@ func (a *TrackFileAPIService) DeleteTrackFileBulkExecute(r ApiDeleteTrackFileBul
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetTrackFileByIdRequest struct {
 	ctx context.Context
 	ApiService *TrackFileAPIService
@@ -302,7 +305,7 @@ func (a *TrackFileAPIService) GetTrackFileByIdExecute(r ApiGetTrackFileByIdReque
 	}
 
 	localVarPath := localBasePath + "/api/v1/trackfile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -389,6 +392,7 @@ func (a *TrackFileAPIService) GetTrackFileByIdExecute(r ApiGetTrackFileByIdReque
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListTrackFileRequest struct {
 	ctx context.Context
 	ApiService *TrackFileAPIService
@@ -418,7 +422,7 @@ func (r ApiListTrackFileRequest) Unmapped(unmapped bool) ApiListTrackFileRequest
 	return r
 }
 
-func (r ApiListTrackFileRequest) Execute() ([]*TrackFileResource, *http.Response, error) {
+func (r ApiListTrackFileRequest) Execute() ([]TrackFileResource, *http.Response, error) {
 	return r.ApiService.ListTrackFileExecute(r)
 }
 
@@ -437,12 +441,12 @@ func (a *TrackFileAPIService) ListTrackFile(ctx context.Context) ApiListTrackFil
 
 // Execute executes the request
 //  @return []TrackFileResource
-func (a *TrackFileAPIService) ListTrackFileExecute(r ApiListTrackFileRequest) ([]*TrackFileResource, *http.Response, error) {
+func (a *TrackFileAPIService) ListTrackFileExecute(r ApiListTrackFileRequest) ([]TrackFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*TrackFileResource
+		localVarReturnValue  []TrackFileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrackFileAPIService.ListTrackFile")
@@ -457,17 +461,17 @@ func (a *TrackFileAPIService) ListTrackFileExecute(r ApiListTrackFileRequest) ([
 	localVarFormParams := url.Values{}
 
 	if r.artistId != nil {
-		localVarQueryParams.Add("artistId", parameterToString(*r.artistId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
 	}
 	if r.trackFileIds != nil {
 		t := *r.trackFileIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("trackFileIds", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "trackFileIds", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("trackFileIds", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "trackFileIds", t, "multi")
 		}
 	}
 	if r.albumId != nil {
@@ -475,14 +479,14 @@ func (a *TrackFileAPIService) ListTrackFileExecute(r ApiListTrackFileRequest) ([
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("albumId", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("albumId", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", t, "multi")
 		}
 	}
 	if r.unmapped != nil {
-		localVarQueryParams.Add("unmapped", parameterToString(*r.unmapped, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unmapped", r.unmapped, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -565,6 +569,7 @@ func (a *TrackFileAPIService) ListTrackFileExecute(r ApiListTrackFileRequest) ([
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiPutTrackFileEditorRequest struct {
 	ctx context.Context
 	ApiService *TrackFileAPIService
@@ -686,6 +691,7 @@ func (a *TrackFileAPIService) PutTrackFileEditorExecute(r ApiPutTrackFileEditorR
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateTrackFileRequest struct {
 	ctx context.Context
 	ApiService *TrackFileAPIService
@@ -733,7 +739,7 @@ func (a *TrackFileAPIService) UpdateTrackFileExecute(r ApiUpdateTrackFileRequest
 	}
 
 	localVarPath := localBasePath + "/api/v1/trackfile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

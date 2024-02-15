@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the NamingConfigResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &NamingConfigResource{}
+
 // NamingConfigResource struct for NamingConfigResource
 type NamingConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -50,7 +53,7 @@ func NewNamingConfigResourceWithDefaults() *NamingConfigResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -60,15 +63,15 @@ func (o *NamingConfigResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -82,7 +85,7 @@ func (o *NamingConfigResource) SetId(v int32) {
 
 // GetRenameTracks returns the RenameTracks field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetRenameTracks() bool {
-	if o == nil || isNil(o.RenameTracks) {
+	if o == nil || IsNil(o.RenameTracks) {
 		var ret bool
 		return ret
 	}
@@ -92,15 +95,15 @@ func (o *NamingConfigResource) GetRenameTracks() bool {
 // GetRenameTracksOk returns a tuple with the RenameTracks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetRenameTracksOk() (*bool, bool) {
-	if o == nil || isNil(o.RenameTracks) {
-    return nil, false
+	if o == nil || IsNil(o.RenameTracks) {
+		return nil, false
 	}
 	return o.RenameTracks, true
 }
 
 // HasRenameTracks returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasRenameTracks() bool {
-	if o != nil && !isNil(o.RenameTracks) {
+	if o != nil && !IsNil(o.RenameTracks) {
 		return true
 	}
 
@@ -114,7 +117,7 @@ func (o *NamingConfigResource) SetRenameTracks(v bool) {
 
 // GetReplaceIllegalCharacters returns the ReplaceIllegalCharacters field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetReplaceIllegalCharacters() bool {
-	if o == nil || isNil(o.ReplaceIllegalCharacters) {
+	if o == nil || IsNil(o.ReplaceIllegalCharacters) {
 		var ret bool
 		return ret
 	}
@@ -124,15 +127,15 @@ func (o *NamingConfigResource) GetReplaceIllegalCharacters() bool {
 // GetReplaceIllegalCharactersOk returns a tuple with the ReplaceIllegalCharacters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetReplaceIllegalCharactersOk() (*bool, bool) {
-	if o == nil || isNil(o.ReplaceIllegalCharacters) {
-    return nil, false
+	if o == nil || IsNil(o.ReplaceIllegalCharacters) {
+		return nil, false
 	}
 	return o.ReplaceIllegalCharacters, true
 }
 
 // HasReplaceIllegalCharacters returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasReplaceIllegalCharacters() bool {
-	if o != nil && !isNil(o.ReplaceIllegalCharacters) {
+	if o != nil && !IsNil(o.ReplaceIllegalCharacters) {
 		return true
 	}
 
@@ -146,7 +149,7 @@ func (o *NamingConfigResource) SetReplaceIllegalCharacters(v bool) {
 
 // GetColonReplacementFormat returns the ColonReplacementFormat field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetColonReplacementFormat() int32 {
-	if o == nil || isNil(o.ColonReplacementFormat) {
+	if o == nil || IsNil(o.ColonReplacementFormat) {
 		var ret int32
 		return ret
 	}
@@ -156,15 +159,15 @@ func (o *NamingConfigResource) GetColonReplacementFormat() int32 {
 // GetColonReplacementFormatOk returns a tuple with the ColonReplacementFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetColonReplacementFormatOk() (*int32, bool) {
-	if o == nil || isNil(o.ColonReplacementFormat) {
-    return nil, false
+	if o == nil || IsNil(o.ColonReplacementFormat) {
+		return nil, false
 	}
 	return o.ColonReplacementFormat, true
 }
 
 // HasColonReplacementFormat returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasColonReplacementFormat() bool {
-	if o != nil && !isNil(o.ColonReplacementFormat) {
+	if o != nil && !IsNil(o.ColonReplacementFormat) {
 		return true
 	}
 
@@ -178,7 +181,7 @@ func (o *NamingConfigResource) SetColonReplacementFormat(v int32) {
 
 // GetStandardTrackFormat returns the StandardTrackFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NamingConfigResource) GetStandardTrackFormat() string {
-	if o == nil || isNil(o.StandardTrackFormat.Get()) {
+	if o == nil || IsNil(o.StandardTrackFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -190,7 +193,7 @@ func (o *NamingConfigResource) GetStandardTrackFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NamingConfigResource) GetStandardTrackFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.StandardTrackFormat.Get(), o.StandardTrackFormat.IsSet()
 }
@@ -220,7 +223,7 @@ func (o *NamingConfigResource) UnsetStandardTrackFormat() {
 
 // GetMultiDiscTrackFormat returns the MultiDiscTrackFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NamingConfigResource) GetMultiDiscTrackFormat() string {
-	if o == nil || isNil(o.MultiDiscTrackFormat.Get()) {
+	if o == nil || IsNil(o.MultiDiscTrackFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -232,7 +235,7 @@ func (o *NamingConfigResource) GetMultiDiscTrackFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NamingConfigResource) GetMultiDiscTrackFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MultiDiscTrackFormat.Get(), o.MultiDiscTrackFormat.IsSet()
 }
@@ -262,7 +265,7 @@ func (o *NamingConfigResource) UnsetMultiDiscTrackFormat() {
 
 // GetArtistFolderFormat returns the ArtistFolderFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NamingConfigResource) GetArtistFolderFormat() string {
-	if o == nil || isNil(o.ArtistFolderFormat.Get()) {
+	if o == nil || IsNil(o.ArtistFolderFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -274,7 +277,7 @@ func (o *NamingConfigResource) GetArtistFolderFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NamingConfigResource) GetArtistFolderFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ArtistFolderFormat.Get(), o.ArtistFolderFormat.IsSet()
 }
@@ -304,7 +307,7 @@ func (o *NamingConfigResource) UnsetArtistFolderFormat() {
 
 // GetIncludeArtistName returns the IncludeArtistName field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetIncludeArtistName() bool {
-	if o == nil || isNil(o.IncludeArtistName) {
+	if o == nil || IsNil(o.IncludeArtistName) {
 		var ret bool
 		return ret
 	}
@@ -314,15 +317,15 @@ func (o *NamingConfigResource) GetIncludeArtistName() bool {
 // GetIncludeArtistNameOk returns a tuple with the IncludeArtistName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetIncludeArtistNameOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeArtistName) {
-    return nil, false
+	if o == nil || IsNil(o.IncludeArtistName) {
+		return nil, false
 	}
 	return o.IncludeArtistName, true
 }
 
 // HasIncludeArtistName returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasIncludeArtistName() bool {
-	if o != nil && !isNil(o.IncludeArtistName) {
+	if o != nil && !IsNil(o.IncludeArtistName) {
 		return true
 	}
 
@@ -336,7 +339,7 @@ func (o *NamingConfigResource) SetIncludeArtistName(v bool) {
 
 // GetIncludeAlbumTitle returns the IncludeAlbumTitle field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetIncludeAlbumTitle() bool {
-	if o == nil || isNil(o.IncludeAlbumTitle) {
+	if o == nil || IsNil(o.IncludeAlbumTitle) {
 		var ret bool
 		return ret
 	}
@@ -346,15 +349,15 @@ func (o *NamingConfigResource) GetIncludeAlbumTitle() bool {
 // GetIncludeAlbumTitleOk returns a tuple with the IncludeAlbumTitle field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetIncludeAlbumTitleOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeAlbumTitle) {
-    return nil, false
+	if o == nil || IsNil(o.IncludeAlbumTitle) {
+		return nil, false
 	}
 	return o.IncludeAlbumTitle, true
 }
 
 // HasIncludeAlbumTitle returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasIncludeAlbumTitle() bool {
-	if o != nil && !isNil(o.IncludeAlbumTitle) {
+	if o != nil && !IsNil(o.IncludeAlbumTitle) {
 		return true
 	}
 
@@ -368,7 +371,7 @@ func (o *NamingConfigResource) SetIncludeAlbumTitle(v bool) {
 
 // GetIncludeQuality returns the IncludeQuality field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetIncludeQuality() bool {
-	if o == nil || isNil(o.IncludeQuality) {
+	if o == nil || IsNil(o.IncludeQuality) {
 		var ret bool
 		return ret
 	}
@@ -378,15 +381,15 @@ func (o *NamingConfigResource) GetIncludeQuality() bool {
 // GetIncludeQualityOk returns a tuple with the IncludeQuality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetIncludeQualityOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeQuality) {
-    return nil, false
+	if o == nil || IsNil(o.IncludeQuality) {
+		return nil, false
 	}
 	return o.IncludeQuality, true
 }
 
 // HasIncludeQuality returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasIncludeQuality() bool {
-	if o != nil && !isNil(o.IncludeQuality) {
+	if o != nil && !IsNil(o.IncludeQuality) {
 		return true
 	}
 
@@ -400,7 +403,7 @@ func (o *NamingConfigResource) SetIncludeQuality(v bool) {
 
 // GetReplaceSpaces returns the ReplaceSpaces field value if set, zero value otherwise.
 func (o *NamingConfigResource) GetReplaceSpaces() bool {
-	if o == nil || isNil(o.ReplaceSpaces) {
+	if o == nil || IsNil(o.ReplaceSpaces) {
 		var ret bool
 		return ret
 	}
@@ -410,15 +413,15 @@ func (o *NamingConfigResource) GetReplaceSpaces() bool {
 // GetReplaceSpacesOk returns a tuple with the ReplaceSpaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NamingConfigResource) GetReplaceSpacesOk() (*bool, bool) {
-	if o == nil || isNil(o.ReplaceSpaces) {
-    return nil, false
+	if o == nil || IsNil(o.ReplaceSpaces) {
+		return nil, false
 	}
 	return o.ReplaceSpaces, true
 }
 
 // HasReplaceSpaces returns a boolean if a field has been set.
 func (o *NamingConfigResource) HasReplaceSpaces() bool {
-	if o != nil && !isNil(o.ReplaceSpaces) {
+	if o != nil && !IsNil(o.ReplaceSpaces) {
 		return true
 	}
 
@@ -432,7 +435,7 @@ func (o *NamingConfigResource) SetReplaceSpaces(v bool) {
 
 // GetSeparator returns the Separator field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NamingConfigResource) GetSeparator() string {
-	if o == nil || isNil(o.Separator.Get()) {
+	if o == nil || IsNil(o.Separator.Get()) {
 		var ret string
 		return ret
 	}
@@ -444,7 +447,7 @@ func (o *NamingConfigResource) GetSeparator() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NamingConfigResource) GetSeparatorOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Separator.Get(), o.Separator.IsSet()
 }
@@ -474,7 +477,7 @@ func (o *NamingConfigResource) UnsetSeparator() {
 
 // GetNumberStyle returns the NumberStyle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NamingConfigResource) GetNumberStyle() string {
-	if o == nil || isNil(o.NumberStyle.Get()) {
+	if o == nil || IsNil(o.NumberStyle.Get()) {
 		var ret string
 		return ret
 	}
@@ -486,7 +489,7 @@ func (o *NamingConfigResource) GetNumberStyle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NamingConfigResource) GetNumberStyleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.NumberStyle.Get(), o.NumberStyle.IsSet()
 }
@@ -515,17 +518,25 @@ func (o *NamingConfigResource) UnsetNumberStyle() {
 }
 
 func (o NamingConfigResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o NamingConfigResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.RenameTracks) {
+	if !IsNil(o.RenameTracks) {
 		toSerialize["renameTracks"] = o.RenameTracks
 	}
-	if !isNil(o.ReplaceIllegalCharacters) {
+	if !IsNil(o.ReplaceIllegalCharacters) {
 		toSerialize["replaceIllegalCharacters"] = o.ReplaceIllegalCharacters
 	}
-	if !isNil(o.ColonReplacementFormat) {
+	if !IsNil(o.ColonReplacementFormat) {
 		toSerialize["colonReplacementFormat"] = o.ColonReplacementFormat
 	}
 	if o.StandardTrackFormat.IsSet() {
@@ -537,16 +548,16 @@ func (o NamingConfigResource) MarshalJSON() ([]byte, error) {
 	if o.ArtistFolderFormat.IsSet() {
 		toSerialize["artistFolderFormat"] = o.ArtistFolderFormat.Get()
 	}
-	if !isNil(o.IncludeArtistName) {
+	if !IsNil(o.IncludeArtistName) {
 		toSerialize["includeArtistName"] = o.IncludeArtistName
 	}
-	if !isNil(o.IncludeAlbumTitle) {
+	if !IsNil(o.IncludeAlbumTitle) {
 		toSerialize["includeAlbumTitle"] = o.IncludeAlbumTitle
 	}
-	if !isNil(o.IncludeQuality) {
+	if !IsNil(o.IncludeQuality) {
 		toSerialize["includeQuality"] = o.IncludeQuality
 	}
-	if !isNil(o.ReplaceSpaces) {
+	if !IsNil(o.ReplaceSpaces) {
 		toSerialize["replaceSpaces"] = o.ReplaceSpaces
 	}
 	if o.Separator.IsSet() {
@@ -555,7 +566,7 @@ func (o NamingConfigResource) MarshalJSON() ([]byte, error) {
 	if o.NumberStyle.IsSet() {
 		toSerialize["numberStyle"] = o.NumberStyle.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableNamingConfigResource struct {

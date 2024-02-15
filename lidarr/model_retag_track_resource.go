@@ -14,15 +14,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the RetagTrackResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RetagTrackResource{}
+
 // RetagTrackResource struct for RetagTrackResource
 type RetagTrackResource struct {
 	Id *int32 `json:"id,omitempty"`
 	ArtistId *int32 `json:"artistId,omitempty"`
 	AlbumId *int32 `json:"albumId,omitempty"`
-	TrackNumbers []*int32 `json:"trackNumbers,omitempty"`
+	TrackNumbers []int32 `json:"trackNumbers,omitempty"`
 	TrackFileId *int32 `json:"trackFileId,omitempty"`
 	Path NullableString `json:"path,omitempty"`
-	Changes []*TagDifference `json:"changes,omitempty"`
+	Changes []TagDifference `json:"changes,omitempty"`
 }
 
 // NewRetagTrackResource instantiates a new RetagTrackResource object
@@ -44,7 +47,7 @@ func NewRetagTrackResourceWithDefaults() *RetagTrackResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *RetagTrackResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -54,15 +57,15 @@ func (o *RetagTrackResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetagTrackResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *RetagTrackResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +79,7 @@ func (o *RetagTrackResource) SetId(v int32) {
 
 // GetArtistId returns the ArtistId field value if set, zero value otherwise.
 func (o *RetagTrackResource) GetArtistId() int32 {
-	if o == nil || isNil(o.ArtistId) {
+	if o == nil || IsNil(o.ArtistId) {
 		var ret int32
 		return ret
 	}
@@ -86,15 +89,15 @@ func (o *RetagTrackResource) GetArtistId() int32 {
 // GetArtistIdOk returns a tuple with the ArtistId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetagTrackResource) GetArtistIdOk() (*int32, bool) {
-	if o == nil || isNil(o.ArtistId) {
-    return nil, false
+	if o == nil || IsNil(o.ArtistId) {
+		return nil, false
 	}
 	return o.ArtistId, true
 }
 
 // HasArtistId returns a boolean if a field has been set.
 func (o *RetagTrackResource) HasArtistId() bool {
-	if o != nil && !isNil(o.ArtistId) {
+	if o != nil && !IsNil(o.ArtistId) {
 		return true
 	}
 
@@ -108,7 +111,7 @@ func (o *RetagTrackResource) SetArtistId(v int32) {
 
 // GetAlbumId returns the AlbumId field value if set, zero value otherwise.
 func (o *RetagTrackResource) GetAlbumId() int32 {
-	if o == nil || isNil(o.AlbumId) {
+	if o == nil || IsNil(o.AlbumId) {
 		var ret int32
 		return ret
 	}
@@ -118,15 +121,15 @@ func (o *RetagTrackResource) GetAlbumId() int32 {
 // GetAlbumIdOk returns a tuple with the AlbumId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetagTrackResource) GetAlbumIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AlbumId) {
-    return nil, false
+	if o == nil || IsNil(o.AlbumId) {
+		return nil, false
 	}
 	return o.AlbumId, true
 }
 
 // HasAlbumId returns a boolean if a field has been set.
 func (o *RetagTrackResource) HasAlbumId() bool {
-	if o != nil && !isNil(o.AlbumId) {
+	if o != nil && !IsNil(o.AlbumId) {
 		return true
 	}
 
@@ -139,9 +142,9 @@ func (o *RetagTrackResource) SetAlbumId(v int32) {
 }
 
 // GetTrackNumbers returns the TrackNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RetagTrackResource) GetTrackNumbers() []*int32 {
+func (o *RetagTrackResource) GetTrackNumbers() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.TrackNumbers
@@ -150,16 +153,16 @@ func (o *RetagTrackResource) GetTrackNumbers() []*int32 {
 // GetTrackNumbersOk returns a tuple with the TrackNumbers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RetagTrackResource) GetTrackNumbersOk() ([]*int32, bool) {
-	if o == nil || isNil(o.TrackNumbers) {
-    return nil, false
+func (o *RetagTrackResource) GetTrackNumbersOk() ([]int32, bool) {
+	if o == nil || IsNil(o.TrackNumbers) {
+		return nil, false
 	}
 	return o.TrackNumbers, true
 }
 
 // HasTrackNumbers returns a boolean if a field has been set.
 func (o *RetagTrackResource) HasTrackNumbers() bool {
-	if o != nil && isNil(o.TrackNumbers) {
+	if o != nil && IsNil(o.TrackNumbers) {
 		return true
 	}
 
@@ -167,13 +170,13 @@ func (o *RetagTrackResource) HasTrackNumbers() bool {
 }
 
 // SetTrackNumbers gets a reference to the given []int32 and assigns it to the TrackNumbers field.
-func (o *RetagTrackResource) SetTrackNumbers(v []*int32) {
+func (o *RetagTrackResource) SetTrackNumbers(v []int32) {
 	o.TrackNumbers = v
 }
 
 // GetTrackFileId returns the TrackFileId field value if set, zero value otherwise.
 func (o *RetagTrackResource) GetTrackFileId() int32 {
-	if o == nil || isNil(o.TrackFileId) {
+	if o == nil || IsNil(o.TrackFileId) {
 		var ret int32
 		return ret
 	}
@@ -183,15 +186,15 @@ func (o *RetagTrackResource) GetTrackFileId() int32 {
 // GetTrackFileIdOk returns a tuple with the TrackFileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetagTrackResource) GetTrackFileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TrackFileId) {
-    return nil, false
+	if o == nil || IsNil(o.TrackFileId) {
+		return nil, false
 	}
 	return o.TrackFileId, true
 }
 
 // HasTrackFileId returns a boolean if a field has been set.
 func (o *RetagTrackResource) HasTrackFileId() bool {
-	if o != nil && !isNil(o.TrackFileId) {
+	if o != nil && !IsNil(o.TrackFileId) {
 		return true
 	}
 
@@ -205,7 +208,7 @@ func (o *RetagTrackResource) SetTrackFileId(v int32) {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RetagTrackResource) GetPath() string {
-	if o == nil || isNil(o.Path.Get()) {
+	if o == nil || IsNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -217,7 +220,7 @@ func (o *RetagTrackResource) GetPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RetagTrackResource) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
 }
@@ -246,9 +249,9 @@ func (o *RetagTrackResource) UnsetPath() {
 }
 
 // GetChanges returns the Changes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RetagTrackResource) GetChanges() []*TagDifference {
+func (o *RetagTrackResource) GetChanges() []TagDifference {
 	if o == nil {
-		var ret []*TagDifference
+		var ret []TagDifference
 		return ret
 	}
 	return o.Changes
@@ -257,16 +260,16 @@ func (o *RetagTrackResource) GetChanges() []*TagDifference {
 // GetChangesOk returns a tuple with the Changes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RetagTrackResource) GetChangesOk() ([]*TagDifference, bool) {
-	if o == nil || isNil(o.Changes) {
-    return nil, false
+func (o *RetagTrackResource) GetChangesOk() ([]TagDifference, bool) {
+	if o == nil || IsNil(o.Changes) {
+		return nil, false
 	}
 	return o.Changes, true
 }
 
 // HasChanges returns a boolean if a field has been set.
 func (o *RetagTrackResource) HasChanges() bool {
-	if o != nil && isNil(o.Changes) {
+	if o != nil && IsNil(o.Changes) {
 		return true
 	}
 
@@ -274,25 +277,33 @@ func (o *RetagTrackResource) HasChanges() bool {
 }
 
 // SetChanges gets a reference to the given []TagDifference and assigns it to the Changes field.
-func (o *RetagTrackResource) SetChanges(v []*TagDifference) {
+func (o *RetagTrackResource) SetChanges(v []TagDifference) {
 	o.Changes = v
 }
 
 func (o RetagTrackResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o RetagTrackResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.ArtistId) {
+	if !IsNil(o.ArtistId) {
 		toSerialize["artistId"] = o.ArtistId
 	}
-	if !isNil(o.AlbumId) {
+	if !IsNil(o.AlbumId) {
 		toSerialize["albumId"] = o.AlbumId
 	}
 	if o.TrackNumbers != nil {
 		toSerialize["trackNumbers"] = o.TrackNumbers
 	}
-	if !isNil(o.TrackFileId) {
+	if !IsNil(o.TrackFileId) {
 		toSerialize["trackFileId"] = o.TrackFileId
 	}
 	if o.Path.IsSet() {
@@ -301,7 +312,7 @@ func (o RetagTrackResource) MarshalJSON() ([]byte, error) {
 	if o.Changes != nil {
 		toSerialize["changes"] = o.Changes
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRetagTrackResource struct {

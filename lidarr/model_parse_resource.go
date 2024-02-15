@@ -14,14 +14,17 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParseResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParseResource{}
+
 // ParseResource struct for ParseResource
 type ParseResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Title NullableString `json:"title,omitempty"`
 	ParsedAlbumInfo *ParsedAlbumInfo `json:"parsedAlbumInfo,omitempty"`
 	Artist *ArtistResource `json:"artist,omitempty"`
-	Albums []*AlbumResource `json:"albums,omitempty"`
-	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	Albums []AlbumResource `json:"albums,omitempty"`
+	CustomFormats []CustomFormatResource `json:"customFormats,omitempty"`
 	CustomFormatScore *int32 `json:"customFormatScore,omitempty"`
 }
 
@@ -44,7 +47,7 @@ func NewParseResourceWithDefaults() *ParseResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ParseResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -54,15 +57,15 @@ func (o *ParseResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParseResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ParseResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +79,7 @@ func (o *ParseResource) SetId(v int32) {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParseResource) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -88,7 +91,7 @@ func (o *ParseResource) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParseResource) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -118,7 +121,7 @@ func (o *ParseResource) UnsetTitle() {
 
 // GetParsedAlbumInfo returns the ParsedAlbumInfo field value if set, zero value otherwise.
 func (o *ParseResource) GetParsedAlbumInfo() ParsedAlbumInfo {
-	if o == nil || isNil(o.ParsedAlbumInfo) {
+	if o == nil || IsNil(o.ParsedAlbumInfo) {
 		var ret ParsedAlbumInfo
 		return ret
 	}
@@ -128,15 +131,15 @@ func (o *ParseResource) GetParsedAlbumInfo() ParsedAlbumInfo {
 // GetParsedAlbumInfoOk returns a tuple with the ParsedAlbumInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParseResource) GetParsedAlbumInfoOk() (*ParsedAlbumInfo, bool) {
-	if o == nil || isNil(o.ParsedAlbumInfo) {
-    return nil, false
+	if o == nil || IsNil(o.ParsedAlbumInfo) {
+		return nil, false
 	}
 	return o.ParsedAlbumInfo, true
 }
 
 // HasParsedAlbumInfo returns a boolean if a field has been set.
 func (o *ParseResource) HasParsedAlbumInfo() bool {
-	if o != nil && !isNil(o.ParsedAlbumInfo) {
+	if o != nil && !IsNil(o.ParsedAlbumInfo) {
 		return true
 	}
 
@@ -150,7 +153,7 @@ func (o *ParseResource) SetParsedAlbumInfo(v ParsedAlbumInfo) {
 
 // GetArtist returns the Artist field value if set, zero value otherwise.
 func (o *ParseResource) GetArtist() ArtistResource {
-	if o == nil || isNil(o.Artist) {
+	if o == nil || IsNil(o.Artist) {
 		var ret ArtistResource
 		return ret
 	}
@@ -160,15 +163,15 @@ func (o *ParseResource) GetArtist() ArtistResource {
 // GetArtistOk returns a tuple with the Artist field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParseResource) GetArtistOk() (*ArtistResource, bool) {
-	if o == nil || isNil(o.Artist) {
-    return nil, false
+	if o == nil || IsNil(o.Artist) {
+		return nil, false
 	}
 	return o.Artist, true
 }
 
 // HasArtist returns a boolean if a field has been set.
 func (o *ParseResource) HasArtist() bool {
-	if o != nil && !isNil(o.Artist) {
+	if o != nil && !IsNil(o.Artist) {
 		return true
 	}
 
@@ -181,9 +184,9 @@ func (o *ParseResource) SetArtist(v ArtistResource) {
 }
 
 // GetAlbums returns the Albums field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParseResource) GetAlbums() []*AlbumResource {
+func (o *ParseResource) GetAlbums() []AlbumResource {
 	if o == nil {
-		var ret []*AlbumResource
+		var ret []AlbumResource
 		return ret
 	}
 	return o.Albums
@@ -192,16 +195,16 @@ func (o *ParseResource) GetAlbums() []*AlbumResource {
 // GetAlbumsOk returns a tuple with the Albums field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParseResource) GetAlbumsOk() ([]*AlbumResource, bool) {
-	if o == nil || isNil(o.Albums) {
-    return nil, false
+func (o *ParseResource) GetAlbumsOk() ([]AlbumResource, bool) {
+	if o == nil || IsNil(o.Albums) {
+		return nil, false
 	}
 	return o.Albums, true
 }
 
 // HasAlbums returns a boolean if a field has been set.
 func (o *ParseResource) HasAlbums() bool {
-	if o != nil && isNil(o.Albums) {
+	if o != nil && IsNil(o.Albums) {
 		return true
 	}
 
@@ -209,14 +212,14 @@ func (o *ParseResource) HasAlbums() bool {
 }
 
 // SetAlbums gets a reference to the given []AlbumResource and assigns it to the Albums field.
-func (o *ParseResource) SetAlbums(v []*AlbumResource) {
+func (o *ParseResource) SetAlbums(v []AlbumResource) {
 	o.Albums = v
 }
 
 // GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParseResource) GetCustomFormats() []*CustomFormatResource {
+func (o *ParseResource) GetCustomFormats() []CustomFormatResource {
 	if o == nil {
-		var ret []*CustomFormatResource
+		var ret []CustomFormatResource
 		return ret
 	}
 	return o.CustomFormats
@@ -225,16 +228,16 @@ func (o *ParseResource) GetCustomFormats() []*CustomFormatResource {
 // GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParseResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
-	if o == nil || isNil(o.CustomFormats) {
-    return nil, false
+func (o *ParseResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
+	if o == nil || IsNil(o.CustomFormats) {
+		return nil, false
 	}
 	return o.CustomFormats, true
 }
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *ParseResource) HasCustomFormats() bool {
-	if o != nil && isNil(o.CustomFormats) {
+	if o != nil && IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -242,13 +245,13 @@ func (o *ParseResource) HasCustomFormats() bool {
 }
 
 // SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
-func (o *ParseResource) SetCustomFormats(v []*CustomFormatResource) {
+func (o *ParseResource) SetCustomFormats(v []CustomFormatResource) {
 	o.CustomFormats = v
 }
 
 // GetCustomFormatScore returns the CustomFormatScore field value if set, zero value otherwise.
 func (o *ParseResource) GetCustomFormatScore() int32 {
-	if o == nil || isNil(o.CustomFormatScore) {
+	if o == nil || IsNil(o.CustomFormatScore) {
 		var ret int32
 		return ret
 	}
@@ -258,15 +261,15 @@ func (o *ParseResource) GetCustomFormatScore() int32 {
 // GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParseResource) GetCustomFormatScoreOk() (*int32, bool) {
-	if o == nil || isNil(o.CustomFormatScore) {
-    return nil, false
+	if o == nil || IsNil(o.CustomFormatScore) {
+		return nil, false
 	}
 	return o.CustomFormatScore, true
 }
 
 // HasCustomFormatScore returns a boolean if a field has been set.
 func (o *ParseResource) HasCustomFormatScore() bool {
-	if o != nil && !isNil(o.CustomFormatScore) {
+	if o != nil && !IsNil(o.CustomFormatScore) {
 		return true
 	}
 
@@ -279,17 +282,25 @@ func (o *ParseResource) SetCustomFormatScore(v int32) {
 }
 
 func (o ParseResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ParseResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
 	}
-	if !isNil(o.ParsedAlbumInfo) {
+	if !IsNil(o.ParsedAlbumInfo) {
 		toSerialize["parsedAlbumInfo"] = o.ParsedAlbumInfo
 	}
-	if !isNil(o.Artist) {
+	if !IsNil(o.Artist) {
 		toSerialize["artist"] = o.Artist
 	}
 	if o.Albums != nil {
@@ -298,10 +309,10 @@ func (o ParseResource) MarshalJSON() ([]byte, error) {
 	if o.CustomFormats != nil {
 		toSerialize["customFormats"] = o.CustomFormats
 	}
-	if !isNil(o.CustomFormatScore) {
+	if !IsNil(o.CustomFormatScore) {
 		toSerialize["customFormatScore"] = o.CustomFormatScore
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableParseResource struct {

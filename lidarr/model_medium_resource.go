@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MediumResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MediumResource{}
+
 // MediumResource struct for MediumResource
 type MediumResource struct {
 	MediumNumber *int32 `json:"mediumNumber,omitempty"`
@@ -40,7 +43,7 @@ func NewMediumResourceWithDefaults() *MediumResource {
 
 // GetMediumNumber returns the MediumNumber field value if set, zero value otherwise.
 func (o *MediumResource) GetMediumNumber() int32 {
-	if o == nil || isNil(o.MediumNumber) {
+	if o == nil || IsNil(o.MediumNumber) {
 		var ret int32
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *MediumResource) GetMediumNumber() int32 {
 // GetMediumNumberOk returns a tuple with the MediumNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediumResource) GetMediumNumberOk() (*int32, bool) {
-	if o == nil || isNil(o.MediumNumber) {
-    return nil, false
+	if o == nil || IsNil(o.MediumNumber) {
+		return nil, false
 	}
 	return o.MediumNumber, true
 }
 
 // HasMediumNumber returns a boolean if a field has been set.
 func (o *MediumResource) HasMediumNumber() bool {
-	if o != nil && !isNil(o.MediumNumber) {
+	if o != nil && !IsNil(o.MediumNumber) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *MediumResource) SetMediumNumber(v int32) {
 
 // GetMediumName returns the MediumName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediumResource) GetMediumName() string {
-	if o == nil || isNil(o.MediumName.Get()) {
+	if o == nil || IsNil(o.MediumName.Get()) {
 		var ret string
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *MediumResource) GetMediumName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediumResource) GetMediumNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MediumName.Get(), o.MediumName.IsSet()
 }
@@ -114,7 +117,7 @@ func (o *MediumResource) UnsetMediumName() {
 
 // GetMediumFormat returns the MediumFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediumResource) GetMediumFormat() string {
-	if o == nil || isNil(o.MediumFormat.Get()) {
+	if o == nil || IsNil(o.MediumFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -126,7 +129,7 @@ func (o *MediumResource) GetMediumFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediumResource) GetMediumFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MediumFormat.Get(), o.MediumFormat.IsSet()
 }
@@ -155,8 +158,16 @@ func (o *MediumResource) UnsetMediumFormat() {
 }
 
 func (o MediumResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o MediumResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.MediumNumber) {
+	if !IsNil(o.MediumNumber) {
 		toSerialize["mediumNumber"] = o.MediumNumber
 	}
 	if o.MediumName.IsSet() {
@@ -165,7 +176,7 @@ func (o MediumResource) MarshalJSON() ([]byte, error) {
 	if o.MediumFormat.IsSet() {
 		toSerialize["mediumFormat"] = o.MediumFormat.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableMediumResource struct {

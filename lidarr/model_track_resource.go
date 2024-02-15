@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the TrackResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TrackResource{}
+
 // TrackResource struct for TrackResource
 type TrackResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -54,7 +57,7 @@ func NewTrackResourceWithDefaults() *TrackResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *TrackResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -64,15 +67,15 @@ func (o *TrackResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *TrackResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -86,7 +89,7 @@ func (o *TrackResource) SetId(v int32) {
 
 // GetArtistId returns the ArtistId field value if set, zero value otherwise.
 func (o *TrackResource) GetArtistId() int32 {
-	if o == nil || isNil(o.ArtistId) {
+	if o == nil || IsNil(o.ArtistId) {
 		var ret int32
 		return ret
 	}
@@ -96,15 +99,15 @@ func (o *TrackResource) GetArtistId() int32 {
 // GetArtistIdOk returns a tuple with the ArtistId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackResource) GetArtistIdOk() (*int32, bool) {
-	if o == nil || isNil(o.ArtistId) {
-    return nil, false
+	if o == nil || IsNil(o.ArtistId) {
+		return nil, false
 	}
 	return o.ArtistId, true
 }
 
 // HasArtistId returns a boolean if a field has been set.
 func (o *TrackResource) HasArtistId() bool {
-	if o != nil && !isNil(o.ArtistId) {
+	if o != nil && !IsNil(o.ArtistId) {
 		return true
 	}
 
@@ -118,7 +121,7 @@ func (o *TrackResource) SetArtistId(v int32) {
 
 // GetForeignTrackId returns the ForeignTrackId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TrackResource) GetForeignTrackId() string {
-	if o == nil || isNil(o.ForeignTrackId.Get()) {
+	if o == nil || IsNil(o.ForeignTrackId.Get()) {
 		var ret string
 		return ret
 	}
@@ -130,7 +133,7 @@ func (o *TrackResource) GetForeignTrackId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TrackResource) GetForeignTrackIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ForeignTrackId.Get(), o.ForeignTrackId.IsSet()
 }
@@ -160,7 +163,7 @@ func (o *TrackResource) UnsetForeignTrackId() {
 
 // GetForeignRecordingId returns the ForeignRecordingId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TrackResource) GetForeignRecordingId() string {
-	if o == nil || isNil(o.ForeignRecordingId.Get()) {
+	if o == nil || IsNil(o.ForeignRecordingId.Get()) {
 		var ret string
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *TrackResource) GetForeignRecordingId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TrackResource) GetForeignRecordingIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ForeignRecordingId.Get(), o.ForeignRecordingId.IsSet()
 }
@@ -202,7 +205,7 @@ func (o *TrackResource) UnsetForeignRecordingId() {
 
 // GetTrackFileId returns the TrackFileId field value if set, zero value otherwise.
 func (o *TrackResource) GetTrackFileId() int32 {
-	if o == nil || isNil(o.TrackFileId) {
+	if o == nil || IsNil(o.TrackFileId) {
 		var ret int32
 		return ret
 	}
@@ -212,15 +215,15 @@ func (o *TrackResource) GetTrackFileId() int32 {
 // GetTrackFileIdOk returns a tuple with the TrackFileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackResource) GetTrackFileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TrackFileId) {
-    return nil, false
+	if o == nil || IsNil(o.TrackFileId) {
+		return nil, false
 	}
 	return o.TrackFileId, true
 }
 
 // HasTrackFileId returns a boolean if a field has been set.
 func (o *TrackResource) HasTrackFileId() bool {
-	if o != nil && !isNil(o.TrackFileId) {
+	if o != nil && !IsNil(o.TrackFileId) {
 		return true
 	}
 
@@ -234,7 +237,7 @@ func (o *TrackResource) SetTrackFileId(v int32) {
 
 // GetAlbumId returns the AlbumId field value if set, zero value otherwise.
 func (o *TrackResource) GetAlbumId() int32 {
-	if o == nil || isNil(o.AlbumId) {
+	if o == nil || IsNil(o.AlbumId) {
 		var ret int32
 		return ret
 	}
@@ -244,15 +247,15 @@ func (o *TrackResource) GetAlbumId() int32 {
 // GetAlbumIdOk returns a tuple with the AlbumId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackResource) GetAlbumIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AlbumId) {
-    return nil, false
+	if o == nil || IsNil(o.AlbumId) {
+		return nil, false
 	}
 	return o.AlbumId, true
 }
 
 // HasAlbumId returns a boolean if a field has been set.
 func (o *TrackResource) HasAlbumId() bool {
-	if o != nil && !isNil(o.AlbumId) {
+	if o != nil && !IsNil(o.AlbumId) {
 		return true
 	}
 
@@ -266,7 +269,7 @@ func (o *TrackResource) SetAlbumId(v int32) {
 
 // GetExplicit returns the Explicit field value if set, zero value otherwise.
 func (o *TrackResource) GetExplicit() bool {
-	if o == nil || isNil(o.Explicit) {
+	if o == nil || IsNil(o.Explicit) {
 		var ret bool
 		return ret
 	}
@@ -276,15 +279,15 @@ func (o *TrackResource) GetExplicit() bool {
 // GetExplicitOk returns a tuple with the Explicit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackResource) GetExplicitOk() (*bool, bool) {
-	if o == nil || isNil(o.Explicit) {
-    return nil, false
+	if o == nil || IsNil(o.Explicit) {
+		return nil, false
 	}
 	return o.Explicit, true
 }
 
 // HasExplicit returns a boolean if a field has been set.
 func (o *TrackResource) HasExplicit() bool {
-	if o != nil && !isNil(o.Explicit) {
+	if o != nil && !IsNil(o.Explicit) {
 		return true
 	}
 
@@ -298,7 +301,7 @@ func (o *TrackResource) SetExplicit(v bool) {
 
 // GetAbsoluteTrackNumber returns the AbsoluteTrackNumber field value if set, zero value otherwise.
 func (o *TrackResource) GetAbsoluteTrackNumber() int32 {
-	if o == nil || isNil(o.AbsoluteTrackNumber) {
+	if o == nil || IsNil(o.AbsoluteTrackNumber) {
 		var ret int32
 		return ret
 	}
@@ -308,15 +311,15 @@ func (o *TrackResource) GetAbsoluteTrackNumber() int32 {
 // GetAbsoluteTrackNumberOk returns a tuple with the AbsoluteTrackNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackResource) GetAbsoluteTrackNumberOk() (*int32, bool) {
-	if o == nil || isNil(o.AbsoluteTrackNumber) {
-    return nil, false
+	if o == nil || IsNil(o.AbsoluteTrackNumber) {
+		return nil, false
 	}
 	return o.AbsoluteTrackNumber, true
 }
 
 // HasAbsoluteTrackNumber returns a boolean if a field has been set.
 func (o *TrackResource) HasAbsoluteTrackNumber() bool {
-	if o != nil && !isNil(o.AbsoluteTrackNumber) {
+	if o != nil && !IsNil(o.AbsoluteTrackNumber) {
 		return true
 	}
 
@@ -330,7 +333,7 @@ func (o *TrackResource) SetAbsoluteTrackNumber(v int32) {
 
 // GetTrackNumber returns the TrackNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TrackResource) GetTrackNumber() string {
-	if o == nil || isNil(o.TrackNumber.Get()) {
+	if o == nil || IsNil(o.TrackNumber.Get()) {
 		var ret string
 		return ret
 	}
@@ -342,7 +345,7 @@ func (o *TrackResource) GetTrackNumber() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TrackResource) GetTrackNumberOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TrackNumber.Get(), o.TrackNumber.IsSet()
 }
@@ -372,7 +375,7 @@ func (o *TrackResource) UnsetTrackNumber() {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TrackResource) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -384,7 +387,7 @@ func (o *TrackResource) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TrackResource) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -414,7 +417,7 @@ func (o *TrackResource) UnsetTitle() {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *TrackResource) GetDuration() int32 {
-	if o == nil || isNil(o.Duration) {
+	if o == nil || IsNil(o.Duration) {
 		var ret int32
 		return ret
 	}
@@ -424,15 +427,15 @@ func (o *TrackResource) GetDuration() int32 {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackResource) GetDurationOk() (*int32, bool) {
-	if o == nil || isNil(o.Duration) {
-    return nil, false
+	if o == nil || IsNil(o.Duration) {
+		return nil, false
 	}
 	return o.Duration, true
 }
 
 // HasDuration returns a boolean if a field has been set.
 func (o *TrackResource) HasDuration() bool {
-	if o != nil && !isNil(o.Duration) {
+	if o != nil && !IsNil(o.Duration) {
 		return true
 	}
 
@@ -446,7 +449,7 @@ func (o *TrackResource) SetDuration(v int32) {
 
 // GetTrackFile returns the TrackFile field value if set, zero value otherwise.
 func (o *TrackResource) GetTrackFile() TrackFileResource {
-	if o == nil || isNil(o.TrackFile) {
+	if o == nil || IsNil(o.TrackFile) {
 		var ret TrackFileResource
 		return ret
 	}
@@ -456,15 +459,15 @@ func (o *TrackResource) GetTrackFile() TrackFileResource {
 // GetTrackFileOk returns a tuple with the TrackFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackResource) GetTrackFileOk() (*TrackFileResource, bool) {
-	if o == nil || isNil(o.TrackFile) {
-    return nil, false
+	if o == nil || IsNil(o.TrackFile) {
+		return nil, false
 	}
 	return o.TrackFile, true
 }
 
 // HasTrackFile returns a boolean if a field has been set.
 func (o *TrackResource) HasTrackFile() bool {
-	if o != nil && !isNil(o.TrackFile) {
+	if o != nil && !IsNil(o.TrackFile) {
 		return true
 	}
 
@@ -478,7 +481,7 @@ func (o *TrackResource) SetTrackFile(v TrackFileResource) {
 
 // GetMediumNumber returns the MediumNumber field value if set, zero value otherwise.
 func (o *TrackResource) GetMediumNumber() int32 {
-	if o == nil || isNil(o.MediumNumber) {
+	if o == nil || IsNil(o.MediumNumber) {
 		var ret int32
 		return ret
 	}
@@ -488,15 +491,15 @@ func (o *TrackResource) GetMediumNumber() int32 {
 // GetMediumNumberOk returns a tuple with the MediumNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackResource) GetMediumNumberOk() (*int32, bool) {
-	if o == nil || isNil(o.MediumNumber) {
-    return nil, false
+	if o == nil || IsNil(o.MediumNumber) {
+		return nil, false
 	}
 	return o.MediumNumber, true
 }
 
 // HasMediumNumber returns a boolean if a field has been set.
 func (o *TrackResource) HasMediumNumber() bool {
-	if o != nil && !isNil(o.MediumNumber) {
+	if o != nil && !IsNil(o.MediumNumber) {
 		return true
 	}
 
@@ -510,7 +513,7 @@ func (o *TrackResource) SetMediumNumber(v int32) {
 
 // GetHasFile returns the HasFile field value if set, zero value otherwise.
 func (o *TrackResource) GetHasFile() bool {
-	if o == nil || isNil(o.HasFile) {
+	if o == nil || IsNil(o.HasFile) {
 		var ret bool
 		return ret
 	}
@@ -520,15 +523,15 @@ func (o *TrackResource) GetHasFile() bool {
 // GetHasFileOk returns a tuple with the HasFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackResource) GetHasFileOk() (*bool, bool) {
-	if o == nil || isNil(o.HasFile) {
-    return nil, false
+	if o == nil || IsNil(o.HasFile) {
+		return nil, false
 	}
 	return o.HasFile, true
 }
 
 // HasHasFile returns a boolean if a field has been set.
 func (o *TrackResource) HasHasFile() bool {
-	if o != nil && !isNil(o.HasFile) {
+	if o != nil && !IsNil(o.HasFile) {
 		return true
 	}
 
@@ -542,7 +545,7 @@ func (o *TrackResource) SetHasFile(v bool) {
 
 // GetArtist returns the Artist field value if set, zero value otherwise.
 func (o *TrackResource) GetArtist() ArtistResource {
-	if o == nil || isNil(o.Artist) {
+	if o == nil || IsNil(o.Artist) {
 		var ret ArtistResource
 		return ret
 	}
@@ -552,15 +555,15 @@ func (o *TrackResource) GetArtist() ArtistResource {
 // GetArtistOk returns a tuple with the Artist field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackResource) GetArtistOk() (*ArtistResource, bool) {
-	if o == nil || isNil(o.Artist) {
-    return nil, false
+	if o == nil || IsNil(o.Artist) {
+		return nil, false
 	}
 	return o.Artist, true
 }
 
 // HasArtist returns a boolean if a field has been set.
 func (o *TrackResource) HasArtist() bool {
-	if o != nil && !isNil(o.Artist) {
+	if o != nil && !IsNil(o.Artist) {
 		return true
 	}
 
@@ -574,7 +577,7 @@ func (o *TrackResource) SetArtist(v ArtistResource) {
 
 // GetRatings returns the Ratings field value if set, zero value otherwise.
 func (o *TrackResource) GetRatings() Ratings {
-	if o == nil || isNil(o.Ratings) {
+	if o == nil || IsNil(o.Ratings) {
 		var ret Ratings
 		return ret
 	}
@@ -584,15 +587,15 @@ func (o *TrackResource) GetRatings() Ratings {
 // GetRatingsOk returns a tuple with the Ratings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackResource) GetRatingsOk() (*Ratings, bool) {
-	if o == nil || isNil(o.Ratings) {
-    return nil, false
+	if o == nil || IsNil(o.Ratings) {
+		return nil, false
 	}
 	return o.Ratings, true
 }
 
 // HasRatings returns a boolean if a field has been set.
 func (o *TrackResource) HasRatings() bool {
-	if o != nil && !isNil(o.Ratings) {
+	if o != nil && !IsNil(o.Ratings) {
 		return true
 	}
 
@@ -606,7 +609,7 @@ func (o *TrackResource) SetRatings(v Ratings) {
 
 // GetGrabbed returns the Grabbed field value if set, zero value otherwise.
 func (o *TrackResource) GetGrabbed() bool {
-	if o == nil || isNil(o.Grabbed) {
+	if o == nil || IsNil(o.Grabbed) {
 		var ret bool
 		return ret
 	}
@@ -616,15 +619,15 @@ func (o *TrackResource) GetGrabbed() bool {
 // GetGrabbedOk returns a tuple with the Grabbed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrackResource) GetGrabbedOk() (*bool, bool) {
-	if o == nil || isNil(o.Grabbed) {
-    return nil, false
+	if o == nil || IsNil(o.Grabbed) {
+		return nil, false
 	}
 	return o.Grabbed, true
 }
 
 // HasGrabbed returns a boolean if a field has been set.
 func (o *TrackResource) HasGrabbed() bool {
-	if o != nil && !isNil(o.Grabbed) {
+	if o != nil && !IsNil(o.Grabbed) {
 		return true
 	}
 
@@ -637,11 +640,19 @@ func (o *TrackResource) SetGrabbed(v bool) {
 }
 
 func (o TrackResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o TrackResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.ArtistId) {
+	if !IsNil(o.ArtistId) {
 		toSerialize["artistId"] = o.ArtistId
 	}
 	if o.ForeignTrackId.IsSet() {
@@ -650,16 +661,16 @@ func (o TrackResource) MarshalJSON() ([]byte, error) {
 	if o.ForeignRecordingId.IsSet() {
 		toSerialize["foreignRecordingId"] = o.ForeignRecordingId.Get()
 	}
-	if !isNil(o.TrackFileId) {
+	if !IsNil(o.TrackFileId) {
 		toSerialize["trackFileId"] = o.TrackFileId
 	}
-	if !isNil(o.AlbumId) {
+	if !IsNil(o.AlbumId) {
 		toSerialize["albumId"] = o.AlbumId
 	}
-	if !isNil(o.Explicit) {
+	if !IsNil(o.Explicit) {
 		toSerialize["explicit"] = o.Explicit
 	}
-	if !isNil(o.AbsoluteTrackNumber) {
+	if !IsNil(o.AbsoluteTrackNumber) {
 		toSerialize["absoluteTrackNumber"] = o.AbsoluteTrackNumber
 	}
 	if o.TrackNumber.IsSet() {
@@ -668,28 +679,28 @@ func (o TrackResource) MarshalJSON() ([]byte, error) {
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
 	}
-	if !isNil(o.Duration) {
+	if !IsNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
-	if !isNil(o.TrackFile) {
+	if !IsNil(o.TrackFile) {
 		toSerialize["trackFile"] = o.TrackFile
 	}
-	if !isNil(o.MediumNumber) {
+	if !IsNil(o.MediumNumber) {
 		toSerialize["mediumNumber"] = o.MediumNumber
 	}
-	if !isNil(o.HasFile) {
+	if !IsNil(o.HasFile) {
 		toSerialize["hasFile"] = o.HasFile
 	}
-	if !isNil(o.Artist) {
+	if !IsNil(o.Artist) {
 		toSerialize["artist"] = o.Artist
 	}
-	if !isNil(o.Ratings) {
+	if !IsNil(o.Ratings) {
 		toSerialize["ratings"] = o.Ratings
 	}
-	if !isNil(o.Grabbed) {
+	if !IsNil(o.Grabbed) {
 		toSerialize["grabbed"] = o.Grabbed
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableTrackResource struct {

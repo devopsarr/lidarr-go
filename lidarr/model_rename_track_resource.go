@@ -14,12 +14,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the RenameTrackResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RenameTrackResource{}
+
 // RenameTrackResource struct for RenameTrackResource
 type RenameTrackResource struct {
 	Id *int32 `json:"id,omitempty"`
 	ArtistId *int32 `json:"artistId,omitempty"`
 	AlbumId *int32 `json:"albumId,omitempty"`
-	TrackNumbers []*int32 `json:"trackNumbers,omitempty"`
+	TrackNumbers []int32 `json:"trackNumbers,omitempty"`
 	TrackFileId *int32 `json:"trackFileId,omitempty"`
 	ExistingPath NullableString `json:"existingPath,omitempty"`
 	NewPath NullableString `json:"newPath,omitempty"`
@@ -44,7 +47,7 @@ func NewRenameTrackResourceWithDefaults() *RenameTrackResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *RenameTrackResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -54,15 +57,15 @@ func (o *RenameTrackResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameTrackResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *RenameTrackResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +79,7 @@ func (o *RenameTrackResource) SetId(v int32) {
 
 // GetArtistId returns the ArtistId field value if set, zero value otherwise.
 func (o *RenameTrackResource) GetArtistId() int32 {
-	if o == nil || isNil(o.ArtistId) {
+	if o == nil || IsNil(o.ArtistId) {
 		var ret int32
 		return ret
 	}
@@ -86,15 +89,15 @@ func (o *RenameTrackResource) GetArtistId() int32 {
 // GetArtistIdOk returns a tuple with the ArtistId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameTrackResource) GetArtistIdOk() (*int32, bool) {
-	if o == nil || isNil(o.ArtistId) {
-    return nil, false
+	if o == nil || IsNil(o.ArtistId) {
+		return nil, false
 	}
 	return o.ArtistId, true
 }
 
 // HasArtistId returns a boolean if a field has been set.
 func (o *RenameTrackResource) HasArtistId() bool {
-	if o != nil && !isNil(o.ArtistId) {
+	if o != nil && !IsNil(o.ArtistId) {
 		return true
 	}
 
@@ -108,7 +111,7 @@ func (o *RenameTrackResource) SetArtistId(v int32) {
 
 // GetAlbumId returns the AlbumId field value if set, zero value otherwise.
 func (o *RenameTrackResource) GetAlbumId() int32 {
-	if o == nil || isNil(o.AlbumId) {
+	if o == nil || IsNil(o.AlbumId) {
 		var ret int32
 		return ret
 	}
@@ -118,15 +121,15 @@ func (o *RenameTrackResource) GetAlbumId() int32 {
 // GetAlbumIdOk returns a tuple with the AlbumId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameTrackResource) GetAlbumIdOk() (*int32, bool) {
-	if o == nil || isNil(o.AlbumId) {
-    return nil, false
+	if o == nil || IsNil(o.AlbumId) {
+		return nil, false
 	}
 	return o.AlbumId, true
 }
 
 // HasAlbumId returns a boolean if a field has been set.
 func (o *RenameTrackResource) HasAlbumId() bool {
-	if o != nil && !isNil(o.AlbumId) {
+	if o != nil && !IsNil(o.AlbumId) {
 		return true
 	}
 
@@ -139,9 +142,9 @@ func (o *RenameTrackResource) SetAlbumId(v int32) {
 }
 
 // GetTrackNumbers returns the TrackNumbers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RenameTrackResource) GetTrackNumbers() []*int32 {
+func (o *RenameTrackResource) GetTrackNumbers() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.TrackNumbers
@@ -150,16 +153,16 @@ func (o *RenameTrackResource) GetTrackNumbers() []*int32 {
 // GetTrackNumbersOk returns a tuple with the TrackNumbers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RenameTrackResource) GetTrackNumbersOk() ([]*int32, bool) {
-	if o == nil || isNil(o.TrackNumbers) {
-    return nil, false
+func (o *RenameTrackResource) GetTrackNumbersOk() ([]int32, bool) {
+	if o == nil || IsNil(o.TrackNumbers) {
+		return nil, false
 	}
 	return o.TrackNumbers, true
 }
 
 // HasTrackNumbers returns a boolean if a field has been set.
 func (o *RenameTrackResource) HasTrackNumbers() bool {
-	if o != nil && isNil(o.TrackNumbers) {
+	if o != nil && IsNil(o.TrackNumbers) {
 		return true
 	}
 
@@ -167,13 +170,13 @@ func (o *RenameTrackResource) HasTrackNumbers() bool {
 }
 
 // SetTrackNumbers gets a reference to the given []int32 and assigns it to the TrackNumbers field.
-func (o *RenameTrackResource) SetTrackNumbers(v []*int32) {
+func (o *RenameTrackResource) SetTrackNumbers(v []int32) {
 	o.TrackNumbers = v
 }
 
 // GetTrackFileId returns the TrackFileId field value if set, zero value otherwise.
 func (o *RenameTrackResource) GetTrackFileId() int32 {
-	if o == nil || isNil(o.TrackFileId) {
+	if o == nil || IsNil(o.TrackFileId) {
 		var ret int32
 		return ret
 	}
@@ -183,15 +186,15 @@ func (o *RenameTrackResource) GetTrackFileId() int32 {
 // GetTrackFileIdOk returns a tuple with the TrackFileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameTrackResource) GetTrackFileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TrackFileId) {
-    return nil, false
+	if o == nil || IsNil(o.TrackFileId) {
+		return nil, false
 	}
 	return o.TrackFileId, true
 }
 
 // HasTrackFileId returns a boolean if a field has been set.
 func (o *RenameTrackResource) HasTrackFileId() bool {
-	if o != nil && !isNil(o.TrackFileId) {
+	if o != nil && !IsNil(o.TrackFileId) {
 		return true
 	}
 
@@ -205,7 +208,7 @@ func (o *RenameTrackResource) SetTrackFileId(v int32) {
 
 // GetExistingPath returns the ExistingPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RenameTrackResource) GetExistingPath() string {
-	if o == nil || isNil(o.ExistingPath.Get()) {
+	if o == nil || IsNil(o.ExistingPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -217,7 +220,7 @@ func (o *RenameTrackResource) GetExistingPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RenameTrackResource) GetExistingPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ExistingPath.Get(), o.ExistingPath.IsSet()
 }
@@ -247,7 +250,7 @@ func (o *RenameTrackResource) UnsetExistingPath() {
 
 // GetNewPath returns the NewPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RenameTrackResource) GetNewPath() string {
-	if o == nil || isNil(o.NewPath.Get()) {
+	if o == nil || IsNil(o.NewPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -259,7 +262,7 @@ func (o *RenameTrackResource) GetNewPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RenameTrackResource) GetNewPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.NewPath.Get(), o.NewPath.IsSet()
 }
@@ -288,20 +291,28 @@ func (o *RenameTrackResource) UnsetNewPath() {
 }
 
 func (o RenameTrackResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o RenameTrackResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.ArtistId) {
+	if !IsNil(o.ArtistId) {
 		toSerialize["artistId"] = o.ArtistId
 	}
-	if !isNil(o.AlbumId) {
+	if !IsNil(o.AlbumId) {
 		toSerialize["albumId"] = o.AlbumId
 	}
 	if o.TrackNumbers != nil {
 		toSerialize["trackNumbers"] = o.TrackNumbers
 	}
-	if !isNil(o.TrackFileId) {
+	if !IsNil(o.TrackFileId) {
 		toSerialize["trackFileId"] = o.TrackFileId
 	}
 	if o.ExistingPath.IsSet() {
@@ -310,7 +321,7 @@ func (o RenameTrackResource) MarshalJSON() ([]byte, error) {
 	if o.NewPath.IsSet() {
 		toSerialize["newPath"] = o.NewPath.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRenameTrackResource struct {

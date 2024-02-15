@@ -21,6 +21,7 @@ import (
 
 // ArtistEditorAPIService ArtistEditorAPI service
 type ArtistEditorAPIService service
+
 type ApiDeleteArtistEditorRequest struct {
 	ctx context.Context
 	ApiService *ArtistEditorAPIService
@@ -142,6 +143,7 @@ func (a *ArtistEditorAPIService) DeleteArtistEditorExecute(r ApiDeleteArtistEdit
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiPutArtistEditorRequest struct {
 	ctx context.Context
 	ApiService *ArtistEditorAPIService

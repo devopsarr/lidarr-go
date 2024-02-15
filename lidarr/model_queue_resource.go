@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the QueueResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &QueueResource{}
+
 // QueueResource struct for QueueResource
 type QueueResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -23,7 +26,7 @@ type QueueResource struct {
 	Artist *ArtistResource `json:"artist,omitempty"`
 	Album *AlbumResource `json:"album,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
-	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormats []CustomFormatResource `json:"customFormats,omitempty"`
 	CustomFormatScore *int32 `json:"customFormatScore,omitempty"`
 	Size *float64 `json:"size,omitempty"`
 	Title NullableString `json:"title,omitempty"`
@@ -34,7 +37,7 @@ type QueueResource struct {
 	Status NullableString `json:"status,omitempty"`
 	TrackedDownloadStatus *TrackedDownloadStatus `json:"trackedDownloadStatus,omitempty"`
 	TrackedDownloadState *TrackedDownloadState `json:"trackedDownloadState,omitempty"`
-	StatusMessages []*TrackedDownloadStatusMessage `json:"statusMessages,omitempty"`
+	StatusMessages []TrackedDownloadStatusMessage `json:"statusMessages,omitempty"`
 	ErrorMessage NullableString `json:"errorMessage,omitempty"`
 	DownloadId NullableString `json:"downloadId,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
@@ -66,7 +69,7 @@ func NewQueueResourceWithDefaults() *QueueResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *QueueResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -76,15 +79,15 @@ func (o *QueueResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *QueueResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -98,7 +101,7 @@ func (o *QueueResource) SetId(v int32) {
 
 // GetArtistId returns the ArtistId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetArtistId() int32 {
-	if o == nil || isNil(o.ArtistId.Get()) {
+	if o == nil || IsNil(o.ArtistId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -110,7 +113,7 @@ func (o *QueueResource) GetArtistId() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QueueResource) GetArtistIdOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ArtistId.Get(), o.ArtistId.IsSet()
 }
@@ -140,7 +143,7 @@ func (o *QueueResource) UnsetArtistId() {
 
 // GetAlbumId returns the AlbumId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetAlbumId() int32 {
-	if o == nil || isNil(o.AlbumId.Get()) {
+	if o == nil || IsNil(o.AlbumId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -152,7 +155,7 @@ func (o *QueueResource) GetAlbumId() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QueueResource) GetAlbumIdOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AlbumId.Get(), o.AlbumId.IsSet()
 }
@@ -182,7 +185,7 @@ func (o *QueueResource) UnsetAlbumId() {
 
 // GetArtist returns the Artist field value if set, zero value otherwise.
 func (o *QueueResource) GetArtist() ArtistResource {
-	if o == nil || isNil(o.Artist) {
+	if o == nil || IsNil(o.Artist) {
 		var ret ArtistResource
 		return ret
 	}
@@ -192,15 +195,15 @@ func (o *QueueResource) GetArtist() ArtistResource {
 // GetArtistOk returns a tuple with the Artist field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetArtistOk() (*ArtistResource, bool) {
-	if o == nil || isNil(o.Artist) {
-    return nil, false
+	if o == nil || IsNil(o.Artist) {
+		return nil, false
 	}
 	return o.Artist, true
 }
 
 // HasArtist returns a boolean if a field has been set.
 func (o *QueueResource) HasArtist() bool {
-	if o != nil && !isNil(o.Artist) {
+	if o != nil && !IsNil(o.Artist) {
 		return true
 	}
 
@@ -214,7 +217,7 @@ func (o *QueueResource) SetArtist(v ArtistResource) {
 
 // GetAlbum returns the Album field value if set, zero value otherwise.
 func (o *QueueResource) GetAlbum() AlbumResource {
-	if o == nil || isNil(o.Album) {
+	if o == nil || IsNil(o.Album) {
 		var ret AlbumResource
 		return ret
 	}
@@ -224,15 +227,15 @@ func (o *QueueResource) GetAlbum() AlbumResource {
 // GetAlbumOk returns a tuple with the Album field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetAlbumOk() (*AlbumResource, bool) {
-	if o == nil || isNil(o.Album) {
-    return nil, false
+	if o == nil || IsNil(o.Album) {
+		return nil, false
 	}
 	return o.Album, true
 }
 
 // HasAlbum returns a boolean if a field has been set.
 func (o *QueueResource) HasAlbum() bool {
-	if o != nil && !isNil(o.Album) {
+	if o != nil && !IsNil(o.Album) {
 		return true
 	}
 
@@ -246,7 +249,7 @@ func (o *QueueResource) SetAlbum(v AlbumResource) {
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *QueueResource) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -256,15 +259,15 @@ func (o *QueueResource) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *QueueResource) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -277,9 +280,9 @@ func (o *QueueResource) SetQuality(v QualityModel) {
 }
 
 // GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueueResource) GetCustomFormats() []*CustomFormatResource {
+func (o *QueueResource) GetCustomFormats() []CustomFormatResource {
 	if o == nil {
-		var ret []*CustomFormatResource
+		var ret []CustomFormatResource
 		return ret
 	}
 	return o.CustomFormats
@@ -288,16 +291,16 @@ func (o *QueueResource) GetCustomFormats() []*CustomFormatResource {
 // GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QueueResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
-	if o == nil || isNil(o.CustomFormats) {
-    return nil, false
+func (o *QueueResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
+	if o == nil || IsNil(o.CustomFormats) {
+		return nil, false
 	}
 	return o.CustomFormats, true
 }
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *QueueResource) HasCustomFormats() bool {
-	if o != nil && isNil(o.CustomFormats) {
+	if o != nil && IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -305,13 +308,13 @@ func (o *QueueResource) HasCustomFormats() bool {
 }
 
 // SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
-func (o *QueueResource) SetCustomFormats(v []*CustomFormatResource) {
+func (o *QueueResource) SetCustomFormats(v []CustomFormatResource) {
 	o.CustomFormats = v
 }
 
 // GetCustomFormatScore returns the CustomFormatScore field value if set, zero value otherwise.
 func (o *QueueResource) GetCustomFormatScore() int32 {
-	if o == nil || isNil(o.CustomFormatScore) {
+	if o == nil || IsNil(o.CustomFormatScore) {
 		var ret int32
 		return ret
 	}
@@ -321,15 +324,15 @@ func (o *QueueResource) GetCustomFormatScore() int32 {
 // GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetCustomFormatScoreOk() (*int32, bool) {
-	if o == nil || isNil(o.CustomFormatScore) {
-    return nil, false
+	if o == nil || IsNil(o.CustomFormatScore) {
+		return nil, false
 	}
 	return o.CustomFormatScore, true
 }
 
 // HasCustomFormatScore returns a boolean if a field has been set.
 func (o *QueueResource) HasCustomFormatScore() bool {
-	if o != nil && !isNil(o.CustomFormatScore) {
+	if o != nil && !IsNil(o.CustomFormatScore) {
 		return true
 	}
 
@@ -343,7 +346,7 @@ func (o *QueueResource) SetCustomFormatScore(v int32) {
 
 // GetSize returns the Size field value if set, zero value otherwise.
 func (o *QueueResource) GetSize() float64 {
-	if o == nil || isNil(o.Size) {
+	if o == nil || IsNil(o.Size) {
 		var ret float64
 		return ret
 	}
@@ -353,15 +356,15 @@ func (o *QueueResource) GetSize() float64 {
 // GetSizeOk returns a tuple with the Size field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetSizeOk() (*float64, bool) {
-	if o == nil || isNil(o.Size) {
-    return nil, false
+	if o == nil || IsNil(o.Size) {
+		return nil, false
 	}
 	return o.Size, true
 }
 
 // HasSize returns a boolean if a field has been set.
 func (o *QueueResource) HasSize() bool {
-	if o != nil && !isNil(o.Size) {
+	if o != nil && !IsNil(o.Size) {
 		return true
 	}
 
@@ -375,7 +378,7 @@ func (o *QueueResource) SetSize(v float64) {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -387,7 +390,7 @@ func (o *QueueResource) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QueueResource) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -417,7 +420,7 @@ func (o *QueueResource) UnsetTitle() {
 
 // GetSizeleft returns the Sizeleft field value if set, zero value otherwise.
 func (o *QueueResource) GetSizeleft() float64 {
-	if o == nil || isNil(o.Sizeleft) {
+	if o == nil || IsNil(o.Sizeleft) {
 		var ret float64
 		return ret
 	}
@@ -427,15 +430,15 @@ func (o *QueueResource) GetSizeleft() float64 {
 // GetSizeleftOk returns a tuple with the Sizeleft field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetSizeleftOk() (*float64, bool) {
-	if o == nil || isNil(o.Sizeleft) {
-    return nil, false
+	if o == nil || IsNil(o.Sizeleft) {
+		return nil, false
 	}
 	return o.Sizeleft, true
 }
 
 // HasSizeleft returns a boolean if a field has been set.
 func (o *QueueResource) HasSizeleft() bool {
-	if o != nil && !isNil(o.Sizeleft) {
+	if o != nil && !IsNil(o.Sizeleft) {
 		return true
 	}
 
@@ -449,7 +452,7 @@ func (o *QueueResource) SetSizeleft(v float64) {
 
 // GetTimeleft returns the Timeleft field value if set, zero value otherwise.
 func (o *QueueResource) GetTimeleft() string {
-	if o == nil || isNil(o.Timeleft) {
+	if o == nil || IsNil(o.Timeleft) {
 		var ret string
 		return ret
 	}
@@ -459,15 +462,15 @@ func (o *QueueResource) GetTimeleft() string {
 // GetTimeleftOk returns a tuple with the Timeleft field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetTimeleftOk() (*string, bool) {
-	if o == nil || isNil(o.Timeleft) {
-    return nil, false
+	if o == nil || IsNil(o.Timeleft) {
+		return nil, false
 	}
 	return o.Timeleft, true
 }
 
 // HasTimeleft returns a boolean if a field has been set.
 func (o *QueueResource) HasTimeleft() bool {
-	if o != nil && !isNil(o.Timeleft) {
+	if o != nil && !IsNil(o.Timeleft) {
 		return true
 	}
 
@@ -481,7 +484,7 @@ func (o *QueueResource) SetTimeleft(v string) {
 
 // GetEstimatedCompletionTime returns the EstimatedCompletionTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetEstimatedCompletionTime() time.Time {
-	if o == nil || isNil(o.EstimatedCompletionTime.Get()) {
+	if o == nil || IsNil(o.EstimatedCompletionTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -493,7 +496,7 @@ func (o *QueueResource) GetEstimatedCompletionTime() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QueueResource) GetEstimatedCompletionTimeOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.EstimatedCompletionTime.Get(), o.EstimatedCompletionTime.IsSet()
 }
@@ -523,7 +526,7 @@ func (o *QueueResource) UnsetEstimatedCompletionTime() {
 
 // GetAdded returns the Added field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetAdded() time.Time {
-	if o == nil || isNil(o.Added.Get()) {
+	if o == nil || IsNil(o.Added.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -535,7 +538,7 @@ func (o *QueueResource) GetAdded() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QueueResource) GetAddedOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Added.Get(), o.Added.IsSet()
 }
@@ -565,7 +568,7 @@ func (o *QueueResource) UnsetAdded() {
 
 // GetStatus returns the Status field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetStatus() string {
-	if o == nil || isNil(o.Status.Get()) {
+	if o == nil || IsNil(o.Status.Get()) {
 		var ret string
 		return ret
 	}
@@ -577,7 +580,7 @@ func (o *QueueResource) GetStatus() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QueueResource) GetStatusOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Status.Get(), o.Status.IsSet()
 }
@@ -607,7 +610,7 @@ func (o *QueueResource) UnsetStatus() {
 
 // GetTrackedDownloadStatus returns the TrackedDownloadStatus field value if set, zero value otherwise.
 func (o *QueueResource) GetTrackedDownloadStatus() TrackedDownloadStatus {
-	if o == nil || isNil(o.TrackedDownloadStatus) {
+	if o == nil || IsNil(o.TrackedDownloadStatus) {
 		var ret TrackedDownloadStatus
 		return ret
 	}
@@ -617,15 +620,15 @@ func (o *QueueResource) GetTrackedDownloadStatus() TrackedDownloadStatus {
 // GetTrackedDownloadStatusOk returns a tuple with the TrackedDownloadStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetTrackedDownloadStatusOk() (*TrackedDownloadStatus, bool) {
-	if o == nil || isNil(o.TrackedDownloadStatus) {
-    return nil, false
+	if o == nil || IsNil(o.TrackedDownloadStatus) {
+		return nil, false
 	}
 	return o.TrackedDownloadStatus, true
 }
 
 // HasTrackedDownloadStatus returns a boolean if a field has been set.
 func (o *QueueResource) HasTrackedDownloadStatus() bool {
-	if o != nil && !isNil(o.TrackedDownloadStatus) {
+	if o != nil && !IsNil(o.TrackedDownloadStatus) {
 		return true
 	}
 
@@ -639,7 +642,7 @@ func (o *QueueResource) SetTrackedDownloadStatus(v TrackedDownloadStatus) {
 
 // GetTrackedDownloadState returns the TrackedDownloadState field value if set, zero value otherwise.
 func (o *QueueResource) GetTrackedDownloadState() TrackedDownloadState {
-	if o == nil || isNil(o.TrackedDownloadState) {
+	if o == nil || IsNil(o.TrackedDownloadState) {
 		var ret TrackedDownloadState
 		return ret
 	}
@@ -649,15 +652,15 @@ func (o *QueueResource) GetTrackedDownloadState() TrackedDownloadState {
 // GetTrackedDownloadStateOk returns a tuple with the TrackedDownloadState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetTrackedDownloadStateOk() (*TrackedDownloadState, bool) {
-	if o == nil || isNil(o.TrackedDownloadState) {
-    return nil, false
+	if o == nil || IsNil(o.TrackedDownloadState) {
+		return nil, false
 	}
 	return o.TrackedDownloadState, true
 }
 
 // HasTrackedDownloadState returns a boolean if a field has been set.
 func (o *QueueResource) HasTrackedDownloadState() bool {
-	if o != nil && !isNil(o.TrackedDownloadState) {
+	if o != nil && !IsNil(o.TrackedDownloadState) {
 		return true
 	}
 
@@ -670,9 +673,9 @@ func (o *QueueResource) SetTrackedDownloadState(v TrackedDownloadState) {
 }
 
 // GetStatusMessages returns the StatusMessages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QueueResource) GetStatusMessages() []*TrackedDownloadStatusMessage {
+func (o *QueueResource) GetStatusMessages() []TrackedDownloadStatusMessage {
 	if o == nil {
-		var ret []*TrackedDownloadStatusMessage
+		var ret []TrackedDownloadStatusMessage
 		return ret
 	}
 	return o.StatusMessages
@@ -681,16 +684,16 @@ func (o *QueueResource) GetStatusMessages() []*TrackedDownloadStatusMessage {
 // GetStatusMessagesOk returns a tuple with the StatusMessages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QueueResource) GetStatusMessagesOk() ([]*TrackedDownloadStatusMessage, bool) {
-	if o == nil || isNil(o.StatusMessages) {
-    return nil, false
+func (o *QueueResource) GetStatusMessagesOk() ([]TrackedDownloadStatusMessage, bool) {
+	if o == nil || IsNil(o.StatusMessages) {
+		return nil, false
 	}
 	return o.StatusMessages, true
 }
 
 // HasStatusMessages returns a boolean if a field has been set.
 func (o *QueueResource) HasStatusMessages() bool {
-	if o != nil && isNil(o.StatusMessages) {
+	if o != nil && IsNil(o.StatusMessages) {
 		return true
 	}
 
@@ -698,13 +701,13 @@ func (o *QueueResource) HasStatusMessages() bool {
 }
 
 // SetStatusMessages gets a reference to the given []TrackedDownloadStatusMessage and assigns it to the StatusMessages field.
-func (o *QueueResource) SetStatusMessages(v []*TrackedDownloadStatusMessage) {
+func (o *QueueResource) SetStatusMessages(v []TrackedDownloadStatusMessage) {
 	o.StatusMessages = v
 }
 
 // GetErrorMessage returns the ErrorMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetErrorMessage() string {
-	if o == nil || isNil(o.ErrorMessage.Get()) {
+	if o == nil || IsNil(o.ErrorMessage.Get()) {
 		var ret string
 		return ret
 	}
@@ -716,7 +719,7 @@ func (o *QueueResource) GetErrorMessage() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QueueResource) GetErrorMessageOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ErrorMessage.Get(), o.ErrorMessage.IsSet()
 }
@@ -746,7 +749,7 @@ func (o *QueueResource) UnsetErrorMessage() {
 
 // GetDownloadId returns the DownloadId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetDownloadId() string {
-	if o == nil || isNil(o.DownloadId.Get()) {
+	if o == nil || IsNil(o.DownloadId.Get()) {
 		var ret string
 		return ret
 	}
@@ -758,7 +761,7 @@ func (o *QueueResource) GetDownloadId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QueueResource) GetDownloadIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DownloadId.Get(), o.DownloadId.IsSet()
 }
@@ -788,7 +791,7 @@ func (o *QueueResource) UnsetDownloadId() {
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
 func (o *QueueResource) GetProtocol() DownloadProtocol {
-	if o == nil || isNil(o.Protocol) {
+	if o == nil || IsNil(o.Protocol) {
 		var ret DownloadProtocol
 		return ret
 	}
@@ -798,15 +801,15 @@ func (o *QueueResource) GetProtocol() DownloadProtocol {
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetProtocolOk() (*DownloadProtocol, bool) {
-	if o == nil || isNil(o.Protocol) {
-    return nil, false
+	if o == nil || IsNil(o.Protocol) {
+		return nil, false
 	}
 	return o.Protocol, true
 }
 
 // HasProtocol returns a boolean if a field has been set.
 func (o *QueueResource) HasProtocol() bool {
-	if o != nil && !isNil(o.Protocol) {
+	if o != nil && !IsNil(o.Protocol) {
 		return true
 	}
 
@@ -820,7 +823,7 @@ func (o *QueueResource) SetProtocol(v DownloadProtocol) {
 
 // GetDownloadClient returns the DownloadClient field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetDownloadClient() string {
-	if o == nil || isNil(o.DownloadClient.Get()) {
+	if o == nil || IsNil(o.DownloadClient.Get()) {
 		var ret string
 		return ret
 	}
@@ -832,7 +835,7 @@ func (o *QueueResource) GetDownloadClient() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QueueResource) GetDownloadClientOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DownloadClient.Get(), o.DownloadClient.IsSet()
 }
@@ -862,7 +865,7 @@ func (o *QueueResource) UnsetDownloadClient() {
 
 // GetDownloadClientHasPostImportCategory returns the DownloadClientHasPostImportCategory field value if set, zero value otherwise.
 func (o *QueueResource) GetDownloadClientHasPostImportCategory() bool {
-	if o == nil || isNil(o.DownloadClientHasPostImportCategory) {
+	if o == nil || IsNil(o.DownloadClientHasPostImportCategory) {
 		var ret bool
 		return ret
 	}
@@ -872,15 +875,15 @@ func (o *QueueResource) GetDownloadClientHasPostImportCategory() bool {
 // GetDownloadClientHasPostImportCategoryOk returns a tuple with the DownloadClientHasPostImportCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetDownloadClientHasPostImportCategoryOk() (*bool, bool) {
-	if o == nil || isNil(o.DownloadClientHasPostImportCategory) {
-    return nil, false
+	if o == nil || IsNil(o.DownloadClientHasPostImportCategory) {
+		return nil, false
 	}
 	return o.DownloadClientHasPostImportCategory, true
 }
 
 // HasDownloadClientHasPostImportCategory returns a boolean if a field has been set.
 func (o *QueueResource) HasDownloadClientHasPostImportCategory() bool {
-	if o != nil && !isNil(o.DownloadClientHasPostImportCategory) {
+	if o != nil && !IsNil(o.DownloadClientHasPostImportCategory) {
 		return true
 	}
 
@@ -894,7 +897,7 @@ func (o *QueueResource) SetDownloadClientHasPostImportCategory(v bool) {
 
 // GetIndexer returns the Indexer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetIndexer() string {
-	if o == nil || isNil(o.Indexer.Get()) {
+	if o == nil || IsNil(o.Indexer.Get()) {
 		var ret string
 		return ret
 	}
@@ -906,7 +909,7 @@ func (o *QueueResource) GetIndexer() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QueueResource) GetIndexerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Indexer.Get(), o.Indexer.IsSet()
 }
@@ -936,7 +939,7 @@ func (o *QueueResource) UnsetIndexer() {
 
 // GetOutputPath returns the OutputPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QueueResource) GetOutputPath() string {
-	if o == nil || isNil(o.OutputPath.Get()) {
+	if o == nil || IsNil(o.OutputPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -948,7 +951,7 @@ func (o *QueueResource) GetOutputPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *QueueResource) GetOutputPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.OutputPath.Get(), o.OutputPath.IsSet()
 }
@@ -978,7 +981,7 @@ func (o *QueueResource) UnsetOutputPath() {
 
 // GetTrackFileCount returns the TrackFileCount field value if set, zero value otherwise.
 func (o *QueueResource) GetTrackFileCount() int32 {
-	if o == nil || isNil(o.TrackFileCount) {
+	if o == nil || IsNil(o.TrackFileCount) {
 		var ret int32
 		return ret
 	}
@@ -988,15 +991,15 @@ func (o *QueueResource) GetTrackFileCount() int32 {
 // GetTrackFileCountOk returns a tuple with the TrackFileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetTrackFileCountOk() (*int32, bool) {
-	if o == nil || isNil(o.TrackFileCount) {
-    return nil, false
+	if o == nil || IsNil(o.TrackFileCount) {
+		return nil, false
 	}
 	return o.TrackFileCount, true
 }
 
 // HasTrackFileCount returns a boolean if a field has been set.
 func (o *QueueResource) HasTrackFileCount() bool {
-	if o != nil && !isNil(o.TrackFileCount) {
+	if o != nil && !IsNil(o.TrackFileCount) {
 		return true
 	}
 
@@ -1010,7 +1013,7 @@ func (o *QueueResource) SetTrackFileCount(v int32) {
 
 // GetTrackHasFileCount returns the TrackHasFileCount field value if set, zero value otherwise.
 func (o *QueueResource) GetTrackHasFileCount() int32 {
-	if o == nil || isNil(o.TrackHasFileCount) {
+	if o == nil || IsNil(o.TrackHasFileCount) {
 		var ret int32
 		return ret
 	}
@@ -1020,15 +1023,15 @@ func (o *QueueResource) GetTrackHasFileCount() int32 {
 // GetTrackHasFileCountOk returns a tuple with the TrackHasFileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetTrackHasFileCountOk() (*int32, bool) {
-	if o == nil || isNil(o.TrackHasFileCount) {
-    return nil, false
+	if o == nil || IsNil(o.TrackHasFileCount) {
+		return nil, false
 	}
 	return o.TrackHasFileCount, true
 }
 
 // HasTrackHasFileCount returns a boolean if a field has been set.
 func (o *QueueResource) HasTrackHasFileCount() bool {
-	if o != nil && !isNil(o.TrackHasFileCount) {
+	if o != nil && !IsNil(o.TrackHasFileCount) {
 		return true
 	}
 
@@ -1042,7 +1045,7 @@ func (o *QueueResource) SetTrackHasFileCount(v int32) {
 
 // GetDownloadForced returns the DownloadForced field value if set, zero value otherwise.
 func (o *QueueResource) GetDownloadForced() bool {
-	if o == nil || isNil(o.DownloadForced) {
+	if o == nil || IsNil(o.DownloadForced) {
 		var ret bool
 		return ret
 	}
@@ -1052,15 +1055,15 @@ func (o *QueueResource) GetDownloadForced() bool {
 // GetDownloadForcedOk returns a tuple with the DownloadForced field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QueueResource) GetDownloadForcedOk() (*bool, bool) {
-	if o == nil || isNil(o.DownloadForced) {
-    return nil, false
+	if o == nil || IsNil(o.DownloadForced) {
+		return nil, false
 	}
 	return o.DownloadForced, true
 }
 
 // HasDownloadForced returns a boolean if a field has been set.
 func (o *QueueResource) HasDownloadForced() bool {
-	if o != nil && !isNil(o.DownloadForced) {
+	if o != nil && !IsNil(o.DownloadForced) {
 		return true
 	}
 
@@ -1073,8 +1076,16 @@ func (o *QueueResource) SetDownloadForced(v bool) {
 }
 
 func (o QueueResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o QueueResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.ArtistId.IsSet() {
@@ -1083,31 +1094,31 @@ func (o QueueResource) MarshalJSON() ([]byte, error) {
 	if o.AlbumId.IsSet() {
 		toSerialize["albumId"] = o.AlbumId.Get()
 	}
-	if !isNil(o.Artist) {
+	if !IsNil(o.Artist) {
 		toSerialize["artist"] = o.Artist
 	}
-	if !isNil(o.Album) {
+	if !IsNil(o.Album) {
 		toSerialize["album"] = o.Album
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
 	if o.CustomFormats != nil {
 		toSerialize["customFormats"] = o.CustomFormats
 	}
-	if !isNil(o.CustomFormatScore) {
+	if !IsNil(o.CustomFormatScore) {
 		toSerialize["customFormatScore"] = o.CustomFormatScore
 	}
-	if !isNil(o.Size) {
+	if !IsNil(o.Size) {
 		toSerialize["size"] = o.Size
 	}
 	if o.Title.IsSet() {
 		toSerialize["title"] = o.Title.Get()
 	}
-	if !isNil(o.Sizeleft) {
+	if !IsNil(o.Sizeleft) {
 		toSerialize["sizeleft"] = o.Sizeleft
 	}
-	if !isNil(o.Timeleft) {
+	if !IsNil(o.Timeleft) {
 		toSerialize["timeleft"] = o.Timeleft
 	}
 	if o.EstimatedCompletionTime.IsSet() {
@@ -1119,10 +1130,10 @@ func (o QueueResource) MarshalJSON() ([]byte, error) {
 	if o.Status.IsSet() {
 		toSerialize["status"] = o.Status.Get()
 	}
-	if !isNil(o.TrackedDownloadStatus) {
+	if !IsNil(o.TrackedDownloadStatus) {
 		toSerialize["trackedDownloadStatus"] = o.TrackedDownloadStatus
 	}
-	if !isNil(o.TrackedDownloadState) {
+	if !IsNil(o.TrackedDownloadState) {
 		toSerialize["trackedDownloadState"] = o.TrackedDownloadState
 	}
 	if o.StatusMessages != nil {
@@ -1134,13 +1145,13 @@ func (o QueueResource) MarshalJSON() ([]byte, error) {
 	if o.DownloadId.IsSet() {
 		toSerialize["downloadId"] = o.DownloadId.Get()
 	}
-	if !isNil(o.Protocol) {
+	if !IsNil(o.Protocol) {
 		toSerialize["protocol"] = o.Protocol
 	}
 	if o.DownloadClient.IsSet() {
 		toSerialize["downloadClient"] = o.DownloadClient.Get()
 	}
-	if !isNil(o.DownloadClientHasPostImportCategory) {
+	if !IsNil(o.DownloadClientHasPostImportCategory) {
 		toSerialize["downloadClientHasPostImportCategory"] = o.DownloadClientHasPostImportCategory
 	}
 	if o.Indexer.IsSet() {
@@ -1149,16 +1160,16 @@ func (o QueueResource) MarshalJSON() ([]byte, error) {
 	if o.OutputPath.IsSet() {
 		toSerialize["outputPath"] = o.OutputPath.Get()
 	}
-	if !isNil(o.TrackFileCount) {
+	if !IsNil(o.TrackFileCount) {
 		toSerialize["trackFileCount"] = o.TrackFileCount
 	}
-	if !isNil(o.TrackHasFileCount) {
+	if !IsNil(o.TrackHasFileCount) {
 		toSerialize["trackHasFileCount"] = o.TrackHasFileCount
 	}
-	if !isNil(o.DownloadForced) {
+	if !IsNil(o.DownloadForced) {
 		toSerialize["downloadForced"] = o.DownloadForced
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableQueueResource struct {

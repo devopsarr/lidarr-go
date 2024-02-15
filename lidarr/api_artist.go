@@ -22,6 +22,7 @@ import (
 
 // ArtistAPIService ArtistAPI service
 type ArtistAPIService service
+
 type ApiCreateArtistRequest struct {
 	ctx context.Context
 	ApiService *ArtistAPIService
@@ -154,6 +155,7 @@ func (a *ArtistAPIService) CreateArtistExecute(r ApiCreateArtistRequest) (*Artis
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteArtistRequest struct {
 	ctx context.Context
 	ApiService *ArtistAPIService
@@ -205,17 +207,23 @@ func (a *ArtistAPIService) DeleteArtistExecute(r ApiDeleteArtistRequest) (*http.
 	}
 
 	localVarPath := localBasePath + "/api/v1/artist/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.deleteFiles != nil {
-		localVarQueryParams.Add("deleteFiles", parameterToString(*r.deleteFiles, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "")
+	} else {
+		var defaultValue bool = false
+		r.deleteFiles = &defaultValue
 	}
 	if r.addImportListExclusion != nil {
-		localVarQueryParams.Add("addImportListExclusion", parameterToString(*r.addImportListExclusion, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "")
+	} else {
+		var defaultValue bool = false
+		r.addImportListExclusion = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -289,6 +297,7 @@ func (a *ArtistAPIService) DeleteArtistExecute(r ApiDeleteArtistRequest) (*http.
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetArtistByIdRequest struct {
 	ctx context.Context
 	ApiService *ArtistAPIService
@@ -330,7 +339,7 @@ func (a *ArtistAPIService) GetArtistByIdExecute(r ApiGetArtistByIdRequest) (*Art
 	}
 
 	localVarPath := localBasePath + "/api/v1/artist/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -417,6 +426,7 @@ func (a *ArtistAPIService) GetArtistByIdExecute(r ApiGetArtistByIdRequest) (*Art
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListArtistRequest struct {
 	ctx context.Context
 	ApiService *ArtistAPIService
@@ -428,7 +438,7 @@ func (r ApiListArtistRequest) MbId(mbId string) ApiListArtistRequest {
 	return r
 }
 
-func (r ApiListArtistRequest) Execute() ([]*ArtistResource, *http.Response, error) {
+func (r ApiListArtistRequest) Execute() ([]ArtistResource, *http.Response, error) {
 	return r.ApiService.ListArtistExecute(r)
 }
 
@@ -447,12 +457,12 @@ func (a *ArtistAPIService) ListArtist(ctx context.Context) ApiListArtistRequest 
 
 // Execute executes the request
 //  @return []ArtistResource
-func (a *ArtistAPIService) ListArtistExecute(r ApiListArtistRequest) ([]*ArtistResource, *http.Response, error) {
+func (a *ArtistAPIService) ListArtistExecute(r ApiListArtistRequest) ([]ArtistResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ArtistResource
+		localVarReturnValue  []ArtistResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistAPIService.ListArtist")
@@ -467,7 +477,7 @@ func (a *ArtistAPIService) ListArtistExecute(r ApiListArtistRequest) ([]*ArtistR
 	localVarFormParams := url.Values{}
 
 	if r.mbId != nil {
-		localVarQueryParams.Add("mbId", parameterToString(*r.mbId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "mbId", r.mbId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -550,6 +560,7 @@ func (a *ArtistAPIService) ListArtistExecute(r ApiListArtistRequest) ([]*ArtistR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateArtistRequest struct {
 	ctx context.Context
 	ApiService *ArtistAPIService
@@ -603,14 +614,17 @@ func (a *ArtistAPIService) UpdateArtistExecute(r ApiUpdateArtistRequest) (*Artis
 	}
 
 	localVarPath := localBasePath + "/api/v1/artist/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.moveFiles != nil {
-		localVarQueryParams.Add("moveFiles", parameterToString(*r.moveFiles, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", r.moveFiles, "")
+	} else {
+		var defaultValue bool = false
+		r.moveFiles = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}

@@ -24,6 +24,7 @@ import (
 
 // HistoryAPIService HistoryAPI service
 type HistoryAPIService service
+
 type ApiCreateHistoryFailedByIdRequest struct {
 	ctx context.Context
 	ApiService *HistoryAPIService
@@ -63,7 +64,7 @@ func (a *HistoryAPIService) CreateHistoryFailedByIdExecute(r ApiCreateHistoryFai
 	}
 
 	localVarPath := localBasePath + "/api/v1/history/failed/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -141,6 +142,7 @@ func (a *HistoryAPIService) CreateHistoryFailedByIdExecute(r ApiCreateHistoryFai
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetHistoryRequest struct {
 	ctx context.Context
 	ApiService *HistoryAPIService
@@ -257,52 +259,58 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+	} else {
+		var defaultValue int32 = 1
+		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
-		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+	} else {
+		var defaultValue int32 = 10
+		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
-		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "")
 	}
 	if r.sortDirection != nil {
-		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "")
 	}
 	if r.includeArtist != nil {
-		localVarQueryParams.Add("includeArtist", parameterToString(*r.includeArtist, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "")
 	}
 	if r.includeAlbum != nil {
-		localVarQueryParams.Add("includeAlbum", parameterToString(*r.includeAlbum, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", r.includeAlbum, "")
 	}
 	if r.includeTrack != nil {
-		localVarQueryParams.Add("includeTrack", parameterToString(*r.includeTrack, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", r.includeTrack, "")
 	}
 	if r.eventType != nil {
 		t := *r.eventType
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("eventType", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("eventType", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", t, "multi")
 		}
 	}
 	if r.albumId != nil {
-		localVarQueryParams.Add("albumId", parameterToString(*r.albumId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "")
 	}
 	if r.downloadId != nil {
-		localVarQueryParams.Add("downloadId", parameterToString(*r.downloadId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "")
 	}
 	if r.artistIds != nil {
 		t := *r.artistIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("artistIds", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "artistIds", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("artistIds", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "artistIds", t, "multi")
 		}
 	}
 	if r.quality != nil {
@@ -310,10 +318,10 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("quality", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "quality", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("quality", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "quality", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -397,6 +405,7 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListHistoryArtistRequest struct {
 	ctx context.Context
 	ApiService *HistoryAPIService
@@ -438,7 +447,7 @@ func (r ApiListHistoryArtistRequest) IncludeTrack(includeTrack bool) ApiListHist
 	return r
 }
 
-func (r ApiListHistoryArtistRequest) Execute() ([]*HistoryResource, *http.Response, error) {
+func (r ApiListHistoryArtistRequest) Execute() ([]HistoryResource, *http.Response, error) {
 	return r.ApiService.ListHistoryArtistExecute(r)
 }
 
@@ -457,12 +466,12 @@ func (a *HistoryAPIService) ListHistoryArtist(ctx context.Context) ApiListHistor
 
 // Execute executes the request
 //  @return []HistoryResource
-func (a *HistoryAPIService) ListHistoryArtistExecute(r ApiListHistoryArtistRequest) ([]*HistoryResource, *http.Response, error) {
+func (a *HistoryAPIService) ListHistoryArtistExecute(r ApiListHistoryArtistRequest) ([]HistoryResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*HistoryResource
+		localVarReturnValue  []HistoryResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryAPIService.ListHistoryArtist")
@@ -477,22 +486,31 @@ func (a *HistoryAPIService) ListHistoryArtistExecute(r ApiListHistoryArtistReque
 	localVarFormParams := url.Values{}
 
 	if r.artistId != nil {
-		localVarQueryParams.Add("artistId", parameterToString(*r.artistId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
 	}
 	if r.albumId != nil {
-		localVarQueryParams.Add("albumId", parameterToString(*r.albumId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "")
 	}
 	if r.eventType != nil {
-		localVarQueryParams.Add("eventType", parameterToString(*r.eventType, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "")
 	}
 	if r.includeArtist != nil {
-		localVarQueryParams.Add("includeArtist", parameterToString(*r.includeArtist, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "")
+	} else {
+		var defaultValue bool = false
+		r.includeArtist = &defaultValue
 	}
 	if r.includeAlbum != nil {
-		localVarQueryParams.Add("includeAlbum", parameterToString(*r.includeAlbum, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", r.includeAlbum, "")
+	} else {
+		var defaultValue bool = false
+		r.includeAlbum = &defaultValue
 	}
 	if r.includeTrack != nil {
-		localVarQueryParams.Add("includeTrack", parameterToString(*r.includeTrack, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", r.includeTrack, "")
+	} else {
+		var defaultValue bool = false
+		r.includeTrack = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -575,6 +593,7 @@ func (a *HistoryAPIService) ListHistoryArtistExecute(r ApiListHistoryArtistReque
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListHistorySinceRequest struct {
 	ctx context.Context
 	ApiService *HistoryAPIService
@@ -610,7 +629,7 @@ func (r ApiListHistorySinceRequest) IncludeTrack(includeTrack bool) ApiListHisto
 	return r
 }
 
-func (r ApiListHistorySinceRequest) Execute() ([]*HistoryResource, *http.Response, error) {
+func (r ApiListHistorySinceRequest) Execute() ([]HistoryResource, *http.Response, error) {
 	return r.ApiService.ListHistorySinceExecute(r)
 }
 
@@ -629,12 +648,12 @@ func (a *HistoryAPIService) ListHistorySince(ctx context.Context) ApiListHistory
 
 // Execute executes the request
 //  @return []HistoryResource
-func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest) ([]*HistoryResource, *http.Response, error) {
+func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest) ([]HistoryResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*HistoryResource
+		localVarReturnValue  []HistoryResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoryAPIService.ListHistorySince")
@@ -649,19 +668,28 @@ func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest
 	localVarFormParams := url.Values{}
 
 	if r.date != nil {
-		localVarQueryParams.Add("date", parameterToString(*r.date, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "")
 	}
 	if r.eventType != nil {
-		localVarQueryParams.Add("eventType", parameterToString(*r.eventType, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "")
 	}
 	if r.includeArtist != nil {
-		localVarQueryParams.Add("includeArtist", parameterToString(*r.includeArtist, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "")
+	} else {
+		var defaultValue bool = false
+		r.includeArtist = &defaultValue
 	}
 	if r.includeAlbum != nil {
-		localVarQueryParams.Add("includeAlbum", parameterToString(*r.includeAlbum, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", r.includeAlbum, "")
+	} else {
+		var defaultValue bool = false
+		r.includeAlbum = &defaultValue
 	}
 	if r.includeTrack != nil {
-		localVarQueryParams.Add("includeTrack", parameterToString(*r.includeTrack, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", r.includeTrack, "")
+	} else {
+		var defaultValue bool = false
+		r.includeTrack = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

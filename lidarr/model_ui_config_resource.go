@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the UiConfigResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UiConfigResource{}
+
 // UiConfigResource struct for UiConfigResource
 type UiConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -52,7 +55,7 @@ func NewUiConfigResourceWithDefaults() *UiConfigResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *UiConfigResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -62,15 +65,15 @@ func (o *UiConfigResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *UiConfigResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -84,7 +87,7 @@ func (o *UiConfigResource) SetId(v int32) {
 
 // GetFirstDayOfWeek returns the FirstDayOfWeek field value if set, zero value otherwise.
 func (o *UiConfigResource) GetFirstDayOfWeek() int32 {
-	if o == nil || isNil(o.FirstDayOfWeek) {
+	if o == nil || IsNil(o.FirstDayOfWeek) {
 		var ret int32
 		return ret
 	}
@@ -94,15 +97,15 @@ func (o *UiConfigResource) GetFirstDayOfWeek() int32 {
 // GetFirstDayOfWeekOk returns a tuple with the FirstDayOfWeek field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetFirstDayOfWeekOk() (*int32, bool) {
-	if o == nil || isNil(o.FirstDayOfWeek) {
-    return nil, false
+	if o == nil || IsNil(o.FirstDayOfWeek) {
+		return nil, false
 	}
 	return o.FirstDayOfWeek, true
 }
 
 // HasFirstDayOfWeek returns a boolean if a field has been set.
 func (o *UiConfigResource) HasFirstDayOfWeek() bool {
-	if o != nil && !isNil(o.FirstDayOfWeek) {
+	if o != nil && !IsNil(o.FirstDayOfWeek) {
 		return true
 	}
 
@@ -116,7 +119,7 @@ func (o *UiConfigResource) SetFirstDayOfWeek(v int32) {
 
 // GetCalendarWeekColumnHeader returns the CalendarWeekColumnHeader field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UiConfigResource) GetCalendarWeekColumnHeader() string {
-	if o == nil || isNil(o.CalendarWeekColumnHeader.Get()) {
+	if o == nil || IsNil(o.CalendarWeekColumnHeader.Get()) {
 		var ret string
 		return ret
 	}
@@ -128,7 +131,7 @@ func (o *UiConfigResource) GetCalendarWeekColumnHeader() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UiConfigResource) GetCalendarWeekColumnHeaderOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.CalendarWeekColumnHeader.Get(), o.CalendarWeekColumnHeader.IsSet()
 }
@@ -158,7 +161,7 @@ func (o *UiConfigResource) UnsetCalendarWeekColumnHeader() {
 
 // GetShortDateFormat returns the ShortDateFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UiConfigResource) GetShortDateFormat() string {
-	if o == nil || isNil(o.ShortDateFormat.Get()) {
+	if o == nil || IsNil(o.ShortDateFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -170,7 +173,7 @@ func (o *UiConfigResource) GetShortDateFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UiConfigResource) GetShortDateFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ShortDateFormat.Get(), o.ShortDateFormat.IsSet()
 }
@@ -200,7 +203,7 @@ func (o *UiConfigResource) UnsetShortDateFormat() {
 
 // GetLongDateFormat returns the LongDateFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UiConfigResource) GetLongDateFormat() string {
-	if o == nil || isNil(o.LongDateFormat.Get()) {
+	if o == nil || IsNil(o.LongDateFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -212,7 +215,7 @@ func (o *UiConfigResource) GetLongDateFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UiConfigResource) GetLongDateFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.LongDateFormat.Get(), o.LongDateFormat.IsSet()
 }
@@ -242,7 +245,7 @@ func (o *UiConfigResource) UnsetLongDateFormat() {
 
 // GetTimeFormat returns the TimeFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UiConfigResource) GetTimeFormat() string {
-	if o == nil || isNil(o.TimeFormat.Get()) {
+	if o == nil || IsNil(o.TimeFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -254,7 +257,7 @@ func (o *UiConfigResource) GetTimeFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UiConfigResource) GetTimeFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TimeFormat.Get(), o.TimeFormat.IsSet()
 }
@@ -284,7 +287,7 @@ func (o *UiConfigResource) UnsetTimeFormat() {
 
 // GetShowRelativeDates returns the ShowRelativeDates field value if set, zero value otherwise.
 func (o *UiConfigResource) GetShowRelativeDates() bool {
-	if o == nil || isNil(o.ShowRelativeDates) {
+	if o == nil || IsNil(o.ShowRelativeDates) {
 		var ret bool
 		return ret
 	}
@@ -294,15 +297,15 @@ func (o *UiConfigResource) GetShowRelativeDates() bool {
 // GetShowRelativeDatesOk returns a tuple with the ShowRelativeDates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetShowRelativeDatesOk() (*bool, bool) {
-	if o == nil || isNil(o.ShowRelativeDates) {
-    return nil, false
+	if o == nil || IsNil(o.ShowRelativeDates) {
+		return nil, false
 	}
 	return o.ShowRelativeDates, true
 }
 
 // HasShowRelativeDates returns a boolean if a field has been set.
 func (o *UiConfigResource) HasShowRelativeDates() bool {
-	if o != nil && !isNil(o.ShowRelativeDates) {
+	if o != nil && !IsNil(o.ShowRelativeDates) {
 		return true
 	}
 
@@ -316,7 +319,7 @@ func (o *UiConfigResource) SetShowRelativeDates(v bool) {
 
 // GetEnableColorImpairedMode returns the EnableColorImpairedMode field value if set, zero value otherwise.
 func (o *UiConfigResource) GetEnableColorImpairedMode() bool {
-	if o == nil || isNil(o.EnableColorImpairedMode) {
+	if o == nil || IsNil(o.EnableColorImpairedMode) {
 		var ret bool
 		return ret
 	}
@@ -326,15 +329,15 @@ func (o *UiConfigResource) GetEnableColorImpairedMode() bool {
 // GetEnableColorImpairedModeOk returns a tuple with the EnableColorImpairedMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetEnableColorImpairedModeOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableColorImpairedMode) {
-    return nil, false
+	if o == nil || IsNil(o.EnableColorImpairedMode) {
+		return nil, false
 	}
 	return o.EnableColorImpairedMode, true
 }
 
 // HasEnableColorImpairedMode returns a boolean if a field has been set.
 func (o *UiConfigResource) HasEnableColorImpairedMode() bool {
-	if o != nil && !isNil(o.EnableColorImpairedMode) {
+	if o != nil && !IsNil(o.EnableColorImpairedMode) {
 		return true
 	}
 
@@ -348,7 +351,7 @@ func (o *UiConfigResource) SetEnableColorImpairedMode(v bool) {
 
 // GetUiLanguage returns the UiLanguage field value if set, zero value otherwise.
 func (o *UiConfigResource) GetUiLanguage() int32 {
-	if o == nil || isNil(o.UiLanguage) {
+	if o == nil || IsNil(o.UiLanguage) {
 		var ret int32
 		return ret
 	}
@@ -358,15 +361,15 @@ func (o *UiConfigResource) GetUiLanguage() int32 {
 // GetUiLanguageOk returns a tuple with the UiLanguage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetUiLanguageOk() (*int32, bool) {
-	if o == nil || isNil(o.UiLanguage) {
-    return nil, false
+	if o == nil || IsNil(o.UiLanguage) {
+		return nil, false
 	}
 	return o.UiLanguage, true
 }
 
 // HasUiLanguage returns a boolean if a field has been set.
 func (o *UiConfigResource) HasUiLanguage() bool {
-	if o != nil && !isNil(o.UiLanguage) {
+	if o != nil && !IsNil(o.UiLanguage) {
 		return true
 	}
 
@@ -380,7 +383,7 @@ func (o *UiConfigResource) SetUiLanguage(v int32) {
 
 // GetExpandAlbumByDefault returns the ExpandAlbumByDefault field value if set, zero value otherwise.
 func (o *UiConfigResource) GetExpandAlbumByDefault() bool {
-	if o == nil || isNil(o.ExpandAlbumByDefault) {
+	if o == nil || IsNil(o.ExpandAlbumByDefault) {
 		var ret bool
 		return ret
 	}
@@ -390,15 +393,15 @@ func (o *UiConfigResource) GetExpandAlbumByDefault() bool {
 // GetExpandAlbumByDefaultOk returns a tuple with the ExpandAlbumByDefault field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetExpandAlbumByDefaultOk() (*bool, bool) {
-	if o == nil || isNil(o.ExpandAlbumByDefault) {
-    return nil, false
+	if o == nil || IsNil(o.ExpandAlbumByDefault) {
+		return nil, false
 	}
 	return o.ExpandAlbumByDefault, true
 }
 
 // HasExpandAlbumByDefault returns a boolean if a field has been set.
 func (o *UiConfigResource) HasExpandAlbumByDefault() bool {
-	if o != nil && !isNil(o.ExpandAlbumByDefault) {
+	if o != nil && !IsNil(o.ExpandAlbumByDefault) {
 		return true
 	}
 
@@ -412,7 +415,7 @@ func (o *UiConfigResource) SetExpandAlbumByDefault(v bool) {
 
 // GetExpandSingleByDefault returns the ExpandSingleByDefault field value if set, zero value otherwise.
 func (o *UiConfigResource) GetExpandSingleByDefault() bool {
-	if o == nil || isNil(o.ExpandSingleByDefault) {
+	if o == nil || IsNil(o.ExpandSingleByDefault) {
 		var ret bool
 		return ret
 	}
@@ -422,15 +425,15 @@ func (o *UiConfigResource) GetExpandSingleByDefault() bool {
 // GetExpandSingleByDefaultOk returns a tuple with the ExpandSingleByDefault field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetExpandSingleByDefaultOk() (*bool, bool) {
-	if o == nil || isNil(o.ExpandSingleByDefault) {
-    return nil, false
+	if o == nil || IsNil(o.ExpandSingleByDefault) {
+		return nil, false
 	}
 	return o.ExpandSingleByDefault, true
 }
 
 // HasExpandSingleByDefault returns a boolean if a field has been set.
 func (o *UiConfigResource) HasExpandSingleByDefault() bool {
-	if o != nil && !isNil(o.ExpandSingleByDefault) {
+	if o != nil && !IsNil(o.ExpandSingleByDefault) {
 		return true
 	}
 
@@ -444,7 +447,7 @@ func (o *UiConfigResource) SetExpandSingleByDefault(v bool) {
 
 // GetExpandEPByDefault returns the ExpandEPByDefault field value if set, zero value otherwise.
 func (o *UiConfigResource) GetExpandEPByDefault() bool {
-	if o == nil || isNil(o.ExpandEPByDefault) {
+	if o == nil || IsNil(o.ExpandEPByDefault) {
 		var ret bool
 		return ret
 	}
@@ -454,15 +457,15 @@ func (o *UiConfigResource) GetExpandEPByDefault() bool {
 // GetExpandEPByDefaultOk returns a tuple with the ExpandEPByDefault field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetExpandEPByDefaultOk() (*bool, bool) {
-	if o == nil || isNil(o.ExpandEPByDefault) {
-    return nil, false
+	if o == nil || IsNil(o.ExpandEPByDefault) {
+		return nil, false
 	}
 	return o.ExpandEPByDefault, true
 }
 
 // HasExpandEPByDefault returns a boolean if a field has been set.
 func (o *UiConfigResource) HasExpandEPByDefault() bool {
-	if o != nil && !isNil(o.ExpandEPByDefault) {
+	if o != nil && !IsNil(o.ExpandEPByDefault) {
 		return true
 	}
 
@@ -476,7 +479,7 @@ func (o *UiConfigResource) SetExpandEPByDefault(v bool) {
 
 // GetExpandBroadcastByDefault returns the ExpandBroadcastByDefault field value if set, zero value otherwise.
 func (o *UiConfigResource) GetExpandBroadcastByDefault() bool {
-	if o == nil || isNil(o.ExpandBroadcastByDefault) {
+	if o == nil || IsNil(o.ExpandBroadcastByDefault) {
 		var ret bool
 		return ret
 	}
@@ -486,15 +489,15 @@ func (o *UiConfigResource) GetExpandBroadcastByDefault() bool {
 // GetExpandBroadcastByDefaultOk returns a tuple with the ExpandBroadcastByDefault field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetExpandBroadcastByDefaultOk() (*bool, bool) {
-	if o == nil || isNil(o.ExpandBroadcastByDefault) {
-    return nil, false
+	if o == nil || IsNil(o.ExpandBroadcastByDefault) {
+		return nil, false
 	}
 	return o.ExpandBroadcastByDefault, true
 }
 
 // HasExpandBroadcastByDefault returns a boolean if a field has been set.
 func (o *UiConfigResource) HasExpandBroadcastByDefault() bool {
-	if o != nil && !isNil(o.ExpandBroadcastByDefault) {
+	if o != nil && !IsNil(o.ExpandBroadcastByDefault) {
 		return true
 	}
 
@@ -508,7 +511,7 @@ func (o *UiConfigResource) SetExpandBroadcastByDefault(v bool) {
 
 // GetExpandOtherByDefault returns the ExpandOtherByDefault field value if set, zero value otherwise.
 func (o *UiConfigResource) GetExpandOtherByDefault() bool {
-	if o == nil || isNil(o.ExpandOtherByDefault) {
+	if o == nil || IsNil(o.ExpandOtherByDefault) {
 		var ret bool
 		return ret
 	}
@@ -518,15 +521,15 @@ func (o *UiConfigResource) GetExpandOtherByDefault() bool {
 // GetExpandOtherByDefaultOk returns a tuple with the ExpandOtherByDefault field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetExpandOtherByDefaultOk() (*bool, bool) {
-	if o == nil || isNil(o.ExpandOtherByDefault) {
-    return nil, false
+	if o == nil || IsNil(o.ExpandOtherByDefault) {
+		return nil, false
 	}
 	return o.ExpandOtherByDefault, true
 }
 
 // HasExpandOtherByDefault returns a boolean if a field has been set.
 func (o *UiConfigResource) HasExpandOtherByDefault() bool {
-	if o != nil && !isNil(o.ExpandOtherByDefault) {
+	if o != nil && !IsNil(o.ExpandOtherByDefault) {
 		return true
 	}
 
@@ -540,7 +543,7 @@ func (o *UiConfigResource) SetExpandOtherByDefault(v bool) {
 
 // GetTheme returns the Theme field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UiConfigResource) GetTheme() string {
-	if o == nil || isNil(o.Theme.Get()) {
+	if o == nil || IsNil(o.Theme.Get()) {
 		var ret string
 		return ret
 	}
@@ -552,7 +555,7 @@ func (o *UiConfigResource) GetTheme() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UiConfigResource) GetThemeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Theme.Get(), o.Theme.IsSet()
 }
@@ -581,11 +584,19 @@ func (o *UiConfigResource) UnsetTheme() {
 }
 
 func (o UiConfigResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o UiConfigResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.FirstDayOfWeek) {
+	if !IsNil(o.FirstDayOfWeek) {
 		toSerialize["firstDayOfWeek"] = o.FirstDayOfWeek
 	}
 	if o.CalendarWeekColumnHeader.IsSet() {
@@ -600,34 +611,34 @@ func (o UiConfigResource) MarshalJSON() ([]byte, error) {
 	if o.TimeFormat.IsSet() {
 		toSerialize["timeFormat"] = o.TimeFormat.Get()
 	}
-	if !isNil(o.ShowRelativeDates) {
+	if !IsNil(o.ShowRelativeDates) {
 		toSerialize["showRelativeDates"] = o.ShowRelativeDates
 	}
-	if !isNil(o.EnableColorImpairedMode) {
+	if !IsNil(o.EnableColorImpairedMode) {
 		toSerialize["enableColorImpairedMode"] = o.EnableColorImpairedMode
 	}
-	if !isNil(o.UiLanguage) {
+	if !IsNil(o.UiLanguage) {
 		toSerialize["uiLanguage"] = o.UiLanguage
 	}
-	if !isNil(o.ExpandAlbumByDefault) {
+	if !IsNil(o.ExpandAlbumByDefault) {
 		toSerialize["expandAlbumByDefault"] = o.ExpandAlbumByDefault
 	}
-	if !isNil(o.ExpandSingleByDefault) {
+	if !IsNil(o.ExpandSingleByDefault) {
 		toSerialize["expandSingleByDefault"] = o.ExpandSingleByDefault
 	}
-	if !isNil(o.ExpandEPByDefault) {
+	if !IsNil(o.ExpandEPByDefault) {
 		toSerialize["expandEPByDefault"] = o.ExpandEPByDefault
 	}
-	if !isNil(o.ExpandBroadcastByDefault) {
+	if !IsNil(o.ExpandBroadcastByDefault) {
 		toSerialize["expandBroadcastByDefault"] = o.ExpandBroadcastByDefault
 	}
-	if !isNil(o.ExpandOtherByDefault) {
+	if !IsNil(o.ExpandOtherByDefault) {
 		toSerialize["expandOtherByDefault"] = o.ExpandOtherByDefault
 	}
 	if o.Theme.IsSet() {
 		toSerialize["theme"] = o.Theme.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableUiConfigResource struct {

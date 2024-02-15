@@ -21,6 +21,7 @@ import (
 
 // AlbumStudioAPIService AlbumStudioAPI service
 type AlbumStudioAPIService service
+
 type ApiCreateAlbumStudioRequest struct {
 	ctx context.Context
 	ApiService *AlbumStudioAPIService

@@ -14,9 +14,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the AlbumsMonitoredResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AlbumsMonitoredResource{}
+
 // AlbumsMonitoredResource struct for AlbumsMonitoredResource
 type AlbumsMonitoredResource struct {
-	AlbumIds []*int32 `json:"albumIds,omitempty"`
+	AlbumIds []int32 `json:"albumIds,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
 }
 
@@ -38,9 +41,9 @@ func NewAlbumsMonitoredResourceWithDefaults() *AlbumsMonitoredResource {
 }
 
 // GetAlbumIds returns the AlbumIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AlbumsMonitoredResource) GetAlbumIds() []*int32 {
+func (o *AlbumsMonitoredResource) GetAlbumIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.AlbumIds
@@ -49,16 +52,16 @@ func (o *AlbumsMonitoredResource) GetAlbumIds() []*int32 {
 // GetAlbumIdsOk returns a tuple with the AlbumIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AlbumsMonitoredResource) GetAlbumIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.AlbumIds) {
-    return nil, false
+func (o *AlbumsMonitoredResource) GetAlbumIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.AlbumIds) {
+		return nil, false
 	}
 	return o.AlbumIds, true
 }
 
 // HasAlbumIds returns a boolean if a field has been set.
 func (o *AlbumsMonitoredResource) HasAlbumIds() bool {
-	if o != nil && isNil(o.AlbumIds) {
+	if o != nil && IsNil(o.AlbumIds) {
 		return true
 	}
 
@@ -66,13 +69,13 @@ func (o *AlbumsMonitoredResource) HasAlbumIds() bool {
 }
 
 // SetAlbumIds gets a reference to the given []int32 and assigns it to the AlbumIds field.
-func (o *AlbumsMonitoredResource) SetAlbumIds(v []*int32) {
+func (o *AlbumsMonitoredResource) SetAlbumIds(v []int32) {
 	o.AlbumIds = v
 }
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise.
 func (o *AlbumsMonitoredResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored) {
+	if o == nil || IsNil(o.Monitored) {
 		var ret bool
 		return ret
 	}
@@ -82,15 +85,15 @@ func (o *AlbumsMonitoredResource) GetMonitored() bool {
 // GetMonitoredOk returns a tuple with the Monitored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlbumsMonitoredResource) GetMonitoredOk() (*bool, bool) {
-	if o == nil || isNil(o.Monitored) {
-    return nil, false
+	if o == nil || IsNil(o.Monitored) {
+		return nil, false
 	}
 	return o.Monitored, true
 }
 
 // HasMonitored returns a boolean if a field has been set.
 func (o *AlbumsMonitoredResource) HasMonitored() bool {
-	if o != nil && !isNil(o.Monitored) {
+	if o != nil && !IsNil(o.Monitored) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *AlbumsMonitoredResource) SetMonitored(v bool) {
 }
 
 func (o AlbumsMonitoredResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AlbumsMonitoredResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AlbumIds != nil {
 		toSerialize["albumIds"] = o.AlbumIds
 	}
-	if !isNil(o.Monitored) {
+	if !IsNil(o.Monitored) {
 		toSerialize["monitored"] = o.Monitored
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAlbumsMonitoredResource struct {

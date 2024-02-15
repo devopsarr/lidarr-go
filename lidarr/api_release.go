@@ -21,6 +21,7 @@ import (
 
 // ReleaseAPIService ReleaseAPI service
 type ReleaseAPIService service
+
 type ApiCreateReleaseRequest struct {
 	ctx context.Context
 	ApiService *ReleaseAPIService
@@ -153,6 +154,7 @@ func (a *ReleaseAPIService) CreateReleaseExecute(r ApiCreateReleaseRequest) (*Re
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListReleaseRequest struct {
 	ctx context.Context
 	ApiService *ReleaseAPIService
@@ -170,7 +172,7 @@ func (r ApiListReleaseRequest) ArtistId(artistId int32) ApiListReleaseRequest {
 	return r
 }
 
-func (r ApiListReleaseRequest) Execute() ([]*ReleaseResource, *http.Response, error) {
+func (r ApiListReleaseRequest) Execute() ([]ReleaseResource, *http.Response, error) {
 	return r.ApiService.ListReleaseExecute(r)
 }
 
@@ -189,12 +191,12 @@ func (a *ReleaseAPIService) ListRelease(ctx context.Context) ApiListReleaseReque
 
 // Execute executes the request
 //  @return []ReleaseResource
-func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]*ReleaseResource, *http.Response, error) {
+func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ReleaseResource
+		localVarReturnValue  []ReleaseResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseAPIService.ListRelease")
@@ -209,10 +211,10 @@ func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]*Rele
 	localVarFormParams := url.Values{}
 
 	if r.albumId != nil {
-		localVarQueryParams.Add("albumId", parameterToString(*r.albumId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "")
 	}
 	if r.artistId != nil {
-		localVarQueryParams.Add("artistId", parameterToString(*r.artistId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

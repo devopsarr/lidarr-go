@@ -21,6 +21,7 @@ import (
 
 // ArtistLookupAPIService ArtistLookupAPI service
 type ArtistLookupAPIService service
+
 type ApiGetArtistLookupRequest struct {
 	ctx context.Context
 	ApiService *ArtistLookupAPIService
@@ -69,7 +70,7 @@ func (a *ArtistLookupAPIService) GetArtistLookupExecute(r ApiGetArtistLookupRequ
 	localVarFormParams := url.Values{}
 
 	if r.term != nil {
-		localVarQueryParams.Add("term", parameterToString(*r.term, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "term", r.term, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

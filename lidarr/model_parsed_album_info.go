@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParsedAlbumInfo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParsedAlbumInfo{}
+
 // ParsedAlbumInfo struct for ParsedAlbumInfo
 type ParsedAlbumInfo struct {
 	AlbumTitle NullableString `json:"albumTitle,omitempty"`
@@ -50,7 +53,7 @@ func NewParsedAlbumInfoWithDefaults() *ParsedAlbumInfo {
 
 // GetAlbumTitle returns the AlbumTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedAlbumInfo) GetAlbumTitle() string {
-	if o == nil || isNil(o.AlbumTitle.Get()) {
+	if o == nil || IsNil(o.AlbumTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -62,7 +65,7 @@ func (o *ParsedAlbumInfo) GetAlbumTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedAlbumInfo) GetAlbumTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AlbumTitle.Get(), o.AlbumTitle.IsSet()
 }
@@ -92,7 +95,7 @@ func (o *ParsedAlbumInfo) UnsetAlbumTitle() {
 
 // GetArtistName returns the ArtistName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedAlbumInfo) GetArtistName() string {
-	if o == nil || isNil(o.ArtistName.Get()) {
+	if o == nil || IsNil(o.ArtistName.Get()) {
 		var ret string
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *ParsedAlbumInfo) GetArtistName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedAlbumInfo) GetArtistNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ArtistName.Get(), o.ArtistName.IsSet()
 }
@@ -134,7 +137,7 @@ func (o *ParsedAlbumInfo) UnsetArtistName() {
 
 // GetAlbumType returns the AlbumType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedAlbumInfo) GetAlbumType() string {
-	if o == nil || isNil(o.AlbumType.Get()) {
+	if o == nil || IsNil(o.AlbumType.Get()) {
 		var ret string
 		return ret
 	}
@@ -146,7 +149,7 @@ func (o *ParsedAlbumInfo) GetAlbumType() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedAlbumInfo) GetAlbumTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AlbumType.Get(), o.AlbumType.IsSet()
 }
@@ -176,7 +179,7 @@ func (o *ParsedAlbumInfo) UnsetAlbumType() {
 
 // GetArtistTitleInfo returns the ArtistTitleInfo field value if set, zero value otherwise.
 func (o *ParsedAlbumInfo) GetArtistTitleInfo() ArtistTitleInfo {
-	if o == nil || isNil(o.ArtistTitleInfo) {
+	if o == nil || IsNil(o.ArtistTitleInfo) {
 		var ret ArtistTitleInfo
 		return ret
 	}
@@ -186,15 +189,15 @@ func (o *ParsedAlbumInfo) GetArtistTitleInfo() ArtistTitleInfo {
 // GetArtistTitleInfoOk returns a tuple with the ArtistTitleInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedAlbumInfo) GetArtistTitleInfoOk() (*ArtistTitleInfo, bool) {
-	if o == nil || isNil(o.ArtistTitleInfo) {
-    return nil, false
+	if o == nil || IsNil(o.ArtistTitleInfo) {
+		return nil, false
 	}
 	return o.ArtistTitleInfo, true
 }
 
 // HasArtistTitleInfo returns a boolean if a field has been set.
 func (o *ParsedAlbumInfo) HasArtistTitleInfo() bool {
-	if o != nil && !isNil(o.ArtistTitleInfo) {
+	if o != nil && !IsNil(o.ArtistTitleInfo) {
 		return true
 	}
 
@@ -208,7 +211,7 @@ func (o *ParsedAlbumInfo) SetArtistTitleInfo(v ArtistTitleInfo) {
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *ParsedAlbumInfo) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -218,15 +221,15 @@ func (o *ParsedAlbumInfo) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedAlbumInfo) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *ParsedAlbumInfo) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -240,7 +243,7 @@ func (o *ParsedAlbumInfo) SetQuality(v QualityModel) {
 
 // GetReleaseDate returns the ReleaseDate field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedAlbumInfo) GetReleaseDate() string {
-	if o == nil || isNil(o.ReleaseDate.Get()) {
+	if o == nil || IsNil(o.ReleaseDate.Get()) {
 		var ret string
 		return ret
 	}
@@ -252,7 +255,7 @@ func (o *ParsedAlbumInfo) GetReleaseDate() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedAlbumInfo) GetReleaseDateOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseDate.Get(), o.ReleaseDate.IsSet()
 }
@@ -282,7 +285,7 @@ func (o *ParsedAlbumInfo) UnsetReleaseDate() {
 
 // GetDiscography returns the Discography field value if set, zero value otherwise.
 func (o *ParsedAlbumInfo) GetDiscography() bool {
-	if o == nil || isNil(o.Discography) {
+	if o == nil || IsNil(o.Discography) {
 		var ret bool
 		return ret
 	}
@@ -292,15 +295,15 @@ func (o *ParsedAlbumInfo) GetDiscography() bool {
 // GetDiscographyOk returns a tuple with the Discography field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedAlbumInfo) GetDiscographyOk() (*bool, bool) {
-	if o == nil || isNil(o.Discography) {
-    return nil, false
+	if o == nil || IsNil(o.Discography) {
+		return nil, false
 	}
 	return o.Discography, true
 }
 
 // HasDiscography returns a boolean if a field has been set.
 func (o *ParsedAlbumInfo) HasDiscography() bool {
-	if o != nil && !isNil(o.Discography) {
+	if o != nil && !IsNil(o.Discography) {
 		return true
 	}
 
@@ -314,7 +317,7 @@ func (o *ParsedAlbumInfo) SetDiscography(v bool) {
 
 // GetDiscographyStart returns the DiscographyStart field value if set, zero value otherwise.
 func (o *ParsedAlbumInfo) GetDiscographyStart() int32 {
-	if o == nil || isNil(o.DiscographyStart) {
+	if o == nil || IsNil(o.DiscographyStart) {
 		var ret int32
 		return ret
 	}
@@ -324,15 +327,15 @@ func (o *ParsedAlbumInfo) GetDiscographyStart() int32 {
 // GetDiscographyStartOk returns a tuple with the DiscographyStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedAlbumInfo) GetDiscographyStartOk() (*int32, bool) {
-	if o == nil || isNil(o.DiscographyStart) {
-    return nil, false
+	if o == nil || IsNil(o.DiscographyStart) {
+		return nil, false
 	}
 	return o.DiscographyStart, true
 }
 
 // HasDiscographyStart returns a boolean if a field has been set.
 func (o *ParsedAlbumInfo) HasDiscographyStart() bool {
-	if o != nil && !isNil(o.DiscographyStart) {
+	if o != nil && !IsNil(o.DiscographyStart) {
 		return true
 	}
 
@@ -346,7 +349,7 @@ func (o *ParsedAlbumInfo) SetDiscographyStart(v int32) {
 
 // GetDiscographyEnd returns the DiscographyEnd field value if set, zero value otherwise.
 func (o *ParsedAlbumInfo) GetDiscographyEnd() int32 {
-	if o == nil || isNil(o.DiscographyEnd) {
+	if o == nil || IsNil(o.DiscographyEnd) {
 		var ret int32
 		return ret
 	}
@@ -356,15 +359,15 @@ func (o *ParsedAlbumInfo) GetDiscographyEnd() int32 {
 // GetDiscographyEndOk returns a tuple with the DiscographyEnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedAlbumInfo) GetDiscographyEndOk() (*int32, bool) {
-	if o == nil || isNil(o.DiscographyEnd) {
-    return nil, false
+	if o == nil || IsNil(o.DiscographyEnd) {
+		return nil, false
 	}
 	return o.DiscographyEnd, true
 }
 
 // HasDiscographyEnd returns a boolean if a field has been set.
 func (o *ParsedAlbumInfo) HasDiscographyEnd() bool {
-	if o != nil && !isNil(o.DiscographyEnd) {
+	if o != nil && !IsNil(o.DiscographyEnd) {
 		return true
 	}
 
@@ -378,7 +381,7 @@ func (o *ParsedAlbumInfo) SetDiscographyEnd(v int32) {
 
 // GetReleaseGroup returns the ReleaseGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedAlbumInfo) GetReleaseGroup() string {
-	if o == nil || isNil(o.ReleaseGroup.Get()) {
+	if o == nil || IsNil(o.ReleaseGroup.Get()) {
 		var ret string
 		return ret
 	}
@@ -390,7 +393,7 @@ func (o *ParsedAlbumInfo) GetReleaseGroup() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedAlbumInfo) GetReleaseGroupOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseGroup.Get(), o.ReleaseGroup.IsSet()
 }
@@ -420,7 +423,7 @@ func (o *ParsedAlbumInfo) UnsetReleaseGroup() {
 
 // GetReleaseHash returns the ReleaseHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedAlbumInfo) GetReleaseHash() string {
-	if o == nil || isNil(o.ReleaseHash.Get()) {
+	if o == nil || IsNil(o.ReleaseHash.Get()) {
 		var ret string
 		return ret
 	}
@@ -432,7 +435,7 @@ func (o *ParsedAlbumInfo) GetReleaseHash() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedAlbumInfo) GetReleaseHashOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseHash.Get(), o.ReleaseHash.IsSet()
 }
@@ -462,7 +465,7 @@ func (o *ParsedAlbumInfo) UnsetReleaseHash() {
 
 // GetReleaseVersion returns the ReleaseVersion field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedAlbumInfo) GetReleaseVersion() string {
-	if o == nil || isNil(o.ReleaseVersion.Get()) {
+	if o == nil || IsNil(o.ReleaseVersion.Get()) {
 		var ret string
 		return ret
 	}
@@ -474,7 +477,7 @@ func (o *ParsedAlbumInfo) GetReleaseVersion() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedAlbumInfo) GetReleaseVersionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseVersion.Get(), o.ReleaseVersion.IsSet()
 }
@@ -504,7 +507,7 @@ func (o *ParsedAlbumInfo) UnsetReleaseVersion() {
 
 // GetReleaseTitle returns the ReleaseTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedAlbumInfo) GetReleaseTitle() string {
-	if o == nil || isNil(o.ReleaseTitle.Get()) {
+	if o == nil || IsNil(o.ReleaseTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -516,7 +519,7 @@ func (o *ParsedAlbumInfo) GetReleaseTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedAlbumInfo) GetReleaseTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseTitle.Get(), o.ReleaseTitle.IsSet()
 }
@@ -545,6 +548,14 @@ func (o *ParsedAlbumInfo) UnsetReleaseTitle() {
 }
 
 func (o ParsedAlbumInfo) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ParsedAlbumInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AlbumTitle.IsSet() {
 		toSerialize["albumTitle"] = o.AlbumTitle.Get()
@@ -555,22 +566,22 @@ func (o ParsedAlbumInfo) MarshalJSON() ([]byte, error) {
 	if o.AlbumType.IsSet() {
 		toSerialize["albumType"] = o.AlbumType.Get()
 	}
-	if !isNil(o.ArtistTitleInfo) {
+	if !IsNil(o.ArtistTitleInfo) {
 		toSerialize["artistTitleInfo"] = o.ArtistTitleInfo
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
 	if o.ReleaseDate.IsSet() {
 		toSerialize["releaseDate"] = o.ReleaseDate.Get()
 	}
-	if !isNil(o.Discography) {
+	if !IsNil(o.Discography) {
 		toSerialize["discography"] = o.Discography
 	}
-	if !isNil(o.DiscographyStart) {
+	if !IsNil(o.DiscographyStart) {
 		toSerialize["discographyStart"] = o.DiscographyStart
 	}
-	if !isNil(o.DiscographyEnd) {
+	if !IsNil(o.DiscographyEnd) {
 		toSerialize["discographyEnd"] = o.DiscographyEnd
 	}
 	if o.ReleaseGroup.IsSet() {
@@ -585,7 +596,7 @@ func (o ParsedAlbumInfo) MarshalJSON() ([]byte, error) {
 	if o.ReleaseTitle.IsSet() {
 		toSerialize["releaseTitle"] = o.ReleaseTitle.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableParsedAlbumInfo struct {

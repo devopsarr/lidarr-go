@@ -14,11 +14,14 @@ import (
 	"encoding/json"
 )
 
+// checks if the Member type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Member{}
+
 // Member struct for Member
 type Member struct {
 	Name NullableString `json:"name,omitempty"`
 	Instrument NullableString `json:"instrument,omitempty"`
-	Images []*MediaCover `json:"images,omitempty"`
+	Images []MediaCover `json:"images,omitempty"`
 }
 
 // NewMember instantiates a new Member object
@@ -40,7 +43,7 @@ func NewMemberWithDefaults() *Member {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Member) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -52,7 +55,7 @@ func (o *Member) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Member) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -82,7 +85,7 @@ func (o *Member) UnsetName() {
 
 // GetInstrument returns the Instrument field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Member) GetInstrument() string {
-	if o == nil || isNil(o.Instrument.Get()) {
+	if o == nil || IsNil(o.Instrument.Get()) {
 		var ret string
 		return ret
 	}
@@ -94,7 +97,7 @@ func (o *Member) GetInstrument() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Member) GetInstrumentOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Instrument.Get(), o.Instrument.IsSet()
 }
@@ -123,9 +126,9 @@ func (o *Member) UnsetInstrument() {
 }
 
 // GetImages returns the Images field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Member) GetImages() []*MediaCover {
+func (o *Member) GetImages() []MediaCover {
 	if o == nil {
-		var ret []*MediaCover
+		var ret []MediaCover
 		return ret
 	}
 	return o.Images
@@ -134,16 +137,16 @@ func (o *Member) GetImages() []*MediaCover {
 // GetImagesOk returns a tuple with the Images field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Member) GetImagesOk() ([]*MediaCover, bool) {
-	if o == nil || isNil(o.Images) {
-    return nil, false
+func (o *Member) GetImagesOk() ([]MediaCover, bool) {
+	if o == nil || IsNil(o.Images) {
+		return nil, false
 	}
 	return o.Images, true
 }
 
 // HasImages returns a boolean if a field has been set.
 func (o *Member) HasImages() bool {
-	if o != nil && isNil(o.Images) {
+	if o != nil && IsNil(o.Images) {
 		return true
 	}
 
@@ -151,11 +154,19 @@ func (o *Member) HasImages() bool {
 }
 
 // SetImages gets a reference to the given []MediaCover and assigns it to the Images field.
-func (o *Member) SetImages(v []*MediaCover) {
+func (o *Member) SetImages(v []MediaCover) {
 	o.Images = v
 }
 
 func (o Member) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o Member) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
@@ -166,7 +177,7 @@ func (o Member) MarshalJSON() ([]byte, error) {
 	if o.Images != nil {
 		toSerialize["images"] = o.Images
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableMember struct {
