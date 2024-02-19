@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.0.0](https://github.com/devopsarr/lidarr-go/compare/v0.3.1...v1.0.0) (2024-02-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **devopsarr/prowlarr-py#39:** update sdk generator to use pydantic 2.x
+
+### Features
+
+* align to go sdk ([2bdcd49](https://github.com/devopsarr/lidarr-go/commit/2bdcd4974235239b5307f5878935b24f4e1419e4))
+* **devopsarr/prowlarr-py#39:** update sdk generator to use pydantic 2.x ([963ddef](https://github.com/devopsarr/lidarr-go/commit/963ddefea974ca0f5ce87c25a4d8544cbe375287))
+* inject api version into readme ([6387d64](https://github.com/devopsarr/lidarr-go/commit/6387d64b0903cbdf33a83c62053fa3bfb9e62213))
+
+
+### Bug Fixes
+
+* release please commented lines ([96d484f](https://github.com/devopsarr/lidarr-go/commit/96d484f0b4ff72b2684423a67af7c004dc91d6d2))
+
 ## [0.3.1](https://github.com/devopsarr/lidarr-go/compare/v0.3.0...v0.3.1) (2023-12-06)
 
 
