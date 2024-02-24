@@ -99,8 +99,8 @@ Class | Method | HTTP request | Description
 *AutoTaggingAPI* | [**CreateAutoTagging**](docs/AutoTaggingAPI.md#createautotagging) | **Post** /api/v1/autotagging | 
 *AutoTaggingAPI* | [**DeleteAutoTagging**](docs/AutoTaggingAPI.md#deleteautotagging) | **Delete** /api/v1/autotagging/{id} | 
 *AutoTaggingAPI* | [**GetAutoTaggingById**](docs/AutoTaggingAPI.md#getautotaggingbyid) | **Get** /api/v1/autotagging/{id} | 
-*AutoTaggingAPI* | [**GetAutoTaggingSchema**](docs/AutoTaggingAPI.md#getautotaggingschema) | **Get** /api/v1/autotagging/schema | 
 *AutoTaggingAPI* | [**ListAutoTagging**](docs/AutoTaggingAPI.md#listautotagging) | **Get** /api/v1/autotagging | 
+*AutoTaggingAPI* | [**ListAutoTaggingSchema**](docs/AutoTaggingAPI.md#listautotaggingschema) | **Get** /api/v1/autotagging/schema | 
 *AutoTaggingAPI* | [**UpdateAutoTagging**](docs/AutoTaggingAPI.md#updateautotagging) | **Put** /api/v1/autotagging/{id} | 
 *BackupAPI* | [**CreateSystemBackupRestoreById**](docs/BackupAPI.md#createsystembackuprestorebyid) | **Post** /api/v1/system/backup/restore/{id} | 
 *BackupAPI* | [**CreateSystemBackupRestoreUpload**](docs/BackupAPI.md#createsystembackuprestoreupload) | **Post** /api/v1/system/backup/restore/upload | 
@@ -124,8 +124,8 @@ Class | Method | HTTP request | Description
 *CustomFormatAPI* | [**CreateCustomFormat**](docs/CustomFormatAPI.md#createcustomformat) | **Post** /api/v1/customformat | 
 *CustomFormatAPI* | [**DeleteCustomFormat**](docs/CustomFormatAPI.md#deletecustomformat) | **Delete** /api/v1/customformat/{id} | 
 *CustomFormatAPI* | [**GetCustomFormatById**](docs/CustomFormatAPI.md#getcustomformatbyid) | **Get** /api/v1/customformat/{id} | 
-*CustomFormatAPI* | [**GetCustomFormatSchema**](docs/CustomFormatAPI.md#getcustomformatschema) | **Get** /api/v1/customformat/schema | 
 *CustomFormatAPI* | [**ListCustomFormat**](docs/CustomFormatAPI.md#listcustomformat) | **Get** /api/v1/customformat | 
+*CustomFormatAPI* | [**ListCustomFormatSchema**](docs/CustomFormatAPI.md#listcustomformatschema) | **Get** /api/v1/customformat/schema | 
 *CustomFormatAPI* | [**UpdateCustomFormat**](docs/CustomFormatAPI.md#updatecustomformat) | **Put** /api/v1/customformat/{id} | 
 *CutoffAPI* | [**GetWantedCutoff**](docs/CutoffAPI.md#getwantedcutoff) | **Get** /api/v1/wanted/cutoff | 
 *CutoffAPI* | [**GetWantedCutoffById**](docs/CutoffAPI.md#getwantedcutoffbyid) | **Get** /api/v1/wanted/cutoff/{id} | 

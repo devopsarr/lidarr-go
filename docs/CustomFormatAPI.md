@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**CreateCustomFormat**](CustomFormatAPI.md#CreateCustomFormat) | **Post** /api/v1/customformat | 
 [**DeleteCustomFormat**](CustomFormatAPI.md#DeleteCustomFormat) | **Delete** /api/v1/customformat/{id} | 
 [**GetCustomFormatById**](CustomFormatAPI.md#GetCustomFormatById) | **Get** /api/v1/customformat/{id} | 
-[**GetCustomFormatSchema**](CustomFormatAPI.md#GetCustomFormatSchema) | **Get** /api/v1/customformat/schema | 
 [**ListCustomFormat**](CustomFormatAPI.md#ListCustomFormat) | **Get** /api/v1/customformat | 
+[**ListCustomFormatSchema**](CustomFormatAPI.md#ListCustomFormatSchema) | **Get** /api/v1/customformat/schema | 
 [**UpdateCustomFormat**](CustomFormatAPI.md#UpdateCustomFormat) | **Put** /api/v1/customformat/{id} | 
 
 
@@ -211,63 +211,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetCustomFormatSchema
-
-> GetCustomFormatSchema(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	lidarrClient "github.com/devopsarr/lidarr-go/lidarr"
-)
-
-func main() {
-
-	configuration := lidarrClient.NewConfiguration()
-	apiClient := lidarrClient.NewAPIClient(configuration)
-	r, err := apiClient.CustomFormatAPI.GetCustomFormatSchema(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatAPI.GetCustomFormatSchema``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetCustomFormatSchemaRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## ListCustomFormat
 
 > []CustomFormatResource ListCustomFormat(ctx).Execute()
@@ -312,6 +255,65 @@ Other parameters are passed through a pointer to a apiListCustomFormatRequest st
 ### Return type
 
 [**[]CustomFormatResource**](CustomFormatResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListCustomFormatSchema
+
+> []CustomFormatSpecificationSchema ListCustomFormatSchema(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	lidarrClient "github.com/devopsarr/lidarr-go/lidarr"
+)
+
+func main() {
+
+	configuration := lidarrClient.NewConfiguration()
+	apiClient := lidarrClient.NewAPIClient(configuration)
+	resp, r, err := apiClient.CustomFormatAPI.ListCustomFormatSchema(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatAPI.ListCustomFormatSchema``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListCustomFormatSchema`: []CustomFormatSpecificationSchema
+	fmt.Fprintf(os.Stdout, "Response from `CustomFormatAPI.ListCustomFormatSchema`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListCustomFormatSchemaRequest struct via the builder pattern
+
+
+### Return type
+
+[**[]CustomFormatSpecificationSchema**](CustomFormatSpecificationSchema.md)
 
 ### Authorization
 
