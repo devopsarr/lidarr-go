@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/devopsarr/lidarr-go/compare/v1.0.0...v1.1.0) (2024-02-24)
+
+
+### Features
+
+* add response to lidarr custom format and auto tag schemas ([7c74f71](https://github.com/devopsarr/lidarr-go/commit/7c74f718606049fe29222df279d7b5daada41a8f))
+
 ## [1.0.0](https://github.com/devopsarr/lidarr-go/compare/v0.3.1...v1.0.0) (2024-02-15)
 
 
