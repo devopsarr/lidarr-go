@@ -235,7 +235,7 @@ func (o *AlbumResourcePagingResource) GetRecordsOk() ([]AlbumResource, bool) {
 
 // HasRecords returns a boolean if a field has been set.
 func (o *AlbumResourcePagingResource) HasRecords() bool {
-	if o != nil && IsNil(o.Records) {
+	if o != nil && !IsNil(o.Records) {
 		return true
 	}
 

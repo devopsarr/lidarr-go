@@ -204,7 +204,7 @@ func (o *ParseResource) GetAlbumsOk() ([]AlbumResource, bool) {
 
 // HasAlbums returns a boolean if a field has been set.
 func (o *ParseResource) HasAlbums() bool {
-	if o != nil && IsNil(o.Albums) {
+	if o != nil && !IsNil(o.Albums) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *ParseResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *ParseResource) HasCustomFormats() bool {
-	if o != nil && IsNil(o.CustomFormats) {
+	if o != nil && !IsNil(o.CustomFormats) {
 		return true
 	}
 

@@ -138,7 +138,7 @@ func (o *MetadataProfileResource) GetPrimaryAlbumTypesOk() ([]ProfilePrimaryAlbu
 
 // HasPrimaryAlbumTypes returns a boolean if a field has been set.
 func (o *MetadataProfileResource) HasPrimaryAlbumTypes() bool {
-	if o != nil && IsNil(o.PrimaryAlbumTypes) {
+	if o != nil && !IsNil(o.PrimaryAlbumTypes) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *MetadataProfileResource) GetSecondaryAlbumTypesOk() ([]ProfileSecondary
 
 // HasSecondaryAlbumTypes returns a boolean if a field has been set.
 func (o *MetadataProfileResource) HasSecondaryAlbumTypes() bool {
-	if o != nil && IsNil(o.SecondaryAlbumTypes) {
+	if o != nil && !IsNil(o.SecondaryAlbumTypes) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *MetadataProfileResource) GetReleaseStatusesOk() ([]ProfileReleaseStatus
 
 // HasReleaseStatuses returns a boolean if a field has been set.
 func (o *MetadataProfileResource) HasReleaseStatuses() bool {
-	if o != nil && IsNil(o.ReleaseStatuses) {
+	if o != nil && !IsNil(o.ReleaseStatuses) {
 		return true
 	}
 

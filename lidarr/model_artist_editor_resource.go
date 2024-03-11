@@ -70,7 +70,7 @@ func (o *ArtistEditorResource) GetArtistIdsOk() ([]int32, bool) {
 
 // HasArtistIds returns a boolean if a field has been set.
 func (o *ArtistEditorResource) HasArtistIds() bool {
-	if o != nil && IsNil(o.ArtistIds) {
+	if o != nil && !IsNil(o.ArtistIds) {
 		return true
 	}
 
@@ -303,7 +303,7 @@ func (o *ArtistEditorResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *ArtistEditorResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 

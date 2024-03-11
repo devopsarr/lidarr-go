@@ -62,7 +62,7 @@ func (o *AlbumStudioResource) GetArtistOk() ([]AlbumStudioArtistResource, bool) 
 
 // HasArtist returns a boolean if a field has been set.
 func (o *AlbumStudioResource) HasArtist() bool {
-	if o != nil && IsNil(o.Artist) {
+	if o != nil && !IsNil(o.Artist) {
 		return true
 	}
 

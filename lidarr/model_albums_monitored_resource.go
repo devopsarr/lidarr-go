@@ -61,7 +61,7 @@ func (o *AlbumsMonitoredResource) GetAlbumIdsOk() ([]int32, bool) {
 
 // HasAlbumIds returns a boolean if a field has been set.
 func (o *AlbumsMonitoredResource) HasAlbumIds() bool {
-	if o != nil && IsNil(o.AlbumIds) {
+	if o != nil && !IsNil(o.AlbumIds) {
 		return true
 	}
 

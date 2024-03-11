@@ -95,7 +95,7 @@ func (o *AddArtistOptions) GetAlbumsToMonitorOk() ([]string, bool) {
 
 // HasAlbumsToMonitor returns a boolean if a field has been set.
 func (o *AddArtistOptions) HasAlbumsToMonitor() bool {
-	if o != nil && IsNil(o.AlbumsToMonitor) {
+	if o != nil && !IsNil(o.AlbumsToMonitor) {
 		return true
 	}
 

@@ -316,7 +316,7 @@ func (o *ManualImportUpdateResource) GetTracksOk() ([]TrackResource, bool) {
 
 // HasTracks returns a boolean if a field has been set.
 func (o *ManualImportUpdateResource) HasTracks() bool {
-	if o != nil && IsNil(o.Tracks) {
+	if o != nil && !IsNil(o.Tracks) {
 		return true
 	}
 
@@ -349,7 +349,7 @@ func (o *ManualImportUpdateResource) GetTrackIdsOk() ([]int32, bool) {
 
 // HasTrackIds returns a boolean if a field has been set.
 func (o *ManualImportUpdateResource) HasTrackIds() bool {
-	if o != nil && IsNil(o.TrackIds) {
+	if o != nil && !IsNil(o.TrackIds) {
 		return true
 	}
 
@@ -594,7 +594,7 @@ func (o *ManualImportUpdateResource) GetRejectionsOk() ([]Rejection, bool) {
 
 // HasRejections returns a boolean if a field has been set.
 func (o *ManualImportUpdateResource) HasRejections() bool {
-	if o != nil && IsNil(o.Rejections) {
+	if o != nil && !IsNil(o.Rejections) {
 		return true
 	}
 
