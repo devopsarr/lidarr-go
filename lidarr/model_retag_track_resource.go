@@ -162,7 +162,7 @@ func (o *RetagTrackResource) GetTrackNumbersOk() ([]int32, bool) {
 
 // HasTrackNumbers returns a boolean if a field has been set.
 func (o *RetagTrackResource) HasTrackNumbers() bool {
-	if o != nil && IsNil(o.TrackNumbers) {
+	if o != nil && !IsNil(o.TrackNumbers) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *RetagTrackResource) GetChangesOk() ([]TagDifference, bool) {
 
 // HasChanges returns a boolean if a field has been set.
 func (o *RetagTrackResource) HasChanges() bool {
-	if o != nil && IsNil(o.Changes) {
+	if o != nil && !IsNil(o.Changes) {
 		return true
 	}
 

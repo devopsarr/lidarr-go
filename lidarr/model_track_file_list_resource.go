@@ -63,7 +63,7 @@ func (o *TrackFileListResource) GetTrackFileIdsOk() ([]int32, bool) {
 
 // HasTrackFileIds returns a boolean if a field has been set.
 func (o *TrackFileListResource) HasTrackFileIds() bool {
-	if o != nil && IsNil(o.TrackFileIds) {
+	if o != nil && !IsNil(o.TrackFileIds) {
 		return true
 	}
 

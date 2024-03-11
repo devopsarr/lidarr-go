@@ -487,7 +487,7 @@ func (o *AlbumResource) GetSecondaryTypesOk() ([]string, bool) {
 
 // HasSecondaryTypes returns a boolean if a field has been set.
 func (o *AlbumResource) HasSecondaryTypes() bool {
-	if o != nil && IsNil(o.SecondaryTypes) {
+	if o != nil && !IsNil(o.SecondaryTypes) {
 		return true
 	}
 
@@ -626,7 +626,7 @@ func (o *AlbumResource) GetReleasesOk() ([]AlbumReleaseResource, bool) {
 
 // HasReleases returns a boolean if a field has been set.
 func (o *AlbumResource) HasReleases() bool {
-	if o != nil && IsNil(o.Releases) {
+	if o != nil && !IsNil(o.Releases) {
 		return true
 	}
 
@@ -659,7 +659,7 @@ func (o *AlbumResource) GetGenresOk() ([]string, bool) {
 
 // HasGenres returns a boolean if a field has been set.
 func (o *AlbumResource) HasGenres() bool {
-	if o != nil && IsNil(o.Genres) {
+	if o != nil && !IsNil(o.Genres) {
 		return true
 	}
 
@@ -692,7 +692,7 @@ func (o *AlbumResource) GetMediaOk() ([]MediumResource, bool) {
 
 // HasMedia returns a boolean if a field has been set.
 func (o *AlbumResource) HasMedia() bool {
-	if o != nil && IsNil(o.Media) {
+	if o != nil && !IsNil(o.Media) {
 		return true
 	}
 
@@ -757,7 +757,7 @@ func (o *AlbumResource) GetImagesOk() ([]MediaCover, bool) {
 
 // HasImages returns a boolean if a field has been set.
 func (o *AlbumResource) HasImages() bool {
-	if o != nil && IsNil(o.Images) {
+	if o != nil && !IsNil(o.Images) {
 		return true
 	}
 
@@ -790,7 +790,7 @@ func (o *AlbumResource) GetLinksOk() ([]Links, bool) {
 
 // HasLinks returns a boolean if a field has been set.
 func (o *AlbumResource) HasLinks() bool {
-	if o != nil && IsNil(o.Links) {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 

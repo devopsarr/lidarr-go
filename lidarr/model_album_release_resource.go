@@ -327,7 +327,7 @@ func (o *AlbumReleaseResource) GetMediaOk() ([]MediumResource, bool) {
 
 // HasMedia returns a boolean if a field has been set.
 func (o *AlbumReleaseResource) HasMedia() bool {
-	if o != nil && IsNil(o.Media) {
+	if o != nil && !IsNil(o.Media) {
 		return true
 	}
 
@@ -434,7 +434,7 @@ func (o *AlbumReleaseResource) GetCountryOk() ([]string, bool) {
 
 // HasCountry returns a boolean if a field has been set.
 func (o *AlbumReleaseResource) HasCountry() bool {
-	if o != nil && IsNil(o.Country) {
+	if o != nil && !IsNil(o.Country) {
 		return true
 	}
 
@@ -467,7 +467,7 @@ func (o *AlbumReleaseResource) GetLabelOk() ([]string, bool) {
 
 // HasLabel returns a boolean if a field has been set.
 func (o *AlbumReleaseResource) HasLabel() bool {
-	if o != nil && IsNil(o.Label) {
+	if o != nil && !IsNil(o.Label) {
 		return true
 	}
 

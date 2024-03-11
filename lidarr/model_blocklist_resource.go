@@ -135,7 +135,7 @@ func (o *BlocklistResource) GetAlbumIdsOk() ([]int32, bool) {
 
 // HasAlbumIds returns a boolean if a field has been set.
 func (o *BlocklistResource) HasAlbumIds() bool {
-	if o != nil && IsNil(o.AlbumIds) {
+	if o != nil && !IsNil(o.AlbumIds) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *BlocklistResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) 
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *BlocklistResource) HasCustomFormats() bool {
-	if o != nil && IsNil(o.CustomFormats) {
+	if o != nil && !IsNil(o.CustomFormats) {
 		return true
 	}
 
