@@ -14,35 +14,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the LanguageResource type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LanguageResource{}
+// checks if the IndexerFlagResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IndexerFlagResource{}
 
-// LanguageResource struct for LanguageResource
-type LanguageResource struct {
+// IndexerFlagResource struct for IndexerFlagResource
+type IndexerFlagResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
 	NameLower NullableString `json:"nameLower,omitempty"`
 }
 
-// NewLanguageResource instantiates a new LanguageResource object
+// NewIndexerFlagResource instantiates a new IndexerFlagResource object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLanguageResource() *LanguageResource {
-	this := LanguageResource{}
+func NewIndexerFlagResource() *IndexerFlagResource {
+	this := IndexerFlagResource{}
 	return &this
 }
 
-// NewLanguageResourceWithDefaults instantiates a new LanguageResource object
+// NewIndexerFlagResourceWithDefaults instantiates a new IndexerFlagResource object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewLanguageResourceWithDefaults() *LanguageResource {
-	this := LanguageResource{}
+func NewIndexerFlagResourceWithDefaults() *IndexerFlagResource {
+	this := IndexerFlagResource{}
 	return &this
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *LanguageResource) GetId() int32 {
+func (o *IndexerFlagResource) GetId() int32 {
 	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
@@ -52,7 +52,7 @@ func (o *LanguageResource) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LanguageResource) GetIdOk() (*int32, bool) {
+func (o *IndexerFlagResource) GetIdOk() (*int32, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *LanguageResource) GetIdOk() (*int32, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *LanguageResource) HasId() bool {
+func (o *IndexerFlagResource) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -69,12 +69,12 @@ func (o *LanguageResource) HasId() bool {
 }
 
 // SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *LanguageResource) SetId(v int32) {
+func (o *IndexerFlagResource) SetId(v int32) {
 	o.Id = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LanguageResource) GetName() string {
+func (o *IndexerFlagResource) GetName() string {
 	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
@@ -85,7 +85,7 @@ func (o *LanguageResource) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LanguageResource) GetNameOk() (*string, bool) {
+func (o *IndexerFlagResource) GetNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *LanguageResource) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *LanguageResource) HasName() bool {
+func (o *IndexerFlagResource) HasName() bool {
 	if o != nil && o.Name.IsSet() {
 		return true
 	}
@@ -102,21 +102,21 @@ func (o *LanguageResource) HasName() bool {
 }
 
 // SetName gets a reference to the given NullableString and assigns it to the Name field.
-func (o *LanguageResource) SetName(v string) {
+func (o *IndexerFlagResource) SetName(v string) {
 	o.Name.Set(&v)
 }
 // SetNameNil sets the value for Name to be an explicit nil
-func (o *LanguageResource) SetNameNil() {
+func (o *IndexerFlagResource) SetNameNil() {
 	o.Name.Set(nil)
 }
 
 // UnsetName ensures that no value is present for Name, not even an explicit nil
-func (o *LanguageResource) UnsetName() {
+func (o *IndexerFlagResource) UnsetName() {
 	o.Name.Unset()
 }
 
 // GetNameLower returns the NameLower field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LanguageResource) GetNameLower() string {
+func (o *IndexerFlagResource) GetNameLower() string {
 	if o == nil || IsNil(o.NameLower.Get()) {
 		var ret string
 		return ret
@@ -127,7 +127,7 @@ func (o *LanguageResource) GetNameLower() string {
 // GetNameLowerOk returns a tuple with the NameLower field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LanguageResource) GetNameLowerOk() (*string, bool) {
+func (o *IndexerFlagResource) GetNameLowerOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -135,7 +135,7 @@ func (o *LanguageResource) GetNameLowerOk() (*string, bool) {
 }
 
 // HasNameLower returns a boolean if a field has been set.
-func (o *LanguageResource) HasNameLower() bool {
+func (o *IndexerFlagResource) HasNameLower() bool {
 	if o != nil && o.NameLower.IsSet() {
 		return true
 	}
@@ -144,20 +144,20 @@ func (o *LanguageResource) HasNameLower() bool {
 }
 
 // SetNameLower gets a reference to the given NullableString and assigns it to the NameLower field.
-func (o *LanguageResource) SetNameLower(v string) {
+func (o *IndexerFlagResource) SetNameLower(v string) {
 	o.NameLower.Set(&v)
 }
 // SetNameLowerNil sets the value for NameLower to be an explicit nil
-func (o *LanguageResource) SetNameLowerNil() {
+func (o *IndexerFlagResource) SetNameLowerNil() {
 	o.NameLower.Set(nil)
 }
 
 // UnsetNameLower ensures that no value is present for NameLower, not even an explicit nil
-func (o *LanguageResource) UnsetNameLower() {
+func (o *IndexerFlagResource) UnsetNameLower() {
 	o.NameLower.Unset()
 }
 
-func (o LanguageResource) MarshalJSON() ([]byte, error) {
+func (o IndexerFlagResource) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -165,7 +165,7 @@ func (o LanguageResource) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o LanguageResource) ToMap() (map[string]interface{}, error) {
+func (o IndexerFlagResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
@@ -179,38 +179,38 @@ func (o LanguageResource) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableLanguageResource struct {
-	value *LanguageResource
+type NullableIndexerFlagResource struct {
+	value *IndexerFlagResource
 	isSet bool
 }
 
-func (v NullableLanguageResource) Get() *LanguageResource {
+func (v NullableIndexerFlagResource) Get() *IndexerFlagResource {
 	return v.value
 }
 
-func (v *NullableLanguageResource) Set(val *LanguageResource) {
+func (v *NullableIndexerFlagResource) Set(val *IndexerFlagResource) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableLanguageResource) IsSet() bool {
+func (v NullableIndexerFlagResource) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableLanguageResource) Unset() {
+func (v *NullableIndexerFlagResource) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableLanguageResource(val *LanguageResource) *NullableLanguageResource {
-	return &NullableLanguageResource{value: val, isSet: true}
+func NewNullableIndexerFlagResource(val *IndexerFlagResource) *NullableIndexerFlagResource {
+	return &NullableIndexerFlagResource{value: val, isSet: true}
 }
 
-func (v NullableLanguageResource) MarshalJSON() ([]byte, error) {
+func (v NullableIndexerFlagResource) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableLanguageResource) UnmarshalJSON(src []byte) error {
+func (v *NullableIndexerFlagResource) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
