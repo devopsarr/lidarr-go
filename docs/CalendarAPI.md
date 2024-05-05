@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## ListCalendar
 
-> []AlbumResource ListCalendar(ctx).Start(start).End(end).Unmonitored(unmonitored).IncludeArtist(includeArtist).Execute()
+> []AlbumResource ListCalendar(ctx).Start(start).End(end).Unmonitored(unmonitored).IncludeArtist(includeArtist).Tags(tags).Execute()
 
 
 
@@ -101,10 +101,11 @@ func main() {
 	end := time.Now() // time.Time |  (optional)
 	unmonitored := true // bool |  (optional) (default to false)
 	includeArtist := true // bool |  (optional) (default to false)
+	tags := "tags_example" // string |  (optional) (default to "")
 
 	configuration := lidarrClient.NewConfiguration()
 	apiClient := lidarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CalendarAPI.ListCalendar(context.Background()).Start(start).End(end).Unmonitored(unmonitored).IncludeArtist(includeArtist).Execute()
+	resp, r, err := apiClient.CalendarAPI.ListCalendar(context.Background()).Start(start).End(end).Unmonitored(unmonitored).IncludeArtist(includeArtist).Tags(tags).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CalendarAPI.ListCalendar``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -129,6 +130,7 @@ Name | Type | Description  | Notes
  **end** | **time.Time** |  | 
  **unmonitored** | **bool** |  | [default to false]
  **includeArtist** | **bool** |  | [default to false]
+ **tags** | **string** |  | [default to &quot;&quot;]
 
 ### Return type
 
@@ -141,7 +143,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

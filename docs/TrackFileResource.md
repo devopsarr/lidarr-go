@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **QualityWeight** | Pointer to **int32** |  | [optional] 
 **CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
 **CustomFormatScore** | Pointer to **int32** |  | [optional] 
+**IndexerFlags** | Pointer to **NullableInt32** |  | [optional] 
 **MediaInfo** | Pointer to [**MediaInfoResource**](MediaInfoResource.md) |  | [optional] 
 **QualityCutoffNotMet** | Pointer to **bool** |  | [optional] 
 **AudioTags** | Pointer to [**ParsedTrackInfo**](ParsedTrackInfo.md) |  | [optional] 
@@ -379,6 +380,41 @@ SetCustomFormatScore sets CustomFormatScore field to given value.
 
 HasCustomFormatScore returns a boolean if a field has been set.
 
+### GetIndexerFlags
+
+`func (o *TrackFileResource) GetIndexerFlags() int32`
+
+GetIndexerFlags returns the IndexerFlags field if non-nil, zero value otherwise.
+
+### GetIndexerFlagsOk
+
+`func (o *TrackFileResource) GetIndexerFlagsOk() (*int32, bool)`
+
+GetIndexerFlagsOk returns a tuple with the IndexerFlags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexerFlags
+
+`func (o *TrackFileResource) SetIndexerFlags(v int32)`
+
+SetIndexerFlags sets IndexerFlags field to given value.
+
+### HasIndexerFlags
+
+`func (o *TrackFileResource) HasIndexerFlags() bool`
+
+HasIndexerFlags returns a boolean if a field has been set.
+
+### SetIndexerFlagsNil
+
+`func (o *TrackFileResource) SetIndexerFlagsNil(b bool)`
+
+ SetIndexerFlagsNil sets the value for IndexerFlags to be an explicit nil
+
+### UnsetIndexerFlags
+`func (o *TrackFileResource) UnsetIndexerFlags()`
+
+UnsetIndexerFlags ensures that no value is present for IndexerFlags, not even an explicit nil
 ### GetMediaInfo
 
 `func (o *TrackFileResource) GetMediaInfo() MediaInfoResource`

@@ -19,47 +19,47 @@ import (
 )
 
 
-// DiskSpaceAPIService DiskSpaceAPI service
-type DiskSpaceAPIService service
+// IndexerFlagAPIService IndexerFlagAPI service
+type IndexerFlagAPIService service
 
-type ApiListDiskSpaceRequest struct {
+type ApiListIndexerFlagRequest struct {
 	ctx context.Context
-	ApiService *DiskSpaceAPIService
+	ApiService *IndexerFlagAPIService
 }
 
-func (r ApiListDiskSpaceRequest) Execute() ([]DiskSpaceResource, *http.Response, error) {
-	return r.ApiService.ListDiskSpaceExecute(r)
+func (r ApiListIndexerFlagRequest) Execute() ([]IndexerFlagResource, *http.Response, error) {
+	return r.ApiService.ListIndexerFlagExecute(r)
 }
 
 /*
-ListDiskSpace Method for ListDiskSpace
+ListIndexerFlag Method for ListIndexerFlag
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListDiskSpaceRequest
+ @return ApiListIndexerFlagRequest
 */
-func (a *DiskSpaceAPIService) ListDiskSpace(ctx context.Context) ApiListDiskSpaceRequest {
-	return ApiListDiskSpaceRequest{
+func (a *IndexerFlagAPIService) ListIndexerFlag(ctx context.Context) ApiListIndexerFlagRequest {
+	return ApiListIndexerFlagRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []DiskSpaceResource
-func (a *DiskSpaceAPIService) ListDiskSpaceExecute(r ApiListDiskSpaceRequest) ([]DiskSpaceResource, *http.Response, error) {
+//  @return []IndexerFlagResource
+func (a *IndexerFlagAPIService) ListIndexerFlagExecute(r ApiListIndexerFlagRequest) ([]IndexerFlagResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []DiskSpaceResource
+		localVarReturnValue  []IndexerFlagResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DiskSpaceAPIService.ListDiskSpace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerFlagAPIService.ListIndexerFlag")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v1/diskspace"
+	localVarPath := localBasePath + "/api/v1/indexerflag"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -75,7 +75,7 @@ func (a *DiskSpaceAPIService) ListDiskSpaceExecute(r ApiListDiskSpaceRequest) ([
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
+	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
