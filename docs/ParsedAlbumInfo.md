@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ReleaseTitle** | Pointer to **NullableString** |  | [optional] 
 **AlbumTitle** | Pointer to **NullableString** |  | [optional] 
 **ArtistName** | Pointer to **NullableString** |  | [optional] 
 **AlbumType** | Pointer to **NullableString** |  | [optional] 
@@ -16,7 +17,6 @@ Name | Type | Description | Notes
 **ReleaseGroup** | Pointer to **NullableString** |  | [optional] 
 **ReleaseHash** | Pointer to **NullableString** |  | [optional] 
 **ReleaseVersion** | Pointer to **NullableString** |  | [optional] 
-**ReleaseTitle** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -37,6 +37,41 @@ NewParsedAlbumInfoWithDefaults instantiates a new ParsedAlbumInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetReleaseTitle
+
+`func (o *ParsedAlbumInfo) GetReleaseTitle() string`
+
+GetReleaseTitle returns the ReleaseTitle field if non-nil, zero value otherwise.
+
+### GetReleaseTitleOk
+
+`func (o *ParsedAlbumInfo) GetReleaseTitleOk() (*string, bool)`
+
+GetReleaseTitleOk returns a tuple with the ReleaseTitle field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReleaseTitle
+
+`func (o *ParsedAlbumInfo) SetReleaseTitle(v string)`
+
+SetReleaseTitle sets ReleaseTitle field to given value.
+
+### HasReleaseTitle
+
+`func (o *ParsedAlbumInfo) HasReleaseTitle() bool`
+
+HasReleaseTitle returns a boolean if a field has been set.
+
+### SetReleaseTitleNil
+
+`func (o *ParsedAlbumInfo) SetReleaseTitleNil(b bool)`
+
+ SetReleaseTitleNil sets the value for ReleaseTitle to be an explicit nil
+
+### UnsetReleaseTitle
+`func (o *ParsedAlbumInfo) UnsetReleaseTitle()`
+
+UnsetReleaseTitle ensures that no value is present for ReleaseTitle, not even an explicit nil
 ### GetAlbumTitle
 
 `func (o *ParsedAlbumInfo) GetAlbumTitle() string`
@@ -407,41 +442,6 @@ HasReleaseVersion returns a boolean if a field has been set.
 `func (o *ParsedAlbumInfo) UnsetReleaseVersion()`
 
 UnsetReleaseVersion ensures that no value is present for ReleaseVersion, not even an explicit nil
-### GetReleaseTitle
-
-`func (o *ParsedAlbumInfo) GetReleaseTitle() string`
-
-GetReleaseTitle returns the ReleaseTitle field if non-nil, zero value otherwise.
-
-### GetReleaseTitleOk
-
-`func (o *ParsedAlbumInfo) GetReleaseTitleOk() (*string, bool)`
-
-GetReleaseTitleOk returns a tuple with the ReleaseTitle field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReleaseTitle
-
-`func (o *ParsedAlbumInfo) SetReleaseTitle(v string)`
-
-SetReleaseTitle sets ReleaseTitle field to given value.
-
-### HasReleaseTitle
-
-`func (o *ParsedAlbumInfo) HasReleaseTitle() bool`
-
-HasReleaseTitle returns a boolean if a field has been set.
-
-### SetReleaseTitleNil
-
-`func (o *ParsedAlbumInfo) SetReleaseTitleNil(b bool)`
-
- SetReleaseTitleNil sets the value for ReleaseTitle to be an explicit nil
-
-### UnsetReleaseTitle
-`func (o *ParsedAlbumInfo) UnsetReleaseTitle()`
-
-UnsetReleaseTitle ensures that no value is present for ReleaseTitle, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
