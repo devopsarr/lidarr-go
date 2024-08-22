@@ -259,58 +259,58 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
 		var defaultValue int32 = 1
 		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
 		var defaultValue int32 = 10
 		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")
 	}
 	if r.sortDirection != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "form", "")
 	}
 	if r.includeArtist != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "form", "")
 	}
 	if r.includeAlbum != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", r.includeAlbum, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", r.includeAlbum, "form", "")
 	}
 	if r.includeTrack != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", r.includeTrack, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", r.includeTrack, "form", "")
 	}
 	if r.eventType != nil {
 		t := *r.eventType
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", t, "form", "multi")
 		}
 	}
 	if r.albumId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "form", "")
 	}
 	if r.downloadId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "form", "")
 	}
 	if r.artistIds != nil {
 		t := *r.artistIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "artistIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "artistIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "artistIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "artistIds", t, "form", "multi")
 		}
 	}
 	if r.quality != nil {
@@ -318,10 +318,10 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "quality", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "quality", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "quality", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "quality", t, "form", "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -486,28 +486,28 @@ func (a *HistoryAPIService) ListHistoryArtistExecute(r ApiListHistoryArtistReque
 	localVarFormParams := url.Values{}
 
 	if r.artistId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "form", "")
 	}
 	if r.albumId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "form", "")
 	}
 	if r.eventType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "form", "")
 	}
 	if r.includeArtist != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeArtist = &defaultValue
 	}
 	if r.includeAlbum != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", r.includeAlbum, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", r.includeAlbum, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeAlbum = &defaultValue
 	}
 	if r.includeTrack != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", r.includeTrack, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", r.includeTrack, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeTrack = &defaultValue
@@ -668,25 +668,25 @@ func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest
 	localVarFormParams := url.Values{}
 
 	if r.date != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "form", "")
 	}
 	if r.eventType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "eventType", r.eventType, "form", "")
 	}
 	if r.includeArtist != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeArtist = &defaultValue
 	}
 	if r.includeAlbum != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", r.includeAlbum, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", r.includeAlbum, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeAlbum = &defaultValue
 	}
 	if r.includeTrack != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", r.includeTrack, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", r.includeTrack, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeTrack = &defaultValue

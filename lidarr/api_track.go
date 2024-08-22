@@ -221,23 +221,23 @@ func (a *TrackAPIService) ListTrackExecute(r ApiListTrackRequest) ([]TrackResour
 	localVarFormParams := url.Values{}
 
 	if r.artistId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "form", "")
 	}
 	if r.albumId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "form", "")
 	}
 	if r.albumReleaseId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "albumReleaseId", r.albumReleaseId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "albumReleaseId", r.albumReleaseId, "form", "")
 	}
 	if r.trackIds != nil {
 		t := *r.trackIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "trackIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "trackIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "trackIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "trackIds", t, "form", "multi")
 		}
 	}
 	// to determine the Content-Type header

@@ -227,25 +227,25 @@ func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]Al
 	localVarFormParams := url.Values{}
 
 	if r.start != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "start", r.start, "form", "")
 	}
 	if r.end != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "end", r.end, "form", "")
 	}
 	if r.unmonitored != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.unmonitored = &defaultValue
 	}
 	if r.includeArtist != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeArtist = &defaultValue
 	}
 	if r.tags != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "form", "")
 	} else {
 		var defaultValue string = ""
 		r.tags = &defaultValue

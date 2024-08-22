@@ -78,10 +78,10 @@ func (a *RetagTrackAPIService) ListRetagExecute(r ApiListRetagRequest) ([]RetagT
 	localVarFormParams := url.Values{}
 
 	if r.artistId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "form", "")
 	}
 	if r.albumId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

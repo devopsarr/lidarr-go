@@ -211,10 +211,10 @@ func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]Relea
 	localVarFormParams := url.Values{}
 
 	if r.albumId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", r.albumId, "form", "")
 	}
 	if r.artistId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

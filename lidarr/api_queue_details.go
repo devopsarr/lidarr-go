@@ -91,27 +91,27 @@ func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRe
 	localVarFormParams := url.Values{}
 
 	if r.artistId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "form", "")
 	}
 	if r.albumIds != nil {
 		t := *r.albumIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "albumIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "albumIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "albumIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "albumIds", t, "form", "multi")
 		}
 	}
 	if r.includeArtist != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeArtist = &defaultValue
 	}
 	if r.includeAlbum != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", r.includeAlbum, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", r.includeAlbum, "form", "")
 	} else {
 		var defaultValue bool = true
 		r.includeAlbum = &defaultValue

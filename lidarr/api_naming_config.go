@@ -403,46 +403,46 @@ func (a *NamingConfigAPIService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	localVarFormParams := url.Values{}
 
 	if r.renameTracks != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "renameTracks", r.renameTracks, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "renameTracks", r.renameTracks, "form", "")
 	}
 	if r.replaceIllegalCharacters != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceIllegalCharacters", r.replaceIllegalCharacters, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceIllegalCharacters", r.replaceIllegalCharacters, "form", "")
 	}
 	if r.colonReplacementFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "colonReplacementFormat", r.colonReplacementFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "colonReplacementFormat", r.colonReplacementFormat, "form", "")
 	}
 	if r.standardTrackFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "standardTrackFormat", r.standardTrackFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "standardTrackFormat", r.standardTrackFormat, "form", "")
 	}
 	if r.multiDiscTrackFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "multiDiscTrackFormat", r.multiDiscTrackFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "multiDiscTrackFormat", r.multiDiscTrackFormat, "form", "")
 	}
 	if r.artistFolderFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "artistFolderFormat", r.artistFolderFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistFolderFormat", r.artistFolderFormat, "form", "")
 	}
 	if r.includeArtistName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtistName", r.includeArtistName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtistName", r.includeArtistName, "form", "")
 	}
 	if r.includeAlbumTitle != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbumTitle", r.includeAlbumTitle, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbumTitle", r.includeAlbumTitle, "form", "")
 	}
 	if r.includeQuality != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeQuality", r.includeQuality, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeQuality", r.includeQuality, "form", "")
 	}
 	if r.replaceSpaces != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceSpaces", r.replaceSpaces, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceSpaces", r.replaceSpaces, "form", "")
 	}
 	if r.separator != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "separator", r.separator, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "separator", r.separator, "form", "")
 	}
 	if r.numberStyle != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "numberStyle", r.numberStyle, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "numberStyle", r.numberStyle, "form", "")
 	}
 	if r.id != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "form", "")
 	}
 	if r.resourceName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "resourceName", r.resourceName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "resourceName", r.resourceName, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
