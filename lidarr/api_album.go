@@ -215,13 +215,13 @@ func (a *AlbumAPIService) DeleteAlbumExecute(r ApiDeleteAlbumRequest) (*http.Res
 	localVarFormParams := url.Values{}
 
 	if r.deleteFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.deleteFiles = &defaultValue
 	}
 	if r.addImportListExclusion != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.addImportListExclusion = &defaultValue
@@ -496,24 +496,24 @@ func (a *AlbumAPIService) ListAlbumExecute(r ApiListAlbumRequest) ([]AlbumResour
 	localVarFormParams := url.Values{}
 
 	if r.artistId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "form", "")
 	}
 	if r.albumIds != nil {
 		t := *r.albumIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "albumIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "albumIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "albumIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "albumIds", t, "form", "multi")
 		}
 	}
 	if r.foreignAlbumId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "foreignAlbumId", r.foreignAlbumId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "foreignAlbumId", r.foreignAlbumId, "form", "")
 	}
 	if r.includeAllArtistAlbums != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAllArtistAlbums", r.includeAllArtistAlbums, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAllArtistAlbums", r.includeAllArtistAlbums, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeAllArtistAlbums = &defaultValue

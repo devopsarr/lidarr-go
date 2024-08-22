@@ -214,13 +214,13 @@ func (a *ArtistAPIService) DeleteArtistExecute(r ApiDeleteArtistRequest) (*http.
 	localVarFormParams := url.Values{}
 
 	if r.deleteFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.deleteFiles = &defaultValue
 	}
 	if r.addImportListExclusion != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.addImportListExclusion = &defaultValue
@@ -477,7 +477,7 @@ func (a *ArtistAPIService) ListArtistExecute(r ApiListArtistRequest) ([]ArtistRe
 	localVarFormParams := url.Values{}
 
 	if r.mbId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "mbId", r.mbId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "mbId", r.mbId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -621,7 +621,7 @@ func (a *ArtistAPIService) UpdateArtistExecute(r ApiUpdateArtistRequest) (*Artis
 	localVarFormParams := url.Values{}
 
 	if r.moveFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", r.moveFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", r.moveFiles, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.moveFiles = &defaultValue

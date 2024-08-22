@@ -461,17 +461,17 @@ func (a *TrackFileAPIService) ListTrackFileExecute(r ApiListTrackFileRequest) ([
 	localVarFormParams := url.Values{}
 
 	if r.artistId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "artistId", r.artistId, "form", "")
 	}
 	if r.trackFileIds != nil {
 		t := *r.trackFileIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "trackFileIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "trackFileIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "trackFileIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "trackFileIds", t, "form", "multi")
 		}
 	}
 	if r.albumId != nil {
@@ -479,14 +479,14 @@ func (a *TrackFileAPIService) ListTrackFileExecute(r ApiListTrackFileRequest) ([
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "albumId", t, "form", "multi")
 		}
 	}
 	if r.unmapped != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "unmapped", r.unmapped, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unmapped", r.unmapped, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
