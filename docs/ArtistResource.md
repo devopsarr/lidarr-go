@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
-**ArtistMetadataId** | Pointer to **int32** |  | [optional] 
 **Status** | Pointer to [**ArtistStatusType**](ArtistStatusType.md) |  | [optional] 
 **Ended** | Pointer to **bool** |  | [optional] [readonly] 
 **ArtistName** | Pointer to **NullableString** |  | [optional] 
@@ -82,31 +81,6 @@ SetId sets Id field to given value.
 `func (o *ArtistResource) HasId() bool`
 
 HasId returns a boolean if a field has been set.
-
-### GetArtistMetadataId
-
-`func (o *ArtistResource) GetArtistMetadataId() int32`
-
-GetArtistMetadataId returns the ArtistMetadataId field if non-nil, zero value otherwise.
-
-### GetArtistMetadataIdOk
-
-`func (o *ArtistResource) GetArtistMetadataIdOk() (*int32, bool)`
-
-GetArtistMetadataIdOk returns a tuple with the ArtistMetadataId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetArtistMetadataId
-
-`func (o *ArtistResource) SetArtistMetadataId(v int32)`
-
-SetArtistMetadataId sets ArtistMetadataId field to given value.
-
-### HasArtistMetadataId
-
-`func (o *ArtistResource) HasArtistMetadataId() bool`
-
-HasArtistMetadataId returns a boolean if a field has been set.
 
 ### GetStatus
 
