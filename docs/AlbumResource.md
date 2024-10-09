@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **Artist** | Pointer to [**ArtistResource**](ArtistResource.md) |  | [optional] 
 **Images** | Pointer to [**[]MediaCover**](MediaCover.md) |  | [optional] 
 **Links** | Pointer to [**[]Links**](Links.md) |  | [optional] 
+**LastSearchTime** | Pointer to **NullableTime** |  | [optional] 
 **Statistics** | Pointer to [**AlbumStatisticsResource**](AlbumStatisticsResource.md) |  | [optional] 
 **AddOptions** | Pointer to [**AddAlbumOptions**](AddAlbumOptions.md) |  | [optional] 
 **RemoteCover** | Pointer to **NullableString** |  | [optional] 
@@ -693,6 +694,41 @@ HasLinks returns a boolean if a field has been set.
 `func (o *AlbumResource) UnsetLinks()`
 
 UnsetLinks ensures that no value is present for Links, not even an explicit nil
+### GetLastSearchTime
+
+`func (o *AlbumResource) GetLastSearchTime() time.Time`
+
+GetLastSearchTime returns the LastSearchTime field if non-nil, zero value otherwise.
+
+### GetLastSearchTimeOk
+
+`func (o *AlbumResource) GetLastSearchTimeOk() (*time.Time, bool)`
+
+GetLastSearchTimeOk returns a tuple with the LastSearchTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastSearchTime
+
+`func (o *AlbumResource) SetLastSearchTime(v time.Time)`
+
+SetLastSearchTime sets LastSearchTime field to given value.
+
+### HasLastSearchTime
+
+`func (o *AlbumResource) HasLastSearchTime() bool`
+
+HasLastSearchTime returns a boolean if a field has been set.
+
+### SetLastSearchTimeNil
+
+`func (o *AlbumResource) SetLastSearchTimeNil(b bool)`
+
+ SetLastSearchTimeNil sets the value for LastSearchTime to be an explicit nil
+
+### UnsetLastSearchTime
+`func (o *AlbumResource) UnsetLastSearchTime()`
+
+UnsetLastSearchTime ensures that no value is present for LastSearchTime, not even an explicit nil
 ### GetStatistics
 
 `func (o *AlbumResource) GetStatistics() AlbumStatisticsResource`
