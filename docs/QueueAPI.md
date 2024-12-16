@@ -182,7 +182,7 @@ func main() {
 	includeAlbum := true // bool |  (optional) (default to false)
 	artistIds := []int32{int32(123)} // []int32 |  (optional)
 	protocol := lidarrClient.DownloadProtocol("unknown") // DownloadProtocol |  (optional)
-	quality := int32(56) // int32 |  (optional)
+	quality := []int32{int32(123)} // []int32 |  (optional)
 
 	configuration := lidarrClient.NewConfiguration()
 	apiClient := lidarrClient.NewAPIClient(configuration)
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
  **includeAlbum** | **bool** |  | [default to false]
  **artistIds** | **[]int32** |  | 
  **protocol** | [**DownloadProtocol**](DownloadProtocol.md) |  | 
- **quality** | **int32** |  | 
+ **quality** | **[]int32** |  | 
 
 ### Return type
 
