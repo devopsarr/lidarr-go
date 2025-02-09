@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAlbumLookup**](AlbumLookupAPI.md#GetAlbumLookup) | **Get** /api/v1/album/lookup | 
+[**ListAlbumLookup**](AlbumLookupAPI.md#ListAlbumLookup) | **Get** /api/v1/album/lookup | 
 
 
 
-## GetAlbumLookup
+## ListAlbumLookup
 
-> GetAlbumLookup(ctx).Term(term).Execute()
+> []AlbumResource ListAlbumLookup(ctx).Term(term).Execute()
 
 
 
@@ -31,11 +31,13 @@ func main() {
 
 	configuration := lidarrClient.NewConfiguration()
 	apiClient := lidarrClient.NewAPIClient(configuration)
-	r, err := apiClient.AlbumLookupAPI.GetAlbumLookup(context.Background()).Term(term).Execute()
+	resp, r, err := apiClient.AlbumLookupAPI.ListAlbumLookup(context.Background()).Term(term).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AlbumLookupAPI.GetAlbumLookup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AlbumLookupAPI.ListAlbumLookup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListAlbumLookup`: []AlbumResource
+	fmt.Fprintf(os.Stdout, "Response from `AlbumLookupAPI.ListAlbumLookup`: %v\n", resp)
 }
 ```
 
@@ -45,7 +47,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAlbumLookupRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListAlbumLookupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -54,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**[]AlbumResource**](AlbumResource.md)
 
 ### Authorization
 
@@ -63,7 +65,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
