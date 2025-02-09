@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:8686*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetArtistLookup**](ArtistLookupAPI.md#GetArtistLookup) | **Get** /api/v1/artist/lookup | 
+[**ListArtistLookup**](ArtistLookupAPI.md#ListArtistLookup) | **Get** /api/v1/artist/lookup | 
 
 
 
-## GetArtistLookup
+## ListArtistLookup
 
-> GetArtistLookup(ctx).Term(term).Execute()
+> []ArtistResource ListArtistLookup(ctx).Term(term).Execute()
 
 
 
@@ -31,11 +31,13 @@ func main() {
 
 	configuration := lidarrClient.NewConfiguration()
 	apiClient := lidarrClient.NewAPIClient(configuration)
-	r, err := apiClient.ArtistLookupAPI.GetArtistLookup(context.Background()).Term(term).Execute()
+	resp, r, err := apiClient.ArtistLookupAPI.ListArtistLookup(context.Background()).Term(term).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ArtistLookupAPI.GetArtistLookup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ArtistLookupAPI.ListArtistLookup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListArtistLookup`: []ArtistResource
+	fmt.Fprintf(os.Stdout, "Response from `ArtistLookupAPI.ListArtistLookup`: %v\n", resp)
 }
 ```
 
@@ -45,7 +47,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetArtistLookupRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListArtistLookupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -54,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**[]ArtistResource**](ArtistResource.md)
 
 ### Authorization
 
@@ -63,7 +65,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
