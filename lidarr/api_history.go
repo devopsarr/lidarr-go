@@ -261,16 +261,16 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
-        var defaultValue int32 = 1
-        parameterAddToHeaderOrQuery(localVarQueryParams, "page", defaultValue, "form", "")
-        r.page = &defaultValue
+		var defaultValue int32 = 1
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", defaultValue, "form", "")
+		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
-        var defaultValue int32 = 10
-        parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", defaultValue, "form", "")
-        r.pageSize = &defaultValue
+		var defaultValue int32 = 10
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", defaultValue, "form", "")
+		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")
@@ -499,23 +499,23 @@ func (a *HistoryAPIService) ListHistoryArtistExecute(r ApiListHistoryArtistReque
 	if r.includeArtist != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", defaultValue, "form", "")
-        r.includeArtist = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", defaultValue, "form", "")
+		r.includeArtist = &defaultValue
 	}
 	if r.includeAlbum != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", r.includeAlbum, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", defaultValue, "form", "")
-        r.includeAlbum = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", defaultValue, "form", "")
+		r.includeAlbum = &defaultValue
 	}
 	if r.includeTrack != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", r.includeTrack, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", defaultValue, "form", "")
-        r.includeTrack = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", defaultValue, "form", "")
+		r.includeTrack = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -681,23 +681,23 @@ func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest
 	if r.includeArtist != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", defaultValue, "form", "")
-        r.includeArtist = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", defaultValue, "form", "")
+		r.includeArtist = &defaultValue
 	}
 	if r.includeAlbum != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", r.includeAlbum, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", defaultValue, "form", "")
-        r.includeAlbum = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAlbum", defaultValue, "form", "")
+		r.includeAlbum = &defaultValue
 	}
 	if r.includeTrack != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", r.includeTrack, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", defaultValue, "form", "")
-        r.includeTrack = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrack", defaultValue, "form", "")
+		r.includeTrack = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
