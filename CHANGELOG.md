@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.2](https://github.com/devopsarr/lidarr-go/compare/v1.2.1...v1.2.2) (2026-01-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency lidarr/lidarr to v3 ([e2de12c](https://github.com/devopsarr/lidarr-go/commit/e2de12c5530bdb08c3b0879a44a1dbdc6ccff8f5))
+* **deps:** update dependency radarr/radarr to v5.28.0.10274 ([ce32dac](https://github.com/devopsarr/lidarr-go/commit/ce32dacf4770bf1b198724042f2c4fe465f482fd))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.17.0 ([94832ed](https://github.com/devopsarr/lidarr-go/commit/94832ed3049dcbad58f0997df33fce0cf5d03ad5))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([65fcf35](https://github.com/devopsarr/lidarr-go/commit/65fcf359ab3e1097cc0b411ddaee51bff9de0c2e))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([4c75d32](https://github.com/devopsarr/lidarr-go/commit/4c75d32874aade502a352bcf1cfbb75eea9cc689))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([fbb8c23](https://github.com/devopsarr/lidarr-go/commit/fbb8c2325a7c57d734adf261830d4304a9c6dae2))
+
 ## [1.2.1](https://github.com/devopsarr/lidarr-go/compare/v1.2.0...v1.2.1) (2025-09-02)
 
 
