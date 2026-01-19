@@ -217,16 +217,16 @@ func (a *AlbumAPIService) DeleteAlbumExecute(r ApiDeleteAlbumRequest) (*http.Res
 	if r.deleteFiles != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", defaultValue, "form", "")
-        r.deleteFiles = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", defaultValue, "form", "")
+		r.deleteFiles = &defaultValue
 	}
 	if r.addImportListExclusion != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", r.addImportListExclusion, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", defaultValue, "form", "")
-        r.addImportListExclusion = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportListExclusion", defaultValue, "form", "")
+		r.addImportListExclusion = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -517,9 +517,9 @@ func (a *AlbumAPIService) ListAlbumExecute(r ApiListAlbumRequest) ([]AlbumResour
 	if r.includeAllArtistAlbums != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAllArtistAlbums", r.includeAllArtistAlbums, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeAllArtistAlbums", defaultValue, "form", "")
-        r.includeAllArtistAlbums = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeAllArtistAlbums", defaultValue, "form", "")
+		r.includeAllArtistAlbums = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

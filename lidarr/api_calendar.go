@@ -235,23 +235,23 @@ func (a *CalendarAPIService) ListCalendarExecute(r ApiListCalendarRequest) ([]Al
 	if r.unmonitored != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", r.unmonitored, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", defaultValue, "form", "")
-        r.unmonitored = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "unmonitored", defaultValue, "form", "")
+		r.unmonitored = &defaultValue
 	}
 	if r.includeArtist != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", r.includeArtist, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", defaultValue, "form", "")
-        r.includeArtist = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeArtist", defaultValue, "form", "")
+		r.includeArtist = &defaultValue
 	}
 	if r.tags != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", r.tags, "form", "")
 	} else {
-        var defaultValue string = ""
-        parameterAddToHeaderOrQuery(localVarQueryParams, "tags", defaultValue, "form", "")
-        r.tags = &defaultValue
+		var defaultValue string = ""
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tags", defaultValue, "form", "")
+		r.tags = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
