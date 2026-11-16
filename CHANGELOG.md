@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.2.2 (2026-11-16)
+
+## What's Changed
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.16.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/72
+* fix(deps): update dependency lidarr/lidarr to v3 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/74
+* fix(deps): update dependency lidarr/lidarr to v3.1.0.4875 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/75
+* fix(deps): update dependency radarr/radarr to v5.28.0.10274 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/76
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.18.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/77
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.19.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/78
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.20.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/79
+* chore: add files for relase please v4 migration by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/80
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.21.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/81
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.22.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/82
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.23.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/83
+* fix: add .goreleaser.yml template and update Makefile for Go release by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/84
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.24.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/85
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.25.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/86
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.26.0 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/87
+* fix(deps): update dependency lidarr/lidarr to v3.1.6.5079 by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/88
+* chore: align-versions by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/89
+* fix: add go releaser file version by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/90
+* chore: edit changelog type to github by @devopsarr[bot] in https://github.com/devopsarr/lidarr-go/pull/91
+
+
+**Full Changelog**: https://github.com/devopsarr/lidarr-go/compare/v1.2.1...v1.2.2
+
 ## [1.2.1](https://github.com/devopsarr/lidarr-go/compare/v1.2.0...v1.2.1) (2025-09-02)
 
 
